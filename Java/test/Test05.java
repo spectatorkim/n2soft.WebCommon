@@ -17,7 +17,7 @@ public class Test05 {
 				if( doCheck(urls[i], checks[i]) ) {
 					counts[i] ++;
 					if( counts[i] > 2 ) {
-						sendSMS("01049204000", "[마스크입고알림] " + names[i]);
+//						sendSMS("01049204000", "[마스크입고알림] " + names[i]);
 						counts[i] = 0;
 					}
 				}					
@@ -41,18 +41,6 @@ public class Test05 {
 		}
 
 		return false;
-	}
-
-	public static void sendSMS(String hp_no, String msg) {
-		try {
-			HttpConnection hc = new HttpConnection("https://www.yeolimprinting.co.kr/_system/_sms.jsp");
-			hc.add("phone", hp_no);
-			hc.add("msg", msg);
-			hc.post();
-		}
-		catch( Exception e ) {
-			e.printStackTrace();
-		}
 	}
 
 }
