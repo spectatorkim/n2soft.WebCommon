@@ -6,7 +6,7 @@ public class Test03 {
 
 	public static void main(String[] args) {
 		try {
-			HttpConnection hc = new HttpConnection("https://www.naver.com/");
+			HttpConnection hc = new HttpConnection("https://www.google.com/");
 
 			String src = hc.post();
 			System.out.println(src);
