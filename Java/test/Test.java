@@ -21,9 +21,8 @@ public class Test {
 		req.put("H_GRAM_RES", "정상확인");
 		req.put("H_GRAM_RES_CD", "0000");
 
-		StringMap res = mgr.doMsg(req);
 
-		LogMgr.debug(res.toString(true));
+		LogMgr.debug(req.toString(true));
 	}
 
 }
