@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>대용량데이터 - 스크롤 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+	<style>
+	.sun-flower-button {
+		padding: 10px;
+		border: 1px solid #CCCCCC;
+		background: #fff;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>셀 업데이트</h1>
+
+		<fieldset class="search"><legend>스타일 변경</legend>
+			<div class="input">
+			<form name="frm" id="frm">
+				<span>25 컬럼 X </span> 
+					<select class="text" name="" id="data-count">
+						<option value="1000">1000</option>
+						<option value="2000">2000</option>
+						<option value="3000">3000</option>
+						<option value="4000">4000</option>
+						<option value="5000">5000</option>
+						<option value="6000">6000</option>
+						<option value="7000">7000</option>
+						<option value="8000">8000</option>
+						<option value="9000">9000</option>
+						<option value="10000">10000</option>
+					</select>
+					
+				</div>
+				<div class="btn" style="top:15px;"><input type="button" value="조회" onclick="appendRow()"></div>
+			</form>
+		</fieldset>
+
+		<div class="wrap">
+			<div class="btnbox" style="top: -122px;">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=17399814'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%EC%97%90%EB%94%94%ED%8C%85'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="400px">
+					<thead>
+						<tr>
+							<th fixed="fixed" name="id" width="70px" align="center">id</th>
+							<th fixed="fixed" name="user_name" width="150px" align="center">user_name</th>
+							<th name="password" width="150px" align="center">password</th>
+							<th name="gender" width="100px" align="center">gender</th>
+							<th name="race" width="200px">race</th>
+							<th name="title" width="100px" align="center">title</th>
+							<th name="first_name" width="150px">first_name</th>
+							<th name="last_name" width="150px">last_name</th>
+							<th name="email" width="250px">email</th>
+							<th name="country" width="250px">country</th>
+							<th name="street_1" width="100px">street_1</th>
+							<th name="street_2" width="250px">street_2</th>
+							<th name="ip_address" width="150px" align="center">ip_address</th>
+							<th name="credit_card_type" width="200px">credit_card_type</th>
+							<th name="credit_card_number" width="200px">credit_card_number</th>
+							<th name="frequency" width="200px">frequency</th>
+							<th name="url" width="400px">url</th>
+							<th name="color" width="120px">color</th>
+							<th name="company" width="150px" align="right">company</th>
+							<th name="currency" width="250px">currency</th>
+							<th name="data" width="150px" align="center">date</th>
+							<th name="ISBN" width="150px" align="center">ISBN</th>
+							<th name="language" width="150px" align="center">language</th>
+							<th name="money" width="100px" align="right">money</th>
+							<th name="message" width="500px">message</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="id" bind="id" ></td>
+							<td data-key name="user_name" bind="user_name" ></td>
+							<td name="password" bind="password" ></td>
+							<td name="gender" bind="gender" ></td>
+							<td name="race" bind="race" ></td>
+							<td name="title" bind="title" ></td>
+							<td name="first_name" bind="first_name" ></td>
+							<td name="last_name" bind="last_name" ></td>
+							<td name="email" bind="email" ></td>
+							<td name="country" bind="country" ></td>
+							<td name="street_1" bind="street_1" ></td>
+							<td name="street_2" bind="street_2" ></td>
+							<td name="ip_address" bind="ip_address" ></td>
+							<td name="credit_card_type" bind="credit_card_type" ></td>
+							<td name="credit_card_number" bind="credit_card_number"></td>
+							<td name="frequency" bind="frequency" ></td>
+							<td name="url" bind="url" ></td>
+							<td name="color" bind="color" ></td>
+							<td name="company" bind="company" ></td>
+							<td name="currency" bind="currency" ></td>
+							<td name="data" bind="data" ></td>
+							<td name="ISBN" bind="ISBN" ></td>
+							<td name="language" bind="language" ></td>
+							<td name="money" bind="money" ></td>
+							<td name="message" bind="message" ></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+			
+		</div>
+
+	</div>
+
+	<div style="height:50px;"></div>
+
+	<input class="sun-flower-button" type="button" value="변경데이터 가저오기">
+
+	<div class="log-area" style="margin-top:50px;"></div>
+
+	<div>
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid1 = webponent.grid.init(table1, template1);
+
+	webponent.grid.UIplugin.init(grid1, {
+		editable : true
+	});
+	
+	function appendRow () {
+
+		grid1.removeRow();
+
+		var data = $('#data-count').val();
+
+		$.ajax({
+			dataType: 'json',
+			cache : false,
+			url : '../../../data/data-' + data + '_0.json',
+			success : function (resp) {
+
+				grid1.appendRow(resp);
+			}
+		});
+	}
+
+	appendRow();
+
+	var updateList = {};
+
+	grid1.event.on('updated', function (e, rowkey, updatedData, rowData) {
+
+		if (updateList[rowkey]) {
+
+			_.extend(updateList[rowkey], updatedData);
+		} else {
+
+			var data = {};
+			data['user_name'] = rowkey;
+			_.extend(data, updatedData);
+			updateList[rowkey] = data;
+		}
+
+	});
+
+	$('.sun-flower-button').on('click', function () {
+
+		$('.log-area').empty().off("*");
+
+		_.each(updateList, function (item) {
+			
+			$('.log-area').append($.param(item));
+			$('.log-area').append('<br>');
+		});
+	});
+
+
+	</script>
+</body>
+</html>

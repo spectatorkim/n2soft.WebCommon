@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>데이터로드 - Array[Map]부터 로드 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+	<style>
+		/*.CI-GRID-BODY-TABLE tbody tr.CI-GRID-EVEN:hover {
+		  background: #FFF;
+		}
+
+		.CI-GRID-BODY-TABLE tbody tr.CI-GRID-ODD:hover {
+		  background: #F8F8F8;
+		}*/
+
+		.CI-GRID-BODY-TABLE-TBODY td.CI-GRID-BORDER-RIGHT {
+			border-right: 1px solid #E0E0E0;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>로우 병합</h1>
+		
+		<div class="wrap">
+
+			<h3>분기별 예산</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+            <button class="btn-excel" onclick="exportExcel();">EXCEL</button>
+            <form id="export-form" style="display: none;"></form>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="500px">
+					<thead>
+						<tr>
+							<th width="120px" align="center" scope="col" name="Year">Year</th>
+							<th width="120px" align="center" scope="col" name="Quarter">Quarter</th>
+							<th width="120px" align="center" scope="col" name="Month">Month</th>
+							<th width="120px" align="right" scope="col" name="Seoul">Seoul</th>
+							<th width="120px" align="right" scope="col" name="Busan">Busan</th>
+							<th width="120px" align="right" scope="col" name="Incheon">Incheon</th>
+							<th width="120px" align="right" scope="col" name="NewYork">NewYork</th>
+							<th width="120px" align="right" scope="col" name="LA">LA</th>
+							<th width="120px" align="right" scope="col" name="Washington">Washington</th>
+							<th width="120px" align="right" scope="col" name="Revenue">Revenue</th>
+							<th width="120px" align="right" scope="col" name="Percent">Percent</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="Year" bind="Year"></td>
+							<td name="Quarter" bind="Quarter"></td>
+							<td name="Month" bind="Month"></td>
+							<td name="Seoul" bind="Seoul"></td>
+							<td name="Busan" bind="Busan"></td>
+							<td name="Incheon" bind="Incheon"></td>
+							<td name="NewYork" bind="NewYork"></td>
+							<td name="LA" bind="LA"></td>
+							<td name="Washington" bind="Washington"></td>
+							<td name="Revenue" bind="Revenue"></td>
+							<td name="Percent" bind="Percent"></td>
+						</tr>
+					</tbody>
+					<caption>등락율 순위를 나타내는 표 입니다.</caption>
+				</table>
+
+			</script>
+			
+		</div>
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+    <script src="../../../webponent.report.js"></script>
+
+	<script>
+
+	var gridData = [
+	  {
+	   "Year":2013,
+	   "Quarter":"1/4",
+	   "Month":1,
+	   "Seoul":109520,
+	   "Busan":40454,
+	   "Incheon":82477,
+	   "NewYork":47424,
+	   "LA":103225,
+	   "Washington":61161,
+	   "Revenue":444260,
+	   "Percent":40
+	  },
+	  {
+	   "Year":2013,
+	   "Quarter":"1/4",
+	   "Month":2,
+	   "Seoul":15749,
+	   "Busan":29714,
+	   "Incheon":31393,
+	   "NewYork":45006,
+	   "LA":17945,
+	   "Washington":90148,
+	   "Revenue":229956,
+	   "Percent":20
+	  },
+	  {
+	   "Year":2013,
+	   "Quarter":"1/4",
+	   "Month":3,
+	   "Seoul":14766,
+	   "Busan":97314,
+	   "Incheon":103216,
+	   "NewYork":86072,
+	   "LA":52863,
+	   "Washington":93789,
+	   "Revenue":448020,
+	   "Percent":40
+	  },
+	  {
+	   "Year":2013,
+	   "Quarter":"2/4",
+	   "Month":4,
+	   "Seoul":52352,
+	   "Busan":56859,
+	   "Incheon":15688,
+	   "NewYork":65438,
+	   "LA":39181,
+	   "Washington":109514,
+	   "Revenue":339031,
+	   "Percent":31
+	  },
+	  {
+	   "Year":2013,
+	   "Quarter":"2/4",
+	   "Month":5,
+	   "Seoul":100842,
+	   "Busan":30391,
+	   "Incheon":23745,
+	   "NewYork":72742,
+	   "LA":102195,
+	   "Washington":30407,
+	   "Revenue":360322,
+	   "Percent":33
+	  },
+	  {
+	   "Year":2013,
+	   "Quarter":"2/4",
+	   "Month":6,
+	   "Seoul":19217,
+	   "Busan":75298,
+	   "Incheon":70807,
+	   "NewYork":36447,
+	   "LA":100805,
+	   "Washington":84934,
+	   "Revenue":387508,
+	   "Percent":36
+	  },
+	  {
+	   "Year":2013,
+	   "Quarter":"3/4",
+	   "Month":7,
+	   "Seoul":74324,
+	   "Busan":64947,
+	   "Incheon":101350,
+	   "NewYork":34673,
+	   "LA":24486,
+	   "Washington":57781,
+	   "Revenue":357561,
+	   "Percent":28
+	  },
+	  {
+	   "Year":2013,
+	   "Quarter":"3/4",
+	   "Month":8,
+	   "Seoul":85932,
+	   "Busan":95733,
+	   "Incheon":40327,
+	   "NewYork":69255,
+	   "LA":80024,
+	   "Washington":102739,
+	   "Revenue":474011,
+	   "Percent":37
+	  },
+	  {
+	   "Year":2013,
+	   "Quarter":"3/4",
+	   "Month":9,
+	   "Seoul":101804,
+	   "Busan":65098,
+	   "Incheon":79194,
+	   "NewYork":101669,
+	   "LA":30608,
+	   "Washington":73020,
+	   "Revenue":451393,
+	   "Percent":35
+	  },
+	  {
+	   "Year":2013,
+	   "Quarter":"4/4",
+	   "Month":10,
+	   "Seoul":92130,
+	   "Busan":91881,
+	   "Incheon":45166,
+	   "NewYork":65524,
+	   "LA":45348,
+	   "Washington":72708,
+	   "Revenue":412757,
+	   "Percent":36
+	  },
+	  {
+	   "Year":2013,
+	   "Quarter":"4/4",
+	   "Month":11,
+	   "Seoul":80925,
+	   "Busan":70537,
+	   "Incheon":25347,
+	   "NewYork":29360,
+	   "LA":76296,
+	   "Washington":42766,
+	   "Revenue":325230,
+	   "Percent":29
+	  },
+	  {
+	   "Year":2013,
+	   "Quarter":"4/4",
+	   "Month":12,
+	   "Seoul":99008,
+	   "Busan":30598,
+	   "Incheon":99124,
+	   "NewYork":22776,
+	   "LA":107805,
+	   "Washington":38384,
+	   "Revenue":397696,
+	   "Percent":35
+	  },
+	  {
+	   "Year":2014,
+	   "Quarter":"1/4",
+	   "Month":1,
+	   "Seoul":68503,
+	   "Busan":10155,
+	   "Incheon":47908,
+	   "NewYork":60857,
+	   "LA":104179,
+	   "Washington":109097,
+	   "Revenue":400699,
+	   "Percent":31
+	  },
+	  {
+	   "Year":2014,
+	   "Quarter":"1/4",
+	   "Month":2,
+	   "Seoul":80573,
+	   "Busan":75743,
+	   "Incheon":107750,
+	   "NewYork":76243,
+	   "LA":79265,
+	   "Washington":85345,
+	   "Revenue":504918,
+	   "Percent":40
+	  },
+	  {
+	   "Year":2014,
+	   "Quarter":"1/4",
+	   "Month":3,
+	   "Seoul":23435,
+	   "Busan":30538,
+	   "Incheon":86528,
+	   "NewYork":36735,
+	   "LA":96031,
+	   "Washington":96928,
+	   "Revenue":370196,
+	   "Percent":29
+	  },
+	  {
+	   "Year":2014,
+	   "Quarter":"2/4",
+	   "Month":4,
+	   "Seoul":35657,
+	   "Busan":109415,
+	   "Incheon":45569,
+	   "NewYork":87683,
+	   "LA":92773,
+	   "Washington":53422,
+	   "Revenue":424520,
+	   "Percent":45
+	  },
+	  {
+	   "Year":2014,
+	   "Quarter":"2/4",
+	   "Month":5,
+	   "Seoul":50140,
+	   "Busan":30142,
+	   "Incheon":83992,
+	   "NewYork":87292,
+	   "LA":72324,
+	   "Washington":32520,
+	   "Revenue":356410,
+	   "Percent":37
+	  },
+	  {
+	   "Year":2014,
+	   "Quarter":"2/4",
+	   "Month":6,
+	   "Seoul":39458,
+	   "Busan":10848,
+	   "Incheon":10553,
+	   "NewYork":48474,
+	   "LA":25642,
+	   "Washington":36591,
+	   "Revenue":171565,
+	   "Percent":18
+	  },
+	  {
+	   "Year":2014,
+	   "Quarter":"3/4",
+	   "Month":7,
+	   "Seoul":33761,
+	   "Busan":49046,
+	   "Incheon":31351,
+	   "NewYork":46829,
+	   "LA":97148,
+	   "Washington":42630,
+	   "Revenue":300765,
+	   "Percent":31
+	  },
+	  {
+	   "Year":2014,
+	   "Quarter":"3/4",
+	   "Month":8,
+	   "Seoul":89645,
+	   "Busan":72565,
+	   "Incheon":23678,
+	   "NewYork":78847,
+	   "LA":62559,
+	   "Washington":87722,
+	   "Revenue":415017,
+	   "Percent":42
+	  },
+	  {
+	   "Year":2014,
+	   "Quarter":"3/4",
+	   "Month":9,
+	   "Seoul":14844,
+	   "Busan":30709,
+	   "Incheon":83037,
+	   "NewYork":23130,
+	   "LA":65006,
+	   "Washington":48367,
+	   "Revenue":265093,
+	   "Percent":27
+	  },
+	  {
+	   "Year":2014,
+	   "Quarter":"4/4",
+	   "Month":10,
+	   "Seoul":30598,
+	   "Busan":55523,
+	   "Incheon":90576,
+	   "NewYork":79997,
+	   "LA":71346,
+	   "Washington":63569,
+	   "Revenue":391608,
+	   "Percent":34
+	  },
+	  {
+	   "Year":2014,
+	   "Quarter":"4/4",
+	   "Month":11,
+	   "Seoul":64461,
+	   "Busan":61341,
+	   "Incheon":74479,
+	   "NewYork":10715,
+	   "LA":40404,
+	   "Washington":93611,
+	   "Revenue":345011,
+	   "Percent":30
+	  },
+	  {
+	   "Year":2014,
+	   "Quarter":"4/4",
+	   "Month":12,
+	   "Seoul":99229,
+	   "Busan":95468,
+	   "Incheon":108828,
+	   "NewYork":27176,
+	   "LA":28673,
+	   "Washington":54816,
+	   "Revenue":414191,
+	   "Percent":36
+	  }
+	];
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid = webponent.grid.init(table1, template1);
+
+	var collapseKeys = ['Year', 'Quarter'];
+
+    function exportExcel () {
+        webponent.report.excel(grid, $('#export-form'), {
+            fileName: '로우병합'
+        });
+    }
+
+	grid.event.on('dataRendered', function () {
+
+		var dataList = grid.data;
+
+		var renderingStartRowIndex = grid.settings.defferedRendering.renderingStartRowIndex;
+		var renderingEndRowIndex = grid.settings.defferedRendering.renderingEndRowIndex;
+
+		if (renderingStartRowIndex === null) {
+
+			renderingStartRowIndex = 0;
+		}
+
+		if (renderingEndRowIndex === null) {
+
+			renderingEndRowIndex = grid.data.length;
+		} else {
+
+			renderingEndRowIndex ++;
+		}
+
+		var prevTdMap = {};
+		var prevDataMap = {};
+		var prevRowspanMap = {};
+
+		for (var i = renderingStartRowIndex; i < renderingEndRowIndex; i ++) {
+
+			var data = dataList[i];
+
+			_.each(collapseKeys, function (collapseKey) {
+				
+				var row = $(grid.rows[i]);
+				var td = row.find('[data-name=' + collapseKey + ']');
+
+				function registerFirstRow () {
+					td.attr('rowspan', '1');
+					td.addClass('CI-GRID-BORDER-RIGHT');
+					prevTdMap[collapseKey] = td;
+					prevDataMap[collapseKey] = data[collapseKey];
+					prevRowspanMap[collapseKey] = 1;
+				}
+
+				var prevTd = prevTdMap[collapseKey];
+
+				if (!prevTd) {
+
+					registerFirstRow();
+					
+				} else {
+
+					if (prevDataMap[collapseKey] === data[collapseKey]) {
+
+						prevTdMap[collapseKey].attr('rowspan', prevRowspanMap[collapseKey] + 1);
+						prevRowspanMap[collapseKey] ++;
+						td.remove();
+					} else {
+
+						registerFirstRow();
+					}
+				}
+			});
+		}
+	});
+	
+	/*for (var i = 0; i < 5; i++) {
+		gridData = gridData.concat(gridData);
+	};
+*/
+	grid.appendRow(gridData);
+	</script>
+</body>
+</html>

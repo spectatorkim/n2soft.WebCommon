@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>그리드간 데이터이동 - 응용샘플 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+	<style type="text/css">
+	.float-left {
+		float: left;
+	}
+	.float-right {
+		float: right;
+	}
+	.move-button {
+		position: relative;
+		top: 170px;
+		left: 30px;
+		border: 1px solid gray;
+		height: 30px;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>응용샘플</h1>
+		<h2>그리드간 데이터 이동</h2>
+		
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%EB%91%90%20%EA%B7%B8%EB%A6%AC%EB%93%9C%EA%B0%84%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%9D%B4%EB%8F%99'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>KOSPI+KOSDAQ종목검색기</h3>
+
+			<label>종목코드/명</label> : <input type="text" id="code" class="text" style="width: 230px;"/>
+
+			<div style="clear:both;margin-bottom: 15px;"></div>
+
+			<table id="grid-table-1">
+				
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="300px" height="350px">
+					<thead>
+						<tr>
+							<th name="code" width="100px" align="center">종목코드</th>
+							<th name="name">종목명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="code" bind="code"></td>
+							<td name="name" bind="name"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+			<input id="move-button" class="move-button" type="button" value="이동"/>
+
+			<table id="grid-table-2">
+				
+			</table>
+
+			<script id="grid-template-2" type="text/template">
+				<table width="300px" height="350px">
+					<thead>
+						<tr>
+							<th name="code" width="100px" align="center">종목코드</th>
+							<th name="name">종목명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="code" bind="code"></td>
+							<td name="name" bind="name"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+			
+		</div>
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid1 = webponent.grid.init(table1, template1, {
+		classes : 'float-left',
+		rowSelectable : true
+	});
+
+	var table2 = $('#grid-table-2');
+	var template2 = $('#grid-template-2');
+	var grid2 = webponent.grid.init(table2, template2, {
+		classes : 'float-right'
+	});
+
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/code.json',
+		success : function (resp) {
+
+			grid1.appendRow(resp);
+		}
+	});
+
+
+	$('#code').on('keyup', function () {
+		
+		grid1.search($(this).val());
+	});
+
+	$('#move-button').on('click', function () {
+
+		var rowData = grid1.getSelectedRowData();
+		
+		var grid2Data = grid2.data;
+
+		grid2.appendRow(rowData);
+	});
+
+	</script>
+</body>
+</html>

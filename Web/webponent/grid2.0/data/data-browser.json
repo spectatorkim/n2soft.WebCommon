@@ -1,0 +1,6003 @@
+[
+{
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 4.0",
+    "platformBind": "Win 95+",
+    "versionBind": "4",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.0",
+    "platformBind": "Win 95+",
+    "versionBind": "5",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.5",
+    "platformBind": "Win 95+",
+    "versionBind": "5.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 6",
+    "platformBind": "Win 98+",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 7",
+    "platformBind": "Win XP SP2+",
+    "versionBind": "7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "AOL browser (AOL desktop)",
+    "platformBind": "Win XP",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.5",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 2.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 3.0",
+    "platformBind": "Win 2k+ / OSX.3+",
+    "versionBind": "1.9",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.0",
+    "platformBind": "OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.5",
+    "platformBind": "OSX.3+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape 7.2",
+    "platformBind": "Win 95+ / Mac OS 8.6-9.2",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Browser 8",
+    "platformBind": "Win 98SE+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Navigator 9",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.1",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.2",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.2",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.3",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.4",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.4",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.5",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.6",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.7",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.8",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Seamonkey 1.1",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Epiphany 2.20",
+    "platformBind": "Gnome",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.2",
+    "platformBind": "OSX.3",
+    "versionBind": "125.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.3",
+    "platformBind": "OSX.3",
+    "versionBind": "312.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 2.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "419.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 3.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "522.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "OmniWeb 5.5",
+    "platformBind": "OSX.4+",
+    "versionBind": "420",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "iPod Touch / iPhone",
+    "platformBind": "iPod",
+    "versionBind": "420.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "S60",
+    "platformBind": "S60",
+    "versionBind": "413",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.0",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.0",
+    "platformBind": "Win 95+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.2",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.5",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera for Wii",
+    "platformBind": "Wii",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nokia N800",
+    "platformBind": "N800",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 4.0",
+    "platformBind": "Win 95+",
+    "versionBind": "4",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.0",
+    "platformBind": "Win 95+",
+    "versionBind": "5",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.5",
+    "platformBind": "Win 95+",
+    "versionBind": "5.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 6",
+    "platformBind": "Win 98+",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 7",
+    "platformBind": "Win XP SP2+",
+    "versionBind": "7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "AOL browser (AOL desktop)",
+    "platformBind": "Win XP",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.5",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 2.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 3.0",
+    "platformBind": "Win 2k+ / OSX.3+",
+    "versionBind": "1.9",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.0",
+    "platformBind": "OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.5",
+    "platformBind": "OSX.3+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape 7.2",
+    "platformBind": "Win 95+ / Mac OS 8.6-9.2",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Browser 8",
+    "platformBind": "Win 98SE+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Navigator 9",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.1",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.2",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.2",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.3",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.4",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.4",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.5",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.6",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.7",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.8",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Seamonkey 1.1",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Epiphany 2.20",
+    "platformBind": "Gnome",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.2",
+    "platformBind": "OSX.3",
+    "versionBind": "125.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.3",
+    "platformBind": "OSX.3",
+    "versionBind": "312.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 2.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "419.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 3.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "522.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "OmniWeb 5.5",
+    "platformBind": "OSX.4+",
+    "versionBind": "420",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "iPod Touch / iPhone",
+    "platformBind": "iPod",
+    "versionBind": "420.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "S60",
+    "platformBind": "S60",
+    "versionBind": "413",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.0",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.0",
+    "platformBind": "Win 95+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.2",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.5",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera for Wii",
+    "platformBind": "Wii",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nokia N800",
+    "platformBind": "N800",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 4.0",
+    "platformBind": "Win 95+",
+    "versionBind": "4",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.0",
+    "platformBind": "Win 95+",
+    "versionBind": "5",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.5",
+    "platformBind": "Win 95+",
+    "versionBind": "5.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 6",
+    "platformBind": "Win 98+",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 7",
+    "platformBind": "Win XP SP2+",
+    "versionBind": "7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "AOL browser (AOL desktop)",
+    "platformBind": "Win XP",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.5",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 2.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 3.0",
+    "platformBind": "Win 2k+ / OSX.3+",
+    "versionBind": "1.9",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.0",
+    "platformBind": "OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.5",
+    "platformBind": "OSX.3+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape 7.2",
+    "platformBind": "Win 95+ / Mac OS 8.6-9.2",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Browser 8",
+    "platformBind": "Win 98SE+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Navigator 9",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.1",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.2",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.2",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.3",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.4",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.4",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.5",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.6",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.7",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.8",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Seamonkey 1.1",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Epiphany 2.20",
+    "platformBind": "Gnome",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.2",
+    "platformBind": "OSX.3",
+    "versionBind": "125.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.3",
+    "platformBind": "OSX.3",
+    "versionBind": "312.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 2.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "419.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 3.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "522.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "OmniWeb 5.5",
+    "platformBind": "OSX.4+",
+    "versionBind": "420",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "iPod Touch / iPhone",
+    "platformBind": "iPod",
+    "versionBind": "420.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "S60",
+    "platformBind": "S60",
+    "versionBind": "413",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.0",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.0",
+    "platformBind": "Win 95+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.2",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.5",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera for Wii",
+    "platformBind": "Wii",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nokia N800",
+    "platformBind": "N800",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 4.0",
+    "platformBind": "Win 95+",
+    "versionBind": "4",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.0",
+    "platformBind": "Win 95+",
+    "versionBind": "5",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.5",
+    "platformBind": "Win 95+",
+    "versionBind": "5.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 6",
+    "platformBind": "Win 98+",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 7",
+    "platformBind": "Win XP SP2+",
+    "versionBind": "7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "AOL browser (AOL desktop)",
+    "platformBind": "Win XP",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.5",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 2.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 3.0",
+    "platformBind": "Win 2k+ / OSX.3+",
+    "versionBind": "1.9",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.0",
+    "platformBind": "OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.5",
+    "platformBind": "OSX.3+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape 7.2",
+    "platformBind": "Win 95+ / Mac OS 8.6-9.2",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Browser 8",
+    "platformBind": "Win 98SE+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Navigator 9",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.1",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.2",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.2",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.3",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.4",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.4",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.5",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.6",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.7",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.8",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Seamonkey 1.1",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Epiphany 2.20",
+    "platformBind": "Gnome",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.2",
+    "platformBind": "OSX.3",
+    "versionBind": "125.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.3",
+    "platformBind": "OSX.3",
+    "versionBind": "312.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 2.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "419.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 3.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "522.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "OmniWeb 5.5",
+    "platformBind": "OSX.4+",
+    "versionBind": "420",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "iPod Touch / iPhone",
+    "platformBind": "iPod",
+    "versionBind": "420.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "S60",
+    "platformBind": "S60",
+    "versionBind": "413",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.0",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.0",
+    "platformBind": "Win 95+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.2",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.5",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera for Wii",
+    "platformBind": "Wii",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nokia N800",
+    "platformBind": "N800",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 4.0",
+    "platformBind": "Win 95+",
+    "versionBind": "4",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.0",
+    "platformBind": "Win 95+",
+    "versionBind": "5",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.5",
+    "platformBind": "Win 95+",
+    "versionBind": "5.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 6",
+    "platformBind": "Win 98+",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 7",
+    "platformBind": "Win XP SP2+",
+    "versionBind": "7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "AOL browser (AOL desktop)",
+    "platformBind": "Win XP",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.5",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 2.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 3.0",
+    "platformBind": "Win 2k+ / OSX.3+",
+    "versionBind": "1.9",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.0",
+    "platformBind": "OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.5",
+    "platformBind": "OSX.3+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape 7.2",
+    "platformBind": "Win 95+ / Mac OS 8.6-9.2",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Browser 8",
+    "platformBind": "Win 98SE+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Navigator 9",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.1",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.2",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.2",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.3",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.4",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.4",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.5",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.6",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.7",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.8",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Seamonkey 1.1",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Epiphany 2.20",
+    "platformBind": "Gnome",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.2",
+    "platformBind": "OSX.3",
+    "versionBind": "125.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.3",
+    "platformBind": "OSX.3",
+    "versionBind": "312.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 2.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "419.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 3.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "522.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "OmniWeb 5.5",
+    "platformBind": "OSX.4+",
+    "versionBind": "420",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "iPod Touch / iPhone",
+    "platformBind": "iPod",
+    "versionBind": "420.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "S60",
+    "platformBind": "S60",
+    "versionBind": "413",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.0",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.0",
+    "platformBind": "Win 95+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.2",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.5",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera for Wii",
+    "platformBind": "Wii",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nokia N800",
+    "platformBind": "N800",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 4.0",
+    "platformBind": "Win 95+",
+    "versionBind": "4",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.0",
+    "platformBind": "Win 95+",
+    "versionBind": "5",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.5",
+    "platformBind": "Win 95+",
+    "versionBind": "5.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 6",
+    "platformBind": "Win 98+",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 7",
+    "platformBind": "Win XP SP2+",
+    "versionBind": "7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "AOL browser (AOL desktop)",
+    "platformBind": "Win XP",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.5",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 2.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 3.0",
+    "platformBind": "Win 2k+ / OSX.3+",
+    "versionBind": "1.9",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.0",
+    "platformBind": "OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.5",
+    "platformBind": "OSX.3+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape 7.2",
+    "platformBind": "Win 95+ / Mac OS 8.6-9.2",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Browser 8",
+    "platformBind": "Win 98SE+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Navigator 9",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.1",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.2",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.2",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.3",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.4",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.4",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.5",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.6",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.7",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.8",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Seamonkey 1.1",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Epiphany 2.20",
+    "platformBind": "Gnome",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.2",
+    "platformBind": "OSX.3",
+    "versionBind": "125.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.3",
+    "platformBind": "OSX.3",
+    "versionBind": "312.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 2.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "419.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 3.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "522.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "OmniWeb 5.5",
+    "platformBind": "OSX.4+",
+    "versionBind": "420",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "iPod Touch / iPhone",
+    "platformBind": "iPod",
+    "versionBind": "420.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "S60",
+    "platformBind": "S60",
+    "versionBind": "413",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.0",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.0",
+    "platformBind": "Win 95+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.2",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.5",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera for Wii",
+    "platformBind": "Wii",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nokia N800",
+    "platformBind": "N800",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 4.0",
+    "platformBind": "Win 95+",
+    "versionBind": "4",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.0",
+    "platformBind": "Win 95+",
+    "versionBind": "5",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.5",
+    "platformBind": "Win 95+",
+    "versionBind": "5.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 6",
+    "platformBind": "Win 98+",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 7",
+    "platformBind": "Win XP SP2+",
+    "versionBind": "7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "AOL browser (AOL desktop)",
+    "platformBind": "Win XP",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.5",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 2.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 3.0",
+    "platformBind": "Win 2k+ / OSX.3+",
+    "versionBind": "1.9",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.0",
+    "platformBind": "OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.5",
+    "platformBind": "OSX.3+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape 7.2",
+    "platformBind": "Win 95+ / Mac OS 8.6-9.2",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Browser 8",
+    "platformBind": "Win 98SE+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Navigator 9",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.1",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.2",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.2",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.3",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.4",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.4",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.5",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.6",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.7",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.8",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Seamonkey 1.1",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Epiphany 2.20",
+    "platformBind": "Gnome",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.2",
+    "platformBind": "OSX.3",
+    "versionBind": "125.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.3",
+    "platformBind": "OSX.3",
+    "versionBind": "312.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 2.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "419.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 3.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "522.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "OmniWeb 5.5",
+    "platformBind": "OSX.4+",
+    "versionBind": "420",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "iPod Touch / iPhone",
+    "platformBind": "iPod",
+    "versionBind": "420.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "S60",
+    "platformBind": "S60",
+    "versionBind": "413",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.0",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.0",
+    "platformBind": "Win 95+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.2",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.5",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera for Wii",
+    "platformBind": "Wii",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nokia N800",
+    "platformBind": "N800",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 4.0",
+    "platformBind": "Win 95+",
+    "versionBind": "4",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.0",
+    "platformBind": "Win 95+",
+    "versionBind": "5",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.5",
+    "platformBind": "Win 95+",
+    "versionBind": "5.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 6",
+    "platformBind": "Win 98+",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 7",
+    "platformBind": "Win XP SP2+",
+    "versionBind": "7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "AOL browser (AOL desktop)",
+    "platformBind": "Win XP",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.5",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 2.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 3.0",
+    "platformBind": "Win 2k+ / OSX.3+",
+    "versionBind": "1.9",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.0",
+    "platformBind": "OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.5",
+    "platformBind": "OSX.3+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape 7.2",
+    "platformBind": "Win 95+ / Mac OS 8.6-9.2",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Browser 8",
+    "platformBind": "Win 98SE+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Navigator 9",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.1",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.2",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.2",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.3",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.4",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.4",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.5",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.6",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.7",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.8",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Seamonkey 1.1",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Epiphany 2.20",
+    "platformBind": "Gnome",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.2",
+    "platformBind": "OSX.3",
+    "versionBind": "125.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.3",
+    "platformBind": "OSX.3",
+    "versionBind": "312.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 2.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "419.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 3.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "522.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "OmniWeb 5.5",
+    "platformBind": "OSX.4+",
+    "versionBind": "420",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "iPod Touch / iPhone",
+    "platformBind": "iPod",
+    "versionBind": "420.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "S60",
+    "platformBind": "S60",
+    "versionBind": "413",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.0",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.0",
+    "platformBind": "Win 95+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.2",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.5",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera for Wii",
+    "platformBind": "Wii",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nokia N800",
+    "platformBind": "N800",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 4.0",
+    "platformBind": "Win 95+",
+    "versionBind": "4",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.0",
+    "platformBind": "Win 95+",
+    "versionBind": "5",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.5",
+    "platformBind": "Win 95+",
+    "versionBind": "5.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 6",
+    "platformBind": "Win 98+",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 7",
+    "platformBind": "Win XP SP2+",
+    "versionBind": "7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "AOL browser (AOL desktop)",
+    "platformBind": "Win XP",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.5",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 2.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 3.0",
+    "platformBind": "Win 2k+ / OSX.3+",
+    "versionBind": "1.9",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.0",
+    "platformBind": "OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.5",
+    "platformBind": "OSX.3+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape 7.2",
+    "platformBind": "Win 95+ / Mac OS 8.6-9.2",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Browser 8",
+    "platformBind": "Win 98SE+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Navigator 9",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.1",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.2",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.2",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.3",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.4",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.4",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.5",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.6",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.7",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.8",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Seamonkey 1.1",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Epiphany 2.20",
+    "platformBind": "Gnome",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.2",
+    "platformBind": "OSX.3",
+    "versionBind": "125.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.3",
+    "platformBind": "OSX.3",
+    "versionBind": "312.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 2.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "419.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 3.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "522.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "OmniWeb 5.5",
+    "platformBind": "OSX.4+",
+    "versionBind": "420",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "iPod Touch / iPhone",
+    "platformBind": "iPod",
+    "versionBind": "420.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "S60",
+    "platformBind": "S60",
+    "versionBind": "413",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.0",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.0",
+    "platformBind": "Win 95+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.2",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.5",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera for Wii",
+    "platformBind": "Wii",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nokia N800",
+    "platformBind": "N800",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 4.0",
+    "platformBind": "Win 95+",
+    "versionBind": "4",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.0",
+    "platformBind": "Win 95+",
+    "versionBind": "5",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.5",
+    "platformBind": "Win 95+",
+    "versionBind": "5.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 6",
+    "platformBind": "Win 98+",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 7",
+    "platformBind": "Win XP SP2+",
+    "versionBind": "7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "AOL browser (AOL desktop)",
+    "platformBind": "Win XP",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.5",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 2.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 3.0",
+    "platformBind": "Win 2k+ / OSX.3+",
+    "versionBind": "1.9",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.0",
+    "platformBind": "OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.5",
+    "platformBind": "OSX.3+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape 7.2",
+    "platformBind": "Win 95+ / Mac OS 8.6-9.2",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Browser 8",
+    "platformBind": "Win 98SE+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Navigator 9",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.1",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.2",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.2",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.3",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.4",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.4",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.5",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.6",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.7",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.8",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Seamonkey 1.1",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Epiphany 2.20",
+    "platformBind": "Gnome",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.2",
+    "platformBind": "OSX.3",
+    "versionBind": "125.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.3",
+    "platformBind": "OSX.3",
+    "versionBind": "312.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 2.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "419.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 3.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "522.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "OmniWeb 5.5",
+    "platformBind": "OSX.4+",
+    "versionBind": "420",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "iPod Touch / iPhone",
+    "platformBind": "iPod",
+    "versionBind": "420.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "S60",
+    "platformBind": "S60",
+    "versionBind": "413",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.0",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.0",
+    "platformBind": "Win 95+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.2",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.5",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera for Wii",
+    "platformBind": "Wii",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nokia N800",
+    "platformBind": "N800",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 4.0",
+    "platformBind": "Win 95+",
+    "versionBind": "4",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.0",
+    "platformBind": "Win 95+",
+    "versionBind": "5",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.5",
+    "platformBind": "Win 95+",
+    "versionBind": "5.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 6",
+    "platformBind": "Win 98+",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 7",
+    "platformBind": "Win XP SP2+",
+    "versionBind": "7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "AOL browser (AOL desktop)",
+    "platformBind": "Win XP",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.5",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 2.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 3.0",
+    "platformBind": "Win 2k+ / OSX.3+",
+    "versionBind": "1.9",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.0",
+    "platformBind": "OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.5",
+    "platformBind": "OSX.3+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape 7.2",
+    "platformBind": "Win 95+ / Mac OS 8.6-9.2",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Browser 8",
+    "platformBind": "Win 98SE+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Navigator 9",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.1",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.2",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.2",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.3",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.4",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.4",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.5",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.6",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.7",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.8",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Seamonkey 1.1",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Epiphany 2.20",
+    "platformBind": "Gnome",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.2",
+    "platformBind": "OSX.3",
+    "versionBind": "125.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.3",
+    "platformBind": "OSX.3",
+    "versionBind": "312.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 2.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "419.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 3.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "522.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "OmniWeb 5.5",
+    "platformBind": "OSX.4+",
+    "versionBind": "420",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "iPod Touch / iPhone",
+    "platformBind": "iPod",
+    "versionBind": "420.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "S60",
+    "platformBind": "S60",
+    "versionBind": "413",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.0",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.0",
+    "platformBind": "Win 95+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.2",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.5",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera for Wii",
+    "platformBind": "Wii",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nokia N800",
+    "platformBind": "N800",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 4.0",
+    "platformBind": "Win 95+",
+    "versionBind": "4",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.0",
+    "platformBind": "Win 95+",
+    "versionBind": "5",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 5.5",
+    "platformBind": "Win 95+",
+    "versionBind": "5.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 6",
+    "platformBind": "Win 98+",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "Internet Explorer 7",
+    "platformBind": "Win XP SP2+",
+    "versionBind": "7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Trident",
+    "browserBind": "AOL browser (AOL desktop)",
+    "platformBind": "Win XP",
+    "versionBind": "6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 1.5",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 2.0",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Firefox 3.0",
+    "platformBind": "Win 2k+ / OSX.3+",
+    "versionBind": "1.9",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.0",
+    "platformBind": "OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Camino 1.5",
+    "platformBind": "OSX.3+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape 7.2",
+    "platformBind": "Win 95+ / Mac OS 8.6-9.2",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Browser 8",
+    "platformBind": "Win 98SE+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Netscape Navigator 9",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.1",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.2",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.2",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.3",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.4",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.4",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.5",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.6",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "1.6",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.7",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.7",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Mozilla 1.8",
+    "platformBind": "Win 98+ / OSX.1+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Seamonkey 1.1",
+    "platformBind": "Win 98+ / OSX.2+",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Gecko",
+    "browserBind": "Epiphany 2.20",
+    "platformBind": "Gnome",
+    "versionBind": "1.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.2",
+    "platformBind": "OSX.3",
+    "versionBind": "125.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 1.3",
+    "platformBind": "OSX.3",
+    "versionBind": "312.8",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 2.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "419.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "Safari 3.0",
+    "platformBind": "OSX.4+",
+    "versionBind": "522.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "OmniWeb 5.5",
+    "platformBind": "OSX.4+",
+    "versionBind": "420",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "iPod Touch / iPhone",
+    "platformBind": "iPod",
+    "versionBind": "420.1",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Webkit",
+    "browserBind": "S60",
+    "platformBind": "S60",
+    "versionBind": "413",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.0",
+    "platformBind": "Win 95+ / OSX.1+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 7.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.0",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 8.5",
+    "platformBind": "Win 95+ / OSX.2+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.0",
+    "platformBind": "Win 95+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.2",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera 9.5",
+    "platformBind": "Win 88+ / OSX.3+",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Opera for Wii",
+    "platformBind": "Wii",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nokia N800",
+    "platformBind": "N800",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Presto",
+    "browserBind": "Nintendo DS browser",
+    "platformBind": "Nintendo DS",
+    "versionBind": "8.5",
+    "gradeBind": "C/A1"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.1",
+    "platformBind": "KDE 3.1",
+    "versionBind": "3.1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.3",
+    "platformBind": "KDE 3.3",
+    "versionBind": "3.3",
+    "gradeBind": "A"
+}, {
+    "engineBind": "KHTML",
+    "browserBind": "Konqureror 3.5",
+    "platformBind": "KDE 3.5",
+    "versionBind": "3.5",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 4.5",
+    "platformBind": "Mac OS 8-9",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.1",
+    "platformBind": "Mac OS 7.6-9",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Tasman",
+    "browserBind": "Internet Explorer 5.2",
+    "platformBind": "Mac OS 8-X",
+    "versionBind": "1",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.1",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "NetFront 3.4",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "A"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Dillo 0.8",
+    "platformBind": "Embedded devices",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Links",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "Lynx",
+    "platformBind": "Text only",
+    "versionBind": "-",
+    "gradeBind": "X"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "IE Mobile",
+    "platformBind": "Windows Mobile 6",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Misc",
+    "browserBind": "PSP browser",
+    "platformBind": "PSP",
+    "versionBind": "-",
+    "gradeBind": "C"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}, {
+    "engineBind": "Other browsers",
+    "browserBind": "All others",
+    "platformBind": "-",
+    "versionBind": "-",
+    "gradeBind": "U"
+}
+]

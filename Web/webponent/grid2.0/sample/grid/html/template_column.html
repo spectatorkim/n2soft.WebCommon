@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>템플릿 컬럼설정 - 제목 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h1>템플릿 컬럼설정</h1>
+		
+		<h2>컬럼 길이 설정</h2>
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=14615150#id-%ED%85%9C%ED%94%8C%EB%A6%BF-width'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%EC%BB%AC%EB%9F%BC%20%EC%84%A4%EC%A0%95'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>종목뉴스</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="jm_nm" width="100px">종목명</th>
+							<th name="pro_nm" width="100px">제공처</th>
+							<th name="ns_title">제목</th>
+							<th name="ns_date" width="100px">일자</th>
+							<th name="ns_time" width="100px">시간</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="jm_nm" bind="jm_nm"></td>
+							<td name="pro_nm" bind="pro_nm"></td>
+							<td name="ns_title" bind="ns_title"></td>
+							<td name="ns_date" bind="ns_date"></td>
+							<td name="ns_time" bind="ns_time"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>
+
+		<h2>컬럼 정렬 설정</h2>
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=14615150#id-%ED%85%9C%ED%94%8C%EB%A6%BF-align'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Chart%20Series/LINE-%EA%B8%B0%EB%B3%B8%20%ED%98%95%EC%8B%9D'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>종목뉴스</h3>
+			<table id="grid-table-2">
+
+			</table>
+
+			<script id="grid-template-2" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="jm_nm" align="right" width="100px">종목명</th>
+							<th name="pro_nm" width="100px">제공처</th>
+							<th name="ns_title">제목</th>
+							<th name="ns_date" align="right" width="150px">일자</th>
+							<th name="ns_time" align="center" width="100px">시간</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="jm_nm" bind="jm_nm"></td>
+							<td name="pro_nm" bind="pro_nm"></td>
+							<td name="ns_title" bind="ns_title"></td>
+							<td name="ns_date" bind="ns_date"></td>
+							<td name="ns_time" bind="ns_time"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>
+
+		<h2>컬럼 보임/숨김 설정</h2>
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=14615150#id-%ED%85%9C%ED%94%8C%EB%A6%BF-visibility'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Chart%20Series/LINE-%EA%B8%B0%EB%B3%B8%20%ED%98%95%EC%8B%9D'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>종목뉴스</h3>
+			<table id="grid-table-3">
+
+			</table>
+
+			<script id="grid-template-3" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="jm_nm" width="100px">종목명</th>
+							<th name="pro_nm" width="100px">제공처</th>
+							<th name="ns_title">제목</th>
+							<th name="ns_date" align="right" width="150px">일자</th>
+							<th name="ns_time" visibility="hidden" align="center" width="100px">시간</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="jm_nm" bind="jm_nm"></td>
+							<td name="pro_nm" bind="pro_nm"></td>
+							<td name="ns_title" bind="ns_title"></td>
+							<td name="ns_date" bind="ns_date"></td>
+							<td name="ns_time" bind="ns_time"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>
+
+		<h2>컬럼 고정</h2>
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=14615150#id-%ED%85%9C%ED%94%8C%EB%A6%BF-fixed'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Chart%20Series/LINE-%EA%B8%B0%EB%B3%B8%20%ED%98%95%EC%8B%9D'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>등락율 순위</h3>
+			<table id="grid-table-4">
+
+			</table>
+
+			<script id="grid-template-4" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="indx" width="70px" fixed="fixed" align="center">순위</th>
+							<th name="Isu" width="120px" fixed="fixed">종목명</th>
+							<th name="NowPrc" width="120px" align="right">현재가</th>
+							<th name="PrdayCmp" width="120px" align="right">전일비</th>
+							<th name="Updn" width="120px" align="right">등락율(%)</th>
+							<th name="TopQty" width="120px" align="right">거래량</th>
+							<th name="SellRmqty" width="100px" align="right">매도잔량</th>
+							<th name="SellOrdprc" width="100px" align="right">매도호가</th>
+							<th name="BuyOrdprc" width="100px" align="right">매수호가</th>
+							<th name="BuyRmqty" width="100px" align="right">매수잔량</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="indx" bind="indx"></td>
+							<td name="Isu" bind="Isu"></td>
+							<td name="NowPrc" bind="NowPrc"></td>
+							<td name="PrdayCmp" bind="PrdayCmp"></td>
+							<td name="Updn" bind="Updn"></td>
+							<td name="TopQty" bind="TopQty"></td>
+							<td name="SellRmqty" bind="SellRmqty"></td>
+							<td name="SellOrdprc" bind="SellOrdprc"></td>
+							<td name="BuyOrdprc" bind="BuyOrdprc"></td>
+							<td name="BuyRmqty" bind="BuyRmqty"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid1 = webponent.grid.init(table1, template1);
+	
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/news-data.json',
+		success : function (resp) {
+
+			grid1.appendRow(resp);
+		}
+	});
+
+	var table2 = $('#grid-table-2');
+	var template2 = $('#grid-template-2');
+	var grid2 = webponent.grid.init(table2, template2);
+	
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/news-data.json',
+		success : function (resp) {
+
+			grid2.appendRow(resp);
+		}
+	});
+
+	var table3 = $('#grid-table-3');
+	var template3 = $('#grid-template-3');
+	var grid3 = webponent.grid.init(table3, template3);
+	
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/news-data.json',
+		success : function (resp) {
+
+			grid3.appendRow(resp);
+		}
+	});
+
+	var table4 = $('#grid-table-4');
+	var template4 = $('#grid-template-4');
+	var grid4 = webponent.grid.init(table4, template4);
+	
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/ranking-map.json',
+		success : function (resp) {
+
+			grid4.appendRow(resp);
+		}
+	});
+	</script>
+</body>
+</html>

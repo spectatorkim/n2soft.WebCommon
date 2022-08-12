@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>sample angular</title>	
+	<style>
+		.svg {
+			width: 100%;
+			height: 400px;
+		}
+		h3{
+			height:25px;
+			border-bottom:1px solid #cecece;
+		}	
+		 div.btn {position: absolute; right: 90%; }
+		 div.btn input {background: #fff; border-radius: 3px; margin: 0; padding: 0; width: 85px; height: 35px; cursor: pointer; color: #333; border: 1px solid #ccc; line-height: 100%; font-weight: bold;}
+		
+	</style>
+</head>
+
+<body>		
+	<h1>Angular_Gauge_Chart (dual)</h1>
+	<h2>RealTime</h2>
+	<div class="wrap">
+		<div class="btnbox">
+			<div class="btn"><input type="button" value="RealTime" id="change_Btn" onclick="realTimeDel(); return false;"></div>
+		</div>
+			<div class="svg" style="position: relative; min-width: 140px;"></div>
+	</div>
+		
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.angular.js'></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.gauge.style.js'></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	
+<script type="text/javascript">
+	var styles = webponent.visual.styles.BASIC;
+	var options = {
+			data : {
+				"data" : [	
+				          	{"currentVal" : 60, "secondData" : 0 }]
+			}              
+	};
+	var gauge = webponent.visual.angular.init($(".svg"), styles, options, "angular_dual");
+
+	
+	var realTimeDatas = [{"data1" : 50 ,  "data2" : 35},{"data1" : 20 ,  "data2" : 330},{"data1" : 180 ,  "data2" : 45},{"data1" : 10 ,  "data2" : 30},{"data1" : 70 ,  "data2" : 50}];
+
+	var timer = null;
+	var timerCount = realTimeDatas.length;
+	var timerDel = null;
+	var realTimeDel = function(){
+		clearInterval(timer);
+      	timer = null;
+		if(timerDel === null){
+
+			timerDel = setInterval(function(){
+				if(timerCount == 0) {
+          			timerDel = null;
+          			timerCount = realTimeDatas.length;
+          			return;
+				}
+                options.data.data.push({"currentVal": realTimeDatas[realTimeDatas.length - timerCount].data1 , "secondData" : realTimeDatas[realTimeDatas.length - timerCount].data2});
+				gauge.reDraw(styles, options); 
+				timerCount --;
+			}, 3000);
+		} else {
+			clearInterval(timerDel);
+          	timerDel = null;
+          	timerCount = realTimeDatas.length;
+		}
+	};
+
+	
+	
+</script>
+
+</body>
+</html>

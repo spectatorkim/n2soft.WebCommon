@@ -1,0 +1,23 @@
+{
+	"output":{
+		"result":[
+					{"date": "20120101", "locname": "강원", "listshrs": 20},
+                    {"date": "20120101", "locname": "경기", "listshrs": 50},
+                    {"date": "20120101", "locname": "경남", "listshrs": 80},
+                    {"date": "20120101", "locname": "경북", "listshrs": 110},
+                    {"date": "20120101", "locname": "광주", "listshrs": 140},
+                    {"date": "20120101", "locname": "대구", "listshrs": 170},
+                    {"date": "20120101", "locname": "대전", "listshrs": 190},
+                    {"date": "20120101", "locname": "부산", "listshrs": 220},
+                    {"date": "20120101", "locname": "서울", "listshrs": 20},
+                    {"date": "20120101", "locname": "울산", "listshrs": 50},
+                    {"date": "20120101", "locname": "인천", "listshrs": 80},
+                    {"date": "20120101", "locname": "전남", "listshrs": 100},
+                    {"date": "20120101", "locname": "전북", "listshrs": 140},
+                    {"date": "20120101", "locname": "제주", "listshrs": 170},
+                    {"date": "20120101", "locname": "충남", "listshrs": 190},
+                    {"date": "20120101", "locname": "충북", "listshrs": 220}
+		]
+	}
+}
+

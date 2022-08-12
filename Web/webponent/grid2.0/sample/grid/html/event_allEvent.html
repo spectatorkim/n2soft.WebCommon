@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>그리드 이벤트 - 이벤트 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h1>그리드 이벤트</h1>
+
+		<h2>그리드 이벤트</h2>
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=14615105'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%EA%B7%B8%EB%A6%AC%EB%93%9C%20%EC%9D%B4%EB%B2%A4%ED%8A%B8'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>등락율 순위</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="indx" width="70px" align="center">순위</th>
+							<th name="Isu" width="120px">종목명</th>
+							<th name="NowPrc" width="120px" align="right">현재가</th>
+							<th name="PrdayCmp" width="120px" align="right">전일비</th>
+							<th name="Updn" width="120px" align="right">등락율(%)</th>
+							<th name="TopQty" width="120px" align="right">거래량</th>
+							<th name="SellRmqty" width="100px" align="right">매도잔량</th>
+							<th name="SellOrdprc" width="100px" align="right">매도호가</th>
+							<th name="BuyOrdprc" width="100px" align="right">매수호가</th>
+							<th name="BuyRmqty" width="100px" align="right">매수잔량</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="indx" bind="indx"></td>
+							<td name="Isu" bind="Isu"></td>
+							<td name="NowPrc" bind="NowPrc"></td>
+							<td name="PrdayCmp" bind="PrdayCmp"></td>
+							<td name="Updn" bind="Updn"></td>
+							<td name="TopQty" bind="TopQty"></td>
+							<td name="SellRmqty" bind="SellRmqty"></td>
+							<td name="SellOrdprc" bind="SellOrdprc"></td>
+							<td name="BuyOrdprc" bind="BuyOrdprc"></td>
+							<td name="BuyRmqty" bind="BuyRmqty"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>
+
+		<h3>headerRendered (<a href="">Reference</a>, <a href="">Publisher</a>)</h3>
+		<p>
+			그리드 헤더가 렌더링 됬을때 발생하는 이벤트
+		</p>
+		<h3>beforeRenderData (<a href="">Reference</a>, <a href="">Publisher</a>)</h3>
+		<p>
+			데이터를 렌더링(그리드 바디 렌더링)하기 전에 발생하는 이벤트
+		</p>
+		<h3>dataRendered (<a href="">Reference</a>, <a href="">Publisher</a>)</h3>
+		<p>
+			그리드 바디에 데이터가 렌더링 됬을때 발생하는 이벤트<br>
+			하나의 로우이든 여러 로우가 추가된 경우도 발생한다.
+		</p>
+		<h3>columnResized (<a href="">Reference</a>, <a href="">Publisher</a>)</h3>
+		<p>
+			그리드 컬럼의 width가 변경되었을때
+		</p>
+		<h3>rowRendered (<a href="">Reference</a>, <a href="">Publisher</a>)</h3>
+		<p>
+			그리드에서 한 Row가 렌더링 됬을떄<br>
+			실제로 Append되기전에 row 노드를 생성했을때 발생한다.
+		</p>
+		<h3>beforeAppendingRow (<a href="">Reference</a>, <a href="">Publisher</a>)</h3>
+		<p>
+			그리드에 append가 되기 직전에 발생
+		</p>
+		<h3>rowAppended (<a href="">Reference</a>, <a href="">Publisher</a>)</h3>
+		<p>
+			그리드에 append가 끝났을때
+		</p>
+		<h3>beforeCachingRow (<a href="">Reference</a>, <a href="">Publisher</a>)</h3>
+		<p>
+			그리드에 row를 캐싱하기전에 발생
+		</p>
+		<h3>rowCached (<a href="">Reference</a>, <a href="">Publisher</a>)</h3>
+		<p>
+			그리드에 row를 캐싱한 후 발생
+		</p>
+		<h3>scroll (<a href="">Reference</a>, <a href="">Publisher</a>)</h3>
+		<p style="margin-bottom: 20px;">
+			그리드가 스크롤 될때 발생함
+		</p>
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid1 = webponent.grid.init(table1, template1);
+
+	/**
+	 * 그리드 헤더가 렌더링 됬을때 발생하는 이벤트
+	 * @type {String}
+	 */
+	grid1.on('headerRendered', function () {
+
+	});
+
+	/**
+	 * 데이터를 렌더링(그리드 바디 렌더링)하기 전에
+	 * 발생하는 이벤트
+	 * @type {String}
+	 */
+	grid1.on('beforeRenderData', function () {
+
+	});
+
+	/**
+	 * 그리드 바디에 데이터가 렌더링 됬을때 발생하는 이벤트
+	 * 하나의 로우이든 여러 로우가 추가된 경우도 발생한다.
+	 * @type {String}
+	 */
+	grid1.on('dataRendered', function () {
+
+	});
+
+	/**
+	 * 그리드 컬럼의 width가 변경되었을때
+	 */
+	grid1.on('columnResized', function () {
+
+	});
+
+	/**
+	 * 그리드에서 한 Row가 렌더링 됬을떄
+	 * 실제로 Append되기전에 row 노드를 생성했을때 발생한다.
+	 */
+	grid1.on('rowRendered', function () {
+
+	});
+
+	/**
+	 * 그리드에 append가 되기 직전에 발생
+	 */
+	grid1.on('beforeAppendingRow', function () {
+
+	});
+
+	/**
+	 * 그리드에 append가 끝났을때
+	 */
+	grid1.on('rowAppended', function () {
+
+	});
+
+	/**
+	 * 그리드에 row를 캐싱하기전에 발생
+	 */
+	grid1.on('beforeCachingRow', function () {
+
+	});
+
+	/**
+	 * 그리드에 row를 캐싱한 후 발생
+	 */
+	grid1.on('rowCached', function () {
+
+	});
+
+	/**
+	 *  그리드가 스크롤 될때 발생함
+	 */
+	grid1.on('scroll', function () {
+
+	});
+	
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/ranking-map.json',
+		success : function (resp) {
+
+			grid1.appendRow(resp);
+		}
+	});
+	</script>
+</body>
+</html>

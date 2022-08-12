@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>렌더링 - 로우 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h1>로우 렌더링</h1>
+		<h2>로우 렌더링 콜백</h2>
+		
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=14615091#id-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B0%94%EC%9D%B8%EB%94%A9%2C%EB%AA%A8%EB%8D%B8-Array%3CMap%3E%EC%9C%BC%EB%A1%9C%EB%B6%80%ED%84%B0%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%B6%94%EA%B0%80'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%EB%A1%9C%EC%9A%B0%20%EB%A0%8C%EB%8D%94%EB%A7%81%20%EC%BD%9C%EB%B0%B1'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>등락율 순위</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="indx" align="center">순위</th>
+							<th name="Isu">종목명</th>
+							<th name="NowPrc" align="right">현재가</th>
+							<th name="PrdayCmp" align="right">전일비</th>
+							<th name="Updn" align="right">등락율(%)</th>
+							<th name="TopQty" align="right">거래량</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="indx" bind="indx"></td>
+							<td name="Isu" bind="Isu"></td>
+							<td name="NowPrc" bind="NowPrc"></td>
+							<td name="PrdayCmp" bind="PrdayCmp"></td>
+							<td name="Updn" bind="Updn"></td>
+							<td name="TopQty" bind="TopQty"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+			
+		</div>
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid1 = webponent.grid.init(table1, template1, {
+
+		rowRendered : function (row, data, index) {
+			
+			$(row).on('click', function () {
+
+				alert(row.index + '번째 로우입니다. ' + '이 로우의 종목명은 ' + data.Isu + '입니다.');
+			});
+
+			var aTag = $('<a href="#">');
+
+			aTag.on('click', function (e) {
+
+				e.preventDefault();
+				e.stopPropagation();
+
+				alert(data.Isu + '종목의 현재가로 이동합니다.');
+			})
+
+
+			var IsuColumn = $(row).find('[data-name="Isu"]');
+
+			IsuColumn.wrapInner(aTag);
+			
+
+		}
+	});
+	
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/ranking-map.json',
+		success : function (resp) {
+
+			grid1.appendRow(resp);
+		}
+	});
+
+
+	</script>
+</body>
+</html>

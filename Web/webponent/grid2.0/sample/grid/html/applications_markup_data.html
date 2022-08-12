@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>로우에 다양한 마크업 삽입 - 응용샘플 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+	<link rel="stylesheet" type="text/css" href="../../../external/jquery-ui.css">
+	<style type="text/css">
+	input.text {
+		width: 100%;
+		padding-left: 10px;
+		text-align: left;
+	}
+	select.grid-select {
+		width: 100%;
+		border-radius: 5px;
+		background: #eaeef2;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>응용샘플</h1>
+
+		<h2>로우에 다양한 마크업 삽입</h2>
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%EB%A1%9C%EC%9A%B0%EC%97%90%20%EB%8B%A4%EC%96%91%ED%95%9C%20%EB%A7%88%ED%81%AC%EC%97%85%20%EC%82%BD%EC%9E%85'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>등락율 순위</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="Isu">링크</th>
+							<th name="NowPrc" align="right">텍스트박스</th>
+							<th name="PrdayCmp" align="center">체크박스</th>
+							<th name="Updn" align="right">등락율(%)</th>
+							<th name="TopQty" align="right">달력</th>
+							<th name="SellRmqty" align="right">셀렉트박스</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="#" name="Isu" bind="Isu"></a></td>
+							<td name="NowPrc"><input type="text" class="text" name="NowPrc" bind="NowPrc"/></td>
+							<td name="PrdayCmp"><input name="PrdayCmpVal" type="checkbox"/></td>
+							<td name="Updn" bind="Updn"></td>
+							<td name="TopQty">
+								<input type="text" name="date" class="date-picker text">
+							</td>
+							<td name="SellRmqty">
+								<select name="amount" class="grid-select">
+									<option>{{SellRmqty}}</option>
+									<option>{{SellOrdprc}}</option>
+									<option>{{BuyOrdprc}}</option>
+									<option>{{BuyRmqty}}</option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>
+
+
+		
+		<h3>변경된 데이터<button class="getChangedData">가저오기</button></h3>
+
+		<div class="data-display"></div>
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid1 = webponent.grid.init(table1, template1, {
+		rowRendered : function (row) {
+
+			$(row).find('.date-picker').datepicker();
+		}
+	});
+
+	var changedData = {};
+	var changedDataList = [];
+
+	$(grid1.markup.main.body.tbody).on('change', 'input, select', function (e) {
+
+		var input = $(this);
+
+		var $tr = input.closest('tr');
+		var tr = $tr[0];
+
+		var rowIndex = tr.index;
+		var rowData = tr.data;
+
+		var NowPrcInputText = $tr.find('[data-name=NowPrc]');
+		var PrdayCmpValCheckbox = $tr.find('[name=PrdayCmpVal]');
+		var dateInput = $tr.find('[name=date]');
+		var amountSelect = $tr.find('[name=amount]');
+
+		changedData[rowIndex + ''] = {
+			IsuCodeRts : rowData.IsuCodeRts,
+			NowPrc : NowPrcInputText.val(),
+			PrdayCmp : PrdayCmpValCheckbox.val(),
+			date : dateInput.val(),
+			Amount : amountSelect.val()
+		}
+
+		changedDataList = [];
+
+		_.each(changedData, function (value, key, map) {
+			
+			changedDataList.push(value);
+		});
+	});
+	
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/ranking-map.json',
+		success : function (resp) {
+
+			grid1.appendRow(resp);
+		}
+	});
+
+	$('.getChangedData').on('click', function () {
+
+		$('.data-display').empty().off("*");
+
+		_.each(changedData, function (value) {
+			
+			$('.data-display').append($.param(value) + '<br/>');
+		});
+		
+
+	});
+	</script>
+</body>
+</html>

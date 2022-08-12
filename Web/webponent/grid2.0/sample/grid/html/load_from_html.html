@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>데이터로드 - HTML로부터 로드 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h1>HTML로부터 로드2</h1>
+		<h2>HTML테이블로부터 로드</h2>
+		
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=14615091#id-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B0%94%EC%9D%B8%EB%94%A9%2C%EB%AA%A8%EB%8D%B8-%EB%A7%88%ED%81%AC%EC%97%85%EC%9C%BC%EB%A1%9C%EB%B6%80%ED%84%B0%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%B6%94%EA%B0%80'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/HTML%EB%A1%9C%EB%B6%80%ED%84%B0%20%EB%A1%9C%EB%93%9C'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>등락율 순위</h3>
+			<table id="grid-table-1">
+				<thead>
+					<tr>
+					    <th>순위</th>
+					    <th>종목명</th>
+					    <th>현재가</th>
+					    <th>전일비</th>
+					    <th>등락율(%)</th>
+					    <th>거래량</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+					    <td>21</td>
+					    <td>파루</td>
+					    <td>4,140</td>
+					    <td>540</td>
+					    <td>15.00%</td>
+					    <td>241,622</td>
+					</tr><tr>
+					    <td>2</td>
+					    <td>이-글 벳</td>
+					    <td>5,840</td>
+					    <td>760</td>
+					    <td>14.96%</td>
+					    <td>361,818</td>
+					</tr><tr>
+					    <td>3</td>
+					    <td>신우</td>
+					    <td>954</td>
+					    <td>124</td>
+					    <td>14.94%</td>
+					    <td>1,597,468</td>
+					</tr><tr>
+					    <td>4</td>
+					    <td>동부하이텍2우B</td>
+					    <td>33,550</td>
+					    <td>4,350</td>
+					    <td>14.90%</td>
+					    <td>8,926</td>
+					</tr><tr>
+					    <td>5</td>
+					    <td>제일바이오</td>
+					    <td>3,360</td>
+					    <td>435</td>
+					    <td>14.87%</td>
+					    <td>761,521</td>
+					</tr>
+					<tr>
+					    <td>21</td>
+					    <td>파루</td>
+					    <td>4,140</td>
+					    <td>540</td>
+					    <td>15.00%</td>
+					    <td>241,622</td>
+					</tr><tr>
+					    <td>2</td>
+					    <td>이-글 벳</td>
+					    <td>5,840</td>
+					    <td>760</td>
+					    <td>14.96%</td>
+					    <td>361,818</td>
+					</tr><tr>
+					    <td>3</td>
+					    <td>신우</td>
+					    <td>954</td>
+					    <td>124</td>
+					    <td>14.94%</td>
+					    <td>1,597,468</td>
+					</tr><tr>
+					    <td>4</td>
+					    <td>동부하이텍2우B</td>
+					    <td>33,550</td>
+					    <td>4,350</td>
+					    <td>14.90%</td>
+					    <td>8,926</td>
+					</tr><tr>
+					    <td>5</td>
+					    <td>제일바이오</td>
+					    <td>3,360</td>
+					    <td>435</td>
+					    <td>14.87%</td>
+					    <td>761,521</td>
+					</tr>
+					<tr>
+					    <td>21</td>
+					    <td>파루</td>
+					    <td>4,140</td>
+					    <td>540</td>
+					    <td>15.00%</td>
+					    <td>241,622</td>
+					</tr><tr>
+					    <td>2</td>
+					    <td>이-글 벳</td>
+					    <td>5,840</td>
+					    <td>760</td>
+					    <td>14.96%</td>
+					    <td>361,818</td>
+					</tr><tr>
+					    <td>3</td>
+					    <td>신우</td>
+					    <td>954</td>
+					    <td>124</td>
+					    <td>14.94%</td>
+					    <td>1,597,468</td>
+					</tr><tr>
+					    <td>4</td>
+					    <td>동부하이텍2우B</td>
+					    <td>33,550</td>
+					    <td>4,350</td>
+					    <td>14.90%</td>
+					    <td>8,926</td>
+					</tr><tr>
+					    <td>5</td>
+					    <td>제일바이오</td>
+					    <td>3,360</td>
+					    <td>435</td>
+					    <td>14.87%</td>
+					    <td>761,521</td>
+					</tr>
+					<tr>
+					    <td>21</td>
+					    <td>파루</td>
+					    <td>4,140</td>
+					    <td>540</td>
+					    <td>15.00%</td>
+					    <td>241,622</td>
+					</tr><tr>
+					    <td>2</td>
+					    <td>이-글 벳</td>
+					    <td>5,840</td>
+					    <td>760</td>
+					    <td>14.96%</td>
+					    <td>361,818</td>
+					</tr><tr>
+					    <td>3</td>
+					    <td>신우</td>
+					    <td>954</td>
+					    <td>124</td>
+					    <td>14.94%</td>
+					    <td>1,597,468</td>
+					</tr><tr>
+					    <td>4</td>
+					    <td>동부하이텍2우B</td>
+					    <td>33,550</td>
+					    <td>4,350</td>
+					    <td>14.90%</td>
+					    <td>8,926</td>
+					</tr><tr>
+					    <td>5</td>
+					    <td>제일바이오</td>
+					    <td>3,360</td>
+					    <td>435</td>
+					    <td>14.87%</td>
+					    <td>761,521</td>
+					</tr>
+					<tr>
+					    <td>21</td>
+					    <td>파루</td>
+					    <td>4,140</td>
+					    <td>540</td>
+					    <td>15.00%</td>
+					    <td>241,622</td>
+					</tr><tr>
+					    <td>2</td>
+					    <td>이-글 벳</td>
+					    <td>5,840</td>
+					    <td>760</td>
+					    <td>14.96%</td>
+					    <td>361,818</td>
+					</tr><tr>
+					    <td>3</td>
+					    <td>신우</td>
+					    <td>954</td>
+					    <td>124</td>
+					    <td>14.94%</td>
+					    <td>1,597,468</td>
+					</tr><tr>
+					    <td>4</td>
+					    <td>동부하이텍2우B</td>
+					    <td>33,550</td>
+					    <td>4,350</td>
+					    <td>14.90%</td>
+					    <td>8,926</td>
+					</tr><tr>
+					    <td>5</td>
+					    <td>제일바이오</td>
+					    <td>3,360</td>
+					    <td>435</td>
+					    <td>14.87%</td>
+					    <td>761,521</td>
+					</tr>
+					<tr>
+					    <td>21</td>
+					    <td>파루</td>
+					    <td>4,140</td>
+					    <td>540</td>
+					    <td>15.00%</td>
+					    <td>241,622</td>
+					</tr><tr>
+					    <td>2</td>
+					    <td>이-글 벳</td>
+					    <td>5,840</td>
+					    <td>760</td>
+					    <td>14.96%</td>
+					    <td>361,818</td>
+					</tr><tr>
+					    <td>3</td>
+					    <td>신우</td>
+					    <td>954</td>
+					    <td>124</td>
+					    <td>14.94%</td>
+					    <td>1,597,468</td>
+					</tr><tr>
+					    <td>4</td>
+					    <td>동부하이텍2우B</td>
+					    <td>33,550</td>
+					    <td>4,350</td>
+					    <td>14.90%</td>
+					    <td>8,926</td>
+					</tr><tr>
+					    <td>5</td>
+					    <td>제일바이오</td>
+					    <td>3,360</td>
+					    <td>435</td>
+					    <td>14.87%</td>
+					    <td>761,521</td>
+					</tr>
+					<tr>
+					    <td>21</td>
+					    <td>파루</td>
+					    <td>4,140</td>
+					    <td>540</td>
+					    <td>15.00%</td>
+					    <td>241,622</td>
+					</tr><tr>
+					    <td>2</td>
+					    <td>이-글 벳</td>
+					    <td>5,840</td>
+					    <td>760</td>
+					    <td>14.96%</td>
+					    <td>361,818</td>
+					</tr><tr>
+					    <td>3</td>
+					    <td>신우</td>
+					    <td>954</td>
+					    <td>124</td>
+					    <td>14.94%</td>
+					    <td>1,597,468</td>
+					</tr><tr>
+					    <td>4</td>
+					    <td>동부하이텍2우B</td>
+					    <td>33,550</td>
+					    <td>4,350</td>
+					    <td>14.90%</td>
+					    <td>8,926</td>
+					</tr><tr>
+					    <td>5</td>
+					    <td>제일바이오</td>
+					    <td>3,360</td>
+					    <td>435</td>
+					    <td>14.87%</td>
+					    <td>761,521</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="indx" align="center">순위</th>
+							<th name="Isu">종목명</th>
+							<th name="NowPrc" align="right">현재가</th>
+							<th name="PrdayCmp" align="right">전일비</th>
+							<th name="Updn" align="right">등락율(%)</th>
+							<th name="TopQty" align="right">거래량</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="x" > <input type="checkbox"/>  <button type="button" name="Isu" bind="indx"></button></td>
+							
+							<td name="NowPrc" >{{Updn}}</td>
+							<td name="PrdayCmp" bind="PrdayCmp"></td>
+							<td name="Updn" bind="Updn"></td>
+							<td name="indx" bind="indx">{{PrdayCmp}}</td>
+<td name="Isu"  > <input type="checkbox"  bind="Updn"/>   </td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+			
+		</div>
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid = webponent.grid.init(table1, template1);
+
+	grid.releaseScroll('vertical');
+	</script>
+</body>
+</html>

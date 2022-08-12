@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>ID, CLASS추가 - 그리드 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h1>그리드에 ID, CLASS추가</h1>
+		<h2>ID 추가</h2>
+		
+		<div class="wrap">
+			<div class="btnbox" style="top: -50px;">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=14615093#id-%EC%98%B5%EC%85%98-id'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/id,%20class%20%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>등락율 순위</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="indx" align="center">순위</th>
+							<th name="Isu">종목명</th>
+							<th name="NowPrc" align="right">현재가</th>
+							<th name="PrdayCmp" align="right">전일비</th>
+							<th name="Updn" align="right">등락율(%)</th>
+							<th name="TopQty" align="right">거래량</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="indx" bind="indx"></td>
+							<td name="Isu" bind="Isu"></td>
+							<td name="NowPrc" bind="NowPrc"></td>
+							<td name="PrdayCmp" bind="PrdayCmp"></td>
+							<td name="Updn" bind="Updn"></td>
+							<td name="TopQty" bind="TopQty"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+			
+		</div>
+		
+
+		<h2>CLASS 추가</h2>
+		
+		<div class="wrap">
+			<div class="btnbox" style="top: -50px;">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=14615093#id-%EC%98%B5%EC%85%98-classes'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Chart%20Series/LINE-%EA%B8%B0%EB%B3%B8%20%ED%98%95%EC%8B%9D'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>등락율 순위</h3>
+			<table id="grid-table-2">
+
+			</table>
+
+			<script id="grid-template-2" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="indx" align="center">순위</th>
+							<th name="Isu">종목명</th>
+							<th name="NowPrc" align="right">현재가</th>
+							<th name="PrdayCmp" align="right">전일비</th>
+							<th name="Updn" align="right">등락율(%)</th>
+							<th name="TopQty" align="right">거래량</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="indx" bind="indx"></td>
+							<td name="Isu" bind="Isu"></td>
+							<td name="NowPrc" bind="NowPrc"></td>
+							<td name="PrdayCmp" bind="PrdayCmp"></td>
+							<td name="Updn" bind="Updn"></td>
+							<td name="TopQty" bind="TopQty"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+			
+		</div>
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid1 = webponent.grid.init(table1, template1, {
+		id : 'my-wonderful-grid'
+	});
+	
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/ranking-map.json',
+		success : function (resp) {
+
+			grid1.appendRow(resp);
+		}
+	});
+
+	var table2 = $('#grid-table-2');
+	var template2 = $('#grid-template-2');
+	var grid2 = webponent.grid.init(table2, template2, {
+		classes : 'my-beautiful-grid fighting'
+	});
+	
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/ranking-map.json',
+		success : function (resp) {
+
+			grid2.appendRow(resp);
+		}
+	});
+	</script>
+</body>
+</html>

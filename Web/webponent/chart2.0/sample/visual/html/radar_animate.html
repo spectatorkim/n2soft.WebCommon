@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RADAR CHART</title>
+    <style>
+        .radar {
+            height: 400px;
+            width:100%;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>RADAR_animate</h1>
+<h2>animate</h2>
+<div class="wrap">
+    <div class='radar' ></div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+<script type="text/javascript" src='../../../lib/visual/webponent.visual.radar.js'></script>
+<script type="text/javascript" src="../../../lib/comm/jquery-ui-1.10.4.custom.min.js"></script>
+<link rel="stylesheet" href="../../../lib/comm/jquery-ui-1.10.4.custom.min.css"/>
+<link rel="stylesheet" href="../../layout/css/layout.css"/>
+<script>
+    var options = {
+        data : {
+            data: [
+                {"dataGb":"1","name" : "매출이익변동성", "val1":88 ,"val2" : 22},
+                {"dataGb":"1","name" : "총자산 이익변동성", "val1":42,"val2" : 22},
+                {"dataGb":"1","name" : "잠재력", "val1":67,"val2" : 22},
+                {"dataGb":"1","name" : "성장성", "val1":50,"val2" : 22},
+                {"dataGb":"1","name" : "수익성", "val1":66,"val2" : 32},
+                {"dataGb":"1","name" : "규모", "val1":23,"val2" : 22},
+
+            ],
+            use:  [
+                {"s1" : "val1"},
+                ],
+            gubun : 'dataGb'
+        },
+        legend : {
+            format : ['매출이익변동성','총자산이익변동성','잠재력','성장성','수익성','규모']
+        },
+        resize : {
+            use : true
+        },
+        timeSlice : {
+            use : false,
+            delay : 1000,
+            slider : $('.slider'),
+            play : $('.play_btn'),
+            pause : $('.pause_btn'),
+            stop : $('.stop_btn'),
+            delay : 2000,
+            animate : {
+                use : true,
+                type : 'elastic', /* linear|>|<|<>|bounce|elastic|backln|backOut|none */
+                speed : 200
+            },
+            data : function (data) {
+                data = data[0].dataGb;
+                $('.info').text("dataGb : "+data);
+            }
+        },
+        toolTip : {
+            use : true
+        },
+        func  :{
+            tickClick :function(data) {
+                console.log(data);
+            }
+        }
+    };
+
+    var styles = {
+        layout : {
+            position : {
+                x : 0,
+                y : 0
+            },
+            area : {
+                color : '#f8f8f8'
+            }
+        },
+        radar : {
+            radius : 60,
+            maxValue:100,
+            area : {
+                color: 'rgb(204, 121, 167)',
+            },
+            line : {
+                color : 'red',
+                width : 0.2
+            },
+            animate : {
+                use : true,
+                step : 70,
+                type : 'linear' /* linear | easeInOutExpo | none */
+            },
+            hover : {
+                use : true,
+                area : {
+                    color : {
+                        src : '../img/pattern_hover.png'
+                    }
+                }
+            }
+        },
+        series :[
+            {s1 : {
+                use : true,
+                line: {
+                    color: '#f6557b',
+                    width: 2,
+                    opacity: 1
+                },
+                area : {
+                    color : '#f6557b',
+                    opacity: 0.5
+                },
+                tick: {
+                    style: 'circle',
+                    size: 5,
+                    overSize: 1.5,
+                    area: {
+                        color: '#f6557b',
+                        opacity: 1
+                    },
+                    line: {
+                        color: '#f6557b',
+                        width: 1,
+                        opacity:1
+                    }
+                }
+            }},
+            {s2 : {
+                use : true,
+                line: {
+                    color: 'black',
+                    width: 1,
+                    opacity: 1
+                },
+                tick: {
+                    style: 'circle',
+                    size: 5,
+                    overSize: 1.5,
+                    area: {
+                        color: 'blue',
+                        opacity: 1
+                    },
+                    line: {
+                        color: 'blue',
+                        width: 1,
+                        opacity:
+                            1
+                    }
+                },
+                area : {
+                    color : 'blue',
+                    opacity: 0.5
+                }
+            }
+        }
+        ],
+        legend : {
+            use : true,
+            text: {
+                family: 'Nanum Gothic',
+                size: 12,
+                color: '#333333',
+                style: 'normal',    /* normal | italic */
+                weight: 'bold',   /* normal | bold */
+                opacity: 1
+            }
+
+        },
+        innerLegend : {
+            use : true,
+            text: {
+                family: 'Nanum Gothic',
+                size: 10,
+                color: '#333333',
+                style: 'normal',    /* normal | italic */
+                weight: 'bold',   /* normal | bold */
+                opacity: 1
+            }
+        }
+    };
+
+    var radar = webponent.visual.radar.init($(".radar"),styles, options);
+
+
+</script>

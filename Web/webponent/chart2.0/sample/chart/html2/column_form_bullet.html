@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CHART01</title>
+
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+
+	
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.style.js"></script>
+	<script type="text/javascript" src="./lib/webponent.test.js"></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<style type="text/css">
+		.chart {width: 600px; height: 400px;}
+	</style>
+	<script type="text/javascript">
+	var chart = null;
+	var styles = webponent.chart.styles.BASIC;
+	        
+	var options = {
+	            data: {data:normalData},
+	            format: {
+	                xAxis: function(_str){
+	                    return _str.substr(0, 4)+'/'+_str.substr(4,2)+'/'+_str.substr(6,2);
+	                },
+	                yAxis: 'priceDataFormat'
+	            },
+	            func: {
+				tip: function(tipElement, data, rect){
+					var date = data.xaxis.substr(0, 4)+'.'+data.xaxis.substr(4, 2)+'.'+data.xaxis.substr(6, 2);
+					var tip = '<div class="text">'+date + ' / ' + String(data.yaxis).format().trim()+'</div>';
+
+					tipElement.html(tip).show();
+
+					var arrow = '<div class="arrow" style="width: '+tipElement.width() + 'px;"></div>';
+
+					tipElement.html(tipElement.html() + arrow).css({
+						left: Math.round(rect.x - (tipElement.width() / 2)), top: rect.y - 35
+					});
+				}
+			},
+	            use: {
+	                animate: false,
+	                aCrossLine: true,
+	                reSize: true
+	            }
+	        };
+	        
+	var series = {
+			"main": {
+				"s1": {series: 'column', form: 'bullet', xaxis: 'Date', yaxis: 'cost1'},
+				"s2": {series: 'column', form: 'bullet', xaxis: 'Date', yaxis: 'cost2'}
+			}
+		};
+	var series2 = {
+            "main": {
+                "s1": {series: 'column', form: 'updown_bullet', xaxis: 'Date', yaxis: 'cost1'},
+				"s2": {series: 'column', form: 'updown_bullet', xaxis: 'Date', yaxis: 'cost2'}
+            }
+        };
+
+
+	window.onload = function(){
+		
+	        chart = webponent.chart.init($('.chart'), options, styles, series);
+
+
+	};
+	
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>COLUMNSERIES-bullet</h1>
+		<h2>일반 디자인</h2>
+		<input type="hidden" id="SVGHIDDEN" value=""/>
+		<div >
+			<div class="ctrlBox">
+			</div>
+			
+		</div>
+	</div>
+	<div class="chart"></div>
+</body>
+</html>

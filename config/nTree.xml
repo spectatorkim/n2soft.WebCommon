@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nTree>
+
+	<system>
+		<msg>
+			<charset>EUC-KR</charset>
+			<cypher_key>N2SOFT00</cypher_key>
+			<use_database>N</use_database>
+		</msg>
+	</system>
+
+	<database>
+		<type>oracle</type>
+		<driver>oracle.jdbc.driver.OracleDriver</driver>
+		<url>jdbc:oracle:thin:@211.236.177.113:1521:N2DB1</url>
+		<user>srbank</user>
+		<pass>tpfka4240!</pass>
+	</database>
+
+	<ibkapp>
+		<len_width>10</len_width>
+		<len_include>Y</len_include>
+
+		<server_ip>localhost</server_ip>
+		<server_port>9978</server_port>
+
+		<test>
+			<server_ip>localhost</server_ip>
+			<server_port>9978</server_port>
+		</test>
+	</ibkapp>
+
+</nTree>

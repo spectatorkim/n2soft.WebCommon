@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>databind.js - 데이터바인딩 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+	<style>
+		.even {
+			background: #F8F8F8;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>데이터바인딩</h1>
+		<h2>databind.js 연계</h2>
+		
+		<div class="wrap" id="data-bind-sample">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=15040616&moved=true'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/databindJS%20%EC%97%B0%EA%B3%84'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>등락율 순위</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="indx" align="center">순위</th>
+							<th name="Isu">종목명</th>
+							<th name="NowPrc" align="right">현재가</th>
+							<th name="PrdayCmp" align="right">전일비</th>
+							<th name="Updn" align="right">등락율(%)</th>
+							<th name="TopQty" align="right">거래량</th>
+						</tr>
+					</thead>
+					<tbody data-bind="_this.listItem(block)">
+						<tr>
+							<td name="indx" bind="indx" data-bind="indx"></td>
+							<td name="Isu" bind="Isu" data-bind="Isu"></td>
+							<td name="NowPrc" bind="NowPrc" data-bind="NowPrc"></td>
+							<td name="PrdayCmp" bind="PrdayCmp" data-bind="PrdayCmp"></td>
+							<td name="Updn" bind="Updn" data-bind="Updn"></td>
+							<td name="TopQty" bind="TopQty" data-bind="TopQty"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+			
+		</div>
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+	<script src="../../../external/databind.js"></script>
+
+	<script>
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid1 = webponent.grid.init(table1, template1);
+
+	function setupGrid (context, grid) {
+
+		$(grid.markup.main.body.tbody)
+				.attr('data-bind', $(grid.settings.template.tbody).attr('data-bind'));
+
+		var columns = grid.settings.columns;
+
+		var emptyRow = {};
+
+		for (var i = 0; i < columns.length; i++) {
+
+			var column = columns[i];
+			emptyRow[column.bind] = '';
+		};
+
+		var emptyRowArray = [];
+		emptyRowArray.push(emptyRow);
+
+		grid.appendRow(emptyRowArray);
+
+		$(grid.rows[0]).removeClass();
+
+		return manager.addBinder(context, true);
+	}
+	
+	function bindToGrid (grid, binder, data) {
+
+		binder.bind(data);
+		$(grid.markup.functional.freezeScrollerInner)
+				.height($(grid.markup.main.body.tbody).height());
+	}
+
+	var binder = setupGrid('data-bind-sample', grid1);
+		
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/ranking-map.json',
+		success : function (resp) {
+			var data = {};
+			data.block = resp;
+			bindToGrid(grid1, binder, data);
+		}
+	});
+
+	</script>
+</body>
+</html>

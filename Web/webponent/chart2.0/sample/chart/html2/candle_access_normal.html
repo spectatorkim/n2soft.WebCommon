@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CHART</title>
+
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+
+	
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.js"></script>
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.style.js"></script>
+	<script type="text/javascript" src="./lib/webponent.test.js"></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<style type="text/css">
+		.chart {width: 600px; height: 400px;}
+	</style>
+	<script type="text/javascript">
+	var chart = null;
+	
+	var options = {
+		data: {data:normalData},
+		format: {
+			xAxis: 'dayDataFormat',
+			yAxis: 'priceDataFormat'
+		},
+		func: {
+			tip: function(tipElement, data, rect){
+				var date = data.xaxis.substr(0, 4)+'.'+data.xaxis.substr(4, 2)+'.'+data.xaxis.substr(6, 2);
+				var tip = '<div class="text">'+date + ' / ' + String(data.close).format().trim()+'</div>';
+
+				tipElement.html(tip).show();
+
+				var arrow = '<div class="arrow" style="width: '+tipElement.width() + 'px;"></div>';
+
+				tipElement.html(tipElement.html() + arrow).css({
+					left: rect.x - (tipElement.width() / 2), top: rect.y - 35
+				});
+			}
+		},
+		use: {
+			animate: false,
+			aCrossLine: true
+		}
+	}
+	var styles = webponent.chart.styles.BASIC;
+	var series = {
+		"main": {
+			"s1": {series: 'candle', xaxis: 'Date', open: 'open', high: 'high', low: 'low', close: 'close'}
+
+		}
+	};
+
+	var series2 = {
+		"main": {
+			"s1": {series: 'candle', xaxis: 'Date', open: 'open', high: 'high', low: 'low', close: 'close'}
+
+		}
+	};
+
+	window.onload = function(){
+		
+		chart = webponent.chart.init($('.chart'), options, styles, series);
+
+	};
+
+	function onChangeStyle(styles, series, theme) {
+		if(theme && theme === 'accessibility') {
+			
+			styles.main.series.candle.accessibility.use = true;
+			styles.main.series.candle.accessibility.style = 'normal';
+		} else {
+			styles.main.series.candle.accessibility.use = false;
+		}
+	}
+	</script>
+<body>
+	<div class="wrapper">
+		<h1>CANDLESERIES-accessibility</h1>
+
+		<h2>Normal</h2>
+		<input type="hidden" id="SVGHIDDEN" value=""/>
+		<div >
+			<div class="ctrlBox">
+			</div>
+			
+		</div>
+	</div>
+	<div class="chart"></div>
+</body>
+</html>

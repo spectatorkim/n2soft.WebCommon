@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>pie coloring normal</title>
+	<style>
+		.pie {    
+			width: 100%;
+			height: 100%;
+		}
+
+		.pie2 {  
+			width: 100%;
+			height: 100%;
+		}    
+
+		.pie3 {  
+			width: 100%;
+			height: 100%;
+		} 
+
+	</style>
+</head>
+
+<body>
+
+	<h1>PIE-coloring_normal</h1>
+	<h2>lollipop</h2>
+	<div class="wrap">
+		<div class="btnbox">
+			<button type="button" class="btn04" onclick="saveImage()">
+				<span>SAVE IMAGE</span>
+			</button>
+			<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;">
+				<span>Mobile</span>
+			</button>
+			<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/1.+Pie'); return false;">
+				<span>Reference</span>
+			</button>
+			<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Visual%20Demo/pie_coloring_normal'); return false;">
+				<span>Publisher</span>
+			</button>
+		</div>
+		<div class='pie'></div>
+	</div>
+	<h2>broken line</h2>
+	<div class="wrap">
+		<div class='pie2'></div>
+	</div>
+	<h2>inside legend</h2>
+	<div class="wrap">
+		<div class='pie3'></div>
+	</div>
+	
+	
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.pie.js'></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<script>
+
+	/* PIE chart */
+
+	var styles = {
+		layout : {
+			position : {
+				x : 0,
+				y : 0
+			}
+		},
+		pie : {
+			radius : 69,
+			area : {
+				color : [
+					'#d6de1d', '#2bcdba', '#34b8ef', '#ffa4d8',
+					'#ff625f', '#838bf0', '#ffbb16'
+				]
+			},
+			line : {
+				color : '#fff',
+				width : 3
+			},               
+			animate : {
+				use : true,
+				step : 80,
+				type : 'easeInOutExpo' /* linear | easeInOutExpo | none */
+			},
+			hover : {
+				use : true,
+				area : {
+					color : {
+						src : '../img/pattern_hover.png'
+					}
+				}
+			}
+		},
+		base : {
+			use : true,
+			radius : 80,
+			area : {
+				color : '#fff'
+			},
+			line : {
+				color : '#e9e9e9',
+				width : 20
+			}
+
+		},      
+		donut : {
+			use : true,
+			radius : 35,
+			area : {
+				color : '#fff'
+			},
+			line : {
+				color : '#fff',
+				width : 2
+			}
+
+		},              
+		legend : {
+			use : true,
+			stackedGap : 5,
+			type : 'lollipop',
+			text: {
+				family: 'Nanum Gothic',
+				size: 12, 
+				color: '#333333', 
+				style: 'normal',    /* normal | italic */
+				weight: 'bold',   /* normal | bold */
+				opacity: 1
+			},               
+			pin : {
+				color : '#8397a6',
+				width : 1,
+				length : 20,
+				opacity : 1
+			},
+			pinHead : {
+				size : 4,
+				area : {
+					color : '#8397a6'
+				},
+				line : {
+					color : '#8397a6',
+					width : 1
+				}
+			}
+		}
+	};
+			
+	var options = {
+		data : {
+			data: [
+				{"date" : "20140102", "legend":"테스트1", "pdata":"60"},                
+				{"date" : "20140102", "legend":"테스트2", "pdata":"70"},
+				{"date" : "20140102", "legend":"테스트3", "pdata":"30"},
+				{"date" : "20140102", "legend":"테스트4", "pdata":"50"},                
+				{"date" : "20140102", "legend":"테스트5", "pdata":"50"},
+				{"date" : "20140102", "legend":"테스트6", "pdata":"70"},
+				{"date" : "20140102", "legend":"테스트7", "pdata":"20"}
+			],
+			use: 'pdata'
+		},                     
+		legend : {
+			format : ['한국', '일본', '러시아', '영국', '프랑스', '미국', '중국']
+		},
+		resize : {
+			use : true
+		},
+		toolTip : {
+			use : false
+		}
+	};
+
+	var pie = webponent.visual.pie.init($(".pie"), styles, options);
+
+	lollipopFunc(pie);
+
+	pie.on('reDraw', function (e, pie) {
+
+		lollipopFunc(pie);
+	});
+
+	function lollipopFunc (pie) {
+
+		var x = pie.svg.width / 2;
+		var y = pie.svg.height / 2;
+		var dataTotalValue = pie.settings.data.dataTotalValue;
+		var renderedData = pie.settings.data.renderedData;
+		var legend = pie.items.legend.text;    
+		var maxIndex = pie.settings.data.maxIndex;    
+		var maxData = renderedData[maxIndex];
+
+		var data = pie.svg.text(x, y - 25, maxData.pdata);
+		var date = pie.svg.text(x, (y + 20), maxData.date);
+		var title = pie.svg.text(x, (y + 40), pie.options.legend.format[maxIndex]);  
+		var linePath = 'M' + (x - 48) + ',' + (y + 2) + ',L' + (x + 48) + ',' + (y + 2);
+		var line = pie.svg.path(linePath);
+
+		data.attr({
+			fill : '#494949',
+			'font-size' : 48,
+			'font-family': 'Nanum Gothic',
+			'font': 48 + " 'Nanum Gothic'",
+		});
+	   
+		date.attr({
+			fill : '#494949',
+			'font-size' : 13,
+			'font-family': 'Nanum Gothic',
+			'font': 13 + " 'Nanum Gothic'",
+		});
+
+		title.attr({
+			fill : '#494949',
+			'font-size' : 13,
+			'font-family': 'Nanum Gothic',
+			'font': 13 + " 'Nanum Gothic'",
+		});
+
+		line.attr({
+			width : 1,
+			stroke : '#dadee0'
+		});
+
+		var number = 0;
+
+		pie.items.pie.hover(function (e) {
+
+			number = this.number;
+
+			pie.items.legend.pinHead[number].attr({
+				r : 8,
+				fill: '#fff',
+				stroke : '#455763',
+				'stroke-width' : 4
+			});
+
+			data.attr({
+				text : pie.settings.data.renderedData[this.number].pdata
+			})       
+			title.attr({
+				text : pie.options.legend.format[this.number]
+			});
+
+		}, function (e) {
+
+			pie.items.legend.pinHead[number].attr({
+				r : 4,
+				fill: '#8397a6',
+				stroke : '#8397a6',
+				'stroke-width' : 1
+			});
+		});
+	}
+
+	
+
+
+
+	/* PIE chart 2 */
+
+	var styles2 = {
+		layout : {
+			position : {
+				x : 0,
+				y : 0
+			}
+		},
+		pie : {
+			radius : 70,
+			area : {
+				color : [
+					'#d6de1d', '#2bcdba', '#34b8ef', '#ffa4d8',
+					'#ff625f', '#838bf0', '#ffbb16'
+				]
+			},
+			line : {
+				color : '#fff',
+				width : 3
+			},               
+			animate : {
+				use : true,
+				step : 80,
+				type : 'easeInOutExpo' /* linear | easeInOutExpo | none */
+			},
+			hover : {
+				use : true,
+				area : {
+					color : {
+						src : '../img/pattern_hover.png'
+					}
+				}
+			}
+		},
+		base : {
+			use : true,
+			radius : 75,
+			area : {
+				color : '#fff'
+			},
+			line : {
+				color : '#d3efed',
+				width : 1
+			}
+
+		},      
+		legend : {
+			use : true,
+			stackedGap : 5,
+			type : 'brokenLine',
+			text: {
+				family: 'Nanum Gothic',
+				size: 12, 
+				color: '#333333', 
+				style: 'normal',    /* normal | italic */
+				weight: 'bold',   /* normal | bold */
+				opacity: 1
+			},          
+			pin : {
+				color : '#8397a6',
+				width : 1,
+				length : 20,
+				opacity : 1
+			},
+			pinHead : {
+				color : '#8397a6',
+				length : 20,
+				width : 1,
+				opacity : 1
+			}            
+		}
+	};
+
+	var options2 = {
+		data : {
+			data: [
+				{"date" : "20140107", "legend":"테스트1", "pdata":"40"},
+				{"date" : "20140107", "legend":"테스트2", "pdata":"40"},               
+				{"date" : "20140107", "legend":"테스트3", "pdata":"40"},
+				{"date" : "20140107", "legend":"테스트4", "pdata":"20"},
+				{"date" : "20140107", "legend":"테스트5", "pdata":"20"},                
+				{"date" : "20140107", "legend":"테스트6", "pdata":"20"},
+				{"date" : "20140107", "legend":"테스트7", "pdata":"40"}
+			],
+			use: 'pdata'      
+		},
+		legend : {
+			format : ['한국', '일본', '러시아', '영국', '프랑스', '미국', '중국']
+		},
+		toolTip : {
+			use : true,
+			className : 'tip',
+			func : function (pie, data, tipElement) {                   
+				
+				var dataTotalValue = pie.settings.data.dataTotalValue;
+				var date = dayDataFormatDot(data.date);
+				var setData = Math.round(100 / dataTotalValue * data.pdata) + '%';
+				var tip = '<div class="text">'+date + ' / ' + setData + '</div>';
+				var arrow = '<div class="arrow" style="width: '+
+						tipElement.width() + 'px;"></div>';
+				
+				tipElement.html(tip);
+				tipElement.html(tipElement.html() + arrow);
+			}
+		},
+		resize : {
+			use : true
+		}
+	};
+
+	pie2 = webponent.visual.pie.init($('.pie2'), styles2, options2);
+
+
+	/* PIE chart 3 */
+
+	var styles3 = {
+		layout : {
+			position : {
+				x : 0,
+				y : 0
+			}
+		},
+		pie : {
+			radius : 70,
+			area : {
+				color : [
+					'#d6de1d', '#2bcdba', '#34b8ef', '#ffa4d8',
+					'#ff625f', '#838bf0', '#ffbb16'
+				]
+			},
+			line : {
+				color : '#fff',
+				width : 3
+			},               
+			animate : {
+				use : true,
+				step : 80,
+				type : 'easeInOutExpo' /* linear | easeInOutExpo | none */
+			},
+			hover : {
+				use : true,
+				area : {
+					color : {
+						src : '../img/pattern_hover.png'
+					}
+				}
+			}
+		},
+		base : {
+			use : true,
+			radius : 75,
+			area : {
+				color : '#fff'
+			},
+			line : {
+				color : '#d3efed',
+				width : 1
+			}
+
+		},      
+		legend : {
+			use : true,
+			stackedGap : 5,
+			type : 'insideLegend',
+			text: {
+				family: 'Nanum Gothic',
+				size: 17, 
+				color: '#333333', 
+				style: 'normal',    /* normal | italic */
+				weight: 'bold',   /* normal | bold */
+				opacity: 1
+			}
+		}
+	};
+
+	var options3 = {
+		data : {
+			data: [
+				{"date" : "20140101", "legend":"테스트1", "pdata":"90"},
+				{"date" : "20140101", "legend":"테스트2", "pdata":"50"},               
+				{"date" : "20140101", "legend":"테스트3", "pdata":"70"},
+				{"date" : "20140101", "legend":"테스트4", "pdata":"10"},
+				{"date" : "20140101", "legend":"테스트5", "pdata":"30"},                
+				{"date" : "20140101", "legend":"테스트6", "pdata":"50"},
+				{"date" : "20140101", "legend":"테스트7", "pdata":"80"}
+			],
+			use: 'pdata'        
+		},
+		legend : {
+			func : function (pie) {       
+				
+				var legend = [];
+
+				var dataTotalValue = pie.settings.data.dataTotalValue;
+				var data = pie.settings.data.renderedData;
+				
+				for (var i = 0; i < data.length; i++) {
+
+					var per = Math.round(100 / dataTotalValue * data[i].pdata);
+				
+					legend.push(per + '%');
+				}
+				  
+				return legend;
+			}
+		},
+		toolTip : {
+			use : true,
+			className : 'tip',
+			func : function (pie, data, tipElement) {                   
+				
+				var dataTotalValue = pie.settings.data.dataTotalValue;
+				var date = dayDataFormatDot(data.date);
+				var setData = Math.round(100 / dataTotalValue * data.pdata) + '%';
+				var tip = '<div class="text">'+date + ' / ' + setData + '</div>';
+				var arrow = '<div class="arrow" style="width: '+
+						tipElement.width() + 'px;"></div>';
+				
+				tipElement.html(tip);
+				tipElement.html(tipElement.html() + arrow);
+			}
+		},
+		resize : {
+			use : true
+		}
+	};
+
+	pie3 = webponent.visual.pie.init($('.pie3'), styles3, options3);
+
+	insideLegendFunc(pie3);
+
+	pie3.on('reDraw', function (e, pie) {
+
+		insideLegendFunc(pie);
+	});
+
+	function insideLegendFunc (pie) {
+
+		var dataTotalValue = pie.settings.data.dataTotalValue;
+		var renderedData = pie.settings.data.renderedData;
+		var maxIndex = pie.settings.data.maxIndex;
+		var maxData = Number(renderedData[0].pdata);
+
+		for (var i = 0; i < renderedData.length; i++) {
+
+			var per = Math.round(100 / dataTotalValue * renderedData[i].pdata);
+
+			if (per < 10) {
+
+				pie.items.legend.text[i].remove();
+			}
+		}
+
+		pie.items.legend.text[maxIndex].attr({
+			'font-size' : 24
+		});
+	}
+
+	var saveImage = function () {
+
+		pie.svg.getSVG();
+	};
+
+
+	</script>
+</body>
+
+</html>

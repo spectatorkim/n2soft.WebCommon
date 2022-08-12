@@ -1,0 +1,90 @@
+@CHARSET "utf-8";
+@import url(./nanumgothic.css);
+
+* {border: 0px;}
+
+body {
+	font-size: 12px;
+	color: #666;
+	font-family: 'Nanum Gothic', Dotum, '돋움';
+	padding: 0 40px;
+	margin: 0;
+
+}
+h1	{padding: 29px 0 0 0; font-size: 25px; height: 40px; margin: 0; color: #333333; border-bottom: 1px solid #cecece;}
+h2 	{padding: 20px 0 10px 20px; font-size: 20px; margin: 0; background: url('../../layout/img/bullet.png') left 25px no-repeat;}
+
+input.text { border: 0; border-radius: 5px; background: #eaeef2; color: #000; text-align: center; font-family: 'Nanum Gothic', Dotum, '돋움';font-size: 12px; width: 70px; height: 30px;}
+select.text { border: 0; border-radius: 5px; background: #eaeef2; color: #000; text-align: center; font-family: 'Nanum Gothic', Dotum, '돋움';font-size: 12px; width: 70px; height: 30px;}
+
+body.gnb {background: #f2f2f2; padding: 0;}
+body.gnb h1 {margin: 0 auto; text-align: left; border-bottom: 1px solid #cecece; height: 88px; background: #fff; padding: 0;}
+body.gnb h1 img {margin-left: 15px;}
+
+body.footer {background: #f2f2f2; border-top: 1px solid #cecece; height: auto; line-height:73px; text-align: center; padding: 0;}
+
+body.lnb, body.main {}
+body.lnb {border-right: 1px solid #cecece; padding: 0; padding-left: 20px;}
+body.lnb div.treeview {overflow-x: hidden; overflow-y: auto; height: 100%;}
+body.lnb span {font-weight: bold; color: #333333;}
+body.lnb a {text-decoration: none; color: #333333;}
+
+body.lnb ul > li {font-size: 16px; line-height: 100%;}
+body.lnb ul > li > ul > li {font-size: 14px;}
+body.lnb ul > li > ul > li a {color: #666666;}
+
+.wrapper {width: 700px;}
+.wrap {width: 700px; height: 400px; position: relative;}
+
+fieldset.search {border: 1px solid #ebebeb; padding: 0; margin: 0 0 10px; position: relative; display: block;}
+fieldset.search legend {font-size: 0; text-indent: -9999px; visibility: hidden; line-height: 0; position: absolute; left: -9999px; top: 0;}
+fieldset.search div.input {display: block; padding: 15px 65px 15px 10px;}
+fieldset.search div.input input {vertical-align: middle;}
+fieldset.search div.btn {position: absolute; right: 10px; top: 7px;}
+fieldset.search div.btn input {background: url('../../layout/img/btn_search.png') left top no-repeat; border: 0; margin: 0; padding: 0; width: 58px; height: 33px; cursor: pointer; color: #fff; line-height: 100%; font-weight: bold;}
+
+div.tip {}
+div.tip div.text {background: #465866; color: #fff; padding: 5px 10px; border: 1px solid #fff; border-radius: 2px;}
+div.tip div.arrow {height:6px;background: url(../../chart/img/tooltip_arrow.png) no-repeat center top; margin-top: -1px; font-size: 6px;}
+
+.controller {border: 1px solid #eaeaea; border-top: 0; position: relative; padding: 5px 10px 2px;}
+.controller.two {}
+.controller .slider { width: 65%; position: absolute; left: 100px; top: 14px;}
+.controller.two .slider {width: 55%;}
+.controller button {width: 26px; height: 26px; border: 0; padding: 0; margin: 0;}
+.controller button span {position: absolute; left: -9999px;}
+.controller .play_btn 	{background: url(../../chart/img/timeslice_play.png) no-repeat;}
+.controller .pause_btn 	{background: url(../../chart/img/timeslice_pause.png) no-repeat;}
+.controller .stop_btn 	{background: url(../../chart/img/timeslice_stop.png) no-repeat;}
+
+.controller .ui-state-default {background: url(../../chart/img/timeslice_dot.png); border: 0;}
+.controller .ui-slider-horizontal {height: 0.7em;}
+.controller .ui-widget-content {border: 0; background: #e0e4e9;}
+.controller .ui-widget-header {background: #2bcdba;}
+
+.controller .info {position: absolute; top: 11px; right: 10px;}
+
+.lnb_banner {margin-top: 50px;}
+.lnb_banner div {text-align: left; margin-bottom: 5px;}
+
+.black {}
+.controller.black {background: #47586a; border: 1px solid #2a2f35; border-top: 0;}
+.controller.black .info {color: #cccccc;}
+.controller.black .ui-widget-content {border: 0; background: #ffffff;}
+
+.top-98	{top: -98px !important;}
+.btnbox {top: -40px; right: 0; position: absolute; font-size: 0;}
+.btnbox button {margin : 0 0 0 5px; padding: 0; width: 76px; height: 37px; position: relative; cursor: pointer;}
+.btnbox button span {position: absolute; left: -9999px; text-indent: -9999px;}
+.btnbox .btn01 {background: url(../../layout/img/btn_mobile.png) no-repeat;}
+.btnbox .btn02 {background: url(../../layout/img/btn_ref.png) no-repeat;}
+.btnbox .btn03 {background: url(../../layout/img/btn_pub.png) no-repeat;}
+.btnbox .btn04 {background: url(../../layout/img/btn_convert.png) no-repeat;}
+
+@media (min-width: 320px) and (max-width: 640px){
+	body {padding: 0;}
+	.wrapper {width: 90%; background: #fff; margin: 0 auto;}
+	.wrap {width: 100%; height: 300px;}
+	.controller {border: 1px solid #eaeaea; border-top: 0; padding: 15px 5px 12px 5px; position: relative;}
+	.controller .info {position: absolute; top: 30px; right: 10px;}
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>많은 그리드 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h1>많은 그리드 </h1>
+
+		<input id="add-grid" type="button" value="그리드 추가">
+		
+		<div id="base" class="wrap" style="display:none;">
+			
+			<table class="grid-table">
+
+			</table>
+
+			<script class="grid-template" type="text/template">
+				<table width="100%" height="400px">
+					<thead>
+						<tr>
+							<th fixed="fixed" name="id" width="70px" align="center">id</th>
+							<th fixed="fixed" name="user_name" width="150px" align="center">user_name</th>
+							<th name="password" width="150px" align="center">password</th>
+							<th name="gender" width="100px" align="center">gender</th>
+							<th name="race" width="200px">race</th>
+							<th name="title" width="100px" align="center">title</th>
+							<th name="first_name" width="150px">first_name</th>
+							<th name="last_name" width="150px">last_name</th>
+							<th name="email" width="250px">email</th>
+							<th name="country" width="250px">country</th>
+							<th name="street_1" width="100px">street_1</th>
+							<th name="street_2" width="250px">street_2</th>
+							<th name="ip_address" width="150px" align="center">ip_address</th>
+							<th name="credit_card_type" width="200px">credit_card_type</th>
+							<th name="credit_card_number" width="200px">credit_card_number</th>
+							<th name="frequency" width="200px">frequency</th>
+							<th name="url" width="400px">url</th>
+							<th name="color" width="120px">color</th>
+							<th name="company" width="150px" align="right">company</th>
+							<th name="currency" width="250px">currency</th>
+							<th name="data" width="150px" align="center">date</th>
+							<th name="ISBN" width="150px" align="center">ISBN</th>
+							<th name="language" width="150px" align="center">language</th>
+							<th name="money" width="100px" align="right">money</th>
+							<th name="message" width="500px">message</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="id" bind="id" ></td>
+							<td name="user_name" bind="user_name" ></td>
+							<td name="password" bind="password" ></td>
+							<td name="gender" bind="gender" ></td>
+							<td name="race" bind="race" ></td>
+							<td name="title" bind="title" ></td>
+							<td name="first_name" bind="first_name" ></td>
+							<td name="last_name" bind="last_name" ></td>
+							<td name="email" bind="email" ></td>
+							<td name="country" bind="country" ></td>
+							<td name="street_1" bind="street_1" ></td>
+							<td name="street_2" bind="street_2" ></td>
+							<td name="ip_address" bind="ip_address" ></td>
+							<td name="credit_card_type" bind="credit_card_type" ></td>
+							<td name="credit_card_number" bind="credit_card_number"</td>
+							<td name="frequency" bind="frequency" ></td>
+							<td name="url" bind="url" ></td>
+							<td name="color" bind="color" ></td>
+							<td name="company" bind="company" ></td>
+							<td name="currency" bind="currency" ></td>
+							<td name="data" bind="data" ></td>
+							<td name="ISBN" bind="ISBN" ></td>
+							<td name="language" bind="language" ></td>
+							<td name="money" bind="money" ></td>
+							<td name="message" bind="message" ></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+			
+		</div>
+				
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+	$('#add-grid').on('click', function () {
+
+		var base = $('#base').clone();
+		$('.wrapper').append(base);
+		base.show();
+
+		var table = base.find('.grid-table');
+		var template = base.find('.grid-template');
+		grid = webponent.grid.init(table, template);
+
+		$.ajax({
+			dataType : 'json',
+			url : '../../../data/data-1000_0.json',
+			success : function (resp) {
+
+				grid.appendRow(resp);
+				
+			}
+		});
+	});
+
+
+	
+	</script>
+</body>
+</html>

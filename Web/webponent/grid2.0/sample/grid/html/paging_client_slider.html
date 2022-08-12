@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>페이징 - 슬라이더 페이징 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/jquery-ui-1.10.3.custom.min.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h1>페이징</h1>
+		<h2>슬라이더 페이징</h2>
+		<h3>3D 애니메이션 (크롬, IE11, safari 에서만 정상적으로 작동)</h3>
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=14615093#id-%EC%98%B5%EC%85%98-paging'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%ED%8E%98%EC%9D%B4%EC%A7%95%20%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%8D%94'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>거래량 순위</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<div class="CI-GRID-PAGING"> 
+				<input class="CI-GRID-PAGING-LEFT" type="button" value="left">
+				<div class="PAGING-SLIDER"></div>
+				<input class="CI-GRID-PAGING-RIGHT" type="button" value="left">
+			</div>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="Num" align="center">순위</th>
+							<th name="Isu">종목명</th>
+							<th name="NowPrc" align="right">현재가</th>
+							<th name="PrdayCmp" align="right">전일비</th>
+							<th name="UpdnRat" align="right">등락율(%)</th>
+							<th name="Trdvol" align="right">거래량</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="Num" bind="Num"></td>
+							<td name="Isu" bind="Isu"></td>
+							<td name="NowPrc" bind="NowPrc"></td>
+							<td name="PrdayCmp" bind="PrdayCmp"></td>
+							<td name="UpdnRat" bind="UpdnRat"></td>
+							<td name="Trdvol" bind="Trdvol"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+		var table1 = $('#grid-table-1');
+		var template1 = $('#grid-template-1');
+		
+		var grid = webponent.grid.init(table1, template1, {
+			paging : {
+				countPerPage : 10,
+				paginationCount : 5,
+				freezeScrollerY : 'hide',
+				animate : '3D'
+			}
+		});
+
+		var pagingSlider = $('.PAGING-SLIDER').slider({
+			range: 'max',
+			min: 0,
+			max: 0,
+			value: 0,
+			slide: function( event, ui ) {
+
+				grid.renderingPage(ui.value);
+			}
+		});
+
+		
+		grid.on('rowAppended', function (e, grid) {
+
+			var pageCount = grid.settings.paging.totalPageCount;
+
+			pagingSlider.slider( "option", "max", pageCount - 1);
+		})
+
+		$.ajax({
+			dataType : 'json',
+			url : '../../../data/trading-volume.json',
+			success : function (resp) {
+
+				grid.appendRow(resp);
+			}
+		});
+
+		$('.CI-GRID-PAGING-LEFT').click( function () {
+
+			var currentPageIndex = pagingSlider.slider( "option", "value" );
+		
+			if (currentPageIndex != 0) {
+
+				currentPageIndex = currentPageIndex - 1;
+
+				pagingSlider.slider( "option", "value", currentPageIndex);
+
+				grid.renderingPage(currentPageIndex);
+			}
+		})
+
+		$('.CI-GRID-PAGING-RIGHT').click( function () {
+
+			var currentPageIndex = pagingSlider.slider( "option", "value" );
+			var pageCount = grid.settings.paging.totalPageCount;
+
+			if (currentPageIndex < pageCount - 1) {
+
+				currentPageIndex = currentPageIndex + 1;
+
+				pagingSlider.slider( "option", "value", currentPageIndex);
+
+				grid.renderingPage(currentPageIndex);
+			}
+		})
+
+	</script>
+</body>
+</html>

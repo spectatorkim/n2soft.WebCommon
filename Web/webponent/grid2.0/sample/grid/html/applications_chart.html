@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>차트연계 - 응용샘플 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+
+	<style type="text/css">
+		.chart01, .chart02 {width: 100%; height: 100%;}
+		.grid-select {border-radius: 5px; background: #eaeef2;}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>그리드 차트 연계</h1>
+
+		<h2>선택된 로우로 차트 그리기</h2>
+
+		<fieldset class="search"><legend>스타일 변경</legend>
+			<form name="frm" id="frm">
+				<div class="input">
+					<label for="seriesChange">series :</label>
+					<select name="seriesChange" id="seriesChange" class="grid-select">
+						<option value="line">LINE</option>
+						<option value="area">AREA</option>
+						<option value="column">COLUMN</option>
+						<option value="plot">PLOT</option>
+						<option value="candle">CANDLE</option>
+						<option value="hloc">HLOC</option>
+					</select>
+					&nbsp;&nbsp;
+					<label for="yaxisChange">y축데이터 :</label>
+					<select name="yaxisChange" id="yaxisChange" class="grid-select">
+						<option value="Cprc">현재가</option>
+						<option value="Mprc">시가</option>
+						<option value="Hiprc">고가</option>
+						<option value="Lprc">저가</option>
+						<option value="TrdRat" selected="selected">거래량</option>
+						<option value="TrdAmt">거래대금</option>
+					</select>
+				</div>
+				<div class="btn" style="top:10px;">
+					<input type="button" value="변경" onclick="changeRowChart()">
+					<input type="button" value="추가" onclick="appendRow()">
+				</div>
+			</form>
+		</fieldset>
+
+
+		<div class="wrap">
+			<div class="btnbox" style="top: -110px;">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%EA%B7%B8%EB%A6%AC%EB%93%9C%20%EC%B0%A8%ED%8A%B8%20%EC%97%B0%EA%B3%84'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>주식현재가</h3>
+
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="Date" width="120px" align="center">날짜</th>
+							<th name="Cprc" width="120px" align="right">현재가</th>
+							<th name="Mprc" width="120px" align="right">시가</th>
+							<th name="Hiprc" width="120px" align="right">고가</th>
+							<th name="Lprc" width="120px" align="right">저가</th>
+							<th name="TrdRat" width="120px" align="right">거래량</th>
+							<th name="TrdAmt" width="100px" align="right">거래대금</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="Date" bind="Date"></td>
+							<td name="Cprc" bind="Cprc"></td>
+							<td name="Mprc" bind="Mprc"></td>
+							<td name="Hiprc" bind="Hiprc"></td>
+							<td name="Lprc" bind="Lprc"></td>
+							<td name="TrdRat" bind="TrdRat"></td>
+							<td name="TrdAmt" bind="TrdAmt"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>
+
+		<div class="wrap">
+			<div class="chart01"></div>
+		</div>
+
+		<h2>선택된 로우로 파이차트 그리기</h2>
+
+		<fieldset class="search"><legend>스타일 변경</legend>
+			<form name="frm" id="frm">
+				<div class="input">
+					선택된 로우 데이터를 파이차트로 조회
+				</div>
+				<div class="btn" style="top:6px;"><input type="button" value="조회" onclick="changeRowChart2()"></div>
+			</form>
+		</fieldset>
+
+
+		<div class="wrap">
+			<div class="btnbox" style="top: -102px;">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Chart%20Series/LINE-%EA%B8%B0%EB%B3%B8%20%ED%98%95%EC%8B%9D'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>등락율 순위</h3>
+
+			<table id="grid-table-2">
+
+			</table>
+
+			<script id="grid-template-2" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="indx" width="70px" align="center">순위</th>
+							<th name="Isu" width="120px">종목명</th>
+							<th name="NowPrc" width="120px" align="right">현재가</th>
+							<th name="PrdayCmp" width="120px" align="right">전일비</th>
+							<th name="Updn" width="120px" align="right">등락율(%)</th>
+							<th name="TopQty" width="120px" align="right">거래량</th>
+							<th name="SellRmqty" width="100px" align="right">매도잔량</th>
+							<th name="SellOrdprc" width="100px" align="right">매도호가</th>
+							<th name="BuyOrdprc" width="100px" align="right">매수호가</th>
+							<th name="BuyRmqty" width="100px" align="right">매수잔량</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="indx" bind="indx"></td>
+							<td name="Isu" bind="Isu"></td>
+							<td name="NowPrc" bind="NowPrc"></td>
+							<td name="PrdayCmp" bind="PrdayCmp"></td>
+							<td name="Updn" bind="Updn"></td>
+							<td name="TopQty" bind="TopQty"></td>
+							<td name="SellRmqty" bind="SellRmqty"></td>
+							<td name="SellOrdprc" bind="SellOrdprc"></td>
+							<td name="BuyOrdprc" bind="BuyOrdprc"></td>
+							<td name="BuyRmqty" bind="BuyRmqty"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>
+
+		<div class="wrap">
+			<div class="chart02"></div>
+		</div>
+
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+	<script src="../../../../chart2.0/lib/comm/raphael.js"></script>
+	<script src="../../../../chart2.0/lib/chart/webponent.chart.js"></script>
+	<script src="../../../../chart2.0/lib/visual/webponent.visual.pie.js"></script>
+
+	<script>
+
+	//json2.js
+	if(typeof JSON!=="object"){JSON={}}(function(){"use strict";function f(e){return e<10?"0"+e:e}function quote(e){escapable.lastIndex=0;return escapable.test(e)?'"'+e.replace(escapable,function(e){var t=meta[e];return typeof t==="string"?t:"\\u"+("0000"+e.charCodeAt(0).toString(16)).slice(-4)})+'"':'"'+e+'"'}function str(e,t){var n,r,i,s,o=gap,u,a=t[e];if(a&&typeof a==="object"&&typeof a.toJSON==="function"){a=a.toJSON(e)}if(typeof rep==="function"){a=rep.call(t,e,a)}switch(typeof a){case"string":return quote(a);case"number":return isFinite(a)?String(a):"null";case"boolean":case"null":return String(a);case"object":if(!a){return"null"}gap+=indent;u=[];if(Object.prototype.toString.apply(a)==="[object Array]"){s=a.length;for(n=0;n<s;n+=1){u[n]=str(n,a)||"null"}i=u.length===0?"[]":gap?"[\n"+gap+u.join(",\n"+gap)+"\n"+o+"]":"["+u.join(",")+"]";gap=o;return i}if(rep&&typeof rep==="object"){s=rep.length;for(n=0;n<s;n+=1){if(typeof rep[n]==="string"){r=rep[n];i=str(r,a);if(i){u.push(quote(r)+(gap?": ":":")+i)}}}}else{for(r in a){if(Object.prototype.hasOwnProperty.call(a,r)){i=str(r,a);if(i){u.push(quote(r)+(gap?": ":":")+i)}}}}i=u.length===0?"{}":gap?"{\n"+gap+u.join(",\n"+gap)+"\n"+o+"}":"{"+u.join(",")+"}";gap=o;return i}}if(typeof Date.prototype.toJSON!=="function"){Date.prototype.toJSON=function(){return isFinite(this.valueOf())?this.getUTCFullYear()+"-"+f(this.getUTCMonth()+1)+"-"+f(this.getUTCDate())+"T"+f(this.getUTCHours())+":"+f(this.getUTCMinutes())+":"+f(this.getUTCSeconds())+"Z":null};String.prototype.toJSON=Number.prototype.toJSON=Boolean.prototype.toJSON=function(){return this.valueOf()}}var cx,escapable,gap,indent,meta,rep;if(typeof JSON.stringify!=="function"){escapable=/[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g;meta={"\b":"\\b","	":"\\t","\n":"\\n","\f":"\\f","\r":"\\r",'"':'\\"',"\\":"\\\\"};JSON.stringify=function(e,t,n){var r;gap="";indent="";if(typeof n==="number"){for(r=0;r<n;r+=1){indent+=" "}}else if(typeof n==="string"){indent=n}rep=t;if(t&&typeof t!=="function"&&(typeof t!=="object"||typeof t.length!=="number")){throw new Error("JSON.stringify")}return str("",{"":e})}}if(typeof JSON.parse!=="function"){cx=/[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g;JSON.parse=function(text,reviver){function walk(e,t){var n,r,i=e[t];if(i&&typeof i==="object"){for(n in i){if(Object.prototype.hasOwnProperty.call(i,n)){r=walk(i,n);if(r!==undefined){i[n]=r}else{delete i[n]}}}}return reviver.call(e,t,i)}var j;text=String(text);cx.lastIndex=0;if(cx.test(text)){text=text.replace(cx,function(e){return"\\u"+("0000"+e.charCodeAt(0).toString(16)).slice(-4)})}if(/^[\],:{}\s]*$/.test(text.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g,"@").replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g,"]").replace(/(?:^|:|,)(?:\s*\[)+/g,""))){j=eval("("+text+")");return typeof reviver==="function"?walk({"":j},""):j}throw new SyntaxError("JSON.parse")}}})()
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid1 = webponent.grid.init(table1, template1, {
+		rowSelectable: true
+	});
+
+	/* chart */
+	var chartSel = $('.chart01');
+
+	var options = {
+		data: {
+			type: 'json'
+		},
+		format: {
+			xAxis: function(value){
+				return value.substr(0,4) + '/'+ value.substr(4,2)+'/'+value.substr(6,2);
+			},
+			yAxis: function(value){
+				if(value==0) return 0;
+
+			    var reg = /(^[+-]?\d+)(\d{3})/;
+			    var n = (value + '');
+
+			    while (reg.test(n)) n = n.replace(reg, '$1' + ',' + '$2');
+
+			    return n;
+			}
+		},
+		use: {
+			animate: true
+		},
+		animate: {
+			speed: 100
+		}
+	};
+	var styles = {
+		main: {
+			series: {
+				series1: {}
+			}
+		}
+	};
+
+	var series = {
+		main: {
+			series1: {series: 'line', xaxis: 'Date', yaxis: 'Hiprc'}
+		}
+	};
+
+	var chart1 = webponent.chart.init(chartSel, options, styles, series);
+
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/chart_005930.json',
+		success : function (resp) {
+
+			chart1.reDraw(resp.output.block_chart);
+
+			grid1.appendRow(resp.output.block_chart);
+		}
+	});
+
+	function changeRowChart () {
+		var frm = document.getElementById('frm');
+
+		var selSeries = frm.seriesChange, selYaxis = frm.yaxisChange;
+
+		var selSeriesValue = selSeries.options[selSeries.selectedIndex].value,
+			selYaxisValue = selYaxis.options[selYaxis.selectedIndex].value;
+
+		/* Styles */
+		var sstyles = { main: { series: { series1: {} } } };
+		if(selSeriesValue === 'line' || selSeriesValue === 'area') {
+			sstyles.main.series.series1.tick = {};
+			sstyles.main.series.series1.tick.style = null;
+		} else if (selSeriesValue === 'plot') {
+			sstyles.main.series.series1.tick = {};
+			sstyles.main.series.series1.tick.style = 'circle';
+		}
+		/* Series */
+		var changeSeries = {
+			series : selSeriesValue,
+			xaxis: 'Date'
+		};
+		if(selSeriesValue !== 'candle' && selSeriesValue !== 'hloc'){
+			changeSeries.yaxis = selYaxisValue;
+		} else {
+			changeSeries.open = 'Mprc';
+			changeSeries.high = 'Hiprc';
+			changeSeries.low = 'Lprc';
+			changeSeries.close = 'Cprc';
+		}
+		var sseries = {
+			main: { series1: changeSeries }
+		};
+
+		var selectedRowsDatas = grid1.getSelectedRowData();
+		chart1.reDraw(selectedRowsDatas, sstyles, sseries);
+	}
+
+	function appendRow(){
+		$.ajax({
+			dataType : 'json',
+			url : '../../../data/chart_005930_append.json',
+			success : function (resp) {
+				chart1.appendData(resp.output.block_chart)
+
+				grid1.appendRow(resp.output.block_chart);
+			}
+		});
+	}
+
+	var table2 = $('#grid-table-2');
+	var template2 = $('#grid-template-2');
+	var grid2 = webponent.grid.init(table2, template2, {
+		rowSelectable: true
+	});
+	/* pie */
+	var pieSel = $('.chart02');
+
+	var options = {
+		data: {
+			use: 'TopQty'
+		},
+		legend: {
+			func: function(chart2){
+
+				var legend = [];
+
+                var data = chart2.settings.data.renderedData;
+                
+                for (var i = 0; i < data.length; i++) {
+                	
+                    legend.push(data[i].Isu + ' ' +data[i].TopQty);
+                }
+                  
+                return legend;
+			}
+		}
+	};
+	var styles = {
+		pie: {
+			area : {
+				color : [
+					'#039e8a', '#17a996', '#23af9d', '#30b8a6',
+					'#42c4b3', '#56d1c1', '#6bddce', '#7fe5d8',
+					'#93ede1', '#acf5ec'
+				]
+			} 
+		}
+	};
+
+	var chart2 = webponent.visual.pie.init(pieSel, styles, options);
+
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/ranking-map.json',
+		success : function (resp) {
+
+			grid2.appendRow(resp);
+
+			var selectedRowsDatas = grid2.data.slice(0,10);
+
+			chart2.appendData(selectedRowsDatas);
+		}
+	});
+
+	function changeRowChart2 () {
+
+		var selectedRowsDatas = grid2.getSelectedRowData();
+
+		if (selectedRowsDatas.length == 0) {
+
+			selectedRowsDatas = grid2.data.slice(0,10);
+		}
+
+		chart2.appendData(selectedRowsDatas);
+	}
+
+	</script>
+</body>
+</html>

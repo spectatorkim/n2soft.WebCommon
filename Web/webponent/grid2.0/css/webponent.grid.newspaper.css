@@ -1,0 +1,184 @@
+@charset "utf-8";
+
+/*
+ * Nanum Gothic (Korean) http://www.google.com/fonts/earlyaccess
+ */
+
+@font-face {
+	font-family: 'Nanum Gothic';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../external/font/NanumGothic-Regular.eot);
+	src: url(../external/font/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+	url(../external/font/NanumGothic-Regular.woff2) format('woff2'),
+	url(../external/font/NanumGothic-Regular.woff) format('woff'),
+	url(../external/font/NanumGothic-Regular.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Nanum Gothic';
+	font-style: normal;
+	font-weight: 700;
+	src: url(../external/font/NanumGothic-Bold.eot);
+	src: url(../external/font/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+	url(../external/font/NanumGothic-Bold.woff2) format('woff2'),
+	url(../external/font/NanumGothic-Bold.woff) format('woff'),
+	url(../external/font/NanumGothic-Bold.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Nanum Gothic';
+	font-style: normal;
+	font-weight: 800;
+	src: url(../external/font/NanumGothic-ExtraBold.eot);
+	src: url(../external/font/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+	url(../external/font/NanumGothic-ExtraBold.woff2) format('woff2'),
+	url(../external/font/NanumGothic-ExtraBold.woff) format('woff'),
+	url(../external/font/NanumGothic-ExtraBold.ttf) format('truetype');
+}
+
+.CI-GRID-AREA {
+	position: relative;
+}
+
+.CI-GRID-WRAPPER {
+	font-family: "Nanum Gothic";
+	background: #E0E0E0;
+	border: 1px solid #6699cc;
+}
+
+.CI-GRID-MAIN-WRAPPER {
+	background: #fff;
+}
+
+.CI-GRID-HEADER-TABLE {
+	background: #fff;
+}
+
+.CI-GRID-HEADER-TABLE thead tr {
+	line-height: 50px;
+}
+
+.CI-GRID-BODY-TABLE tbody tr {
+	line-height: 45px;
+}
+
+.CI-GRID-HEADER-TABLE thead th, 
+.CI-GRID-HEADER-TABLE thead td{
+	text-align: left;
+	font-size: 15px;
+	color: #003399;
+	font-weight: bold;
+	padding: 0 15px;
+	border: none;
+	border-bottom: 1px dashed #e8edff;
+}
+
+.CI-GRID-BODY-TABLE tbody th,
+.CI-GRID-BODY-TABLE tbody td {
+	padding: 0 15px;
+	font-size: 12px;
+	color: #666699;
+	border: none;
+	border-bottom: 1px dashed #fff;
+}
+
+.CI-GRID-EVEN {
+	background: #e8edff;
+}
+
+.CI-GRID-ODD {
+	background: #e8edff;
+}
+
+
+.CI-GRID-BODY-TABLE tbody tr:hover {
+	background: #d0dafd;
+}
+
+.CI-GRID-ROW-SELECTED {
+	background: #E2EFF5;
+}
+
+
+.CI-GRID-BODY-TABLE tbody tr.CI-GRID-ROW-SELECTED:hover {
+	background: #E2EFF5;
+}
+
+
+/* 디자인용 보더 */
+.CI-GRID-BORDER-RIGHT {
+	border-left: 0px solid #e0e0e0;
+}
+
+.CI-GRID-BORDER-BOTTOM {
+	border-top: 1px solid #e0e0e0;
+}
+
+.CI-GRID-BORDER-FIXED {
+	position : absolute;
+	top : 0;
+	z-index: 3;
+	width : 1px;
+	background : #E0E0E0;
+	display: none;
+}
+
+/* 디자인용 사각형 */
+.CI-GRID-RECT-RIGHT-TOP {
+	border-left: 1px solid #fff;
+	background: #fff;
+}
+
+.CI-GRID-RESIZER-HELPER {
+	background: #A3C6DA;
+}
+
+.CI-GRID-HEADER-MICELINOUS {
+	top: 18px;
+	right: 10px;
+}
+
+.CI-GRID-GROUPING-INDI {
+	display: inline-block;
+	
+	width: 10px;
+	height: 15px;
+
+	margin-right: 5px;
+
+	text-indent: -999px;
+
+	background-image: url(../img/flat_1.png);
+
+	background-position: -12px -10px;
+	
+}
+
+.CI-GRID-SORTER {
+	display: block;
+	
+	width: 10px;
+	height: 15px;
+
+	text-indent: -999px;
+
+	background-image: url(../img/flat_1.png);
+}
+
+.CI-GRID-SORTER-NONE {
+
+	background-position: -189px -10px;
+}
+
+.CI-GRID-SORTER-DESC {
+	background-position: -260px -10px;
+}
+
+.CI-GRID-SORTER-ASC {
+	background-position: -224px -10px;
+}
+
+.CI-GRID-HEADER-MICELINOUS {
+	top: 24px;
+	right: 10px;
+}
+

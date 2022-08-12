@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>페이징 - 서버 페이징 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.pagingUI.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h1>페이징</h1>
+		<h2>서버 페이징</h2>
+		
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=14615134'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8%20%EC%84%9C%EB%B2%84%20%ED%8E%98%EC%9D%B4%EC%A7%95'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>거래량 순위</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="Num" align="center">순위</th>
+							<th name="Isu">종목명</th>
+							<th name="NowPrc" align="right">현재가</th>
+							<th name="PrdayCmp" align="right">전일비</th>
+							<th name="UpdnRat" align="right">등락율(%)</th>
+							<th name="Trdvol" align="right">거래량</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="Num" bind="Num"></td>
+							<td name="Isu" bind="Isu"></td>
+							<td name="NowPrc" bind="NowPrc"></td>
+							<td name="PrdayCmp" bind="PrdayCmp"></td>
+							<td name="UpdnRat" bind="UpdnRat"></td>
+							<td name="Trdvol" bind="Trdvol"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+	<script src="../../../external/webponent.pagingUI.js"></script>
+
+	<script>
+
+		var table1 = $('#grid-table-1');
+		var template1 = $('#grid-template-1');
+		
+		var grid = webponent.grid.init(table1, template1);
+
+		var pagingInfo = {
+			countPerPage : 20,
+			paginationCount : 5,
+			freezeScrollerY : 'hide'
+		}
+		
+		/*
+			UIplugin 을 사용하여 페이징 기능을 사용할 경우
+		 */
+		var uiPlugIn = webponent.grid.UIplugin.init(grid, {
+			
+			paging : {
+				type : 'server', // 'server' | 'client'
+
+				countPerPage : pagingInfo.countPerPage,
+
+				paginationCount : pagingInfo.paginationCount,
+
+				freezeScrollerY : pagingInfo.freezeScrollerY,
+
+				pageSelected : function (pagingInfo) {
+
+					/*
+					pagingInfo = {
+								 	"countPerPage": 20,
+								 	"totalPageCount": 50,
+								 	"totalCount": 1000,
+								 	"currentPageIndex": 1,
+								 	"paginationCount": 7,
+								 	"startPageListIndex": 0,
+								 	"type": "server"
+								}
+					 */
+					inquery(url, pagingInfo.currentPageIndex);
+					
+				}
+			}
+		});
+
+		function inquery (url, pageNumber) {
+
+			$.ajax({
+				cache : false,
+				dataType: 'json',
+				data : {
+					'ROW_PER_COUNT' : pagingInfo.countPerPage
+				},
+
+				url :  url  + (pageNumber + 1) + '.json',
+
+				success : function (resp) {
+
+					grid.removeRow();
+					grid.appendRow(resp.output.result);
+
+					if (pageNumber === 0) {
+
+						uiPlugIn.pagingUI.refreshPagingUI({
+							totalCount : resp.output.paging[0].TOTAL_COUNT
+						});
+					}
+
+				}
+			});
+
+		}
+
+		var url = '../../../data/trading-volume_';
+		
+		inquery(url, 0);
+
+	</script>
+</body>
+</html>

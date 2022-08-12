@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CHART01</title>
+
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+
+	
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.js"></script>
+	<link rel="stylesheet" href="../../../lib/comm/jquery-ui-1.10.4.custom.min.css"/>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	
+	<style type="text/css">
+		.chart01 {width: 100%; height: 100%;}
+	</style>
+	<script type="text/javascript">
+	window.onload = function(){
+		var options = {
+			data: {
+				/* url: '/WEB-APP/webponent/chart/sample/chart/data/chart01_txt.txt',
+				type: 'text' */
+				data: [
+					{"Date":"20140411","Mprc":"58100","HiPrc":"59500","Lprc":"57900","Cprc":"59400","TrdRat":"1147313"},
+					{"Date":"20140410","Mprc":"59700","HiPrc":"59800","Lprc":"57600","Cprc":"58600","TrdRat":"2661787"},
+					{"Date":"20140409","Mprc":"60400","HiPrc":"61200","Lprc":"58400","Cprc":"59200","TrdRat":"2982273"},
+					{"Date":"20140408","Mprc":"60200","HiPrc":"61000","Lprc":"60000","Cprc":"60700","TrdRat":"657407"},
+					{"Date":"20140407","Mprc":"60600","HiPrc":"60800","Lprc":"59800","Cprc":"60700","TrdRat":"763556"},
+					{"Date":"20140404","Mprc":"61000","HiPrc":"61300","Lprc":"60500","Cprc":"60900","TrdRat":"1319245"},
+					{"Date":"20140403","Mprc":"61500","HiPrc":"61600","Lprc":"60000","Cprc":"60600","TrdRat":"1410086"},
+					{"Date":"20140402","Mprc":"60500","HiPrc":"61300","Lprc":"60500","Cprc":"60800","TrdRat":"1969494"},
+					{"Date":"20140401","Mprc":"59000","HiPrc":"60000","Lprc":"58800","Cprc":"59700","TrdRat":"1224315"},
+					{"Date":"20140331","Mprc":"59800","HiPrc":"60200","Lprc":"58900","Cprc":"59300","TrdRat":"1187209"},
+					{"Date":"20140328","Mprc":"58800","HiPrc":"59800","Lprc":"58500","Cprc":"59500","TrdRat":"1025430"},
+					{"Date":"20140327","Mprc":"59500","HiPrc":"59700","Lprc":"58900","Cprc":"59700","TrdRat":"981268"},
+					{"Date":"20140326","Mprc":"58600","HiPrc":"59500","Lprc":"58100","Cprc":"59200","TrdRat":"1360441"},
+					{"Date":"20140325","Mprc":"58100","HiPrc":"58600","Lprc":"57400","Cprc":"57900","TrdRat":"581031"},
+					{"Date":"20140324","Mprc":"58800","HiPrc":"58900","Lprc":"57800","Cprc":"58300","TrdRat":"808353"},
+					{"Date":"20140321","Mprc":"57500","HiPrc":"58400","Lprc":"57300","Cprc":"58400","TrdRat":"1287823"},
+					{"Date":"20140320","Mprc":"57000","HiPrc":"57400","Lprc":"56700","Cprc":"56900","TrdRat":"995543"},
+					{"Date":"20140319","Mprc":"56900","HiPrc":"57700","Lprc":"56700","Cprc":"57100","TrdRat":"1122577"},
+					{"Date":"20140318","Mprc":"57100","HiPrc":"57300","Lprc":"56200","Cprc":"56900","TrdRat":"1196508"},
+					{"Date":"20140317","Mprc":"54600","HiPrc":"56600","Lprc":"54600","Cprc":"56600","TrdRat":"1295568"},
+					{"Date":"20140314","Mprc":"54100","HiPrc":"55200","Lprc":"53800","Cprc":"54900","TrdRat":"817661"},
+					{"Date":"20140313","Mprc":"55800","HiPrc":"56300","Lprc":"54700","Cprc":"54800","TrdRat":"1090218"},
+					{"Date":"20140312","Mprc":"56700","HiPrc":"57000","Lprc":"55600","Cprc":"55700","TrdRat":"1189508"},
+					{"Date":"20140311","Mprc":"54800","HiPrc":"55900","Lprc":"54700","Cprc":"55800","TrdRat":"943842"},
+					{"Date":"20140310","Mprc":"55100","HiPrc":"55400","Lprc":"54500","Cprc":"54800","TrdRat":"638071"},
+					{"Date":"20140307","Mprc":"55800","HiPrc":"55900","Lprc":"55100","Cprc":"55600","TrdRat":"603294"},
+					{"Date":"20140306","Mprc":"56400","HiPrc":"56700","Lprc":"55300","Cprc":"55800","TrdRat":"860907"},
+					{"Date":"20140305","Mprc":"56400","HiPrc":"56900","Lprc":"56000","Cprc":"56700","TrdRat":"1179068"},
+					{"Date":"20140304","Mprc":"55600","HiPrc":"56500","Lprc":"55200","Cprc":"55800","TrdRat":"1111525"},
+					{"Date":"20140303","Mprc":"55600","HiPrc":"56900","Lprc":"54500","Cprc":"56000","TrdRat":"1578890"}
+				],
+				reverse: true
+			},
+			format: {
+				xAxis: function(_str){
+					return _str.substr(0, 4)+'.'+_str.substr(4,2)+'.'+_str.substr(6,2);
+				},
+				yAxis: 'priceDataFormat'
+			},
+			func: {
+				tip: function(tipElement, data, rect){
+					var date = data.xaxis.substr(0, 4)+'.'+data.xaxis.substr(4, 2)+'.'+data.xaxis.substr(6, 2);
+					var tip = '<div class="text">'+date + ' / ' + String(data.yaxis).format().trim()+'</div>';
+
+					tipElement.html(tip).show();
+
+					var arrow = '<div class="arrow" style="width: '+tipElement.width() + 'px;"></div>';
+
+					tipElement.html(tipElement.html() + arrow).css({
+						left: rect.x - (tipElement.width() / 2), top: rect.y - 35
+					});
+				}
+			},
+			use: {
+				animate: true,
+				aCrossLine: true
+			},
+			timeSlice: {
+				use: true,
+				delay: 300,
+				slider: $('.slider'),
+				play: $('.play_btn'),
+				pause: $('.pause_btn'),
+				stop: $('.stop_btn'),
+				data: function(data){
+					var dateFormat = function(_str){
+						return _str.substr(0, 4)+'.'+_str.substr(4,2)+'.'+_str.substr(6,2);
+					}
+					$('.info').text('DATE : '+dateFormat(data[0].Date) + ' ~ ' + dateFormat(data[data.length -  1].Date))
+				}
+			}
+		}
+		var styles = {
+			main: {
+				layout: {
+					paddingTop: 57, paddingRight: 30, color: '#f8f8f8',
+					line: {color: '#eaeaea', width: 1}
+				},
+				graph: {
+					color: '#f8f8f8',
+					line: {
+						top: {color: '#cccccc'},
+						left: {width: 0},
+						right: {width: 0},
+						bottom: {color: '#cccccc'}
+					}
+				},
+				crossLine: {
+					color: '#465866'
+				},
+				xAxis: {
+					paddingTop: 13, height: 30,
+					text: {family: 'Nanum Gothic', size: 12, color: '#666'},
+					line: {color: '#e3e3e3', width: 1}
+				},
+				yAxis: {
+					line: {color: '#cccccc', width: 1, opacity: 1},
+					text: {family: 'Nanum Gothic', size: 12, color: '#666', align: 'right'}
+				},
+				tip: {
+					className: 'tip'
+				},
+				series: {
+					s1: {
+						area: {
+							normal: {
+								color: [ [0, '#2bcdba'], [100, '#6bdccf'] ],
+								over: { color: {src: '../../chart/img/over.png', color: '#4e6679'} }
+							}
+						},
+						line: {
+							normal: {
+								width: 0, over: { width: 0 }
+							}
+						},
+						gradient: { direction: 'vertical' }
+					}
+				}
+			}
+		};
+		var series = {
+			"main": {
+				"s1": {series: 'column', xaxis: 'Date', yaxis: 'Mprc'}
+			}
+		};
+		var chart = webponent.chart.init($('.chart01'), options, styles, series);
+		
+	};
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>TimeSlice</h1>
+		<h2>일반 디자인</h2>
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/TimeSlice'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Chart%20Demo/Option-timeSlice'); return false;"><span>Publisher</span></button>
+			</div>
+			<div class="chart01"></div>
+		</div>
+		<div class="controller two">
+		    <button type="button" name="play_btn" value="play" class="play_btn"><span>재생</span></button> 
+		    <button type="button" name="pause_btn" value="pause" class="pause_btn"><span>일시정지</span></button> 
+		    <button type="button" name="stop_btn" value="stop" class="stop_btn"><span>정지</span></button> 
+		    <div class="slider"></div>
+		    <span class="info">DATE: 2010.01.01</span>
+		</div>
+	</div>
+</body>
+</html>

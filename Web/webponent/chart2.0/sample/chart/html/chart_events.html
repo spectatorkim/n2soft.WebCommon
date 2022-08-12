@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CHART</title>
+
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+
+	
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<style type="text/css">
+		.chart {width: 100%; height: 100%;}
+		p {padding: 0 20px;}
+	</style>
+	<script type="text/javascript">
+	var chart = null;
+	
+	var options = {
+        data: {
+            data: [
+                { Date: '20140101', Mprc: 10000 },
+                { Date: '20140102', Mprc: 20000 },
+                { Date: '20140103', Mprc: 15000 },
+                { Date: '20140104', Mprc: 30000 },
+                { Date: '20140105', Mprc: 5000 }
+            ]
+        },
+        format: {
+            xAxis: function(_str){
+                return _str.substr(0, 4)+'/'+_str.substr(4,2)+'/'+_str.substr(6,2);
+            },
+            yAxis: 'priceDataFormat'
+        },
+        func: {
+			tip: function(tipElement, data, rect){
+				var date = data.xaxis.substr(0, 4)+'.'+data.xaxis.substr(4, 2)+'.'+data.xaxis.substr(6, 2);
+				var tip = '<div class="text">'+date + ' / ' + String(data.yaxis).format().trim()+'</div>';
+
+				tipElement.html(tip).show();
+
+				var arrow = '<div class="arrow" style="width: '+tipElement.width() + 'px;"></div>';
+
+				tipElement.html(tipElement.html() + arrow).css({
+					left: Math.round(rect.x - (tipElement.width() / 2)), top: rect.y - 35
+				});
+			}
+		},
+        use: {
+            animate: true,
+            aCrossLine: true,
+            reSize: true
+        },
+        events: {
+        	drawCompleted: function(e, paper) {
+        		console.log('drawCompleted')
+        	},
+        	beforeDrawSeriesInGraph: function(e, paper, seriesObject){
+        		console.log('beforeDrawSeriesInGraph')
+        	}
+        }
+    };
+    var styles = {
+		main: {
+			layout: {
+				paddingTop: 57, paddingRight: 30, color: '#f8f8f8',
+				line: {color: '#eaeaea', width: 1}
+			},
+			graph: {
+				color: '#f8f8f8',
+				line: {
+					top: {color: '#cccccc'},
+					left: {width: 0},
+					right: {width: 0},
+					bottom: {color: '#cccccc'}
+				}
+			},
+			crossLine: {
+				color: '#465866'
+			},
+			xAxis: {
+				paddingTop: 13, height: 30,
+				text: {family: 'Nanum Gothic', size: 12, color: '#666'},
+				line: {color: '#e3e3e3', width: 1}
+			},
+			yAxis: {
+				line: {color: '#cccccc', width: 1, opacity: 1},
+				text: {family: 'Nanum Gothic', size: 12, color: '#666', align: 'right'}
+			},
+			tip: {
+				className: 'tip'
+			},
+            series: {
+                s1: {
+                    area: {
+						normal: {
+							color: [ [0, '#2bcdba'], [100, '#6bdccf'] ],
+							over: { color: {src: '../../chart/img/over.png', color: '#4e6679'} }
+						}
+					},
+					line: {
+						normal: {
+							width: 0,
+							over: { width: 0 }
+						}
+					},
+					gradient: {
+						direction: 'vertical'
+					},
+					text: {
+						use: false, color: '#666666', family: 'Nanum Gothic', size: 12,
+						format: 'priceDataFormat'
+					}
+                }
+            }
+        }
+    };
+    var series = {
+        "main": {
+            "s1": {series: 'column', xaxis: 'Date', yaxis: 'Mprc'}
+        }
+    };
+    window.onload = function(){
+        chart = webponent.chart.init($('.chart'), options, styles, series);
+	};
+	var saveImage = function (){
+		/*{
+			url: "/WEB-APP/export/image",
+			file: 'png',
+			name: 'Image',
+			log: true,
+			done: function(val){
+				$('#SVGHIDDEN').val(val);
+			}
+		}*/
+		chart.getSVG({
+			log: false,
+			width: 700,
+			height: 400
+		});
+
+
+	};
+
+	var reSize = function(){
+		if($('#wrap1').width() < 1000) {
+			$('#wrap1').css('width', 1000).css('height', 500);
+			chart.resize();
+		} else {
+			$('#wrap1').css('width', 700);
+			chart.resize();
+		}
+	};
+
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Chart Events</h1>
+		<h2>일반 디자인</h2>
+		<input type="hidden" id="SVGHIDDEN" value=""/>
+		<div id="wrap1" class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/1.+options#id-1.options-events'); return false;"><span>Reference</span></button>
+			</div>
+			<div class="chart"></div>
+		</div>
+	</div>
+
+	<h3>beforeDrawSeriesInGraph</h3>
+	<p>
+		그래프영역별로 시리즈를 그리기 바로 직전에 발생
+	</p>
+
+	<h3>drawCompleted</h3>
+	<p>
+		차트 완료했을때 발생. 애니메이션 완료시점이랑 무관함.<br/><br/>
+
+		차트 init 전에 미리 등록해야 할 경우에 jQuery selector에 bind시킬 수도 있음.<br/>
+		예시 : <strong>$(jQuery Selector).on('drawCompleted', function(e, chart){ ... })</strong>
+	</p>
+
+	<h3>주의사항</h3>
+	<p>
+		이벤트를 통하여 만들어진 SVG Node들은 reDraw, inquery 같이 다시 그려져야 하는 경우 직접 삭제해야 한다.
+	</p>
+</body>
+</html>

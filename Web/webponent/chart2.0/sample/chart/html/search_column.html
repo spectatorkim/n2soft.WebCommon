@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CHART01</title>
+
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+
+	
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.js"></script>
+	<script type="text/javascript" src="../../../lib/stock/webponent.chart.stock.style.js"></script>
+	<script type="text/javascript" src="../../../lib/stock/webponent.chart.stock.js"></script>
+	
+	<link rel="stylesheet" href="../../../lib/comm/jquery-ui-1.10.4.custom.min.css"/>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+
+	<style type="text/css">
+		.chart01 {width: 100%; height: 100%;}
+		.chart02 {width: 100%; height: 100%;}
+	</style>
+</head>
+<body>
+	<h1>Search (with coreFrame)</h1>
+	<div class="wrapper">
+		<h2>종목 검색</h2>
+		<fieldset class="search"><legend>데이터 변경</legend>
+			<form name="frm" id="frm" action="javascript:return false;">
+				<div class="input">
+					<label><input type="radio" name="code" value="005930" checked="checked" /> 005930</label>
+					<label><input type="radio" name="code" value="000270" /> 000270</label>
+					<label><input type="radio" name="code" value="005380" /> 005380</label>
+					<label><input type="radio" name="code" value="066570" /> 066570</label>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 기간 : <input type="text" name="Sdate" value="20140301" maxlength="8" class="text" /> ~
+					<input type="text" name="Edate" value="20140411" maxlength="8" class="text" />
+				</div>
+				<div class="btn"><input type="button" value="Search" onclick="inquery()" /></div>
+			</form>
+		</fieldset>
+		<div class="wrap">
+			<div class="chart01"></div>
+		</div>
+		<div class="controller two">
+		    <button type="button" name="play_btn" value="play" class="play_btn"><span>재생</span></button> 
+		    <button type="button" name="pause_btn" value="pause" class="pause_btn"><span>일시정지</span></button> 
+		    <button type="button" name="stop_btn" value="stop" class="stop_btn"><span>정지</span></button> 
+		    <div class="slider"></div>
+		    <span class="info">DATE: 2010.01.01</span>
+		</div>
+	
+		<h2>지수 검색</h2>
+		<fieldset class="search"><legend>데이터 변경</legend>
+			<form name="frm2" id="frm2" action="javascript:return false;">
+				<div class="input">
+					<label><input type="radio" name="Jisu" value="1001" checked="checked" /> 1001</label>
+				<label><input type="radio" name="Jisu" value="1002" /> 1002</label>
+				<label><input type="radio" name="Jisu" value="1003" /> 1003</label>
+				<label><input type="radio" name="Jisu" value="2001" /> 2001</label>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 기간 : <input type="text" name="Sdate" value="20140301" maxlength="8" class="text" /> ~
+					<input type="text" name="Edate" value="20140411" maxlength="8" class="text" />
+				</div>
+				<div class="btn"><input type="button" value="Search" onclick="inquery2()" /></div>
+			</form>
+		</fieldset>
+		<!-- <form name="frm2" id="frm2" action="javascript:return false;">
+			<fieldset><legend>지수</legend>
+				<label><input type="radio" name="Jisu" value="1001" checked="checked" /> 1001</label>
+				<label><input type="radio" name="Jisu" value="1002" /> 1002</label>
+				<label><input type="radio" name="Jisu" value="1003" /> 1003</label>
+				<label><input type="radio" name="Jisu" value="2001" /> 2001</label><br/>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;● 기간 : <input type="text" name="Sdate" value="20131202" maxlength="8" style="width: 70px; text-align: center;" /> ~
+				<input type="text" name="Edate" value="20140102" maxlength="8" style="width: 70px; text-align: center;" />
+				<input type="button" onclick="inquery2()" value="조회" />
+			</fieldset>
+	
+		</form> -->
+		<div class="wrap">
+			<div class="chart02" style="background: #eee;"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	var chart = null, chart2 = null;
+	function inquery(){
+		var frm = document.frm;
+		var code = "";
+		for(var i = 0, len = frm.code.length; i < len; i++){
+			if(frm.code[i].checked) {
+				code = frm.code[i].value;
+				break;
+			}
+		}
+
+		var options = {
+			data: {
+				url: '/WEB-APP/webponent/chart/data.jspx?cmd=chartData&type=stock&Code='+code+'&Sdate='+frm.Sdate.value+ '&Edate='+frm.Edate.value
+			}
+		};
+		
+		chart.inquery(options, {}, {});
+		return false;
+	}
+	function inquery2(){
+		var frm = document.frm2;
+		var code = "";
+		for(var i = 0, len = frm.Jisu.length; i < len; i++){
+			if(frm.Jisu[i].checked) {
+				code = frm.Jisu[i].value;
+				break;
+			}
+		}
+
+		var options = {
+			data: {
+				url: '/WEB-APP/webponent/chart/data.jspx?cmd=chartData&type=jisu&Jisu='+code+'&Sdate='+frm.Sdate.value+ '&Edate='+frm.Edate.value
+			}
+		}
+		chart2.inquery(options, {}, {});
+		return false;
+	}
+	window.onload = function(){
+		var options = {
+			data: {
+				// /WEB-APP/webponent/chart/data.jspx?cmd=chartData&type=stock&Code=005930&Sdate=20140301&Edate=20140411
+				url: '',
+				reverse: true,
+				jsonDepth: 'output.result'
+
+			},
+			format: {
+				xAxis: function(_str){
+					return _str.substr(0, 4)+'.'+_str.substr(4,2)+'.'+_str.substr(6,2);
+				},
+				yAxis: 'priceDataFormat'
+			},
+			func: {
+				tip: function(tipElement, data, rect){
+					var date = data.xaxis.substr(0, 4)+'.'+data.xaxis.substr(4, 2)+'.'+data.xaxis.substr(6, 2);
+					var tip = '<div class="text">'+date + ' / ' + String(data.yaxis).format().trim()+'</div>';
+
+					tipElement.html(tip).show();
+
+					var arrow = '<div class="arrow" style="width: '+tipElement.width() + 'px;"></div>';
+
+					tipElement.html(tipElement.html() + arrow).css({
+						left: rect.x - (tipElement.width() / 2), top: rect.y - 35
+					});
+				}
+			},
+			use: {
+				animate: true,
+				aCrossLine: true
+			},
+			timeSlice: {
+				use: true,
+				delay: 300,
+				slider: $('.slider'),
+				play: $('.play_btn'),
+				pause: $('.pause_btn'),
+				stop: $('.stop_btn'),
+				data: function(data){
+					var dateFormat = function(_str){
+						return _str.substr(0, 4)+'.'+_str.substr(4,2)+'.'+_str.substr(6,2);
+					}
+					$('.info').text('DATE : '+dateFormat(data[0].Date) + ' ~ ' + dateFormat(data[data.length -  1].Date))
+				}
+			}
+		};
+		var styles = {
+			main: {
+				layout: {
+					paddingTop: 57, paddingRight: 30, color: '#f8f8f8',
+					line: {color: '#eaeaea', width: 1}
+				},
+				graph: {
+					color: '#f8f8f8',
+					line: {
+						top: {color: '#cccccc'},
+						left: {width: 0},
+						right: {width: 0},
+						bottom: {color: '#cccccc'}
+					}
+				},
+				crossLine: {
+					color: '#465866'
+				},
+				xAxis: {
+					paddingTop: 13, height: 30,
+					text: {family: 'Nanum Gothic', size: 12, color: '#666'},
+					line: {color: '#e3e3e3', width: 1}
+				},
+				yAxis: {
+					line: {color: '#cccccc', width: 1, opacity: 1},
+					text: {family: 'Nanum Gothic', size: 12, color: '#666', align: 'right'}
+				},
+				tip: {
+					className: 'tip'
+				},
+				series: {
+					s1: {
+						area: {
+							normal: {
+								color: [ [0, '#2bcdba'], [100, '#6bdccf'] ],
+								over: { color: {src: '../../chart/img/over.png', color: '#4e6679'} }
+							}
+						},
+						line: {
+							normal: {
+								width: 0,
+								over: { width: 0 }
+							}
+						},
+						gradient: {
+							direction: 'vertical'
+						},
+						text: {
+							use: false, color: '#666666', family: 'Nanum Gothic', size: 12,
+							format: 'priceDataFormat'
+						}
+					}
+				}
+			}
+		};
+		var series = {
+			"main": {
+				"type": "main",
+				"s1": {series: 'column', xaxis: 'Date', yaxis: 'Mprc'}
+			}
+		};
+		chart = webponent.chart.init($('.chart01'), options, styles, series);
+
+
+		var options = {
+			data: {
+				url: '/WEB-APP/webponent/chart/data.jspx?cmd=chartData&type=jisu&Jisu=1001&Sdate=20131202&Edate=20140102',
+				reverse: true
+			},
+			format: {
+				xAxis: function(_str){
+					return _str.substr(0, 4)+'.'+_str.substr(4,2)+'.'+_str.substr(6,2);
+				},
+				yAxis: 'priceDataFormat'
+			},
+			func: {
+				tip: function(tipElement, data, rect){
+					var date = data.xaxis.substr(0, 4)+'.'+data.xaxis.substr(4, 2)+'.'+data.xaxis.substr(6, 2);
+					var tip = '<div class="text">'+date + ' / ' + String(data.yaxis).format().trim()+'</div>';
+
+					tipElement.html(tip).show();
+
+					var arrow = '<div class="arrow" style="width: '+tipElement.width() + 'px;"></div>';
+
+					tipElement.html(tipElement.html() + arrow).css({
+						left: rect.x - (tipElement.width() / 2), top: rect.y - 35
+					});
+				}
+			},
+			animate: {
+				speed: 100
+			},
+			use: {
+				animate: true,
+				aCrossLine: true
+			}
+		};
+		var styles = {
+			main: {
+				layout: {
+					paddingTop: 57, paddingRight: 30, color: '#f8f8f8',
+					line: {color: '#eaeaea', width: 1}
+				},
+				graph: {
+					color: '#f8f8f8',
+					line: {
+						top: {color: '#cccccc'},
+						left: {width: 0},
+						right: {width: 0},
+						bottom: {color: '#cccccc'}
+					}
+				},
+				crossLine: {
+					color: '#465866'
+				},
+				xAxis: {
+					paddingTop: 13, height: 30,
+					text: {family: 'Nanum Gothic', size: 12, color: '#666'},
+					line: {color: '#e3e3e3', width: 1}
+				},
+				yAxis: {
+					line: {color: '#cccccc', width: 1, opacity: 1},
+					text: {family: 'Nanum Gothic', size: 12, color: '#666', align: 'right'}
+				},
+				tip: {
+					className: 'tip'
+				},
+				series: {
+					s1: {
+						area: {
+							normal: {
+								color: '#2bcdba', opacity: 0.4,
+								over: {
+									color: '#2bcdba', opacity: 0.4
+								}
+							}
+						},
+						line: {
+							normal: {
+								color: '#2bcdba', width: 3,
+								over: {
+									color: '#2bcdba', width: 3
+								}
+							}
+						}
+					},
+					s2: {
+						area: {
+							normal: {
+								color: '#8670e1', opacity: 0.4,
+								over: {
+									color: '#8670e1', opacity: 0.4
+								}
+							}
+						},
+						line: {
+							normal: {
+								color: '#8670e1', width: 3,
+								over: {
+									color: '#8670e1', width: 3
+								}
+							}
+						}
+					}
+				}
+			}
+		};
+		var series = {
+			"main": {
+				"type": "main",
+				"s1": {series: 'area', xaxis: 'Date', yaxis: 'HiPrc'},
+				"s2": {series: 'area', xaxis: 'Date', yaxis: 'Lprc'}
+			}
+		};
+		chart2 = webponent.chart.init($('.chart02'), options, styles, series);
+	};
+	</script>
+</body>
+</html>

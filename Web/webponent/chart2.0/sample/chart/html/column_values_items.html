@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CHART01</title>
+
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+
+	
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.js"></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<style type="text/css">
+		.chart01 {width: 100%; height: 100%;}
+	</style>
+	<script type="text/javascript">
+	window.onload = function(){
+		var options = {
+			data: {
+				/* url: '/WEB-APP/webponent/chart/sample/chart/data/chart01_txt.txt',
+				type: 'text' */
+				data: [
+					{ Date: '20140101', Mprc: 10000 },
+					{ Date: '20140102', Mprc: 20000 },
+					{ Date: '20140103', Mprc: 15000 },
+					{ Date: '20140104', Mprc: 30000 },
+					{ Date: '20140105', Mprc: 5000 }
+				]
+			},
+			format: {
+				xAxis: function(_str){
+					return _str.substr(0, 4)+'.'+_str.substr(4,2)+'.'+_str.substr(6,2);
+				},
+				yAxis: 'priceDataFormat'
+			},
+			func: {
+				tip: function(tipElement, data, rect){
+					var date = data.xaxis.substr(0, 4)+'.'+data.xaxis.substr(4, 2)+'.'+data.xaxis.substr(6, 2);
+					var tip = '<div class="text">'+date + ' / ' + String(data.yaxis).format().trim()+'</div>';
+
+					tipElement.html(tip).show();
+
+					var arrow = '<div class="arrow" style="width: '+tipElement.width() + 'px;"></div>';
+
+					tipElement.html(tipElement.html() + arrow).css({
+						left: rect.x - (tipElement.width() / 2), top: rect.y - 35
+					});
+				}
+			},
+			use: {
+				animate: true,
+				aCrossLine: true
+			}
+		}
+		var styles = {
+			main: {
+				layout: {
+					paddingTop: 57, paddingRight: 30, color: '#f8f8f8',
+					line: {color: '#eaeaea', width: 1}
+				},
+				graph: {
+					color: '#f8f8f8',
+					line: {
+						top: {color: '#cccccc'},
+						left: {width: 0},
+						right: {width: 0},
+						bottom: {color: '#cccccc'}
+					}
+				},
+				crossLine: {
+					color: '#465866'
+				},
+				xAxis: {
+					paddingTop: 13, height: 30,
+					text: {family: 'Nanum Gothic', size: 12, color: '#666'},
+					line: {color: '#e3e3e3', width: 1}
+				},
+				yAxis: {
+					line: {color: '#cccccc', width: 1, opacity: 1},
+					text: {family: 'Nanum Gothic', size: 12, color: '#666', align: 'right'}
+				},
+				tip: {
+					className: 'tip'
+				},
+				series: {
+					s1: {
+						area: {
+							items: [
+								{
+									color: [ [0, '#2bcdba'], [100, '#6bdccf'] ],
+									over: { color: [[0, '#018b8d'], [100, '#33a2a4']] }
+								},
+								{
+									color: [ [0, '#ff625f'], [100, '#ff918f'] ],
+									over: { color: [[0, '#ca2b28'], [100, '#d55552']] }
+								},
+								{
+									color: [ [0, '#feb402'], [100, '#fecb4e'] ],
+									over: { color: [[0, '#f28301'], [100, '#f59c33']] }
+								},
+								{
+									color: [ [0, '#0193d8'], [100, '#4db4e4'] ],
+									over: { color: [[0, '#0260a9'], [100, '#337fb9']] }
+								},
+								{
+									color: [ [0, '#8671e1'], [100, '#ab9bea'] ],
+									over: { color: [[0, '#5744a3'], [100, '#7869b5']] }
+								}
+							]
+						},
+						line: {
+							normal: {
+								width: 0,
+								over: { width: 0 }
+							}
+						},
+						gradient: {
+							direction: 'vertical'
+						},
+						text: {
+							use: true, color: '#666666', family: 'Nanum Gothic', size: 12,
+							format: 'priceDataFormat'
+						}
+					}
+				}
+			}
+		};
+		var series = {
+			"main": {
+				"s1": {series: 'column', xaxis: 'Date', yaxis: 'Mprc'}
+			}
+		};
+		var chart = webponent.chart.init($('.chart01'), options, styles, series);
+	};
+	</script>
+</head>
+<body>
+	<h1>COLUMNSERIES-items values</h1>
+	<h2>일반 디자인</h2>
+	<div class="wrap">
+		<div class="btnbox">
+			<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+			<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/Column+Series#ColumnSeries-LabelingColumns'); return false;"><span>Reference</span></button>
+			<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Chart%20Series/COLUMN-%EA%B8%B0%EB%B3%B8%20%EB%A7%89%EB%8C%80%20%ED%98%95%EC%8B%9D'); return false;"><span>Publisher</span></button>
+		</div>
+		<div class="chart01"></div>
+	</div>
+</body>
+</html>

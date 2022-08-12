@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CHART01</title>
+
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+
+	
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<style type="text/css">
+		.chart01, .chart02 {width: 100%; height: 100%;}
+	</style>
+	<script type="text/javascript">
+	var chart = null;
+	window.onload = function(){
+		var options = {
+            data: {
+                data: [
+                    { Date: '20140101', Mprc: 10000 },
+                    { Date: '20140102', Mprc: 20000 },
+                    { Date: '20140103', Mprc: 15000 },
+                    { Date: '20140104', Mprc: 30000 },
+                    { Date: '20140105', Mprc: 5000 }
+                ]
+            },
+            format: {
+                xAxis: null,
+                yAxis: 'priceDataFormat'
+            },
+            func: {
+			tip: function(tipElement, data, rect){
+				var date = data.xaxis.substr(0, 4)+'.'+data.xaxis.substr(4, 2)+'.'+data.xaxis.substr(6, 2);
+				var tip = '<div class="text">'+date + ' / ' + String(data.yaxis).format().trim()+'</div>';
+
+				tipElement.html(tip).show();
+
+				var arrow = '<div class="arrow" style="width: '+tipElement.width() + 'px;"></div>';
+
+				tipElement.html(tipElement.html() + arrow).css({
+					left: Math.round(rect.x - (tipElement.width() / 2)), top: rect.y - 35
+				});
+			}
+		},
+            use: {
+                animate: false,
+                aCrossLine: true,
+                reSize: true
+            }
+        };
+        var styles = {
+			main: {
+				layout: {
+					paddingTop: 57, paddingRight: 30, color: '#f8f8f8',
+					line: {color: '#eaeaea', width: 1}
+				},
+				graph: {
+					color: '#f8f8f8',
+					line: {
+						top: {color: '#cccccc'},
+						left: {width: 0},
+						right: {width: 0},
+						bottom: {color: '#cccccc'}
+					}
+				},
+				crossLine: {
+					color: '#465866'
+				},
+				xAxis: {
+					paddingTop: 13, height: 30,
+					text: {family: 'Nanum Gothic', size: 12, color: '#666'},
+					line: {color: '#e3e3e3', width: 1}
+				},
+				yAxis: {
+					line: {color: '#cccccc', width: 1, opacity: 1},
+					text: {family: 'Nanum Gothic', size: 12, color: '#666', align: 'right'}
+				},
+				tip: {
+					className: 'tip'
+				},
+                series: {
+                    s1: {
+                        area: {
+							normal: {
+								color: [ [0, '#2bcdba'], [100, '#6bdccf'] ],
+								over: { color: {src: '../../chart/img/over.png', color: '#4e6679'} }
+							}
+						},
+						line: {
+							normal: {
+								width: 1,
+								over: { width: 0 }
+							}
+						},
+						gradient: {
+							direction: 'vertical'
+						},
+						text: {
+							use: false, color: '#666666', family: 'Nanum Gothic', size: 12,
+							format: 'priceDataFormat'
+						}
+                    }
+                }
+            }
+        };
+        var series = {
+            "main": {
+                "s1": {series: 'column', xaxis: 'Date', yaxis: 'Mprc'}
+            }
+        };
+        chart = webponent.chart.init($('.chart01'), options, styles, series);
+
+	};
+
+	function rand(start, end)
+	{
+	    return Math.floor((Math.random() * (end-start+1)) + start);
+	}
+	var timer = null;
+	var realTime = function(){
+		clearInterval(timerDel);
+      	timerDel = null;
+		if(timer === null){
+
+			timer = setInterval(function(){
+              var today = new Date();
+              var times = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+              chart.appendData([{ Date: times, Mprc: rand(5000, 30000) }]);
+			}, 2000);
+		} else {
+			clearInterval(timer);
+          	timer = null;
+		}
+	};
+	var timerDel = null;
+	var realTimeDel = function(){
+		clearInterval(timer);
+      	timer = null;
+		if(timerDel === null){
+
+			timerDel = setInterval(function(){
+				var data = chart.getOriginalData();
+				var today = new Date();
+                var times = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                
+				data.push({ Date: times, Mprc: rand(5000, 30000) });
+
+				data.shift();
+
+				chart.setOriginalData(data);
+
+				chart.reDraw(data);
+
+			}, 2000);
+		} else {
+			clearInterval(timerDel);
+          	timerDel = null;
+		}
+	};
+
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>COLUMNSERIES-RealTime</h1>
+		<h2>일반 디자인</h2>
+		<input type="hidden" id="SVGHIDDEN" value=""/>
+		<div id="wrap1" class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/Column+Series'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Chart%20Demo/RealTime'); return false;"><span>Publisher</span></button>
+				<button type="button" class="btn06" onclick="realTime(); return false;"><span>데이터 중첩</span></button>
+				<button type="button" class="btn07" onclick="realTimeDel(); return false;"><span>데이터 갱신</span></button>
+			</div>
+			<div class="chart01"></div>
+
+			<div style="margin-top: 10px;line-height: 160%;">
+				<strong>실시간</strong><br/>
+				RealTime Stack : 데이터 중첩(기존 데이터에 새로운 데이터 추가)<br/>
+				RealTime Renew : 데이터 갱신(기존 데이터 중 처음 데이터가 삭제되며 새 데이터가 추가)<br/>
+				상단 버튼 클릭시 실시간 재생 또는 실시간이 멈추게 됩니다.
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

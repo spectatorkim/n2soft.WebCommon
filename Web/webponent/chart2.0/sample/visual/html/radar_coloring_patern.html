@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RADAR CHART</title>
+    <style>
+        .radar {
+            height: 400px;
+            width:100%;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>RADAR_coloring_patern</h1>
+<h2>coloring_patern</h2>
+<div class="wrap">
+    <div class='radar' ></div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+<script type="text/javascript" src='../../../lib/visual/webponent.visual.radar.js'></script>
+<script type="text/javascript" src="../../../lib/comm/jquery-ui-1.10.4.custom.min.js"></script>
+<link rel="stylesheet" href="../../../lib/comm/jquery-ui-1.10.4.custom.min.css"/>
+<link rel="stylesheet" href="../../layout/css/layout.css"/>
+<script>
+    var options = {
+        data : {
+            data: [
+                {"dataGb":"1","name" : "Perceivable", "val1":22 ,"val2" : 22},
+                {"dataGb":"1","name" : "Information", "val1":42,"val2" : 22},
+                {"dataGb":"1","name" : "Understandable", "val1":67,"val2" : 22},
+                {"dataGb":"1","name" : "Enough", "val1":23,"val2" : 22},
+                {"dataGb":"1","name" : "Epilepsy", "val1":78,"val2" : 22},
+                {"dataGb":"1","name" : "Operable", "val1":23,"val2" : 22},
+                {"dataGb":"1","name" : "Navigation", "val1":42,"val2" : 22},
+                {"dataGb":"1","name" : "Error", "val1":22,"val2" : 22},
+                {"dataGb":"2","name" : "Perceivable", "val1":22 ,"val2" : 22},
+                {"dataGb":"2","name" : "Information", "val1":23,"val2" : 22},
+                {"dataGb":"2","name" : "Understandable", "val1":27,"val2" : 22},
+                {"dataGb":"2","name" : "Enough", "val1":23,"val2" : 22},
+                {"dataGb":"2","name" : "Epilepsy", "val1":23,"val2" : 22},
+                {"dataGb":"2","name" : "Operable", "val1":22,"val2" : 22},
+                {"dataGb":"2","name" : "Navigation", "val1":42,"val2" : 22},
+                {"dataGb":"2","name" : "Error", "val1":42,"val2" : 22},
+                {"dataGb":"3","name" : "Perceivable", "val1":22 ,"val2" : 22},
+                {"dataGb":"3","name" : "Information", "val1":23,"val2" : 22},
+                {"dataGb":"3","name" : "Understandable", "val1":42,"val2" : 22},
+                {"dataGb":"3","name" : "Enough", "val1":23,"val2" : 31},
+                {"dataGb":"3","name" : "Epilepsy", "val1":78,"val2" : 22},
+                {"dataGb":"3","name" : "Operable", "val1":23,"val2" : 22},
+                {"dataGb":"3","name" : "Navigation", "val1":42,"val2" : 22},
+                {"dataGb":"3","name" : "Error", "val1":42,"val2" : 22},
+                {"dataGb":"4","name" : "Perceivable", "val1":22 ,"val2" : 22},
+                {"dataGb":"4","name" : "Information", "val1":23,"val2" : 22},
+                {"dataGb":"4","name" : "Understandable", "val1":42,"val2" : 22},
+                {"dataGb":"4","name" : "Enough", "val1":23,"val2" : 22},
+                {"dataGb":"4","name" : "Epilepsy", "val1":78,"val2" : 22},
+                {"dataGb":"4","name" : "Operable", "val1":23,"val2" : 22},
+                {"dataGb":"4","name" : "Navigation", "val1":42,"val2" : 22},
+                {"dataGb":"4","name" : "Error", "val1":42,"val2" : 22},
+                {"dataGb":"5","name" : "Perceivable", "val1":25 ,"val2" : 25},
+                {"dataGb":"5","name" : "Information", "val1":53,"val2" : 55},
+                {"dataGb":"5","name" : "Understandable", "val1":45,"val2" : 55},
+                {"dataGb":"5","name" : "Enough", "val1":23,"val2" : 55},
+                {"dataGb":"5","name" : "Epilepsy", "val1":78,"val2" : 44},
+                {"dataGb":"5","name" : "Operable", "val1":53,"val2" : 55},
+                {"dataGb":"5","name" : "Navigation", "val1":45,"val2" : 55},
+                {"dataGb":"5","name" : "Error", "val1":45,"val2" : 0},
+                {"dataGb":"6","name" : "Perceivable", "val1":25 ,"val2" : 25},
+                {"dataGb":"6","name" : "Information", "val1":53,"val2" : 55},
+                {"dataGb":"6","name" : "Understandable", "val1":45,"val2" : 55},
+                {"dataGb":"6","name" : "Enough", "val1":23,"val2" : 15},
+                {"dataGb":"6","name" : "Epilepsy", "val1":78,"val2" : 55},
+                {"dataGb":"6","name" : "Operable", "val1":53,"val2" : 55},
+                {"dataGb":"6","name" : "Navigation", "val1":45,"val2" : 55},
+                {"dataGb":"6","name" : "Error", "val1":45,"val2" : 55},
+
+            ],
+            use:  [
+                {"s1" : "val1"},
+                {"s2" : "val2"}
+                ],
+            gubun : 'dataGb'
+        },
+        legend : {
+            format : ['Perceivable', 'Information', 'Understandable', 'Enough', 'Epilepsy', 'Operable', 'Navigation','Error']
+        },
+        resize : {
+            use : true
+        },
+        timeSlice : {
+            use : false,
+            delay : 1000,
+            slider : $('.slider'),
+            play : $('.play_btn'),
+            pause : $('.pause_btn'),
+            stop : $('.stop_btn'),
+            delay : 2000,
+            animate : {
+                use : true,
+                type : 'elastic', /* linear|>|<|<>|bounce|elastic|backln|backOut|none */
+                speed : 200
+            },
+            data : function (data) {
+                data = data[0].dataGb;
+                $('.info').text("dataGb : "+data);
+            }
+        },
+        toolTip : {
+            use : true
+        },
+        func  :{
+            tickClick :function(data) {
+                console.log(data);
+            }
+        }
+    };
+
+    var styles = {
+        layout : {
+            position : {
+                x : 0,
+                y : 0
+            },
+            area : {
+                color : 'white'
+            }
+        },
+        radar : {
+            radius : 60,
+            maxValue:100,
+            area : {
+                color: 'rgb(204, 121, 167)',
+            },
+            line : {
+                color : 'red',
+                width : 0.2
+            },
+            animate : {
+                use : false,
+                step : 80,
+                type : 'linear' /* linear | easeInOutExpo | none */
+            },
+            hover : {
+                use : true,
+                area : {
+                    color : {
+                        src : '../img/pattern_hover.png'
+                    }
+                }
+            }
+        },
+        series : [
+            {s1 : {
+                use : true,
+                line: {
+                    color: 'white',
+                    width: 0,
+                    opacity: 1
+                },
+                area : {
+                    color : {
+                        src : '../img/ptn_04.png',
+                        color: 'red'
+                    },
+                    opacity: 0.5
+                },
+                tick: {
+                    style: 'circle',
+                    size: 5,
+                    overSize: 1.5,
+                    area: {
+                        color: 'blue',
+                        opacity: 1
+                    },
+                    line: {
+                        color: 'blue',
+                        width: 1,
+                        opacity:1
+                    }
+                }
+            }},
+            {s2 : {
+                use : true,
+                line: {
+                    color: 'red',
+                    width: 0,
+                    opacity: 0.6
+                },
+                tick: {
+                    style: 'circle',
+                    size: 5,
+                    overSize: 1.5,
+                    area: {
+                        color: 'red',
+                        opacity: 1
+                    },
+                    line: {
+                        color: '#ff625f',
+                        width: 1,
+                        opacity:
+                            1
+                    }
+                },
+                area : {
+                    color : {
+                        src : '../img/ptn_03.png'
+                    },
+                    opacity: 0.5
+                }
+            }
+        }],
+        legend : {
+            use : true,
+            text: {
+                family: 'Nanum Gothic',
+                size: 12,
+                color: '#333333',
+                style: 'normal',    /* normal | italic */
+                weight: 'bold',   /* normal | bold */
+                opacity: 1
+            }
+
+        },
+        innerLegend : {
+            use : true,
+            text: {
+                family: 'Nanum Gothic',
+                size: 10,
+                color: '#333333',
+                style: 'normal',    /* normal | italic */
+                weight: 'bold',   /* normal | bold */
+                opacity: 1
+            }
+        }
+    };
+
+    var radar = webponent.visual.radar.init($(".radar"),styles, options);
+
+
+</script>

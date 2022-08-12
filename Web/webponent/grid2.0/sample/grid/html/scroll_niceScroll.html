@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>NiceScroll - 스크롤 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h1>NiceScroll</h1>
+
+		<h2>NiceScroll 적용</h2>
+
+		
+
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<!-- <button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/API#API-releaseScroll'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%EC%8A%A4%ED%81%AC%EB%A1%A4%20%EC%97%86%EC%95%A0%EA%B8%B0'); return false;"><span>Publisher</span></button> -->
+			</div>
+
+			<h3>등락율 순위</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<fieldset class="search" style="margin-top: 20px;"><legend>스타일 변경</legend>
+				<form name="frm" id="frm">
+					<div class="input">
+						하단 그리드에 데이터 불러오기(스크롤 갱신)
+					</div>
+					<div class="btn" style="top:6px;"><input type="button" value="실행" onclick="appendRow()"></div>
+				</form>
+			</fieldset>
+
+			<table id="grid-table-2">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="indx" width="70px" align="center">순위</th>
+							<th name="Isu" width="120px">종목명</th>
+							<th name="NowPrc" width="120px" align="right">현재가</th>
+							<th name="PrdayCmp" width="120px" align="right">전일비</th>
+							<th name="Updn" width="120px" align="right">등락율(%)</th>
+							<th name="TopQty" width="120px" align="right">거래량</th>
+							<th name="SellRmqty" width="100px" align="right">매도잔량</th>
+							<th name="SellOrdprc" width="100px" align="right">매도호가</th>
+							<th name="BuyOrdprc" width="100px" align="right">매수호가</th>
+							<th name="BuyRmqty" width="100px" align="right">매수잔량</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="indx" bind="indx"></td>
+							<td name="Isu" bind="Isu"></td>
+							<td name="NowPrc" bind="NowPrc"></td>
+							<td name="PrdayCmp" bind="PrdayCmp"></td>
+							<td name="Updn" bind="Updn"></td>
+							<td name="TopQty" bind="TopQty"></td>
+							<td name="SellRmqty" bind="SellRmqty"></td>
+							<td name="SellOrdprc" bind="SellOrdprc"></td>
+							<td name="BuyOrdprc" bind="BuyOrdprc"></td>
+							<td name="BuyRmqty" bind="BuyRmqty"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+			<ul style="line-height: 180%;">
+				<li>그리드 초기화 시 옵션에 niceScroll : true 적용</li>
+				<li>grid.markup.functional.freezeScroller 의 css - overflow는 'hidden' 처리됨</li>
+				<li>라이브러리 사이트 - <a href="http://areaaperta.com/nicescroll/" target="_blank">Nice Scroll</a> 참고</li>
+			</ul>
+		</div>
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/jquery.nicescroll.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+	var table1 = $('#grid-table-1');
+	var table2 = $('#grid-table-2');
+	var template1 = $('#grid-template-1');
+	var grid1 = webponent.grid.init(table1, template1, {
+
+		niceScroll: true,
+
+		niceScrollOption: {
+			autohidemode: true
+		}
+	});
+
+	var grid2 = webponent.grid.init(table2, template1, {
+
+		niceScroll: true,
+
+		niceScrollOption: {
+			autohidemode: 'false'
+		}
+
+	});
+	var datas = null;
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/ranking-map.json',
+		success : function (resp) {
+
+			grid1.appendRow(resp);
+			datas = resp;
+		}
+	});
+
+	function appendRow () {
+
+		grid2.appendRow(datas);
+	}
+
+	</script>
+</body>
+</html>

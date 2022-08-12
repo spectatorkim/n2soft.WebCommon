@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CHART01</title>
+
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+
+	
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.style.js"></script>
+	<script type="text/javascript" src="./lib/webponent.test.js"></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<style type="text/css">
+		.chart {width: 600px; height: 400px;}
+	</style>
+	<script type="text/javascript">
+	var chart = null;
+	
+	var options = {
+        data: {data:normalData},
+        format: {
+            xAxis: null,
+            yAxis: 'priceDataFormat'
+        },
+        func: {
+		tip: function(tipElement, data, rect){
+			var date = data.xaxis.substr(0, 4)+'.'+data.xaxis.substr(4, 2)+'.'+data.xaxis.substr(6, 2);
+			var tip = '<div class="text">'+date + ' / ' + String(data.yaxis).format().trim()+'</div>';
+
+			tipElement.html(tip).show();
+
+			var arrow = '<div class="arrow" style="width: '+tipElement.width() + 'px;"></div>';
+
+			tipElement.html(tipElement.html() + arrow).css({
+				left: Math.round(rect.x - (tipElement.width() / 2)), top: rect.y - 35
+			});
+		}
+	},
+        use: {
+            animate: false,
+            aCrossLine: true,
+            reSize: true
+        }
+    };
+    var styles = webponent.chart.styles.BASIC;
+    var series = {
+        "main": {
+            "s1": {series: 'column', xaxis: 'Date', yaxis: 'Mprc'}
+        }
+    };
+    var series2 = {
+		"main": {
+			"s0": {series: 'column', xaxis: 'Date', yaxis: 'Mprc'}
+		}
+	};
+    window.onload = function(){
+        chart = webponent.chart.init($('.chart'), options, styles, series);
+        realTime();
+
+	};
+
+	var realTimeDatas = [5000,25000,8000,35000,20000];
+	
+	var timer = null;
+	var timerCount = 5;
+	var realTime = function(){
+		clearInterval(timerDel);
+      	timerDel = null;
+		if(timer === null){
+
+			timer = setInterval(function(){
+
+				if(timerCount == 0) {
+					clearInterval(timer);
+          			timer = null;
+          			timerCount = 5;
+          			realTimeDel();
+          			return;
+				}
+				var today = new Date();
+				var times = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+				chart.appendData([{ Date: times, Mprc: realTimeDatas[5 - timerCount] }]);
+
+				timerCount --;
+
+			}, 50);
+		} else {
+			clearInterval(timer);
+          	timer = null;
+          	timerCount = 5;
+		}
+	};
+	var timerDel = null;
+	var realTimeDel = function(){
+		clearInterval(timer);
+      	timer = null;
+		if(timerDel === null){
+
+			timerDel = setInterval(function(){
+				if(timerCount == 0) {
+					clearInterval(timerDel);
+          			timerDel = null;
+          			timerCount = 5;
+          			return;
+				}
+
+				var data = chart.getOriginalData();
+				var today = new Date();
+                var times = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                
+				data.push({ Date: times, Mprc: realTimeDatas[5 - timerCount] });
+
+				data.shift();
+
+				chart.setOriginalData(data);
+
+				chart.reDraw(data);
+
+				timerCount --;
+
+			}, 50);
+		} else {
+			clearInterval(timerDel);
+          	timerDel = null;
+          	timerCount = 5;
+		}
+	};
+
+	function onChangeStyle(styles) {
+		
+	}
+
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>COLUMNSERIES-RealTime</h1>
+		<h2>일반 디자인</h2>
+		<input type="hidden" id="SVGHIDDEN" value=""/>
+		<div>
+			<div class="ctrlBox">
+			</div>
+		</div>
+
+	</div>
+	<div class="chart"></div>
+
+	<div style="margin-top: 10px;line-height: 160%;">
+		<strong>실시간</strong><br/>
+		RealTime Stack : 데이터 중첩(기존 데이터에 새로운 데이터 추가)<br/>
+		RealTime Renew : 데이터 갱신(기존 데이터 중 처음 데이터가 삭제되며 새 데이터가 추가)<br/>
+		상단 버튼 클릭시 실시간 재생 또는 실시간이 멈추게 됩니다.
+	</div>
+</body>
+</html>

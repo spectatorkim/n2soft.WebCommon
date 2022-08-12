@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+    	<encoder>
+      	<pattern>
+        	%d{yyyy-MM-dd HH:mm:ss} %yellow(%-5level) %gray([%logger]) %msg%n
+      	</pattern>
+    	</encoder>
+  	</appender>
+
+	<appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>D:/workspace/n2soft.Webponent/logs/nTree.log</file>
+        <encoder
+            class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%logger{36}] %msg%n</Pattern>
+        </encoder>
+        <rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>D:/workspace/n2soft.Webponent/logs/archived/nTree_%d{yyyyMMdd}_%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>30MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+	</appender>
+
+	<appender name="msg_log" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>D:/workspace/n2soft.Webponent/logs/msg.log</file>
+        <encoder
+            class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%logger{36}] %msg%n</Pattern>
+        </encoder>
+        <rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>D:/workspace/n2soft.Webponent/logs/archived/msg_%d{yyyyMMdd}_%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>30MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+	</appender>
+
+	<appender name="sql_log" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>D:/workspace/n2soft.Webponent/logs/sql.log</file>
+        <encoder
+            class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%logger{36}] %msg%n</Pattern>
+        </encoder>
+        <rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>D:/workspace/n2soft.Webponent/logs/archived/sql_%d{yyyyMMdd}_%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>30MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+	</appender>
+
+	<logger name="com.n2soft.msg" level="DEBUG" additivity="false">
+		<appender-ref ref="msg_log" />
+		<appender-ref ref="consoleAppender" />
+	</logger>
+ 
+	<logger name="com.n2soft.common.TXSocket" level="DEBUG" additivity="false">
+		<appender-ref ref="msg_log" />
+		<appender-ref ref="consoleAppender" />
+	</logger>
+ 
+	<logger name="com.n2soft.common.SqlMgr" level="DEBUG" additivity="false">
+		<appender-ref ref="sql_log" />
+		<appender-ref ref="consoleAppender" />
+	</logger>
+ 
+	<root level="DEBUG">
+		<appender-ref ref="consoleAppender" />
+	</root>
+</configuration>

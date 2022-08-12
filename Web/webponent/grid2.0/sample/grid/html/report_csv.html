@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CSV - 리포트 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h1>리포트</h1>
+
+		<h2>CSV 내보내기</h2>
+
+		<fieldset class="search"><legend>스타일 변경</legend>
+			<form name="frm" id="frm">
+				<div class="input">
+					파일명 : <input type="text" id="grid1-file-name" class="text" value="등락율순위"/>
+				</div>
+				<div class="btn" style="top:16px;"><input type="button" value="CSV" onclick="exportCSV()"></div>
+			</form>
+		</fieldset>
+
+		<div class="wrap">
+			<div class="btnbox" style="top: -122px;">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=15040716'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/CSV%20%EB%82%B4%EB%B3%B4%EB%82%B4%EA%B8%B0'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>등락율 순위</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="indx" width="70px" align="center">순위</th>
+							<th name="Isu" width="120px">종목명</th>
+							<th name="NowPrc" width="120px" align="right">현재가</th>
+							<th name="PrdayCmp" width="120px" align="right">전일비</th>
+							<th name="Updn" width="120px" align="right">등락율(%)</th>
+							<th name="TopQty" width="120px" align="right">거래량</th>
+							<th name="SellRmqty" width="100px" align="right">매도잔량</th>
+							<th name="SellOrdprc" width="100px" align="right">매도호가</th>
+							<th name="BuyOrdprc" width="100px" align="right">매수호가</th>
+							<th name="BuyRmqty" width="100px" align="right">매수잔량</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="indx" bind="indx"></td>
+							<td name="Isu" bind="Isu"></td>
+							<td name="NowPrc" bind="NowPrc"></td>
+							<td name="PrdayCmp" bind="PrdayCmp"></td>
+							<td name="Updn" bind="Updn"></td>
+							<td name="TopQty" bind="TopQty"></td>
+							<td name="SellRmqty" bind="SellRmqty"></td>
+							<td name="SellOrdprc" bind="SellOrdprc"></td>
+							<td name="BuyOrdprc" bind="BuyOrdprc"></td>
+							<td name="BuyRmqty" bind="BuyRmqty"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>
+		
+	</div>
+
+    <form id="export-form" style="display: none;"></form>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../external/json2.min.js"></script>
+	<script src="../../../external/lz-string.js"></script>
+	<script src="../../../webponent.report.js"></script>
+
+	<script>
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid1 = webponent.grid.init(table1, template1);
+
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/ranking-map.json',
+		success : function (resp) {
+
+			grid1.appendRow(resp);
+	
+		}
+	});
+
+	function exportCSV () {
+        option = {
+            fileName: $('#grid1-file-name').val()
+        }
+        webponent.report.csv(grid1, $('#export-form'), option);
+	}
+
+	</script>
+</body>
+</html>

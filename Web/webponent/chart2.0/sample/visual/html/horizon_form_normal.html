@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>horizon chart form normal</title>
+	<style>
+		
+		.horizon {
+			width: 100%;
+			height: 100%;
+		}
+
+		.horizon2 {
+			width: 100%;
+			height: 100%;
+		}
+		
+		.tip_name {
+			font-size : 14px;
+			font-weight: bold;
+			margin-bottom : 5px;
+		}
+
+		.tip_text {
+			margin-bottom : 3px;
+			color :#cccccc;
+			font-weight: bold;
+		}
+
+		.tip_text2 { 
+			margin-left: 25px;
+		}
+
+	</style>
+</head>
+
+<body>
+	
+	<h1>HORIZON CHART-form_normal</h1>
+	<h2>일반디자인</h2>
+	<div class="wrap">
+		<div class="btnbox">
+			<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;">
+				<span>Mobile</span>
+			</button>
+			<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/3.+Horizon+Chart'); return false;">
+				<span>Reference</span>
+			</button>
+			<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Visual%20Demo/horizon_normal'); return false;">
+				<span>Publisher</span>
+			</button>
+		</div>
+		<div class="horizon"></div>
+	</div>
+	<h2>접근성디자인</h2>
+	<div class="wrap">
+		<div class="horizon2"></div>
+	</div>
+	
+	
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.horizon.js'></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<script>
+
+		(function () {
+
+			/* Horizon chart 1 */
+
+			var styles = {
+				layout : {
+					paddingTop : 30,
+					paddingBottom : 20,
+					paddingLeft : 20,
+					paddingRight : 30
+				},
+				graph : {
+					paddingTop: 10,
+					paddingBottom: 10,
+					paddingLeft: 10,
+					paddingRight: 10,
+					area :{
+						color : '#f8f8f8'
+					},
+					line: {
+						top: { 
+							color: '#cccccc', 
+							width: 1, 
+							opacity: 1 
+						},
+						left: { 
+							width: 0
+						},
+						right: { 
+							width: 0
+						},
+						bottom: { 
+							color: '#cccccc', 
+							width: 1, 
+							opacity: 1 
+						}
+					}
+				},
+				yAxis: {
+					width: 30, 
+					position: 'left',
+					paddingLeft: 10, 
+					paddingRight: 20,
+					baseZero : true,
+					line: {
+						color: '#cccccc', 
+						width: 1, 
+						opacity: 1,
+						underLine : {
+							use : false,
+							color: '#3e4150', 
+							width: 1, 
+							opacity: 1
+						}
+					},
+					text: {
+						family: 'Nanum Gothic',
+						size: 12, 
+						color: '#737373', 
+						align: 'right',	/* left | center | right */
+						style: 'normal',	/* normal | italic */
+						weight: 'bold',		/* normal | bold */
+						opacity: 1
+					},
+					tick: {
+						use : false,
+						length: 8, 
+						color: '#202228',
+						width: 1, 
+						opacity: 1,
+						position: 'out'	/* out|in */
+					}
+				},
+				xAxis: {
+					height: 10, 
+					paddingTop: 25, 
+					betweenLabels: false,
+					line: { 
+						use : false,
+						color: '#e3e3e3', 
+						width: 1, 
+						opacity: 1,
+						underLine : {
+							use : false,
+							color: '#3e4150', 
+							width: 1, 
+							opacity: 1
+						}
+					},
+					text: {
+						family: 'Nanum Gothic',
+						size: 12, 
+						color: '#737373', 
+						align: 'center',	/* left | center | right */
+						style: 'normal',	/* normal | italic */
+						weight: 'bold',		/* normal | bold */
+						opacity: 1
+					},
+					gap : 30
+				},
+				series : {
+					s1 : {
+						use : true,
+						way : 'up',
+						line: {
+							color: '#f26744', 
+							width: 0, 
+							opacity: 1
+						},
+						area : {
+							color : [ [0, '#ffafad'], [100, '#fbdcdb'] ],
+							gradient: {
+								direction: 'vertical'
+							},
+							opacity: 1
+						},
+						animate : {
+							use : true,
+							type : 'linear', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+							speed : 400
+						}
+					}, 
+					s2 : {
+						use : true,
+						way : 'up',
+						line: {
+							color: '#e42f02', 
+							width: 0, 
+							opacity: 1
+						},
+						area : {
+							color : [ [0, '#fb635f'], [100, '#fb9492'] ],
+							gradient: {
+								direction: 'vertical'
+							},
+							opacity: 1
+						},
+						animate : {
+							use : true,
+							type : 'linear', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+							speed : 400	
+						}
+					},
+					s3 : {
+						use : true,
+						way : 'down',
+						line: {
+							color: '#485fff', 
+							width: 0, 
+							opacity: 1
+						},
+						area : {
+							color : [ [0, '#bddae8'], [100, '#44afe2'] ],
+							gradient: {
+								direction: 'vertical'
+							},
+							opacity: 1
+						},
+						animate : {
+							use : true,
+							type : 'linear', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+							speed : 400	
+						}
+					},
+					s4 : {
+						use : true,
+						way : 'down',
+						line: {
+							color: '#6095ff', 
+							width: 0, 
+							opacity: 1
+						},
+						area : {
+							color : [ [0, '#4aacdb'], [100, '#0594d8'] ],
+							gradient: {
+								direction: 'vertical'
+							},
+							opacity: 1
+						},
+						animate : {
+							use : true,
+							type : 'linear', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+							speed : 400
+						}
+					}
+				},
+				verticalLine : {
+					use : true,
+					type : '',	/* - | . | -. | -.. | .  | -  | -- | - . | --. | --.. */
+					color : '#465866',
+					width : 1,
+					opacity : 1
+				},
+				horizonLine : {
+					use : true,
+					type : '',	/* - | . | -. | -.. | .  | -  | -- | - . | --. | --.. */
+					color : '#465866',
+					width : 1,
+					opacity : 1
+				}
+			};
+
+			var options = {
+				// data : {
+				// 	url: '../data/horizon_text.txt',
+				// 	type : 'text'	
+				// },  
+
+				// data : {
+				// 	url: '../data/horizon_json.txt',
+				// 	type : 'json',
+				// 	jsonDepth : 'output.result'
+
+				// },  
+
+				data : {
+					data : [
+						{date:'20120101', data1 :'800', data2 : '400', data3 : '1200', data4 : '400'},
+						{date:'20120102', data1 :'900', data2 : '193', data3 : '937', data4 : '40'},
+						{date:'20120103', data1 :'400', data2 : '195', data3 : '716', data4 : '205'},
+						{date:'20120104', data1 :'1200', data2 : '295', data3 : '1074', data4 : '140'},
+						{date:'20120105', data1 :'800', data2 : '194', data3 : '1238', data4 : '105'},
+						{date:'20120106', data1 :'584', data2 : '158', data3 : '1119', data4 : '180'},
+						{date:'20120107', data1 :'416', data2 : '50', data3 : '1338', data4 : '120'},
+						{date:'20120108', data1 :'637', data2 : '140', data3 : '1115', data4 : '400'},
+						{date:'20120109', data1 :'525', data2 : '270', data3 : '1216', data4 : '600'},
+						{date:'20120110', data1 :'893', data2 : '360', data3 : '810', data4 : '500'},
+						{date:'20120111', data1 :'817', data2 : '320', data3 : '879', data4 : '195'},
+						{date:'20120112', data1 :'1146', data2 : '300', data3 : '574', data4 : '220'},
+						{date:'20120113', data1 :'936', data2 : '208', data3 : '762', data4 : '140'},
+						{date:'20120114', data1 :'934', data2 : '280', data3 : '743', data4 : '80'},
+						{date:'20120115', data1 :'478', data2 : '250', data3 : '1259', data4 : '40'},
+						{date:'20120116', data1 :'1159', data2 : '360', data3 : '556', data4 : '205'},
+						{date:'20120117', data1 :'573', data2 : '270', data3 : '1168', data4 : '300'},
+						{date:'20120118', data1 :'823', data2 : '298', data3 : '867', data4 : '100'},
+						{date:'20120119', data1 :'776', data2 : '193', data3 : '937', data4 : '400'},
+						{date:'20120120', data1 :'986', data2 : '195', data3 : '716', data4 : '50'},
+						{date:'20120121', data1 :'635', data2 : '295', data3 : '1074', data4 : '140'},
+						{date:'20120122', data1 :'504', data2 : '194', data3 : '1238', data4 : '215'},
+						{date:'20120123', data1 :'584', data2 : '198', data3 : '1119', data4 : '128'},
+						{date:'20120124', data1 :'416', data2 : '50', data3 : '1338', data4 : '198'},
+						{date:'20120125', data1 :'637', data2 : '140', data3 : '1115', data4 : '400'},
+						{date:'20120126', data1 :'525', data2 : '270', data3 : '1216', data4 : '600'},
+						{date:'20120127', data1 :'893', data2 : '360', data3 : '810', data4 : '155'},
+						{date:'20120128', data1 :'817', data2 : '307', data3 : '879', data4 : '195'},
+						{date:'20120129', data1 :'1146', data2 : '260', data3 : '574', data4 : '210'},
+						{date:'20120130', data1 :'1246', data2 : '160', data3 : '574', data4 : '120'},
+						{date:'20120131', data1 :'1146', data2 : '260', data3 : '974', data4 : '320'}
+					]
+				},
+				xAxis : {
+					select : 'date',
+					format : function ( xAxis ) {
+						xAxis = dayDataFormatDot(xAxis);
+						return xAxis;
+					}
+				},
+				yAxis : {
+					select : {
+						s1 : 'data1',
+						s2 : 'data2',
+						s3 : 'data3',
+						s4 : 'data4'
+					},
+					format : function ( yAxis ) {
+						yAxis = priceDataFormat(yAxis);
+						return yAxis;
+					}
+				},
+				toolTip : {
+					use : true,
+					position : {
+						x : -90,
+						y : -90
+					},
+					className : 'tip',
+					func : function ( data, tipElement ) {	         
+						var name = '<div class="tip_name">'+ dayDataFormatDot(data.date) + '</div>';
+						var data1 = '<div class="tip_text">' + '<span>상승 : ' 
+							+ data.data2 +'</span>' + '<span class="tip_text2">상한 : ' 
+							+ data.data1 +'</span>' + '</div>';
+						var data2 = '<div class="tip_text">' + '<span>하락 : ' 
+							+ data.data3 +'</span>' + '<span class="tip_text2">하한 : ' 
+							+ data.data4 +'</span>' + '</div>';
+
+						var tip = '<div class="text">'+ name + data1 + data2 + '</div>';
+						var arrow = '<div class="arrow" style="width: '+tipElement.width()+'px;"></div>';
+						tipElement.html(tip + arrow);
+					}
+				},
+				resize : {
+					use : true
+				}
+			};
+
+			horizon = webponent.visual.horizon.init($(".horizon"), styles, options);        
+
+		})();
+
+		(function () {
+
+			/* Horizon chart 2 */
+
+			var styles = {
+				layout : {
+					paddingTop : 30,
+					paddingBottom : 20,
+					paddingLeft : 20,
+					paddingRight : 30
+				},
+				graph : {
+					paddingTop: 10,
+					paddingBottom: 10,
+					paddingLeft: 10,
+					paddingRight: 10,
+					area :{
+						color : '#f8f8f8'
+					},
+					line: {
+						top: { 
+							color: '#cccccc', 
+							width: 1, 
+							opacity: 1 
+						},
+						left: { 
+							width: 0
+						},
+						right: { 
+							width: 0
+						},
+						bottom: { 
+							color: '#cccccc', 
+							width: 1, 
+							opacity: 1 
+						}
+					}
+				},
+				yAxis: {
+					width: 30, 
+					position: 'left',
+					paddingLeft: 10, 
+					paddingRight: 20,
+					baseZero : true,
+					line: {
+						color: '#cccccc', 
+						width: 1, 
+						opacity: 1,
+						underLine : {
+							use : false,
+							color: '#3e4150', 
+							width: 1, 
+							opacity: 1
+						}
+					},
+					text: {
+						family: 'Nanum Gothic',
+						size: 12, 
+						color: '#737373', 
+						align: 'right',	/* left | center | right */
+						style: 'normal',	/* normal | italic */
+						weight: 'bold',		/* normal | bold */
+						opacity: 1
+					},
+					tick: {
+						use : false,
+						length: 8, 
+						color: '#202228',
+						width: 1, 
+						opacity: 1,
+						position: 'out'	/* out|in */
+					}
+				},
+				xAxis: {
+					height: 10, 
+					paddingTop: 25, 
+					betweenLabels: false,
+					line: { 
+						use : false,
+						color: '#e3e3e3', 
+						width: 1, 
+						opacity: 1,
+						underLine : {
+							use : false,
+							color: '#3e4150', 
+							width: 1, 
+							opacity: 1
+						}
+					},
+					text: {
+						family: 'Nanum Gothic',
+						size: 12, 
+						color: '#737373', 
+						align: 'center',	/* left | center | right */
+						style: 'normal',	/* normal | italic */
+						weight: 'bold',		/* normal | bold */
+						opacity: 1
+					},
+					gap : 30
+				},
+				series : {
+					s1 : {
+						use : true,
+						way : 'up',
+						line: {
+							color: '#f26744', 
+							width: 0, 
+							opacity: 1
+						},
+						area : {
+							color : {
+								'src': '../img/horizon_pattern1.png'
+							},
+							opacity: 1
+						},
+						animate : {
+							use : true,
+							type : 'linear', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+							speed : 400				     	
+						}
+					}, 
+					s2 : {
+						use : true,
+						way : 'up',
+						line: {
+							color: '#e42f02', 
+							width: 0, 
+							opacity: 1
+						},
+						area : {
+							color : {
+								'src': '../img/horizon_pattern2.png'
+							},
+							opacity: 1
+						},
+						animate : {
+							use : true,
+							type : 'linear', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+							speed : 400	
+						}
+					},
+					s3 : {
+						use : true,
+						way : 'down',
+						line: {
+							color: '#485fff', 
+							width: 0, 
+							opacity: 1
+						},
+						area : {
+							color : {
+								'src': '../img/horizon_pattern3.png'
+							},
+							opacity: 1
+						},
+						animate : {
+							use : true,
+							type : 'linear', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+							speed : 400	
+						}
+					},
+					s4 : {
+						use : true,
+						way : 'down',
+						line: {
+							color: '#6095ff', 
+							width: 0, 
+							opacity: 1
+						},
+						area : {
+							color : {
+								'src': '../img/horizon_pattern4.png'
+							},
+							opacity: 1
+						},
+						animate : {
+							use : true,
+							type : 'linear', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+							speed : 400
+						}
+					}
+				},
+				verticalLine : {
+					use : true,
+					type : '',	/* - | . | -. | -.. | .  | -  | -- | - . | --. | --.. */
+					color : '#465866',
+					width : 1,
+					opacity : 1
+				},
+				horizonLine : {
+					use : true,
+					type : '',	/* - | . | -. | -.. | .  | -  | -- | - . | --. | --.. */
+					color : '#465866',
+					width : 1,
+					opacity : 1
+				}
+			};
+
+			var options = {
+				data : {
+					data : [
+						{date:'20120101', data1 :'800', data2 : '400', data3 : '1200', data4 : '400'},
+						{date:'20120102', data1 :'900', data2 : '193', data3 : '937', data4 : '40'},
+						{date:'20120103', data1 :'400', data2 : '195', data3 : '716', data4 : '205'},
+						{date:'20120104', data1 :'1200', data2 : '295', data3 : '1074', data4 : '140'},
+						{date:'20120105', data1 :'800', data2 : '194', data3 : '1238', data4 : '105'},
+						{date:'20120106', data1 :'584', data2 : '158', data3 : '1119', data4 : '180'},
+						{date:'20120107', data1 :'416', data2 : '50', data3 : '1338', data4 : '120'},
+						{date:'20120108', data1 :'637', data2 : '140', data3 : '1115', data4 : '400'},
+						{date:'20120109', data1 :'525', data2 : '270', data3 : '1216', data4 : '600'},
+						{date:'20120110', data1 :'893', data2 : '360', data3 : '810', data4 : '500'},
+						{date:'20120111', data1 :'817', data2 : '320', data3 : '879', data4 : '195'},
+						{date:'20120112', data1 :'1146', data2 : '300', data3 : '574', data4 : '220'},
+						{date:'20120113', data1 :'936', data2 : '208', data3 : '762', data4 : '140'},
+						{date:'20120114', data1 :'934', data2 : '280', data3 : '743', data4 : '80'},
+						{date:'20120115', data1 :'478', data2 : '250', data3 : '1259', data4 : '40'},
+						{date:'20120116', data1 :'1159', data2 : '360', data3 : '556', data4 : '205'},
+						{date:'20120117', data1 :'573', data2 : '270', data3 : '1168', data4 : '300'},
+						{date:'20120118', data1 :'823', data2 : '298', data3 : '867', data4 : '100'},
+						{date:'20120119', data1 :'776', data2 : '193', data3 : '937', data4 : '400'},
+						{date:'20120120', data1 :'986', data2 : '195', data3 : '716', data4 : '50'},
+						{date:'20120121', data1 :'635', data2 : '295', data3 : '1074', data4 : '140'},
+						{date:'20120122', data1 :'504', data2 : '194', data3 : '1238', data4 : '215'},
+						{date:'20120123', data1 :'584', data2 : '198', data3 : '1119', data4 : '128'},
+						{date:'20120124', data1 :'416', data2 : '50', data3 : '1338', data4 : '198'},
+						{date:'20120125', data1 :'637', data2 : '140', data3 : '1115', data4 : '400'},
+						{date:'20120126', data1 :'525', data2 : '270', data3 : '1216', data4 : '600'},
+						{date:'20120127', data1 :'893', data2 : '360', data3 : '810', data4 : '155'},
+						{date:'20120128', data1 :'817', data2 : '307', data3 : '879', data4 : '195'},
+						{date:'20120129', data1 :'1146', data2 : '260', data3 : '574', data4 : '210'},
+						{date:'20120130', data1 :'1246', data2 : '160', data3 : '574', data4 : '120'},
+						{date:'20120131', data1 :'1146', data2 : '260', data3 : '974', data4 : '320'}
+					]
+					// url: '../data/horizon_text.txt',
+					// type : 'text'	
+				},
+				xAxis : {
+					select : 'date',
+					format : function ( xAxis ) {
+						xAxis = dayDataFormatDot(xAxis);
+						return xAxis;
+					}
+				},
+				yAxis : {
+					select : {
+						s1 : 'data1',
+						s2 : 'data2',
+						s3 : 'data3',
+						s4 : 'data4'
+					},
+					format : function ( yAxis ) {
+						yAxis = priceDataFormat(yAxis);
+						return yAxis;
+					}
+				},
+				toolTip : {
+					use : true,
+					position : {
+						x : -90,
+						y : -90
+					},
+					className : 'tip',
+					func : function ( data, tipElement ) {	         
+						var name = '<div class="tip_name">'+ dayDataFormatDot(data.date) + '</div>';
+						var data1 = '<div class="tip_text">' + '<span>상승 : ' 
+							+ data.data2 +'</span>' + '<span class="tip_text2">상한 : ' 
+							+ data.data1 +'</span>' + '</div>';
+						var data2 = '<div class="tip_text">' + '<span>하락 : ' 
+							+ data.data3 +'</span>' + '<span class="tip_text2">하한 : ' 
+							+ data.data4 +'</span>' + '</div>';
+
+						var tip = '<div class="text">'+ name + data1 + data2 + '</div>';
+						var arrow = '<div class="arrow" style="width: '+tipElement.width()+'px;"></div>';
+						tipElement.html(tip + arrow);
+					}
+				},
+				resize : {
+					use : true
+				}
+			};
+
+			horizon2 = webponent.visual.horizon.init($(".horizon2"), styles, options);        
+
+		})();
+
+	</script>
+</body>
+
+</html>
+

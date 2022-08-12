@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>비동기 Tree Table webPonentⓒ Grid</title>
+<link rel="stylesheet" href="../../layout/css/layout.css" />
+<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+<link rel="stylesheet" type="text/css" href="../../../css/webponent.Tree.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h1>비동기 Tree Table</h1>
+
+		<h2>비동기 Tree Table</h2>
+
+
+		<div class="wrap">
+			<h3>사이트 맵</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="name"  align="left">메뉴명</th>
+							<th name="korname" align="left">한글명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="name" bind="name"></td>
+							<td name="korname" bind="korname"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>
+
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+	<script src="../../../webponent.grid.AjaxTree.js"></script>
+
+	<script>
+		var table1 = $('#grid-table-1');
+		var template1 = $('#grid-template-1');
+		var grid1 = webponent.grid.init(table1, template1);
+
+		webponent.grid.AjaxTree.init(grid1, {
+			ajaxUrl : '../../../data/tree_data.jsp',
+			generatorParam : function(data) {
+				return {};
+			}
+		});
+
+		$.ajax({
+			dataType : 'json',
+			url : '../../../data/tree_data.jsp',
+			success : function(resp) {
+				grid1.appendRow(resp);
+			}
+		});
+	</script>
+</body>
+
+</html>

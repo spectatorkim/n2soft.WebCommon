@@ -1,0 +1,16 @@
+{
+	"output":{
+		"result":[
+			{"date":"20140101","name":"한국","sell":0,"buy":0,"straight_purchase":"0"},
+			{"date":"20140101","name":"미국","sell":1000,"buy":1000,"straight_purchase":"0"},
+			{"date":"20140101","name":"일본","sell":2000,"buy":4000,"straight_purchase":"2000"},
+			{"date":"20140101","name":"중국","sell":3000,"buy":3000,"straight_purchase":"0"},
+			{"date":"20140101","name":"러시아","sell":4000,"buy":5000,"straight_purchase":"1000"},
+			{"date":"20140101","name":"프랑스","sell":5000,"buy":2000,"straight_purchase":"-3000"},
+			{"date":"20140101","name":"이탈리아","sell":6000,"buy":6600,"straight_purchase":"600"},
+			{"date":"20140101","name":"영국","sell":6000,"buy":7200,"straight_purchase":"1200"},
+			{"date":"20140101","name":"호주","sell":8000,"buy":5400,"straight_purchase":"-2600"},
+			{"date":"20140101","name":"브라질","sell":9000,"buy":9000,"straight_purchase":"0"}
+		]
+	}
+}

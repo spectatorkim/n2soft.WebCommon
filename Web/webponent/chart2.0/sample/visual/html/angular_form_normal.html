@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>sample angular</title>	
+	<style>
+		.svg {
+			width: 100%;
+			height: 400px;
+		}
+		
+		.setting {border: 1px solid #ebebeb; padding: 0; margin: 10px 0 10px; position: relative; display: block;}
+		.setting legend {font-size: 0; text-indent: -9999px; visibility: hidden; line-height: 0; position: absolute; left: -9999px; top: 0;}
+		.setting div.input input {vertical-align: middle;}
+		.setting label{display: inline-block; width:85px; border-right:1px solid #ccc; padding-right:5px;}
+		.setting div.input input[type="text"] {margin-left:3px;border: 1px solid lightgrey; width:25px;}
+		.setting div.input {display: block;padding: 10px 10px 10px 10px;}
+		.setting label.last{width:100px; border-right:none;}
+		 div.btn {position: absolute; right: 90%; }
+		 div.btn input {background: #fff; border-radius: 3px; margin: 0; padding: 0; width: 75px; height: 35px; cursor: pointer; color: #333; border: 1px solid #ccc; line-height: 100%; font-weight: bold;}
+	</style>
+</head>
+
+<body>
+		<h1>Form - Angular_Gauge_Chart (normal)</h1>
+		<h2>option</h2>
+		
+		<div class="wrap">
+			<div class="btnbox">
+				<div class="btn"><input type="button" value="Change" id="change_Btn"></div>
+			</div>
+			
+			<fieldset class="setting"><legend>스타일 변경</legend>
+				<form name="frm" id="frm">
+					<div class="input">
+						<label><input type="checkbox" id="axis"name="option" checked="checked">치수·눈금</label>
+						<label><input type="checkbox" id="axisNum" name="option" checked="checked">치수표시판</label>
+						<label><input type="checkbox" id="max" name="option"  checked="checked">최대값표시</label>
+						<label><input type="checkbox" id="avg" name="option"  checked="checked">평균값표시</label>	
+						<label><input type="checkbox" id="tooltip" name="option"  checked="checked">마우스오버</label>
+						<label><input type="checkbox" id="animate" name="option"  checked="checked">비쥬얼효과</label>
+						<label class="last"><input type="checkbox" id="target" name="option">표시값 :<input type="text" id="targetVal"></label>
+					</div>
+				</form>
+			</fieldset>
+			<div class= "svg" ></div>
+			
+		</div>
+		
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.angular.js'></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.gauge.style.js'></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	
+	
+<script type="text/javascript">
+
+var styles = webponent.visual.styles.BASIC;
+var options = {
+		toolTip : { use : true},
+		data : {
+			"data" : [	
+			          	{"currentVal" : 60, "previousVal" : 0 }
+			          ]
+		},
+		use : {
+				axis: true,			// 눈금
+				axisText : true,		// 치수
+				counter : true,		// 치수표시판
+				max :true,			// 최대값 표시
+				avg : true,			// 평균값 표시
+				target : false,		// 타겟값 표시
+				toolTip: true,		// 마우스오버 툴팁
+				animate: true,		// 움직이는 효과
+				resize: false,		// 게이지 사이즈 조절
+				responsive: true 	// 반응형 유무
+		},
+		marker: {
+			target : 0
+		}
+
+};
+var gauge = webponent.visual.angular.init($(".svg"), styles, options, "angular_noramal");
+
+$('#change_Btn').click(function(){
+
+		
+	options.use.axis = ($('#axis').is(':checked')) ? true : false;
+	options.use.axisText = ($('#axis').is(':checked')) ? true : false;
+	options.use.counter = ($('#axisNum').is(':checked')) ? true : false;
+	options.use.max = ($('#max').is(':checked')) ? true : false;
+	options.use.avg = ($('#avg').is(':checked')) ? true : false;
+	options.use.toolTip = ($('#tooltip').is(':checked')) ? true : false;
+	options.use.animate = ($('#animate').is(':checked')) ? true : false;
+	
+	
+	if($('#target').is(':checked')){
+		options.use.target =  true;
+		options.marker.target =  $('#targetVal').val();
+	}else{
+		options.use.target = false;
+	}
+	
+	gauge.reDraw(styles, options); 
+});
+
+</script>
+
+</body>
+</html>

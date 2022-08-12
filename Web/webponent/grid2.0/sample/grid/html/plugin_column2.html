@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>컬럼 설정 - 컬럼 webPonentⓒ Grid</title>
+    <link rel="stylesheet" href="../../layout/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+    <style>
+    .column-menu-indi {
+        margin: 0;
+        padding: 0;
+        display: block;
+        font-size: 16px;
+        color: #FFF;
+        margin-top: -5px;
+        background: none;
+        cursor: pointer;
+    }
+    
+    .column-context-menu {
+        visibility: hidden;
+        position: absolute;
+        list-style: none;
+        width: 200px;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #E0E0E0;
+        -webkit-box-shadow: 6px 7px 13px -5px rgba(0,0,0,0.75);
+        -moz-box-shadow: 6px 7px 13px -5px rgba(0,0,0,0.75);
+        box-shadow: 6px 7px 13px -5px rgba(0,0,0,0.75);
+    }
+    
+    .column-context-menu > li {
+    	cursor: pointer;
+        padding: 10px 10px;
+        background: #fff;
+        border-top: 1px solid #E0E0E0;
+    }
+
+    .column-context-menu > li label {
+    	display: inline-block;
+    	cursor: pointer;
+    	width: 140px;
+    }
+
+    .column-context-menu > li .visibility-check {
+    	cursor: pointer;
+    	vertical-align: sub;
+    	margin-right: 10px;
+    }
+
+    .column-context-menu > li.hasBg {
+    	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAcklEQVQ4T7WT2QrAMAgEJ1/dg9KLHr9dhORRDUp9ERQny2oKySjJeX4D7FVZy6pQTcEBrIBkE6IBpH4CiwexPJDeBcwWxDNR+g8wapAewAsMEYD7uqzGMvEGpqiJMmya1w5DU7BVdeFD6v4i3hZcUBrwAYpQEhFiz8joAAAAAElFTkSuQmCC);
+    	background-repeat: no-repeat;
+    	background-position: 90% center;
+    }
+
+    .column-context-menu > li:first-child {
+		border-top: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>컬럼 설정</h1>
+        <div class="wrap">
+            <h3>등락율 순위</h3>
+            <table id="grid-table-1">
+            </table>
+            <script id="grid-template-1" type="text/template">
+                <table width="100%" height="350px">
+                    <thead>
+                        <tr>
+                            <th name="indx" width="70px" align="center">순위</th>
+                            <th name="Isu" width="120px">종목명</th>
+                            <th name="NowPrc" width="120px" align="right">현재가</th>
+                            <th name="PrdayCmp" width="120px" align="right">전일비</th>
+                            <th name="Updn" width="120px" align="right">등락율(%)</th>
+                            <th name="TopQty" width="120px" align="right">거래량</th>
+                            <th name="SellRmqty" width="100px" align="right">매도잔량</th>
+                            <th name="SellOrdprc" width="100px" align="right">매도호가</th>
+                            <th name="BuyOrdprc" width="100px" align="right">매수호가</th>
+                            <th name="BuyRmqty" width="100px" align="right">매수잔량</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td name="indx" bind="indx"></td>
+                            <td name="Isu" bind="Isu"></td>
+                            <td name="NowPrc" bind="NowPrc"></td>
+                            <td name="PrdayCmp" bind="PrdayCmp"></td>
+                            <td name="Updn" bind="Updn"></td>
+                            <td name="TopQty" bind="TopQty"></td>
+                            <td name="SellRmqty" bind="SellRmqty"></td>
+                            <td name="SellOrdprc" bind="SellOrdprc"></td>
+                            <td name="BuyOrdprc" bind="BuyOrdprc"></td>
+                            <td name="BuyRmqty" bind="BuyRmqty"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </script>
+        </div>
+    </div>
+    
+    
+    <script src="../../../external/jquery-1.11.1.min.js"></script>
+    <script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../../../external/jquery.mousewheel.min.js"></script>
+    <script src="../../../external/underscore-min.js"></script>
+    <script src="../../../webponent.grid.js"></script>
+    <script src="../../../webponent.grid.UIplugin.js"></script>
+    <script>
+    var table1 = $('#grid-table-1');
+    var template1 = $('#grid-template-1');
+    var grid = webponent.grid.init(table1, template1, {
+        sortable: false
+    });
+
+    $.ajax({
+        dataType: 'json',
+        url: '../../../data/ranking-map.json',
+        success: function(resp) {
+
+            grid.appendRow(resp);
+        }
+    });
+
+    var columns = grid.settings.columns;
+
+    function closeContextMenu () {
+
+    	var gridArea = $(grid.markup.area);
+
+    	gridArea.find('.column-context-menu').remove();
+    }
+
+    function showColumnVisibilityMenu (columnMenu) {
+
+    	var gridArea = $(grid.markup.area);
+
+    	var columnVisibilityMenu = $('<ul class="column-context-menu">');
+    	var columnVisibilityOrigin = $('<li tabindex="1" class="column-menu"></li>');
+
+    	var columns = grid.settings.columns;
+
+    	_.each(columns, function (column) {
+    		
+    		var cloned = columnVisibilityOrigin.clone();
+    		
+    		var checkBox = $('<input class="visibility-check" type="checkbox"/>');
+    		checkBox.attr('id', 'visibility-' + column.name);
+
+    		if (column.visibility === 'visible') {
+    			checkBox.attr('checked', 'checked');
+    		}
+
+    		checkBox.on('change', function () {
+
+    			if (checkBox.prop('checked') === true) {
+    				grid.setColumnVisibility(column.name, true);
+    			} else {
+    				grid.setColumnVisibility(column.name, false);
+    			}
+
+    			closeContextMenu();
+    		});
+
+    		var label = $('<label>');
+    		label.attr('for', 'visibility-' + column.name);
+    		label.text(column.label);
+
+    		columnVisibilityMenu.append(cloned);
+
+    		cloned.append(checkBox);
+    		cloned.append(label);
+    	});
+
+    	columnMenu.append(columnVisibilityMenu);
+
+    	columnVisibilityMenu.position({
+    		my : 'left top',
+    		of : columnMenu,
+    		at : 'right top'
+    	});
+
+    	columnVisibilityMenu.css('visibility', 'visible');
+
+    }
+
+    function showContextMenu(column) {
+
+    	closeContextMenu();
+
+    	var gridArea = $(grid.markup.area);
+
+        var columnContextMenu = $('<ul class="column-context-menu">');
+        var columnMenu = $('<li tabindex="1" class="column-menu hasBg">Columns</li>');
+
+        columnContextMenu.append(columnMenu);
+
+        gridArea.append(columnContextMenu);
+
+        var settingButton = $(column.header).find('.column-menu-indi');
+
+        columnContextMenu.position({
+            my: 'left top',
+            of: settingButton,
+            at: 'left bottom+5'
+        });
+
+        columnContextMenu.css('visibility', 'visible');
+
+        columnContextMenu.on('mouseleave', function () {
+        	closeContextMenu();
+        });
+
+        columnMenu.on('click', function () {
+
+        	if (columnMenu.data('opened') !== true) {
+
+        		columnMenu.data('opened', true);
+        		showColumnVisibilityMenu(columnMenu);
+        	}
+        });
+
+    }
+
+    _.each(columns, function(column) {
+
+        var th = $(column.header);
+
+        var micel = th.find('.CI-GRID-HEADER-MICELINOUS');
+
+        var settingButton = $('<button class="column-menu-indi">☰</button>');
+        micel.append(settingButton);
+
+        settingButton.on('click', function() {
+
+            showContextMenu(column);
+        });
+    });
+
+    grid.event.on(webponent.grid.EVENT.SCROLL, function () {
+
+    	closeContextMenu();
+    });
+    </script>
+</body>
+
+</html>

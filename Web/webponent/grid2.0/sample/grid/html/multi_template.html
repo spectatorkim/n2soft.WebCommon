@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>멀티 템플릿 - 템플릿 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+	<style>
+
+		
+
+		.minor {
+			margin:12px 5px 0px 7px;
+			width:11px;
+			height:11px;
+			display:block;
+			float:left;
+			background-image:url('../../layout/img/minus.gif');
+			background-repeat:no-repeat;
+		}
+
+		.plus {
+			margin:12px 5px 0px 7px;
+			width:11px;
+			height:11px;
+			display:block;
+			float:left;
+			background-image:url('../../layout/img/plus.gif');
+			background-repeat:no-repeat;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>마이크로 템플릿</h1>
+		
+		<h2>{{key}}를 이용한 a태그의 href속성 추가</h2>
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=14615091#id-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B0%94%EC%9D%B8%EB%94%A9%2C%EB%AA%A8%EB%8D%B8-%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%ED%85%9C%ED%94%8C%EB%A6%BF%EC%9D%84%EC%9D%B4%EC%9A%A9%ED%95%9C%EB%B0%94%EC%9D%B8%EB%94%A9'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%20%ED%85%9C%ED%94%8C%EB%A6%BF'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>종목뉴스</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-mobile" type="text/template">
+				<table width="100%" height="350px" tabindex="0">
+					<thead>
+						<tr>
+							<th name="jm_nm" width="100px">종목명</th>
+							<th name="ns_title">제목</th>
+							
+					</thead>
+					<tbody>
+						<tr>
+							<td name="jm_nm"><a href="#" class="folder minor"></a> {{jm_nm}} </td>
+							<td> {{ns_title}}</td>
+						</tr>
+						<tr style="display:none;">
+							<td colspan="2"> 
+							<div>일자 : {{ns_date}}</div>
+							<div>시간 : {{ns_time}}</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="jm_nm" width="100px">종목명</th>
+							<th name="pro_nm" width="100px">제공처</th>
+							<th name="ns_title">제목</th>
+							<th name="ns_date" width="100px">일자</th>
+							<th name="ns_time" width="100px">시간</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="jm_nm" bind="jm_nm"></td>
+							<td name="pro_nm" bind="pro_nm"></td>
+							<td><a href="{{ns_id}}" name="ns_title" >{{ns_title}} </a></td>
+							<td name="ns_date" bind="ns_date"></td>
+							<td name="ns_time" bind="ns_time"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>
+
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+	var windowWidth = window.screen.width < window.outerWidth ?
+                  window.screen.width : window.outerWidth;
+	var is_mobile = false;
+	if(windowWidth<600) {
+		is_mobile = true;
+	}
+	
+
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	if(is_mobile) {
+		template1 = $('#grid-template-mobile');
+	}
+	var grid1 = webponent.grid.init(table1, template1);
+	
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/news-data.json',
+		success : function (resp) {
+
+			grid1.appendRow(resp);
+		}
+	});
+	$(grid1.markup.main.body.table).on('click','.folder', function() {
+		var tr=$(this).closest('tr').next();
+		if($(this).hasClass('minor')) {
+			$(this).removeClass('minor').addClass('plus');
+			tr.show();
+		}else {
+			$(this).removeClass('plus').addClass('minor');
+			tr.hide();
+		}
+		grid1.setGridHeight(grid1.settings.option.height);
+
+	})
+
+
+	
+	</script>
+</body>
+</html>

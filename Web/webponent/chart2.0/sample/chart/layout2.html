@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>CHART INDEX</title>
+<script type="text/javascript">
+redirect = function(url){
+	if(document.location.hash == "") return false;
+	var url = document.location.hash.substring(1);
+	mainfrm.location.href = url;
+	return false;
+};
+</script>
+</head>
+<frameset rows="93, *, 75">
+	<frame src="./gnb.html" id="gnbfrm" name="gnbfrm" title="상단 영역" frameborder="0" />
+	<frameset cols="25%, 75%" id="contentfrm" onload="redirect()">
+		<frame src="./lnb2.html" id="lnbfrm" name="lnbfrm" title="메뉴 영역" frameborder="0" />
+		<frame src="./html2/column_form_normal.html" id="mainfrm" name="mainfrm" title="컨텐츠 영역" frameborder="0" />
+		
+	</frameset>
+	<frame src="../layout/footer.html" id="footerfrm" name="footerfrm" title="하단 영역" frameborder="0" />
+</frameset>
+</html>

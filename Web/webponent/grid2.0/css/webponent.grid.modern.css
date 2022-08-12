@@ -1,0 +1,193 @@
+@charset "utf-8";
+
+/*
+ * Nanum Gothic (Korean) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+	font-family: 'Nanum Gothic';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../external/font/NanumGothic-Regular.eot);
+	src: url(../external/font/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+	url(../external/font/NanumGothic-Regular.woff2) format('woff2'),
+	url(../external/font/NanumGothic-Regular.woff) format('woff'),
+	url(../external/font/NanumGothic-Regular.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Nanum Gothic';
+	font-style: normal;
+	font-weight: 700;
+	src: url(../external/font/NanumGothic-Bold.eot);
+	src: url(../external/font/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+	url(../external/font/NanumGothic-Bold.woff2) format('woff2'),
+	url(../external/font/NanumGothic-Bold.woff) format('woff'),
+	url(../external/font/NanumGothic-Bold.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Nanum Gothic';
+	font-style: normal;
+	font-weight: 800;
+	src: url(../external/font/NanumGothic-ExtraBold.eot);
+	src: url(../external/font/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+	url(../external/font/NanumGothic-ExtraBold.woff2) format('woff2'),
+	url(../external/font/NanumGothic-ExtraBold.woff) format('woff'),
+	url(../external/font/NanumGothic-ExtraBold.ttf) format('truetype');
+}
+
+
+.CI-GRID-AREA {
+	position: relative;
+}
+
+.CI-GRID-WRAPPER {
+	font-family: "Nanum Gothic";
+	background: #E0E0E0;
+	border: 1px solid #e0e0e0;
+}
+
+.CI-GRID-MAIN-WRAPPER {
+	background: #fff;
+}
+
+.CI-GRID-HEADER-TABLE {
+	background: #6d7580;
+	background: -moz-linear-gradient(top, #737b86 0%, #6f7782 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#737b86), color-stop(100%,#6f7782));
+	background: -webkit-linear-gradient(top, #737b86 0%,#6f7782 100%);
+	background: -o-linear-gradient(top, #737b86 0%,#6f7782 100%);
+	background: -ms-linear-gradient(top, #737b86 0%,#6f7782 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#737b86', endColorstr='#6f7782',GradientType=0 );
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#737b86',EndColorStr='#6f7782')";
+	background: linear-gradient(top, #737b86 0%,#6f7782 100%);
+}
+
+.CI-GRID-HEADER-TABLE thead tr {
+	line-height: 25px;
+}
+
+.CI-GRID-BODY-TABLE tbody tr {
+
+	line-height: 40px;
+}
+
+.CI-GRID-HEADER-TABLE thead th, 
+.CI-GRID-HEADER-TABLE thead td{
+
+	text-align: left;
+	font-size: 11px;
+	color: #fff;
+	font-weight: bold;
+	padding: 0 15px;
+	border-right: 1px solid #606873;
+	border-bottom: 1px solid #606873;
+}
+
+.CI-GRID-BODY-TABLE tbody th,
+.CI-GRID-BODY-TABLE tbody td {
+	padding: 0 15px;
+	font-size: 10px;
+	color: #3d3d3d;
+	font-weight: bold;
+	border-right: 2px solid transparent;
+	border-bottom: 2px solid #f6f6f6;
+}
+
+
+.CI-GRID-ODD {
+	background: #fff;
+}
+
+
+.CI-GRID-BODY-TABLE tbody tr:hover {
+	background: #dfe4ea;
+}
+
+.CI-GRID-ROW-SELECTED {
+	background: #E2EFF5;
+}
+
+
+.CI-GRID-BODY-TABLE tbody tr.CI-GRID-ROW-SELECTED:hover {
+	background: #E2EFF5;
+}
+
+
+/* 디자인용 보더 */
+.CI-GRID-BORDER-RIGHT {
+	border-left: 0px solid #e0e0e0;
+}
+
+.CI-GRID-BORDER-BOTTOM {
+	border-top: 1px solid #e0e0e0;
+}
+
+.CI-GRID-BORDER-FIXED {
+	position : absolute;
+	top : 0;
+	z-index: 3;
+	width : 1px;
+	background : #E0E0E0;
+	display: none;
+}
+
+/* 디자인용 사각형 */
+.CI-GRID-RECT-RIGHT-TOP {	
+	background: #6d7580;
+	background: -moz-linear-gradient(top, #737b86 0%, #6f7782 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#737b86), color-stop(100%,#6f7782));
+	background: -webkit-linear-gradient(top, #737b86 0%,#6f7782 100%);
+	background: -o-linear-gradient(top, #737b86 0%,#6f7782 100%);
+	background: -ms-linear-gradient(top, #737b86 0%,#6f7782 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#737b86', endColorstr='#6f7782',GradientType=0 );
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#737b86',EndColorStr='#6f7782')";
+	background: linear-gradient(top, #737b86 0%,#6f7782 100%);
+}
+
+.CI-GRID-RESIZER-HELPER {
+	background: #A3C6DA;
+}
+
+.CI-GRID-HEADER-MICELINOUS {
+	top: 11px;
+	right: 10px;
+}
+
+.CI-GRID-GROUPING-INDI {
+	display: inline-block;
+	
+	width: 10px;
+	height: 15px;
+
+	margin-right: 5px;
+
+	text-indent: -999px;
+
+	background-image: url(../img/flat_1.png);
+
+	background-position: -12px -10px;
+	
+}
+
+.CI-GRID-SORTER {
+	display: block;
+	
+	width: 10px;
+	height: 15px;
+
+	text-indent: -999px;
+
+	background-image: url(../img/flat_1.png);
+}
+
+.CI-GRID-SORTER-NONE {
+
+	background-position: -189px -10px;
+}
+
+.CI-GRID-SORTER-DESC {
+	background-position: -260px -10px;
+}
+
+.CI-GRID-SORTER-ASC {
+	background-position: -224px -10px;
+}

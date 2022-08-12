@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+	<style>
+		/*.CI-GRID-BODY-TABLE tbody tr.CI-GRID-EVEN:hover {
+		  background: #FFF;
+		}
+
+		.CI-GRID-BODY-TABLE tbody tr.CI-GRID-ODD:hover {
+		  background: #F8F8F8;
+		}*/
+
+		.CI-GRID-BODY-TABLE-TBODY td.CI-GRID-BORDER-RIGHT {
+		    border-right: 1px solid #E0E0E0;
+		}
+	</style>
+</head>
+<body>
+<form id="export-form" style="display: none;"></form>
+
+	<h4>2015년 2분기 서울 자치구 동별 인구수</h4>
+
+	<table id="grid-table"></table>
+
+	<p>로우를 병합해서 그룹화된 데이터를 효과적으로 표현할 수 있습니다.</p>
+
+	<script id="grid-template" type="text/template">
+		<table width="100%" height="500px">
+			<caption>2015년 2분기 서울 자치구별 인구수</caption>
+			<thead>
+				<tr>
+					<th fixed="fixed" name="district" rowspan="3" width="100px" align="left">자치구</th>
+					<th fixed="fixed" name="dong" rowspan="3" width="120px" align="left">동</th>
+					<th name="home" rowspan="3" width="120px" align="right">세대</th>
+					<th name="popular" colspan="9" width="1080" align="right">인구</th>
+					<th name="manperhome" rowspan="3" width="120px" align="right">세대당인구</th>
+					<th name="oldmantotal" rowspan="3" width="120px" align="right">65세이상</th>
+				</tr>
+				<tr>
+					<th name="totalAll" parent="popular" colspan="3" width="360px" align="right">합계</th>
+					<th name="totalKorean" parent="popular" colspan="3" width="360px" align="right">한국인</th>
+					<th name="totalForein" parent="popular" colspan="3" width="360px" align="right">외국인</th>
+				</tr>
+				<tr>
+					<th name="total" parent="totalAll" width="120px" align="right">계</th>
+					<th name="mtotal" parent="totalAll" width="120px" align="right">남자</th>
+					<th name="wtotal" parent="totalAll" width="120px" align="right">여자</th>
+					<th name="ktotal" parent="totalKorean" width="120px" align="right">계</th>
+					<th name="kmtotal" parent="totalKorean" width="120px" align="right">남자</th>
+					<th name="kwtotal" parent="totalKorean" width="120px" align="right">여자</th>
+					<th name="ftotal" parent="totalForein" width="120px" align="right">계</th>
+					<th name="fmtotal" parent="totalForein" width="120px" align="right">남자</th>
+					<th name="fwtotal" parent="totalForein" width="120px" align="right">여자</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td name="district" bind="district" ></td>
+					<td name="dong" bind="dong" ></td>
+					<td name="home" bind="home" ></td>
+					<td name="total" bind="total" ></td>
+					<td name="mtotal" bind="mtotal" ></td>
+					<td name="wtotal" bind="wtotal" ></td>
+					<td name="ktotal" bind="ktotal" ></td>
+					<td name="kmtotal" bind="kmtotal" ></td>
+					<td name="kwtotal" bind="kwtotal" ></td>
+					<td name="ftotal" bind="ftotal" ></td>
+					<td name="fmtotal" bind="fmtotal" ></td>
+					<td name="fwtotal" bind="fwtotal" ></td>
+					<td name="manperhome" bind="manperhome" ></td>
+					<td name="oldmantotal" bind="oldmantotal" ></td>
+				</tr>
+			</tbody>
+		</table>
+	</script>
+
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+	<script src="../../../webponent.report.js"></script>
+
+	<script>
+
+	var table = $('#grid-table');
+	var template = $('#grid-template');
+	var grid = webponent.grid.init(table, template, {
+		sortable : false,
+		virtualScrollUsable : true
+
+	});
+
+	var collapseKeys = ['district'];
+	var td2;
+
+	grid.event.on('dataRendered', function () {
+		var colSize = grid.settings.template.tbody.find('th, td').length;
+
+	    var dataList = grid.data;
+
+	    var renderingStartRowIndex = grid.settings.defferedRendering.renderingStartRowIndex;
+	    var renderingEndRowIndex = grid.settings.defferedRendering.renderingEndRowIndex;
+
+	    if (renderingStartRowIndex === null) {
+
+	        renderingStartRowIndex = 0;
+	    }
+
+	    if (renderingEndRowIndex === null) {
+
+	        renderingEndRowIndex = grid.data.length;
+	    } else {
+
+	        renderingEndRowIndex ++;
+	    }
+
+	    var prevTdMap = {};
+	    var prevDataMap = {};
+	    var prevRowspanMap = {};
+
+	    for (var i = renderingStartRowIndex; i < renderingEndRowIndex; i ++) {
+
+	    	var row = $(grid.rows[i]);
+	    	var colSize2 = row.children().length;
+
+	    	if(i==renderingStartRowIndex && colSize != colSize2) {
+	    		row.prepend(td2);
+	    	}
+
+	        var data = dataList[i];
+	        
+	        _.each(collapseKeys, function (collapseKey) {
+	        	
+	            var z = i-renderingStartRowIndex;
+
+	            var td = row.find('[data-name=' + collapseKey + ']');
+
+	            var prevTd = prevTdMap[collapseKey];
+
+	            if (!prevTd) {
+	                td.attr('rowspan', '1');
+	                td.addClass('CI-GRID-BORDER-RIGHT');
+	                prevTdMap[collapseKey] = td;
+	                prevDataMap[collapseKey] = data[collapseKey];
+	                prevRowspanMap[collapseKey] = 1;
+
+	            } else {
+	                if (prevDataMap[collapseKey] === data[collapseKey]) {
+	                    prevTdMap[collapseKey].attr('rowspan', prevRowspanMap[collapseKey] + 1);
+	                    prevRowspanMap[collapseKey] ++;
+	                    td2=td;
+	                    td.remove();
+	                } else {
+	                    td.attr('rowspan', '1');
+	                    td.addClass('CI-GRID-BORDER-RIGHT');
+	                    prevTdMap[collapseKey] = td;
+	                    prevDataMap[collapseKey] = data[collapseKey];
+	                    prevRowspanMap[collapseKey] = 1;
+	                }
+	            }
+	        });
+	    }
+	});
+
+	$.ajax({
+		cache : false,
+		url : '../../../data/seoul_statstics_dong.json',
+		dataType: 'json',
+		success : function (resp) {
+			//resp = resp.splice(0, 100);
+			grid.appendRow(resp);
+			
+		}
+	});
+	function exportCSV () {
+
+		var option = {
+			fileName: 'ffssssf',
+			//헤더만 row colspan 되고 바디는 안되어있어서 서로 안맞을시
+			complexHeader: true
+		};
+		webponent.report.csv(grid, $('#export-form'), option);
+	}
+
+	</script>
+</body>
+</html>

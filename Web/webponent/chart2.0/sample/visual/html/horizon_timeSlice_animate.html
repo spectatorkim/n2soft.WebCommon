@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>horizon chart timeslice animate</title>
+	<style>
+
+		.horizon {      
+			width: 100%;
+			height: 400px;
+		}
+
+		.tip_name {
+			font-size : 14px;
+			font-weight: bold;
+			margin-bottom : 5px;
+		}
+
+		.tip_text {
+			margin-bottom : 3px;
+			color :#cccccc;
+			font-weight: bold;
+		}
+
+		.tip_text2 { 
+			margin-left: 25px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<h1>HORIZON CHART-timeslice_animate</h1>
+		<h2>애니메이션 시계열</h2>
+
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;">
+					<span>Mobile</span>
+				</button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/3.+Horizon+Chart'); return false;">
+					<span>Reference</span>
+				</button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Visual%20Demo/horizon_timeSlice_animate'); return false;">
+					<span>Publisher</span>
+				</button>
+			</div>
+			<div class="horizon"></div>    
+
+			<div class="controller two">
+				<button type="button" name="play_btn" value="play" class="play_btn"><span>재생</span></button> 
+				<button type="button" name="pause_btn" value="pause" class="pause_btn"><span>일시정지</span></button> 
+				<button type="button" name="stop_btn" value="stop" class="stop_btn"><span>정지</span></button> 
+				<div class="slider"></div>
+				<span class="info"></span>
+			</div> 
+		</div>
+	</div>
+
+	
+		
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.horizon.js'></script>
+	<script type="text/javascript" src="../../../lib/comm/jquery-ui-1.10.4.custom.min.js"></script>
+	<link rel="stylesheet" href="../../../lib/comm/jquery-ui-1.10.4.custom.min.css"/>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<script>
+	   
+		(function () {
+
+			/* PIE chart 1 */
+
+			var styles = {
+				layout : {
+					paddingTop : 30,
+					paddingBottom : 20,
+					paddingLeft : 20,
+					paddingRight : 30
+				},
+				graph : {
+					paddingTop: 10,
+					paddingBottom: 10,
+					paddingLeft: 10,
+					paddingRight: 10,
+					area :{
+						color : '#f8f8f8'
+					},
+					line: {
+						top: { 
+							color: '#cccccc', 
+							width: 1, 
+							opacity: 1 
+						},
+						left: { 
+							width: 0
+						},
+						right: { 
+							width: 0
+						},
+						bottom: { 
+							color: '#cccccc', 
+							width: 1, 
+							opacity: 1 
+						}
+					}						            
+				},
+				yAxis: {
+					width: 30, 
+					position: 'left',
+					paddingLeft: 10, 
+					paddingRight: 20,
+					baseZero : true,
+					line: {
+						color: '#cccccc', 
+						width: 1, 
+						opacity: 1,
+						underLine : {
+							use : false,
+							color: '#3e4150', 
+							width: 1, 
+							opacity: 1
+						}
+					},
+					text: {
+						family: 'Nanum Gothic',
+						size: 12, 
+						color: '#737373', 
+						align: 'right',	/* left | center | right */
+						style: 'normal',	/* normal | italic */
+						weight: 'bold',		/* normal | bold */
+						opacity: 1
+					},
+					tick: {
+						use : false,
+						length: 8, 
+						color: '#202228',
+						width: 1, 
+						opacity: 1,
+						position: 'out'	/* out|in */
+					}
+				},
+				xAxis: {
+					height: 10, 
+					paddingTop: 25, 
+					betweenLabels: false,
+					line: { 
+						use : false,
+						color: '#e3e3e3', 
+						width: 1, 
+						opacity: 1,
+						underLine : {
+							use : false,
+							color: '#3e4150', 
+							width: 1, 
+							opacity: 1
+						}
+					},
+					text: {
+						family: 'Nanum Gothic',
+						size: 12, 
+						color: '#737373', 
+						align: 'center',	/* left | center | right */
+						style: 'normal',	/* normal | italic */
+						weight: 'bold',		/* normal | bold */
+						opacity: 1
+					},
+					gap : 30
+				},
+				series : {
+					s1 : {
+						use : true,
+						way : 'up',
+						line: {
+							color: '#f26744', 
+							width: 0, 
+							opacity: 1
+						},
+						area : {
+							color : {
+								'src': '../img/horizon_pattern1.png'
+							},
+							opacity: 1
+						},
+						animate : {
+							use : true,
+							type : 'linear', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+							speed : 400				     	
+						}
+					}, 
+					s2 : {
+						use : true,
+						way : 'up',
+						line: {
+							color: '#e42f02', 
+							width: 0, 
+							opacity: 1
+						},
+						area : {
+							color : {
+								'src': '../img/horizon_pattern2.png'
+							},
+							opacity: 1
+						},
+						animate : {
+							use : true,
+							type : 'linear', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+							speed : 400	
+						}
+					},
+					s3 : {
+						use : true,
+						way : 'down',
+						line: {
+							color: '#485fff', 
+							width: 0, 
+							opacity: 1
+						},
+						area : {
+							color : {
+								'src': '../img/horizon_pattern3.png'
+							},
+							opacity: 1
+						},
+						animate : {
+							use : true,
+							type : 'linear', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+							speed : 400	
+						}
+					},
+					s4 : {
+						use : true,
+						way : 'down',
+						line: {
+							color: '#6095ff', 
+							width: 0, 
+							opacity: 1
+						},
+						area : {
+							color : {
+								'src': '../img/horizon_pattern4.png'
+							},
+							opacity: 1
+						},
+						animate : {
+							use : true,
+							type : 'linear', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+							speed : 400
+						}
+					}
+				},
+				verticalLine : {
+					use : true,
+					type : '',	/* - | . | -. | -.. | .  | -  | -- | - . | --. | --.. */
+					color : '#465866',
+					width : 1,
+					opacity : 1
+				},
+				horizonLine : {
+					use : true,
+					type : '',	/* - | . | -. | -.. | .  | -  | -- | - . | --. | --.. */
+					color : '#465866',
+					width : 1,
+					opacity : 1
+				}
+			};
+
+			var options = {
+				data : {
+					url: '../data/horizon_text.txt',
+					type : 'text'	
+				},        		
+				xAxis : {
+					select : 'date',
+					format : function ( xAxis ) {						
+						xAxis = dayDataFormatDot(xAxis);
+						return xAxis;
+					}
+				},
+				yAxis : {
+					select : {
+						s1 : 'data1',
+						s2 : 'data2',
+						s3 : 'data3',
+						s4 : 'data4'
+					},
+					format : function ( yAxis ) {
+						yAxis = priceDataFormat(yAxis);
+						return yAxis;
+					}
+				},
+				toolTip : {
+					use : true,
+					position : {
+						x : -90,
+						y : -90
+					},
+					className : 'tip',
+					func : function ( data, tipElement ) {	         
+						var name = '<div class="tip_name">'+ dayDataFormatDot(data.date) + '</div>';
+						var data1 = '<div class="tip_text">' + '<span>상승 : ' 
+							+ data.data2 +'</span>' + '<span class="tip_text2">상한 : ' 
+							+ data.data1 +'</span>' + '</div>';
+						var data2 = '<div class="tip_text">' + '<span>하락 : ' 
+							+ data.data3 +'</span>' + '<span class="tip_text2">하한 : ' 
+							+ data.data4 +'</span>' + '</div>';
+
+						var tip = '<div class="text">'+ name + data1 + data2 + '</div>';
+						var arrow = '<div class="arrow" style="width: '+tipElement.width()+'px;"></div>';
+						tipElement.html(tip + arrow);
+					}
+				},
+				timeSlice : {
+					use : true,
+					delay : 400,
+					animate : {
+						use : true,
+						type : 'linear', /* linear|>|<|<>|bounce|elastic|backln|backOut|none */
+						speed : 250
+					},
+					slider : $('.slider'),
+					play : $('.play_btn'),
+					pause : $('.pause_btn'),
+					stop : $('.stop_btn'),
+					data : function (data1, data2) {
+						var newData1 = dayDataFormatDot(data1[options.xAxis.select]);
+						var newData2 = dayDataFormatDot(data2[options.xAxis.select]);
+
+						$('.info').text('DATE : '+newData1 + ' ~ ' + newData2)
+					}
+				},
+				resize : {
+					use : true
+				}
+			};
+		 
+			horizon = webponent.visual.horizon.init($(".horizon"), styles, options);        
+
+		})();
+
+	  
+	</script>
+</body>
+
+</html>
+

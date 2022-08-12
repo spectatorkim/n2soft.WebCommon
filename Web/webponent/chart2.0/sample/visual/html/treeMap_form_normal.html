@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<title>tree map form normal</title>		
+	
+	<style>	
+
+		.treemap {
+			width: 100%;
+			height: 100%;
+		}
+
+		.loading {
+			background-color: #fff;
+			width: 100%;
+			height: 100%;            
+			position: absolute;
+			top: 1px;
+			left: 0;
+		}
+		.loadingImage {
+			background : url("../img/loading.gif") no-repeat;
+			width : 104px;
+			height: 104px;
+			margin: 120px auto 0;
+		}
+
+		#legend {
+			border : solid 1px #ebebeb;
+			border-top: 0;
+			padding: 10px 0;
+			min-height : 20px;
+			text-align: center;
+		}
+		#legend ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;			
+		}		
+		#legend div {
+			margin: 0 auto;
+		}
+		#legend_ui li {			
+			font-family: 'Nanum Gothic';
+			font-size: 13px;
+			font-weight: bold;
+			color: #333333;
+			display: inline-block;
+			padding: 2px 0 0 25px;
+			min-height: 18px;
+			zoom: 1;
+			*display: inline;			
+		}
+		#legend_ui li.l1 {
+			background: url(../img/treemap_legend1.png) no-repeat;
+		}
+		#legend_ui li.l2 {
+			background: url(../img/treemap_legend2.png) no-repeat;
+		}
+		#legend_ui li.l3 {
+			background: url(../img/treemap_legend3.png) no-repeat;
+		}
+		#legend_ui li.l4 {
+			background: url(../img/treemap_legend4.png) no-repeat;
+		}
+		#legend_ui li.l5 {
+			background: url(../img/treemap_legend5.png) no-repeat;
+		}
+		#legend_ui li.l6 {
+			background: url(../img/treemap_legend6.png) no-repeat;
+		}
+		#legend_ui li.l7 {
+			background: url(../img/treemap_legend7.png) no-repeat;
+		}
+		#legend_ui li img {
+			vertical-align: middle;
+			margin-left : 66px;
+			margin-right : 8px;
+		}
+		#legend_ui li span {
+			display: block;
+			width : 65px;
+		}
+		#legend_ui li:first-child img {
+			margin-left : 8px;
+		}
+
+		#treemap-info {
+			margin-top : 10px;
+			border : solid 1px #ebebeb;
+			border-bottom: 0;
+			padding-top : 11px;
+			padding-bottom : 7px;
+			min-height: 20px;
+			background-color: #fff;			
+		}
+		#treemap-info span {
+			margin-left: 8px;
+			margin-right: 8px;
+			color : #666666;
+			letter-spacing:-1px;
+			font-size : 13px;
+			font-weight: bold;
+		}        
+		#treemap-info span:first-child {
+			margin-left: 20px;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<h1>TREEMAP-form_normal</h1>
+	<h2>일반디자인</h2>
+	
+	<div class="wrap">
+		
+		<div class="btnbox">
+			<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;">
+				<span>Mobile</span>
+			</button>
+			<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/4.+Tree+Map'); return false;">
+				<span>Reference</span>
+			</button>
+			<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Visual%20Demo/treemap_form_normal'); return false;">
+				<span>Publisher</span>
+			</button>
+		</div>
+
+		<div name="treemap-info" id="treemap-info"></div>
+		<div style="position: relative; height: 400px;">
+		<div class="treemap"></div>
+
+		<div class="loading">
+			<div class="loadingImage"></div>
+		</div> 	
+		</div>
+
+		<div id="legend">			
+			<div>
+				<ul id="legend_ui">
+					<li class="l1"><span>-15%</span></li>
+					<li class="l2"><span>-10%</span></li>
+					<li class="l3"><span>-5%</span></li>
+					<li class="l4"><span>0%</span></li>
+					<li class="l5"><span>5%</span></li>
+					<li class="l6"><span>10%</span></li>
+					<li class="l7"><span>15%</span></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+	
+	
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/visual/webponent.visual.treemap.js"></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<script type="text/javascript">
+
+	(function () {
+
+		var styles = { 			
+			layout : {
+				paddingLeft : 20,
+				paddingRight : 20,
+				paddingTop : 20,
+				paddingBottom : 20
+			},
+			animate : {
+				use : true,
+				delay : 50,
+				type : 'backOut', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+				speed : 300				     	
+			},
+			label : {
+				position : {
+					x : 3,
+					y : 3
+				},
+				area : {
+					color : '#fff',
+					opacity: 0,
+					paddingTop : 3,
+					paddingBottom : 3,
+					paddingLeft : 3,
+					paddingRight : 3
+				},
+				line : {
+					color : '#dad9d8',
+					width : 1,
+					opacity : 1
+				},
+				text: {
+					family: 'Nanum Gothic', 
+					size: 13, 
+					color: '#000', 
+					style: 'normal', 	/* normal | italic */
+					weight: 'bold',	/* normal | bold */
+					opacity: 1
+				}
+			},
+			group : {
+				line : {
+					width : 3,
+					color : '#f8f8f8'
+				},
+				hover : {
+					use : false,
+					color : '#000',
+					opacity : 0.3
+				}
+			},
+			item : {
+				line : {
+					width : 2,
+					color : '#f8f8f8'
+				},
+				area : {
+					color : [
+						'#ff625f',
+						'#f69493',
+						'#ffd3d3',
+						'#ffffff',
+						'#bee1f0',
+						'#61b8e1',
+						'#0093d8'
+					],
+					opacity : 1					
+				},
+				hover : {
+					line : {
+						color: '#3a464f', 
+						width: 4,
+						opacity : 1
+					},
+					area : {
+						opacity: 0,
+						color : '#fff'
+					}
+				}
+			}			
+		};
+
+		var options = {
+			data : {
+				url: '../data/treemap_json.txt',
+				type : 'json',
+				jsonDepth: 'output.result',
+				use : 'vol',
+				flag : 'rate_cd',
+				group : 'group',
+				groupName : 'up_name',
+				item : 'name'
+				
+				// url: '../data/treemap_text.txt',
+				// type : 'text',
+				// use : 'vol',
+				// flag : 'flag',
+				// group : 'group',
+				// groupName : 'up_name'
+
+				// data : [
+		  //           {"name":"한국" ,"group":"001" ,"up_name":"아시아" ,"flag":"1" ,"vol":"250000"},
+		  //           {"name":"일본" ,"group":"001" ,"up_name":"아시아" ,"flag":"2" ,"vol":"180000"},
+		  //           {"name":"중국" ,"group":"001" ,"up_name":"아시아" ,"flag":"3" ,"vol":"150000"},
+		  //           {"name":"북한" ,"group":"001" ,"up_name":"아시아" ,"flag":"4" ,"vol":"100000"},
+		  //           {"name":"태국" ,"group":"001" ,"up_name":"아시아" ,"flag":"5" ,"vol":"60000"},
+		  //           {"name":"북한" ,"group":"001", "up_name":"아시아", "flag":"6" ,"vol":"30000"},
+		  //           {"name":"네팔" ,"group":"001" ,"up_name":"아시아" ,"flag":"7" ,"vol":"20000"},
+		  //           {"name":"몽골" ,"group":"001" ,"up_name":"아시아" ,"flag":"1" ,"vol":"10000"},
+		  //           {"name":"프랑스" ,"group":"002" ,"up_name":"유럽" ,"flag":"2" ,"vol":"240000"},
+		  //           {"name":"덴마크" ,"group":"002" ,"up_name":"유럽" ,"flag":"3" ,"vol":"200000"},
+		  //           {"name":"모나코" ,"group":"002" ,"up_name":"유럽" ,"flag":"4" ,"vol":"150000"},
+		  //           {"name":"벨기에" ,"group":"002" ,"up_name":"유럽" ,"flag":"5" ,"vol":"120000"},
+		  //           {"name":"스웨덴" ,"group":"002" ,"up_name":"유럽" ,"flag":"6" ,"vol":"90000"},
+		  //           {"name":"스위스" ,"group":"002" ,"up_name":"유럽", "flag":"7" ,"vol":"40000"},
+		  //           {"name":"폴란드" ,"group":"002" ,"up_name":"유럽" ,"flag":"1" ,"vol":"30000"},
+		  //           {"name":"헝가리" ,"group":"002" ,"up_name":"유럽" ,"flag":"1" ,"vol":"20000"}
+		  //       ],
+		  //       use : 'vol',
+		  //       flag : 'flag',
+		  //       group : 'group',
+		  //       groupName : 'up_name',
+		  //       item : 'name' 
+				
+			},
+			mousemove : function ( item ) {				
+				var open = priceDataFormat(item.siga);
+				var high = priceDataFormat(item.koga);
+				var low = priceDataFormat(item.jega);
+				var volume = priceDataFormat(item.vol);
+				var groupName='<span class="info_text">'+item.up_name+'</span>|';
+				var groupCode='<span class="info_text">'+item.name+'('+item.code+')'+'</span> |';
+				var groupOpen='<span class="info_text"> 현재가 : '+ open +'</span> |';
+				var groupHigh='<span class="info_text"> 고가 : '+ high +'</span> |';
+				var groupLow='<span class="info_text"> 저가 : '+ low +'</span> |';
+				var groupVolume='<span class="info_text"> 거래량 : '+ volume +'</span>';
+				
+				var infoText = groupName + groupCode + groupOpen + groupHigh + groupLow + groupVolume;
+
+				$('#treemap-info').html(infoText);
+
+			},
+			loadingBar : {
+				use : true,
+				select : $('.loading')
+			},
+			resize : {
+				use : true
+			}
+		};
+	
+		treemap = webponent.visual.treemap.init($('.treemap'), styles, options);
+
+	})();
+
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RADAR CHART</title>
+    <style>
+        .radar {
+            height: 400px;
+            width:100%;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>RADAR_timeSlice_animate</h1>
+<h2>timeSlice_animate</h2>
+<div class="wrap">
+    <div class='radar' ></div>
+    <div class="controller">
+        <button type="button" name="play_btn" value="play" class="play_btn"><span>재생</span></button>
+        <button type="button" name="pause_btn" value="pause" class="pause_btn"><span>일시정지</span></button>
+        <button type="button" name="stop_btn" value="stop" class="stop_btn"><span>정지</span></button>
+        <div class="slider"></div>
+        <span class="info"></span>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+<script type="text/javascript" src='../../../lib/visual/webponent.visual.radar.js'></script>
+<script type="text/javascript" src="../../../lib/comm/jquery-ui-1.10.4.custom.min.js"></script>
+<link rel="stylesheet" href="../../../lib/comm/jquery-ui-1.10.4.custom.min.css"/>
+<link rel="stylesheet" href="../../layout/css/layout.css"/>
+<link rel='stylesheet' href='../../../lib/visual/webponent.visual.radar.css' type='text/css'>
+<script>
+    var options = {
+        data : {
+            data: [
+                {"dataGb":"1","name" : "매출이익변동성", "val1":22 ,"val2" : 22},
+                {"dataGb":"1","name" : "총자산 이익변동성", "val1":42,"val2" : 22},
+                {"dataGb":"1","name" : "잠재력", "val1":67,"val2" : 22},
+                {"dataGb":"1","name" : "성장성", "val1":23,"val2" : 22},
+                {"dataGb":"1","name" : "수익성", "val1":78,"val2" : 22},
+                {"dataGb":"1","name" : "규모", "val1":23,"val2" : 22},
+                {"dataGb":"2","name" : "매출이익변동성", "val1":22 ,"val2" : 22},
+                {"dataGb":"2","name" : "총자산 이익변동성", "val1":23,"val2" : 22},
+                {"dataGb":"2","name" : "잠재력", "val1":27,"val2" : 22},
+                {"dataGb":"2","name" : "성장성", "val1":23,"val2" : 22},
+                {"dataGb":"2","name" : "수익성", "val1":23,"val2" : 22},
+                {"dataGb":"2","name" : "규모", "val1":22,"val2" : 22},
+                {"dataGb":"3","name" : "매출이익변동성", "val1":22 ,"val2" : 22},
+                {"dataGb":"3","name" : "총자산 이익변동성", "val1":23,"val2" : 22},
+                {"dataGb":"3","name" : "잠재력", "val1":42,"val2" : 22},
+                {"dataGb":"3","name" : "성장성", "val1":23,"val2" : 31},
+                {"dataGb":"3","name" : "수익성", "val1":78,"val2" : 22},
+                {"dataGb":"3","name" : "규모", "val1":23,"val2" : 22},
+                {"dataGb":"4","name" : "매출이익변동성", "val1":22 ,"val2" : 22},
+                {"dataGb":"4","name" : "총자산 이익변동성", "val1":23,"val2" : 22},
+                {"dataGb":"4","name" : "잠재력", "val1":42,"val2" : 22},
+                {"dataGb":"4","name" : "성장성", "val1":23,"val2" : 22},
+                {"dataGb":"4","name" : "수익성", "val1":78,"val2" : 22},
+                {"dataGb":"4","name" : "규모", "val1":23,"val2" : 22},
+                {"dataGb":"5","name" : "매출이익변동성", "val1":25 ,"val2" : 25},
+                {"dataGb":"5","name" : "총자산 이익변동성", "val1":53,"val2" : 55},
+                {"dataGb":"5","name" : "잠재력", "val1":45,"val2" : 55},
+                {"dataGb":"5","name" : "성장성", "val1":23,"val2" : 55},
+                {"dataGb":"5","name" : "수익성", "val1":78,"val2" : 44},
+                {"dataGb":"5","name" : "규모", "val1":53,"val2" : 55},
+                {"dataGb":"6","name" : "매출이익변동성", "val1":25 ,"val2" : 25},
+                {"dataGb":"6","name" : "총자산 이익변동성", "val1":53,"val2" : 55},
+                {"dataGb":"6","name" : "잠재력", "val1":45,"val2" : 55},
+                {"dataGb":"6","name" : "성장성", "val1":23,"val2" : 15},
+                {"dataGb":"6","name" : "수익성", "val1":78,"val2" : 55},
+                {"dataGb":"6","name" : "규모", "val1":53,"val2" : 55},
+            ],
+            use:  [
+                {"s1" : "val1"},
+                {"s2" : "val2"}
+                ],
+            gubun : 'dataGb'
+        },
+        legend : {
+            format : ['매출이익변동성', '총자산 이익변동성', '잠재력', '성장성', '수익성', '규모']
+        },
+        resize : {
+            use : true
+        },
+        timeSlice : {
+            use : true,
+            delay : 1000,
+            slider : $('.slider'),
+            play : $('.play_btn'),
+            pause : $('.pause_btn'),
+            stop : $('.stop_btn'),
+            delay : 2000,
+            animate : {
+                use : true,
+                type : 'elastic', /* linear|>|<|<>|bounce|elastic|backln|backOut|none */
+                speed : 1000
+            },
+            data : function (data) {
+                data = data[0].dataGb;
+                $('.info').text("dataGb : "+data);
+            }
+        },
+        toolTip : {
+            use : false
+        },
+        func  :{
+            tickClick :function(data) {
+                console.log(data);
+            }
+        }
+    };
+
+    var styles = {
+        layout : {
+            position : {
+                x : 0,
+                y : 0
+            },
+            area : {
+                color : '#f3f3f3'
+            }
+        },
+        radar : {
+            radius : 60,
+            maxValue:120,
+            area : {
+                color: 'rgb(204, 121, 167)',
+            },
+            line : {
+                color : 'red',
+                width : 0.2
+            },
+            animate : {
+                use : true,
+                step : 80,
+                type : 'linear' /* linear | easeInOutExpo | none */
+            },
+            hover : {
+                use : true,
+                area : {
+                    color : {
+                        src : '../img/pattern_hover.png'
+                    }
+                }
+            }
+        },
+        series : [
+            {s1 : {
+                use : true,
+                line: {
+                    color: '#f6557b',
+                    width: 1,
+                    opacity: 1
+                },
+                area : {
+                    color : 'rgba(246,85,123,0.5)',
+                    opacity: 0.5
+                },
+                tick: {
+                    style: 'circle',
+                    size: 5,
+                    overSize: 1.5,
+                    area: {
+                        color: '#f6557b',
+                        opacity: 1
+                    },
+                    line: {
+                        color: '#f6557b',
+                        width: 1,
+                        opacity:1
+                    }
+                }
+            }},
+            {s2 : {
+                use : true,
+                line: {
+                    color: '#2678ff',
+                    width: 1,
+                    opacity: 1
+                },
+                tick: {
+                    style: 'circle',
+                    size: 5,
+                    overSize: 1.5,
+                    area: {
+                        color: '#2678ff',
+                        opacity: 1
+                    },
+                    line: {
+                        color: '#2678ff',
+                        width: 1,
+                        opacity:
+                            1
+                    }
+                },
+                area : {
+                    color : 'rgba(38,120,255,0.5)',
+                    opacity: 0.5
+                }
+            }
+        }],
+        legend : {
+            use : true,
+            text: {
+                family: 'Nanum Gothic',
+                size: 12,
+                color: '#333333',
+                style: 'normal',    /* normal | italic */
+                weight: 'bold',   /* normal | bold */
+                opacity: 1
+            }
+
+        },
+        innerLegend : {
+            use : true,
+            lineNum : 6,
+            text: {
+                family: 'Nanum Gothic',
+                size: 10,
+                color: '#333333',
+                style: 'normal',    /* normal | italic */
+                weight: 'bold',   /* normal | bold */
+                opacity: 1
+            }
+        }
+    };
+
+    var radar = webponent.visual.radar.init($(".radar"),styles, options);
+
+
+</script>

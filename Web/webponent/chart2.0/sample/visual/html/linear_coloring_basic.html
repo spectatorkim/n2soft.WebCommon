@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>sample linear</title>	
+	<style>
+		.svg {
+			width: 100%;
+			height: 400px;
+		}
+		h3{
+			height:25px;
+			border-bottom:1px solid #cecece;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<h1>Coloring - Linear_Gauge_Chart</h1>
+		<h2>일반 디자인</h2>
+		<div class="wrap">
+			<div class="btnbox">
+<!-- 				<button type="button" class="btn04"  onclick="saveImage(gauge)">
+					<span>SAVE IMAGE</span>
+				</button> -->
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;">
+					<span>Mobile</span>
+				</button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/7.+Linear+gauge'); return false;">
+					<span>Reference</span>
+				</button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Visual%20Demo/linear_form_solid'); return false;">
+					<span>Publisher</span>
+				</button>
+			</div>
+			<div class= "theme1 svg" ></div>
+		</div>
+		
+		<h2>일반 디자인</h2>
+		<div class="wrap">
+			<div class="btnbox">
+<!-- 				<button type="button" class="btn04"  onclick="saveImage(gauge2)">
+					<span>SAVE IMAGE</span>
+				</button> -->
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;">
+					<span>Mobile</span>
+				</button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/7.+Linear+gauge'); return false;">
+					<span>Reference</span>
+				</button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Visual%20Demo/linear_form_pointer'); return false;">
+					<span>Publisher</span>
+				</button>
+			</div>
+			<div class= "theme2 svg" ></div>
+		</div>
+		
+		<h2>일반 디자인</h2>
+		<div class="wrap">
+			<div class="btnbox">
+<!-- 				<button type="button" class="btn04"  onclick="saveImage(gauge3)">
+					<span>SAVE IMAGE</span>
+				</button> -->
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;">
+					<span>Mobile</span>
+				</button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/7.+Linear+gauge'); return false;">
+					<span>Reference</span>
+				</button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Visual%20Demo/linear_form_led'); return false;">
+					<span>Publisher</span>
+				</button>
+			</div>
+			<div class= "theme3 svg" ></div>
+		</div>
+		
+	</div>
+	
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.linear.js'></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.gauge.style.js'></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	
+<script type="text/javascript">
+
+	var styles = webponent.visual.styles.BASIC;
+	
+	var options = {
+			data : {
+				"data" : [	
+				          	{"currentVal" : 60 }]
+			},
+			use : {
+				toolTip : false
+			}             
+	};
+	var gauge = webponent.visual.linear.init($(".theme1"), styles, options, "linear_solid");
+	var gauge2 = webponent.visual.linear.init($(".theme2"), styles, options, "linear_pointer");
+	var gauge3 = webponent.visual.linear.init($(".theme3"), styles, options, "linear_led");
+
+/* 	var saveImage = function (x) {
+
+		x.svg.getSVG();
+	}; */
+</script>
+
+</body>
+</html>

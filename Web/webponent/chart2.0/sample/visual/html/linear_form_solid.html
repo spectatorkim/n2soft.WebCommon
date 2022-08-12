@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>sample linear</title>	
+	<style>
+		.svg {
+			width: 100%;
+			height: 400px;
+		}
+		.setting {border: 1px solid #ebebeb; padding: 0 10px 10px 10px; margin: 10px 0 10px; position: relative; display: block;}
+		.setting legend {font-size: 0; text-indent: -9999px; visibility: hidden; line-height: 0; position: absolute; left: -9999px; top: 0;}
+		.setting span.input input {vertical-align: middle;}
+		.setting label{display: inline-block; margin-left:5px;width:80px; border-right:1px solid #ccc; padding-right:5px; height: 19px; vertical-align:sub;}
+		.setting label.last{width:100px; border:none;}
+		.setting label.radio{width:25px; border:none;}
+		.setting span.input input[type="text"] {margin-left:3px;border: 1px solid lightgrey; width:25px;}
+		.setting span.input input[type="radio"] {margin-right:0px;}
+		.setting span.input {display: block; padding-top:10px;}
+		 div.btn {position: absolute; right: 90%; }
+		 div.btn input {background: #fff; border-radius: 3px; margin: 0; padding: 0; width: 75px; height: 35px; cursor: pointer; color: #333; border: 1px solid #ccc; line-height: 100%; font-weight: bold;}
+	</style>
+</head>
+<body>
+		<h1>Form - Linear_Gauge_Chart (solid)</h1>
+		<h2>option</h2>
+		<div class="wrap">
+			<div class="btnbox">
+				<div class="btn"><input type="button" value="Change" id="change_Btn"></div>
+			</div>
+			
+		<fieldset class="setting"><legend>스타일 변경</legend>
+			<form name="frm" id="frm">
+				<span class="input">
+					<label><input type="checkbox" id="axis"name="option" checked="checked">치수·눈금</label>
+					<label><input type="checkbox" id="axisNum" name="option" checked="checked">치수표시판</label>
+					<label><input type="checkbox" id="max" name="option"  checked="checked">최대값표시</label>
+					<label><input type="checkbox" id="avg" name="option"  checked="checked">평균값표시</label>	
+					<label><input type="checkbox" id="tooltip" name="option"  checked="checked">마우스오버</label>
+					<label><input type="checkbox" id="animate" name="option"  checked="checked">비쥬얼효과</label>
+					<label class="last"><input type="checkbox" id="target" name="option">표시값 :<input type="text" id="targetVal"></label>
+				</span>
+				<span class="input">
+					<input type="radio" id="row" name="option"> <label for="row" class="radio">가로</label>
+					<input type="radio" id="col" name="option" checked="checked"> <label for="col" class="radio">세로</label>
+				</span>
+			</form>
+		</fieldset>
+		<div class= "svg" ></div>
+	</div>
+		
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.linear.js'></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.gauge.style.js'></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+		
+<script type="text/javascript">
+
+	var styles = webponent.visual.styles.BASIC;
+	var options = {
+			data : {
+				"data" : [	{"currentVal" : 60},{"d2":22} ]
+			},
+			use : {
+					axis: true,			// 눈금
+					axisText : true,		// 치수
+					counter : true,		// 치수표시판
+					max :true,			// 최대값 표시
+					avg : true,			// 평균값 표시
+					target : false,		// 타겟값 표시
+					toolTip: true,		// 마우스오버 툴팁
+					animate: true,		// 움직이는 효과
+					resize: false,		// 게이지 사이즈 조절
+					responsive: true ,	// 반응형 유무
+					direct : 'col'		// 가로세로 유무 (default - col 세로)
+			},
+			marker: {
+				target : 0
+			}
+	};
+
+	var gauge = webponent.visual.linear.init($(".svg"), styles, options, "linear_solid");
+	
+	$('#change_Btn').click(function(){
+		
+		options.use.axis = ($('#axis').is(':checked')) ? true : false;
+		options.use.axisText = ($('#axis').is(':checked')) ? true : false;
+		options.use.counter = ($('#axisNum').is(':checked')) ? true : false;
+		options.use.max = ($('#max').is(':checked')) ? true : false;
+		options.use.avg = ($('#avg').is(':checked')) ? true : false;
+		options.use.toolTip = ($('#tooltip').is(':checked')) ? true : false;
+		options.use.animate = ($('#animate').is(':checked')) ? true : false;
+		
+		// 표시값 target 설정
+		if($('#target').is(':checked')){
+			options.use.target =  true;
+			options.marker.target =  $('#targetVal').val();
+		}else{
+			options.use.target = false;
+		}
+		
+		// Linear 가로 세로모드
+		if($('#row').is(':checked')){
+			options.use.direct = "row"
+		}else{
+			options.use.direct = "col"
+		}
+		
+		gauge.reDraw(styles, options); 
+	});
+	
+</script>
+
+</body>
+</html>

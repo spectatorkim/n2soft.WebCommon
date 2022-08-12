@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nTreeCall>
+
+    <call msg_cd="A1000" msg_id="IBKAPP.1000" host_id="IBKAPP" param1="1000" inq_mode="1" msg_name="추천인조회" />
+    <call msg_cd="A1100" msg_id="IBKAPP.1100" host_id="IBKAPP" param1="1100" inq_mode="1" msg_name="예금주조회" />
+    <call msg_cd="A1200" msg_id="IBKAPP.1200" host_id="IBKAPP" param1="1200" inq_mode="1" msg_name="유입경로조회" />
+    <call msg_cd="A2000" msg_id="IBKAPP.2000" host_id="IBKAPP" param1="2000" inq_mode="1" msg_name="약관동의" />
+    <call msg_cd="A2100" msg_id="IBKAPP.2100" host_id="IBKAPP" param1="2100" inq_mode="1" msg_name="한도조회" />
+    <call msg_cd="A2200" msg_id="IBKAPP.2200" host_id="IBKAPP" param1="2200" inq_mode="1" msg_name="신분증확인" />
+    <call msg_cd="A2300" msg_id="IBKAPP.2300" host_id="IBKAPP" param1="2300" inq_mode="1" msg_name="대출신청" />
+    <call msg_cd="A2400" msg_id="IBKAPP.2400" host_id="IBKAPP" param1="2400" inq_mode="1" msg_name="자영업자접수" />
+    <call msg_cd="A4000" msg_id="IBKAPP.4000" host_id="IBKAPP" param1="4000" inq_mode="1" msg_name="대출계좌조회" />
+    <call msg_cd="A4100" msg_id="IBKAPP.4100" host_id="IBKAPP" param1="4100" inq_mode="1" msg_name="대출거래내역조회" />
+    <call msg_cd="A4200" msg_id="IBKAPP.4200" host_id="IBKAPP" param1="4200" inq_mode="1" msg_name="대출신청내역" />
+    <call msg_cd="A4300" msg_id="IBKAPP.4300" host_id="IBKAPP" param1="4300" inq_mode="1" msg_name="한도조회내역" />
+    <call msg_cd="A4400" msg_id="IBKAPP.4400" host_id="IBKAPP" param1="4400" inq_mode="1" msg_name="상환계획일정" />
+    <call msg_cd="A5000" msg_id="IBKAPP.5000" host_id="IBKAPP" param1="5000" inq_mode="1" msg_name="상환조회" />
+    <call msg_cd="A5100" msg_id="IBKAPP.5100" host_id="IBKAPP" param1="5100" inq_mode="1" msg_name="실시간상환" />
+    <call msg_cd="A6000" msg_id="IBKAPP.6000" host_id="IBKAPP" param1="6000" inq_mode="1" msg_name="증명서신청정보조회" />
+    <call msg_cd="A8100" msg_id="IBKAPP.8100" host_id="IBKAPP" param1="8100" inq_mode="1" msg_name="휴대폰본인인증확인" />
+    <call msg_cd="A8200" msg_id="IBKAPP.8200" host_id="IBKAPP" param1="8200" inq_mode="1" msg_name="공인인증확인" />
+    <call msg_cd="A8300" msg_id="IBKAPP.8300" host_id="IBKAPP" param1="8300" inq_mode="1" msg_name="중개본인인증확인" />
+    <call msg_cd="A9000" msg_id="IBKAPP.9000" host_id="IBKAPP" param1="9000" inq_mode="1" msg_name="스크래핑 납부확인서" />
+    <call msg_cd="A9100" msg_id="IBKAPP.9100" host_id="IBKAPP" param1="9100" inq_mode="1" msg_name="스크래핑 자격득실확인서" />
+    <call msg_cd="A9200" msg_id="IBKAPP.9200" host_id="IBKAPP" param1="9200" inq_mode="1" msg_name="스크래핑 주민등록등본" />
+    
+</nTreeCall>

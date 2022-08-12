@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang='ko'>
+
+<head>
+<meta charset='UTF-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>scatterPlot timeslice normal</title>
+<style>
+.scatter_plot {
+	width: 100%;
+	height: 400px;
+}
+
+.tip_name {
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.tip_text {
+	margin-bottom: 3px;
+	color: #cccccc;
+	font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<h1>SCATTER PLOT-timeslice_animate</h1>
+		<h2>애니메이션 시계열</h2>
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01"
+					onclick="parent.location.href=document.location; return false;">
+					<span>Mobile</span>
+				</button>
+				<button type="button" class="btn02"
+					onclick="window.open('http://build.cyber-i.com/docs/display/wp/2.+Scatter+Plot'); return false;">
+					<span>Reference</span>
+				</button>
+				<button type="button" class="btn03"
+					onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Visual%20Demo/ScatterPlot_timeSlice_animate'); return false;">
+					<span>Publisher</span>
+				</button>
+			</div>
+
+			<div class='scatter_plot'></div>
+			<div class="controller">
+				<button type="button" name="play_btn" value="play" class="play_btn">
+					<span>재생</span>
+				</button>
+				<button type="button" name="pause_btn" value="pause"
+					class="pause_btn">
+					<span>일시정지</span>
+				</button>
+				<button type="button" name="stop_btn" value="stop" class="stop_btn">
+					<span>정지</span>
+				</button>
+				<div class="slider"></div>
+				<span class="info"></span>
+			</div>
+		</div>
+	</div>
+	
+	
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.scatterplot.js'></script>
+	<script type="text/javascript" src="../../../lib/comm/jquery-ui-1.10.4.custom.min.js"></script>
+	<link rel="stylesheet" href="../../../lib/comm/jquery-ui-1.10.4.custom.min.css" />
+	<link rel="stylesheet" href="../../layout/css/layout.css" />
+
+	<script>
+		(function() {
+
+			var style = {
+				layout : {
+					paddingTop : 43,
+					paddingBottom : 24,
+					paddingLeft : 20,
+					paddingRight : 30
+				},
+				graph : {
+					paddingTop : 0,
+					paddingBottom : 0,
+					paddingLeft : 30,
+					paddingRight : 30,
+					area : {
+						color : '#f8f8f8'
+					},
+					line : {
+						top : {
+							color : '#ccc9c9',
+							width : 1,
+							opacity : 1
+						},
+						left : {
+							width : 0
+						},
+						right : {
+							width : 0
+						},
+						bottom : {
+							color : '#ccc9c9',
+							width : 1,
+							opacity : 1
+						}
+					}
+				},
+				yAxis : {
+					width : 44,
+					position : 'left', /* left | right */
+					paddingLeft : 0,
+					paddingRight : 11,
+					line : {
+						color : '#cccccc',
+						width : 1,
+						opacity : 1
+					},
+					text : {
+						family : 'Nanum Gothic',
+						size : 12,
+						color : '#666666',
+						align : 'right', /* left | center | right */
+						style : 'normal', /* normal | italic */
+						weight : 'bold', /* normal | bold */
+						opacity : 1
+					}
+				},
+				xAxis : {
+					height : 10,
+					paddingTop : 15,
+					line : {
+						color : '#e3e3e3',
+						width : 1,
+						opacity : 1
+					},
+					text : {
+						family : 'Nanum Gothic',
+						size : 12,
+						color : '#666666',
+						align : 'center', /* left | center | right */
+						style : 'normal', /* normal | italic */
+						weight : 'bold', /* normal | bold */
+						opacity : 1
+					}
+				},
+				trendLine : {
+					use : true,
+					color : '#556673',
+					width : 1,
+					opacity : 1,
+					animate : {
+						use : true,
+						color : '#ca873f'
+					}
+				},
+				series : {
+					area : {
+						type : 'normal', /* normal | upDown */
+						color : [ '#ff625f', '#ff852c', '#ffbb16', '#d6de1d',
+								'#2bcdba', '#34b8ef', '#5e93f4', '#838bf0',
+								'#cc8af2', '#ff8bcd' ],
+						size : {
+							max : 25,
+							min : 1
+						}
+					},
+					hover : {
+						use : true,
+						area : {
+							color : {
+								src : '../img/pattern_hover.png'
+							}
+						}
+					}
+				},
+				animate : {
+					use : true,
+					type : 'bounce', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+					speed : 600
+				}
+
+			};
+
+			var options = {
+				data : {
+					url : '../data/scatterPlot_text.txt',
+					type : 'text',
+					gubun : 'code'/*,
+					gubunOption : 'KR7000060004'*/
+				},
+				plot : {
+					select : 'straight_purchase'
+				},
+				xAxis : {
+					select : 'sell',
+					format : function(xAxis) {
+						xAxis = priceDataFormat(xAxis);
+						return xAxis;
+					}
+				},
+				yAxis : {
+					select : 'buy',
+					format : function(yAxis) {
+						yAxis = priceDataFormat(yAxis);
+						return yAxis;
+					}
+				},
+				toolTip : {
+					use : true,
+					className : 'tip',
+					func : function(data, tipElement) {
+						var name = '<div class="tip_name">' + data.name
+								+ '</div>';
+						var buy = '<div class="tip_text">' + '매수 : '
+								+ priceDataFormat(data.buy) + '</div>';
+						var sell = '<div class="tip_text">' + '매도 : '
+								+ priceDataFormat(data.sell) + '</div>';
+						var flat = '<div class="tip_text">' + '순매수 : '
+								+ priceDataFormat(data.buy - data.sell)
+								+ '</div>';
+						var tip = '<div class="text">' + name + buy + sell
+								+ flat + '</div>';
+						var arrow = '<div class="arrow" style="width: '
+								+ tipElement.width() + 'px;"></div>';
+						tipElement.html(tip + arrow);
+					}
+				},
+				timeSlice : {
+					use : true,
+					delay : 800,
+					animate : {
+						use : true,
+						type : 'linear', /* linear|>|<|<>|bounce|elastic|backln|backOut|none */
+						speed : 300
+					},
+					slider : $('.slider'),
+					play : $('.play_btn'),
+					pause : $('.pause_btn'),
+					stop : $('.stop_btn'),
+					data : function(data) {
+						$('.info').text(data[0].code);
+					}
+				},
+				resize : {
+					use : true
+				}
+			};
+
+			scatterPlot = webponent.visual.scatterPlot.init($('.scatter_plot'), style,
+					options);
+
+		})();
+	</script>
+</body>
+
+</html>
+

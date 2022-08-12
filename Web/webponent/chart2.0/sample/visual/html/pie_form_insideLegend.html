@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>pie inside legend</title>
+	<style>
+
+		.pie {    
+			width: 100%;
+			height: 100%;
+		}
+
+		.pie2 {  
+			width: 100%;
+			height: 100%;
+		}    
+	  
+	</style>
+</head>
+
+<body>
+
+	<h1>PIE-form_InsideLegend</h1>
+	<h2>일반 디자인</h2>
+	<div class="wrap">
+		<div class="btnbox">
+			<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;">
+				<span>Mobile</span>
+			</button>
+			<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/1.+Pie'); return false;">
+				<span>Reference</span>
+			</button>
+			<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Visual%20Demo/pie_insideLegend'); return false;">
+				<span>Publisher</span>
+			</button>
+		</div>
+		<div class='pie'></div>
+	</div>
+	<h2>접근성 디자인</h2>
+	<div class="wrap">
+		<div class='pie2'></div>
+	</div>
+	
+	
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.pie.js'></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<script>
+
+
+	/* PIE chart  */
+
+	var styles = {
+		layout : {
+			position : {
+				x : 0,
+				y : 0
+			}
+		},
+		pie : {
+			radius : 70,
+			area : {
+				color : [
+					'#43acdc', '#45acdc', '#5cb7e1', '#7fc6e8',
+					'#a9d9ef', '#acdaf0', '#c7e6f5'
+				]
+			},
+			line : {
+				color : '#fff',
+				width : 3
+			},               
+			animate : {
+				use : true,
+				step : 80,
+				type : 'easeInOutExpo' /* linear | easeInOutExpo | none */
+			},
+			hover : {
+				use : true,
+				area : {
+					color : '#238cbc'
+				}
+			}
+		},
+		base : {
+			use : true,
+			radius : 75,
+			area : {
+				color : '#fff'
+			},
+			line : {
+				color : '#d3efed',
+				width : 1
+			}
+
+		},      
+		legend : {
+			use : true,
+			stackedGap : 5,
+			type : 'insideLegend',
+			text: {
+				family: 'Nanum Gothic',
+				size: 17, 
+				color: '#333333', 
+				style: 'normal',    /* normal | italic */
+				weight: 'bold',   /* normal | bold */
+				opacity: 1
+			}
+		}
+	};
+
+	var options = {
+		data : {
+			data: [
+				{"date" : "20140101", "legend":"테스트1", "pdata":"90"},
+				{"date" : "20140101", "legend":"테스트2", "pdata":"50"},               
+				{"date" : "20140101", "legend":"테스트3", "pdata":"70"},
+				{"date" : "20140101", "legend":"테스트4", "pdata":"10"},
+				{"date" : "20140101", "legend":"테스트5", "pdata":"30"},                
+				{"date" : "20140101", "legend":"테스트6", "pdata":"50"},
+				{"date" : "20140101", "legend":"테스트7", "pdata":"80"}
+			],
+			use: 'pdata'       
+		},
+		legend : {
+			func : function (pie) {    
+
+				var legend = [];
+
+				var dataTotalValue = pie.settings.data.dataTotalValue;
+				var data = pie.settings.data.renderedData;
+				
+				for (var i = 0; i < data.length; i++) {
+
+					var per = Math.round(100 / dataTotalValue * data[i].pdata);
+				
+					legend.push(per + '%');
+				}
+				  
+				return legend;
+			}
+		},
+		toolTip : {
+			use : true,
+			className : 'tip',
+			func : function (pie, data, tipElement) {                   
+				
+				var dataTotalValue = pie.settings.data.dataTotalValue;
+				var date = dayDataFormatDot(data.date);
+				var setData = Math.round(100 / dataTotalValue * data.pdata) + '%';
+				var tip = '<div class="text">'+date + ' / ' + setData + '</div>';
+				var arrow = '<div class="arrow" style="width: '+
+						tipElement.width() + 'px;"></div>';
+				
+				tipElement.html(tip);
+				tipElement.html(tipElement.html() + arrow);
+			}
+		},
+		resize : {
+			use : true
+		}
+	};
+
+	var pie = webponent.visual.pie.init($('.pie'), styles, options);
+ 
+	insideLegendFunc(pie);
+
+	pie.on('reDraw', function (e, pie) {
+
+		insideLegendFunc(pie);
+	});
+
+
+	/* PIE chart 2 */
+
+	var styles2 = {
+		layout : {
+			position : {
+				x : 0,
+				y : 0
+			}
+		},
+		pie : {
+			radius : 70,
+			area : {
+				color : [
+					'#d6de1d', '#2bcdba', '#34b8ef', '#ffa4d8',
+					'#ff625f', '#838bf0', '#ffbb16'
+				]
+			},
+			line : {
+				color : '#fff',
+				width : 3
+			},               
+			animate : {
+				use : true,
+				step : 80,
+				type : 'easeInOutExpo' /* linear | easeInOutExpo | none */
+			},
+			hover : {
+				use : true,
+				area : {
+					color : {
+						src : '../img/pattern_hover.png'
+					}
+				}
+			}
+		},
+		base : {
+			use : true,
+			radius : 75,
+			area : {
+				color : '#fff'
+			},
+			line : {
+				color : '#d3efed',
+				width : 1
+			}
+
+		},      
+		legend : {
+			use : true,
+			stackedGap : 5,
+			type : 'insideLegend',
+			text: {
+				family: 'Nanum Gothic',
+				size: 17, 
+				color: '#333333', 
+				style: 'normal',    /* normal | italic */
+				weight: 'bold',   /* normal | bold */
+				opacity: 1
+			}
+		}
+	};
+
+	var options2 = {
+		data : {
+			data: [
+				{"date" : "20140101", "legend":"테스트1", "pdata":"90"},
+				{"date" : "20140101", "legend":"테스트2", "pdata":"50"},               
+				{"date" : "20140101", "legend":"테스트3", "pdata":"70"},
+				{"date" : "20140101", "legend":"테스트4", "pdata":"10"},
+				{"date" : "20140101", "legend":"테스트5", "pdata":"30"},                
+				{"date" : "20140101", "legend":"테스트6", "pdata":"50"},
+				{"date" : "20140101", "legend":"테스트7", "pdata":"80"}
+			],
+			use: 'pdata'     
+		},
+		legend : {
+			func : function (pie) {       
+				
+				var legend = [];
+
+				var dataTotalValue = pie.settings.data.dataTotalValue;
+				var data = pie.settings.data.renderedData;
+				
+				for (var i = 0; i < data.length; i++) {
+
+					var per = Math.round(100 / dataTotalValue * data[i].pdata);
+				
+					legend.push(per + '%');
+				}
+				  
+				return legend;
+			}
+		},
+		toolTip : {
+			use : true,
+			className : 'tip',
+			func : function (pie, data, tipElement) {                   
+				
+				var dataTotalValue = pie.settings.data.dataTotalValue;
+				var date = dayDataFormatDot(data.date);
+				var setData = Math.round(100 / dataTotalValue * data.pdata) + '%';
+				var tip = '<div class="text">'+date + ' / ' + setData + '</div>';
+				var arrow = '<div class="arrow" style="width: '+
+						tipElement.width() + 'px;"></div>';
+				
+				tipElement.html(tip);
+				tipElement.html(tipElement.html() + arrow);
+			}
+		},
+		resize : {
+			use : true
+		}
+	};
+
+	var pie2 = webponent.visual.pie.init($('.pie2'), styles2, options2);
+
+	insideLegendFunc(pie2);
+
+	pie2.on('reDraw', function (e, pie) {
+
+		insideLegendFunc(pie);
+	});
+   
+	function insideLegendFunc (pie) {
+
+		var dataTotalValue = pie.settings.data.dataTotalValue;
+		var renderedData = pie.settings.data.renderedData;
+		var maxIndex = pie.settings.data.maxIndex;
+		var maxData = Number(renderedData[0].pdata);
+
+		for (var i = 0; i < renderedData.length; i++) {
+
+			var per = Math.round(100 / dataTotalValue * renderedData[i].pdata);
+
+			if (per < 10) {
+
+				pie.items.legend.text[i].remove();
+			}
+		}
+
+		pie.items.legend.text[maxIndex].attr({
+			'font-size' : 24
+		})
+	} 
+
+	
+
+	</script>
+</body>
+
+</html>

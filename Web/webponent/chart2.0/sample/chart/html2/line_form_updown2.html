@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CHART</title>
+
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+
+	
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.style.js"></script>
+	<script type="text/javascript" src="./lib/webponent.test.js"></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<style type="text/css">
+		.chart {width: 600px; height: 400px;}
+	</style>
+	<script type="text/javascript">
+	var chart = null;
+	var styles = webponent.chart.styles.BASIC;
+	
+
+	        
+	var options = {
+	            data: {data:normalData},
+	            format: {
+	                xAxis: 'dayDataFormat',
+	                yAxis: 'priceDataFormat'
+	            },
+	            func: {
+				tip: 'defaultTip'
+				},
+	            use: {
+	                animate: false,
+	                aCrossLine: true
+	            }
+	        };
+	        
+	var series = {
+			"main": {
+				"s1": {series: 'line', form: 'updown', xaxis: 'Date', yaxis: 'minus'}
+			}
+		};
+
+
+    var series2 = {
+			"main": {
+				"s1": {series: 'line', form: 'updown_base', xaxis: 'Date', yaxis: 'plus'}
+			}
+		};
+
+
+	window.onload = function(){
+		onChangeStyle(styles);
+        chart = webponent.chart.init($('.chart'), options, styles, series);
+	};
+
+	function onChangeStyle(styles) {
+		
+	}
+	
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>LINEERIES-updown</h1>
+		<h2>상승/하락값만 있을때</h2>
+		<input type="hidden" id="SVGHIDDEN" value=""/>
+		<div >
+			<div class="ctrlBox">
+			</div>
+			
+		</div>
+	</div>
+	<div class="chart"></div>
+</body>
+</html>

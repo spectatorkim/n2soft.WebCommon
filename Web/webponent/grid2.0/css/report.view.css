@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+/* --------------------------  view layout  -------------------------- */
+#reportContainer {
+	height: auto;
+	width: 1200px;
+	margin: auto;
+}
+
+#container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}	
+
+.contentsFrame {
+	list-style-type: none; 
+	border-style: none; 
+	border-width: 1px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 15px;
+}
+
+caption {height: 0px; visibility: hidden;}
+
+
+#ui-datepicker-div {
+	background-color: ghostwhite;
+	}
+
+#bigFrame {
+	list-style-type: none;
+	padding-left: 0px;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+li.bigFrame {
+	width: 100%;
+	display: inline-block;
+}
+
+ul.liChildren {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+ul.liChildren li {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.liDiv {
+	border-style: solid;
+	border-width: 1px;
+	width: 100%;
+}
+
+.liDiv>div {
+	text-align: right;
+	margin-right: 10px;
+}
+
+li {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#report1 {
+	width: 968px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+}
+
+#report2 {
+	width: 452px;
+	margin-right: auto;
+	float: left;
+}
+
+#report3 {
+	width: 452px;
+	margin-left: auto;
+	float: right;
+}
+
+#reportContainer {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+/* --------------------------  grid table --------------------------- */
+.CI-GRID-AREA{width: 100%;} 
+
+.CI-GRID-WRAPPER {background: #fff; border: 1px solid gray;}
+
+.CI-GRID-BORDER-RIGHT {border-left: 1px solid gray;}
+
+.CI-GRID-BORDER-BOTTOM {border-top: 1px solid gray;}
+
+.CI-GRID-WRAPPER th,.CI-GRID-WRAPPER td {border-right: 1px solid gray; border-bottom: 1px solid gray; padding: 3px;}
+
+.CI-GRID-ODD {background-color: #F0F0F0;} 
+
+#gridTable {width: 100px;}
+
+
+
+/* -------------------------- charts --------------------------- */
+svg {
+	width: 100%;
+}
+
+.chartPart {
+	width: 100%;
+	height: 500px;
+	border: 1px solid #eee;
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.controller .ui-state-default {
+	background: url(/WEB-APP/webponent/chart2.0/sample/chart/img/timeslice_dot.png);
+	border: 0;
+	width: 1em;
+	height: 1em;
+}
+
+.controller {border: 1px solid #eaeaea; border-top: 0; padding: 5px 5px 2px 5px; position: relative;}
+
+.controller .slider {width: 70%; left: 15%; position: absolute; top: 14px;}
+
+.controller .ui-slider-horizontal {height: 0.7em;}
+
+.controller .ui-widget-content {border: 0; background: #e0e4e9;}
+
+.controller .ui-widget-header {background: #2bcdba;}
+
+.controller .info {position: absolute; top: 11px; right: 10px;}
+
+.controller .ui-slider {margin-top: 0px; left: 160px;}
+
+

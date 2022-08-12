@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CHART01</title>
+
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+
+	
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.js"></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<style type="text/css">
+		.chart01 {width: 100%; height: 100%;}
+	</style>
+	<script type="text/javascript">
+	var chart = null;
+	window.onload = function(){
+		var options = {
+			data: {
+				data: [
+					{ Date: '20140101', Mprc: 10000, Oprc:12000 },
+					{ Date: '20140102', Mprc: 20000, Oprc:22000 },
+					{ Date: '20140103', Mprc: 15000, Oprc:22000 },
+					{ Date: '20140104', Mprc: 30000, Oprc:32000 },
+					{ Date: '20140105', Mprc: 5000, Oprc:12000 },
+					{ Date: '20140106', Mprc: 10000, Oprc:12000 },
+					{ Date: '20140107', Mprc: 20000, Oprc:22000 },
+					{ Date: '20140108', Mprc: 15000, Oprc:22000 },
+					{ Date: '20140109', Mprc: 15000, Oprc:22000 },
+					{ Date: '20140110', Mprc: 5000, Oprc:12000 }
+				]
+			},
+			format: {
+				xAxis: function(_str){
+					return _str.substr(0, 4)+'.'+_str.substr(4,2)+'.'+_str.substr(6,2);
+				},
+				yAxis: 'priceDataFormat'
+			},
+			func: {
+				tip: function(tipElement, data, rect){
+					var date = data.xaxis.substr(0, 4)+'.'+data.xaxis.substr(4, 2)+'.'+data.xaxis.substr(6, 2);
+					var tip = '<div class="text">'+date + ' / ' + String(data.yaxis).format().trim()+'</div>';
+
+					tipElement.html(tip).show();
+
+					var arrow = '<div class="arrow" style="width: '+tipElement.width() + 'px;"></div>';
+
+					tipElement.html(tipElement.html() + arrow).css({
+						left: rect.x - (tipElement.width() / 2), top: rect.y - 35
+					});
+				}
+			},
+			use: {
+				animate: true,
+				aCrossLine: true
+			},
+			animate: {
+				speed: 100
+			}
+		}
+		var styles = {
+			main: {
+				layout: {
+					paddingTop: 57, paddingRight: 30, color: '#f8f8f8',
+					line: {color: '#eaeaea', width: 1}
+				},
+				graph: {
+					color: '#f8f8f8',
+					line: {
+						top: {color: '#cccccc'},
+						left: {width: 0},
+						right: {width: 0},
+						bottom: {color: '#cccccc'}
+					}
+				},
+				crossLine: {
+					color: '#465866'
+				},
+				xAxis: {
+					paddingTop: 13, height: 30,
+					text: {family: 'Nanum Gothic', size: 12, color: '#666'},
+					line: {color: '#e3e3e3', width: 1}
+				},
+				yAxis: {
+					useValue: {min: true},
+					line: {color: '#cccccc', width: 1, opacity: 1},
+					text: {family: 'Nanum Gothic', size: 12, color: '#666', align: 'right'}
+				},
+				tip: {
+					className: 'tip'
+				},
+				series: {
+					s1: {
+						area: {
+							normal: {
+								color: '#2bcdba', opacity: 0.4,
+								over: {
+									color: '#2bcdba', opacity: 0.4
+								}
+							}
+						},
+						line: {
+							normal: {
+								color: '#2bcdba', width: 3,
+								over: {
+									color: '#2bcdba', width: 3
+								}
+							}
+						},
+						tick: {
+							style: 'circle', size: 5, overSize: 1.5,
+							area: {
+								normal: {
+									color: '#fff', over: {color: '#fff'}
+								}
+							},
+							line: {
+								normal: {
+									color: '#2bcdba', width: 3, over: {color: '#465866', width: 3}
+								}
+							}
+						}
+					}
+				}
+			}
+		};
+		var series = {
+			"main": {
+				"s1": {series: 'area', xaxis: 'Date', yaxis: 'Oprc'}
+			}
+		};
+		chart = webponent.chart.init($('.chart01'), options, styles, series);
+	};
+	changeTickStyle = function(){
+		var frm = document.frm;
+		var tick = '';
+		for(var i = 0, len = frm.tick.length; i < len; i++){
+			if(frm.tick[i].checked) {
+				tick = frm.tick[i].value;
+				break;
+			}
+		}
+		chart.reDraw(null, {main: {
+			series: {
+				s1: {
+					tick: {
+						style: tick
+					}
+				}
+			}
+		}});
+	};
+	</script>
+<body>
+	<div class="wrapper">
+		<h1>AREASERIES-normal</h1>
+		<h2>Tick style 변경</h2>
+		<fieldset class="search"><legend>스타일 변경</legend>
+			<form name="frm" id="frm">
+				<div class="input">
+					<label><input type="radio" name="tick" value="circle" checked="checked" /> Circle</label>
+					<label><input type="radio" name="tick" value="square" /> Square</label>
+					<label><input type="radio" name="tick" value="triangle" /> Triangle</label>
+					<label><input type="radio" name="tick" value="star" /> Star</label>
+					<label><input type="radio" name="tick" value="diamond" /> Diamond</label>
+				</div>
+				<div class="btn"><input type="button" value="Search" onclick="changeTickStyle()" /></div>
+			</form>
+		</fieldset>
+		<div class="wrap">
+			<div class="btnbox top-98">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/Area+Series#AreaSeries-Tick'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Chart%20Series/AREA-TICK'); return false;"><span>Publisher</span></button>
+			</div>
+			<div class="chart01"></div>
+		</div>
+	</div>
+</body>
+</html>

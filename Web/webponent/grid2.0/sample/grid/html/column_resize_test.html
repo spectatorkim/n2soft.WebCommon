@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>컬럼 리사이즈 - 컬럼 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+</head>
+<body>
+	<div class="wrapper" style="width:100%;">
+		<h1>컬럼 리사이즈</h1>
+
+		<h2>컬럼 리사이즈</h2>
+		<div class="wrap" style="width:100%;">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=14615093#id-%EC%98%B5%EC%85%98-resizable'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%EC%BB%AC%EB%9F%BC%20%EB%A6%AC%EC%82%AC%EC%9D%B4%EC%A6%88'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>등락율 순위</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="indx" width="100px" align="center">순위</th>
+							<th name="Isu" width="20%">종목명</th>
+							<th name="NowPrc" width="20%" align="right">현재가</th>
+							<th name="PrdayCmp" width="*" align="right">전일비</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="indx" bind="indx"></td>
+							<td name="Isu" bind="Isu"></td>
+							<td name="NowPrc" bind="NowPrc"></td>
+							<td name="PrdayCmp" bind="PrdayCmp"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid1 = webponent.grid.init(table1, template1);
+	
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/ranking-map.json',
+		success : function (resp) {
+
+			grid1.appendRow(resp);
+		}
+	});
+
+	var t = $('<table>')
+	$('body').append(t)
+	t.append(grid1.markup.main.header.thead)
+	t.append(grid1.markup.main.body.tbody)
+	t.wrap('<div class="CI-GRID-AREA">')
+	t.wrap('<div class="CI-GRID-WRAPPER ">')
+	t.find('.CI-GRID-HEADER-MICELINOUS').remove();
+	</script>
+</body>
+</html>

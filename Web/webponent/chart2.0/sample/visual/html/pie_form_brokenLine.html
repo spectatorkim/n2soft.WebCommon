@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>pie broken line</title>
+	<style>
+
+		.pie {    
+			width: 100%;
+			height: 100%;
+		}
+
+		.pie2 {  
+			width: 100%;
+			height: 100%;
+		}      
+
+	</style>
+</head>
+
+<body>
+
+	<h1>PIE-form_BrokenLine</h1>
+	<h2>일반 디자인</h2>
+	<div class="wrap">
+		<div class="btnbox">
+			<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;">
+				<span>Mobile</span>
+			</button>
+			<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/1.+Pie'); return false;">
+				<span>Reference</span>
+			</button>
+			<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Visual%20Demo/pie_brokenLine'); return false;">
+				<span>Publisher</span>
+			</button>
+		</div>
+		<div class='pie'></div>
+	</div>
+	<h2>접근성 디자인</h2>
+	<div class="wrap">
+		<div class='pie2'></div>
+	</div>
+	
+	
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.pie.js'></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<script>
+
+  
+
+	/* PIE chart 1 */
+
+	var styles = {
+		layout : {
+			position : {
+				x : 0,
+				y : 0
+			}
+		},
+		pie : {
+			radius : 70,
+			area : {
+				color : [
+					'#f96461', '#fd7370', '#fd827f', '#fe9997',
+					'#feaead', '#febfbd', '#fecac8'
+				]
+			},
+			line : {
+				color : '#fff',
+				width : 3
+			},               
+			animate : {
+				use : true,
+				step : 80,
+				type : 'easeInOutExpo' /* linear | easeInOutExpo | none */
+			},
+			hover : {
+				use : true,
+				area : {
+					color : {
+						src : '../img/pattern_hover.png'
+					}
+				}
+			}
+		},
+		base : {
+			use : true,
+			radius : 75,
+			area : {
+				color : '#fff'
+			},
+			line : {
+				color : '#d3efed',
+				width : 1
+			}
+
+		},      
+		legend : {
+			use : true,
+			stackedGap : 5,
+			type : 'brokenLine',
+			text: {
+				family: 'Nanum Gothic',
+				size: 12, 
+				color: '#333333', 
+				style: 'normal',    /* normal | italic */
+				weight: 'bold',   /* normal | bold */
+				opacity: 1
+			},          
+			pin : {
+				color : '#8397a6',
+				width : 1,
+				length : 20,
+				opacity : 1
+			},
+			pinHead : {
+				color : '#8397a6',
+				length : 20,
+				width : 1,
+				opacity : 1
+			}            
+		}
+	};
+
+	var options = {
+		data : {
+			data: [
+				{"date" : "20140107", "legend":"테스트1", "pdata":"40"},
+				{"date" : "20140107", "legend":"테스트2", "pdata":"40"},               
+				{"date" : "20140107", "legend":"테스트3", "pdata":"40"},
+				{"date" : "20140107", "legend":"테스트4", "pdata":"20"},
+				{"date" : "20140107", "legend":"테스트5", "pdata":"20"},                
+				{"date" : "20140107", "legend":"테스트6", "pdata":"20"},
+				{"date" : "20140107", "legend":"테스트7", "pdata":"40"}
+			],
+			use: 'pdata'        
+		},
+		legend : {
+			format : ['한국', '일본', '러시아', '영국', '프랑스', '미국', '중국']
+		},
+		toolTip : {
+			use : true,		
+			className : 'tip',
+			func : function (pie, data, tipElement) {                   
+				
+				var dataTotalValue = pie.settings.data.dataTotalValue;
+				var date = dayDataFormatDot(data.date);
+				var setData = Math.round(100 / dataTotalValue * data.pdata) + '%';
+				var tip = '<div class="text">'+date + ' / ' + setData + '</div>';
+				var arrow = '<div class="arrow" style="width: '+
+						tipElement.width() + 'px;"></div>';
+				
+				tipElement.html(tip);
+				tipElement.html(tipElement.html() + arrow);
+			}
+		},
+		resize : {
+			use : true
+		}
+	};
+
+	pie = webponent.visual.pie.init($('.pie'), styles, options);
+
+
+
+
+
+	/* PIE chart 2 */
+
+	var styles2 = {
+		layout : {
+			position : {
+				x : 0,
+				y : 0
+			}
+		},
+		pie : {
+			radius : 70,
+			area : {
+				color : [
+					'#d6de1d', '#2bcdba', '#34b8ef', '#ffa4d8',
+					'#ff625f', '#838bf0', '#ffbb16'
+				]
+			},
+			line : {
+				color : '#fff',
+				width : 3
+			},               
+			animate : {
+				use : true,
+				step : 80,
+				type : 'easeInOutExpo' /* linear | easeInOutExpo | none */
+			},
+			hover : {
+				use : true,
+				area : {
+					color : {
+						src : '../img/pattern_hover.png'
+					}
+				}
+			}
+		},
+		base : {
+			use : true,
+			radius : 75,
+			area : {
+				color : '#fff'
+			},
+			line : {
+				color : '#d3efed',
+				width : 1
+			}
+
+		},      
+		legend : {
+			use : true,
+			stackedGap : 5,
+			type : 'brokenLine',
+			text: {
+				family: 'Nanum Gothic',
+				size: 12, 
+				color: '#333333', 
+				style: 'normal',    /* normal | italic */
+				weight: 'bold',   /* normal | bold */
+				opacity: 1
+			},          
+			pin : {
+				color : '#8397a6',
+				width : 1,
+				length : 20,
+				opacity : 1
+			},
+			pinHead : {
+				color : '#8397a6',
+				length : 20,
+				width : 1,
+				opacity : 1
+			}            
+		}
+	};
+
+	var options2 = {
+		data : {
+			data: [
+				{"date" : "20140107", "legend":"테스트1", "pdata":"40"},
+				{"date" : "20140107", "legend":"테스트2", "pdata":"40"},               
+				{"date" : "20140107", "legend":"테스트3", "pdata":"40"},
+				{"date" : "20140107", "legend":"테스트4", "pdata":"20"},
+				{"date" : "20140107", "legend":"테스트5", "pdata":"20"},                
+				{"date" : "20140107", "legend":"테스트6", "pdata":"20"},
+				{"date" : "20140107", "legend":"테스트7", "pdata":"40"}
+			],
+			use: 'pdata'       
+		},
+		legend : {
+			format : ['한국', '일본', '러시아', '영국', '프랑스', '미국', '중국']
+		},
+		toolTip : {
+			use : true,		
+			className : 'tip',
+			func : function (pie, data, tipElement) {                   
+				
+				var dataTotalValue = pie.settings.data.dataTotalValue;
+				var date = dayDataFormatDot(data.date);
+				var setData = Math.round(100 / dataTotalValue * data.pdata) + '%';
+				var tip = '<div class="text">'+date + ' / ' + setData + '</div>';
+				var arrow = '<div class="arrow" style="width: '+
+						tipElement.width() + 'px;"></div>';
+				
+				tipElement.html(tip);
+				tipElement.html(tipElement.html() + arrow);
+			}
+		},
+		resize : {
+			use : true
+		}
+	};
+
+	pie2 = webponent.visual.pie.init($('.pie2'), styles2, options2);
+
+   
+
+   
+	</script>
+</body>
+
+</html>

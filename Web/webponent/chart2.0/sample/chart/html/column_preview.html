@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CHART01</title>
+
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+
+	
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+
+
+	<script type="text/javascript" src="../../../lib/convert/spectrum.js"></script>
+
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" href="../../../lib/convert/spectrum.css"/>
+
+	<style type="text/css">
+		.chart01, .chart02 {width: 100%; height: 100%;}
+		select, input {border: 1px solid #ddd;}
+	</style>
+	<script type="text/javascript">
+	var chart = null;
+	window.onload = function(){
+		var options = {
+			data: {
+				data: [
+					{ Date: '20140101', Mprc: 10000, Oprc: 20000 },
+					{ Date: '20140102', Mprc: 20000, Oprc: 20000 },
+					{ Date: '20140103', Mprc: 15000, Oprc: 20000 },
+					{ Date: '20140104', Mprc: 30000, Oprc: 20000 },
+					{ Date: '20140105', Mprc: 5000, Oprc: 20000 }
+				]
+			},
+			format: {
+				xAxis: function(_str){
+					return _str.substr(0, 4)+'.'+_str.substr(4,2)+'.'+_str.substr(6,2);
+				},
+				yAxis: 'priceDataFormat'
+			},
+			func: {
+				tip: function(tipElement, data, rect){
+					var date = data.xaxis.substr(0, 4)+'.'+data.xaxis.substr(4, 2)+'.'+data.xaxis.substr(6, 2);
+					var tip = '<div class="text">'+date + ' / ' + String(data.yaxis).format().trim()+'</div>';
+
+					tipElement.html(tip).show();
+
+					var arrow = '<div class="arrow" style="width: '+tipElement.width() + 'px;"></div>';
+
+					tipElement.html(tipElement.html() + arrow).css({
+						left: rect.x - (tipElement.width() / 2), top: rect.y - 35
+					});
+				}
+			},
+			use: {
+				aCrossLine: true,
+				reSize: true
+			}
+		}
+		var styles = {
+			main: {
+				layout: {
+					paddingTop: 57, paddingRight: 30, color: '#f8f8f8',
+					line: {color: '#eaeaea', width: 1}
+				},
+				graph: {
+					color: '#f8f8f8',
+					line: {
+						top: {color: '#cccccc'},
+						left: {width: 0},
+						right: {width: 0},
+						bottom: {color: '#cccccc'}
+					}
+				},
+				crossLine: {
+					color: '#465866'
+				},
+				xAxis: {
+					paddingTop: 13, height: 30,
+					text: {family: 'Nanum Gothic', size: 12, color: '#666'},
+					line: {color: '#e3e3e3', width: 1}
+				},
+				yAxis: {
+					line: {color: '#cccccc', width: 1, opacity: 1},
+					text: {family: 'Nanum Gothic', size: 12, color: '#666', align: 'right'}
+				},
+				tip: {
+					className: 'tip'
+				},
+				series: {
+					s1: {
+						area: {
+							normal: {
+								color: [ [0, '#2bcdba'], [100, '#6bdccf'] ],
+								// color: {src: '../../chart/img/over.png', color: '#4e6679'},
+								over: { color: {src: '../../chart/img/over.png', color: '#4e6679'} }
+							}
+						},
+						line: {
+							normal: {
+								width: 0,
+								over: { width: 0 }
+							}
+						},
+						gradient: {
+							direction: 'vertical'
+						},
+						text: {
+							use: false, color: '#666666', family: 'Nanum Gothic', size: 12,
+							format: 'priceDataFormat'
+						}
+					},
+					s2: {
+						area: {
+							normal: {
+								color: [ [0, '#2bcdba'], [100, '#6bdccf'] ],
+								// color: {src: '../../chart/img/over.png', color: '#4e6679'},
+								over: { color: {src: '../../chart/img/over.png', color: '#4e6679'} }
+							}
+						},
+						line: {
+							normal: {
+								width: 3,
+								over: { width: 3 }
+							}
+						},
+						gradient: {
+							direction: 'vertical'
+						},
+						text: {
+							use: false, color: '#666666', family: 'Nanum Gothic', size: 12,
+							format: 'priceDataFormat'
+						}
+					}
+				}
+			}
+		};
+		var series = {
+			"main": {
+				"s1": {series: 'column', xaxis: 'Date', yaxis: 'Mprc'},
+				"s2": {series: 'line', xaxis: 'Date', yaxis: 'Oprc'}
+			}
+		};
+		chart = webponent.chart.init($('.chart01'), options, styles, series);
+
+		var styles2 = {
+				main: {
+					layout: {
+						paddingTop: 57, paddingRight: 30, color: '#374553',
+						line: {color: '#eaeaea', width: 1}
+					},
+					graph: {
+						color: '#374553',
+						line: {
+							top: {color: '#506376'},
+							left: {width: 0},
+							right: {width: 0},
+							bottom: {color: '#506376'}
+						}
+					},
+					crossLine: {
+						color: '#465866'
+					},
+					xAxis: {
+						paddingTop: 13, height: 30,
+						text: {family: 'Nanum Gothic', size: 12, color: '#b0becc'},
+						line: {color: '#506376', width: 1}
+					},
+					yAxis: {
+						line: {color: '#506376', width: 1, opacity: 1},
+						text: {family: 'Nanum Gothic', size: 12, color: '#b0becc', align: 'right'}
+					},
+					tip: {
+						className: 'tip'
+					},
+					series: {
+						s1: {
+							area: {
+								normal: {
+									color: [ [0, '#2bcdba'], [100, '#6bdccf'] ],
+									over: { color: {src: '../../chart/img/over.png', color: '#4e6679'} }
+								}
+							},
+							line: {
+								normal: {
+									width: 0,
+									over: { width: 0 }
+								}
+							},
+							gradient: {
+								direction: 'vertical'
+							},
+							text: {
+								use: false, color: '#666666', family: 'Nanum Gothic', size: 12,
+								format: 'priceDataFormat'
+							}
+						}
+					}
+				}
+			};
+		// var chart2 = webponent.chart.init($('.chart02'), options, styles2, series);
+
+		$('form[name="frm"]').find('select, input').focusout(function(){
+			var $this = $(this),
+				$this_name = $this.attr('name');
+
+			if($this[0].tagName.toLowerCase() === 'select'){
+
+			} else {
+				var styleArray = $this_name.split('_');
+
+				if(styleArray[0] === "series"){
+
+					var select_series = getSelectSeries(chart, $this);
+
+					var chart_getstyles = chart.getStyles();
+
+					var chart_styles = chart_getstyles[select_series.layout].series[select_series.series];
+					for(var i = 1; i < styleArray.length; i++){
+						if(styleArray.length - 1 > i){
+							chart_styles = chart_styles[styleArray[i]];
+						} else {
+							chart_styles[styleArray[i]] = $this.val();
+						}
+					}
+
+				} else {
+
+
+				}
+				chart.reDraw(undefined, chart_getstyles, undefined, true, false);
+			}
+			return false;
+		});
+
+		$('#full').spectrum({
+			color: '#FF0000',
+			showInitial: true,
+			change : function(color){
+				$(this).prev().val(color.toHexString());
+				$(this).prev().focusout();
+			}
+		})
+	};
+	var saveImage = function (){
+		/*{
+			url: "/WEB-APP/export/image",
+			file: 'png',
+			name: 'Image',
+			log: true,
+			done: function(val){
+				$('#SVGHIDDEN').val(val);
+			}
+		}*/
+		chart.getSVG({
+			log: true
+		});
+
+
+	};
+
+	var reSize = function(){
+		if($('#wrap1').width() < 1000) {
+			$('#wrap1').css('width', 1000);
+			chart.resize();
+			// $(window).trigger('resize');
+		} else {
+			$('#wrap1').css('width', 700);
+			chart.resize();
+			// $(window).trigger('resize');
+		}
+		//chart.resize();
+	};
+
+	var getSelectSeries = function(chart, $this){
+		var chart_series = chart.getSeries();
+		var sel_series_val = $('select option:selected', $('form[name="frm"]')).val();
+
+		var eachBoolean = false,
+			select_series = {};
+		$.each(chart_series, function(key){
+
+			$.each(chart_series[key], function(key2){
+				if(key2 != 'type') {
+					if((chart_series[key])[key2].yaxis == sel_series_val){
+						select_series.layout = key; // main, sub
+						select_series.series = key2; // series key
+
+						eachBoolean = true;
+						return;
+					}
+				}
+			});
+
+			if(eachBoolean) return;
+		});
+		return select_series;
+	}
+
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>COLUMNSERIES-normal</h1>
+		<h2>일반 디자인</h2>
+		<input type="hidden" id="SVGHIDDEN" value=""/>
+		<div id="wrap1" class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn05" onclick="reSize()"><span>SAVE IMAGE</span></button>
+				<button type="button" class="btn04" onclick="saveImage()"><span>SAVE IMAGE</span></button>
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/Column+Series'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Chart%20Series/COLUMN-%EA%B8%B0%EB%B3%B8%20%EB%A7%89%EB%8C%80%20%ED%98%95%EC%8B%9D'); return false;"><span>Publisher</span></button>
+			</div>
+			<div class="chart01"></div>
+
+
+		</div>
+		<form name="frm" id="frm">
+			<ul>
+				<li>Series :
+					<select>
+						<option>Mprc</option>
+						<option>Oprc</option>
+					</select>
+				</li>
+				<li>Series Color :
+					<input type="text" name="series_area_normal_color" value="red" />
+					<input id="full" />
+				</li>
+			</ul>
+		</form>
+		<h2>블랙 디자인</h2>
+		<div class="wrap">
+			<div class="chart02"></div>
+		</div>
+	</div>
+</body>
+</html>

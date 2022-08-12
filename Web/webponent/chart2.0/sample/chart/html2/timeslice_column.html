@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>CHART</title>
+
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+
+	
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.js"></script>
+	<script type="text/javascript" src="../../../lib/chart/webponent.chart.style.js"></script>
+	<script type="text/javascript" src="./lib/webponent.test.js"></script>
+	<link rel="stylesheet" href="../../../lib/comm/jquery-ui-1.10.4.custom.min.css"/>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	
+	<style type="text/css">
+		.chart {width: 700px; height: 400px;box-sizing: border-box;}
+		.controller {width: 700px;box-sizing: border-box;}
+		li {padding: 5px 0;}
+	</style>
+	<script type="text/javascript">
+	var chart = null;
+	
+	var styles = webponent.chart.styles.BASIC;
+
+	var series = {
+		"main": {
+			"s1": {series: 'column', xaxis: 'Date', yaxis: 'Mprc'}
+		}
+	};
+	window.onload = function(){
+		var options = {
+			data: {
+				data: [
+					{"Date":"20140411","Mprc":"58100","HiPrc":"59500","Lprc":"57900","Cprc":"59400","TrdRat":"1147313"},
+					{"Date":"20140410","Mprc":"59700","HiPrc":"59800","Lprc":"57600","Cprc":"58600","TrdRat":"2661787"},
+					{"Date":"20140409","Mprc":"60400","HiPrc":"61200","Lprc":"58400","Cprc":"59200","TrdRat":"2982273"},
+					{"Date":"20140408","Mprc":"60200","HiPrc":"61000","Lprc":"60000","Cprc":"60700","TrdRat":"657407"},
+					{"Date":"20140407","Mprc":"60600","HiPrc":"60800","Lprc":"59800","Cprc":"60700","TrdRat":"763556"},
+					{"Date":"20140404","Mprc":"61000","HiPrc":"61300","Lprc":"60500","Cprc":"60900","TrdRat":"1319245"},
+					{"Date":"20140403","Mprc":"61500","HiPrc":"61600","Lprc":"60000","Cprc":"60600","TrdRat":"1410086"},
+					{"Date":"20140402","Mprc":"60500","HiPrc":"61300","Lprc":"60500","Cprc":"60800","TrdRat":"1969494"},
+					{"Date":"20140401","Mprc":"59000","HiPrc":"60000","Lprc":"58800","Cprc":"59700","TrdRat":"1224315"},
+					{"Date":"20140331","Mprc":"59800","HiPrc":"60200","Lprc":"58900","Cprc":"59300","TrdRat":"1187209"},
+					{"Date":"20140328","Mprc":"58800","HiPrc":"59800","Lprc":"58500","Cprc":"59500","TrdRat":"1025430"},
+					{"Date":"20140327","Mprc":"59500","HiPrc":"59700","Lprc":"58900","Cprc":"59700","TrdRat":"981268"},
+					{"Date":"20140326","Mprc":"58600","HiPrc":"59500","Lprc":"58100","Cprc":"59200","TrdRat":"1360441"},
+					{"Date":"20140325","Mprc":"58100","HiPrc":"58600","Lprc":"57400","Cprc":"57900","TrdRat":"581031"},
+					{"Date":"20140324","Mprc":"58800","HiPrc":"58900","Lprc":"57800","Cprc":"58300","TrdRat":"808353"},
+					{"Date":"20140321","Mprc":"57500","HiPrc":"58400","Lprc":"57300","Cprc":"58400","TrdRat":"1287823"},
+					{"Date":"20140320","Mprc":"57000","HiPrc":"57400","Lprc":"56700","Cprc":"56900","TrdRat":"995543"},
+					{"Date":"20140319","Mprc":"56900","HiPrc":"57700","Lprc":"56700","Cprc":"57100","TrdRat":"1122577"},
+					{"Date":"20140318","Mprc":"57100","HiPrc":"57300","Lprc":"56200","Cprc":"56900","TrdRat":"1196508"},
+					{"Date":"20140317","Mprc":"54600","HiPrc":"56600","Lprc":"54600","Cprc":"56600","TrdRat":"1295568"},
+					{"Date":"20140314","Mprc":"54100","HiPrc":"55200","Lprc":"53800","Cprc":"54900","TrdRat":"817661"},
+					{"Date":"20140313","Mprc":"55800","HiPrc":"56300","Lprc":"54700","Cprc":"54800","TrdRat":"1090218"},
+					{"Date":"20140312","Mprc":"56700","HiPrc":"57000","Lprc":"55600","Cprc":"55700","TrdRat":"1189508"},
+					{"Date":"20140311","Mprc":"54800","HiPrc":"55900","Lprc":"54700","Cprc":"55800","TrdRat":"943842"},
+					{"Date":"20140310","Mprc":"55100","HiPrc":"55400","Lprc":"54500","Cprc":"54800","TrdRat":"638071"},
+					{"Date":"20140307","Mprc":"55800","HiPrc":"55900","Lprc":"55100","Cprc":"55600","TrdRat":"603294"},
+					{"Date":"20140306","Mprc":"56400","HiPrc":"56700","Lprc":"55300","Cprc":"55800","TrdRat":"860907"},
+					{"Date":"20140305","Mprc":"56400","HiPrc":"56900","Lprc":"56000","Cprc":"56700","TrdRat":"1179068"},
+					{"Date":"20140304","Mprc":"55600","HiPrc":"56500","Lprc":"55200","Cprc":"55800","TrdRat":"1111525"},
+					{"Date":"20140303","Mprc":"55600","HiPrc":"56900","Lprc":"54500","Cprc":"56000","TrdRat":"1578890"}
+				],
+				reverse: true
+			},
+			format: {
+				xAxis: 'dayDataFormat',
+				yAxis: 'priceDataFormat'
+			},
+			func: {
+				tip: 'defaultTip'
+			},
+			use: {
+				animate: false,
+				aCrossLine: true
+			},
+			timeSlice: {
+				use: true,
+				delay: 300,
+				slider: $('.slider'),
+				play: $('.play_btn'),
+				pause: $('.pause_btn'),
+				stop: $('.stop_btn'),
+				data: function(data){
+					var dateFormat = function(_str){
+						return _str.substr(0, 4)+'.'+_str.substr(4,2)+'.'+_str.substr(6,2);
+					}
+					$('.info').text('DATE : '+dateFormat(data[0].Date) + ' ~ ' + dateFormat(data[data.length -  1].Date))
+				}
+			}
+		}
+		chart = webponent.chart.init($('.chart'), options, styles, series);
+		
+	};
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>TimeSlice</h1>
+		<h2>일반 디자인</h2>
+		<input type="hidden" id="SVGHIDDEN" value=""/>
+		<div >
+			<div class="ctrlBox">
+			</div>
+			
+		</div>
+	</div>
+	<div class="chart"></div>
+	<div class="controller two">
+	    <button type="button" name="play_btn" value="play" class="play_btn"><span>재생</span></button> 
+	    <button type="button" name="pause_btn" value="pause" class="pause_btn"><span>일시정지</span></button> 
+	    <button type="button" name="stop_btn" value="stop" class="stop_btn"><span>정지</span></button> 
+	    <div class="slider"></div>
+	    <span class="info">DATE: 2010.01.01</span>
+	</div>
+
+	<div>
+		<h3>수동으로 테스트</h3>
+		<ul style="list-style: decimal">
+			<li>재생버튼을 누른다. <br/>
+				재생과 동시에 슬라이더가 비활성화 되는지 체크</li>
+			<li>일시정지버튼을 누른다. <br/>
+				일시정지되며 슬라이더가 비활성화 되는지 체크</li>
+			<li>재생 중 정지버튼을 누른다. <br/>
+				재생이 멈추고 슬라이더가 설정한 영역까지 보여주고 활성화되는지 체크</li>
+			<li>일시정지 중 정지버튼을 누른다. <br/>
+				슬라이더가 설정한 영역까지 보여주고 활성화되는지 체크</li>
+			<li>슬라이더의 핸들을 움직여 차트의 아이템 개수가 변경되는지 확인한다.</li>
+			<li>슬라이더의 핸들을 움직일때 옆 info 텍스트가 변경되는지 확인한다.</li>
+			<li><strong>상단의 버튼들의 테스트는 의미가 없다.</strong> <a href="/WEB-APP/webponent/chart2.0/sample/chart/html2/column_form_normal.html">column_form_normal</a> 페이지에서 체크함.<br/>
+				이 페이지에서는 슬라이더에 대한 테스트만 진행한다.</li>
+		</ul>
+	</div>
+</body>
+</html>

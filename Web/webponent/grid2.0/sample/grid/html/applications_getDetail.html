@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>그리드간 데이터이동 - 응용샘플 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+	<style type="text/css">
+	.wrap *, .wrap *:before, .wrap *:after {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.float-left {
+		float: left;
+	}
+	.float-right {
+		float: right;
+	}
+	/* DL로 잡은 텍스트 레이아웃 */
+	.dl-layout {
+	    display: block;
+	    width: 100%;
+	}
+
+	.dl-layout.ia {
+	    /*인풋이 들어갈경우*/
+	}
+
+	.dl-layout:after {
+	    content: ".";
+	    display: block;
+	    clear: both;
+	    visibility: hidden;
+	    line-height: 0;
+	    height: 0;
+	}
+
+	.dl-layout > dt {
+	    text-align: center;
+	}
+
+	.dl-layout.dt-tal > dt {
+	    text-align: left;
+	}
+
+	.dl-layout > dd{
+	    text-align: right;
+	}
+
+	.dl-layout.dd-tal > dd{
+	    text-align: left !important;
+	}
+
+	.dl-layout > dt,
+	.dl-layout > dd {
+	    float: left;
+	    margin: 0;
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+	    overflow: hidden;
+	}
+
+	.dl-layout.ia > dt,
+	.dl-layout.ia > dd {
+	   
+	}
+
+	.dl-layout > dt.first-line,
+	.dl-layout > dd.first-line {
+	    border-top: none;
+	}
+
+	.dl-layout.four > dt,
+	.dl-layout.four > dd {
+	    width: 12.5%;
+	}
+
+	.dl-layout.three > dt,
+	.dl-layout.three > dd {
+	    width: 16.6%;
+	}
+
+	.dl-layout.two > dt,
+	.dl-layout.two > dd {
+	    width: 25%;
+	}
+
+	.dl-layout.one > dt,
+	.dl-layout.one > dd {
+	    width: 50%;
+	}
+
+	.dl-layout.one.big-dt > dt {
+	    width: 60%
+	}
+	.dl-layout.one.big-dt > dd {
+	    width: 40%
+	}
+
+	.dl-layout.one.big-dd > dt {
+	    width: 40%
+	}
+	.dl-layout.one.big-dd > dd {
+	    width: 60%
+	}
+
+	.dl-layout.tal > dt {
+	    text-align: left;
+	}
+
+	.dl-layout.tal > dd {
+	    text-align: left;
+	}
+	/* dl layout override */
+	.dl-layout {
+		margin-top: 0;
+	    margin-bottom: 5px;
+	    border-top: 2px solid #555555;
+	    border-bottom: 1px solid #b2b2b2;
+	}
+
+	.dl-layout > dt {
+	    color: #555555;
+	    background-color: #f2f2f2;
+	}
+
+	.dl-layout > dt,
+	.dl-layout > dd {
+	    height: 26px;
+	    line-height: 26px;
+	    padding: 0 8px;
+	    border-top: 1px solid #e6e6e6;
+	}
+
+	.dl-layout.ia > dt,
+	.dl-layout.ia > dd {
+	    height: 36px;
+	    line-height: 36px;
+	}
+	.red {
+		color: #cd2214;
+	}
+
+	.blue {
+		color: #1c6fb1;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>응용샘플</h1>
+		<h2>로우클릭시 상세정보 가져오기</h2>
+		
+		<div class="wrap">
+			<div class="btnbox">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%EB%A1%9C%EC%9A%B0%EC%97%90%20%ED%81%B4%EB%A6%AD%EC%8B%9C%20%EC%83%81%EC%84%B8%20%EC%A0%95%EB%B3%B4%20%ED%91%9C%EC%8B%9C'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>KOSPI+KOSDAQ종목</h3>
+
+			<table id="grid-table-1">
+				
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="250px" height="235px">
+					<thead>
+						<tr>
+							<th name="code" width="80px" align="center">코드</th>
+							<th name="name">종목명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="code" bind="code"></td>
+							<td name="name" bind="name"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+			<div id="detail-area" style="width:440px;" class="float-right">
+				<dl class="dl-layout two">
+                    <dt class="first-line">현재가</dt>
+                    <dd class="first-line"></dd>
+                    <dt class="first-line">시가</dt>
+                    <dd class="first-line"></dd>
+                    <dt>전일비</dt>
+                    <dd></dd>
+                    <dt>고가</dt>
+                    <dd></dd>
+                    <dt>등락률</dt>
+                    <dd></dd>
+                    <dt>저가</dt>
+                    <dd></dd>
+                    <dt>거래량</dt>
+                    <dd></dd>
+                    <dt>상한가</dt>
+                    <dd class="red"></dd>
+                    <dt>전일 거래량</dt>
+                    <dd></dd>
+                    <dt>하한가</dt>
+                    <dd class="blue"></dd>
+                    <dt>거래량비</dt>
+                    <dd><span class="red"></span></dd>
+                    <dt>PER</dt>
+                    <dd></dd>
+                    <dt>액면가</dt>
+                    <dd></dd>
+                    <dt>EPS</dt>
+                    <dd></dd>
+                    <dt>시가총액</dt>
+                    <dd><span></dd>
+                    <dt>외국인취득</dt>
+                    <dd></dd>
+                    <dt>발행주식</dt>
+                    <dd><span><span>(천)</span></dd>
+                    <dt>신용잔고율</dt>
+                    <dd></dd>
+                </dl>
+			</div>
+
+			<script id="detail-tempate" type="text/template">
+				<dl class="dl-layout two">
+                    <dt class="first-line">현재가</dt>
+                    <dd class="first-line">{{NowPrc}}</dd>
+                    <dt class="first-line">시가</dt>
+                    <dd class="first-line">{{Mprc}}</dd>
+                    <dt>전일비</dt>
+                    <dd>{{PrdayCmp}}</dd>
+                    <dt>고가</dt>
+                    <dd>{{Hiprc}}</dd>
+                    <dt>등락률</dt>
+                    <dd>{{UpdnRat}}</dd>
+                    <dt>저가</dt>
+                    <dd>{{Lprc}}</dd>
+                    <dt>거래량</dt>
+                    <dd>{{TrdQty}}</dd>
+                    <dt>상한가</dt>
+                    <dd class="red">{{HglmtPrc}}</dd>
+                    <dt>전일 거래량</dt>
+                    <dd>{{PrdayTrdQty}}</dd>
+                    <dt>하한가</dt>
+                    <dd class="blue">{{LwlmtPrc}}</dd>
+                    <dt>거래량비</dt>
+                    <dd>{{TrdRat}}<span class="red"></span></dd>
+                    <dt>PER</dt>
+                    <dd>{{Per}}</dd>
+                    <dt>액면가</dt>
+                    <dd>{{Parprc}}</dd>
+                    <dt>EPS</dt>
+                    <dd>{{Eps}}</dd>
+                    <dt>시가총액</dt>
+                    <dd><span>{{MprcTotamt}}</dd>
+                    <dt>외국인취득</dt>
+                    <dd>{{FrgrGet}}</dd>
+                    <dt>발행주식</dt>
+                    <dd><span>{{StkQty}}<span>(천)</span></dd>
+                    <dt>신용잔고율</dt>
+                    <dd>{{CrdtRat}}</dd>
+                </dl>
+			</script>
+			
+		</div>
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid1 = webponent.grid.init(table1, template1, {
+		classes : 'float-left',
+		rowSelectable : true
+	});
+
+	var templateSettings = {
+	  interpolate : /\{\{(.+?)\}\}/g
+	};
+	var template = _.template(_.unescape($('#detail-tempate').html()), null, templateSettings);
+
+	$(grid1.markup.main.body.tbody).on('click', 'tr', function () {
+
+		var row = this;
+		var data = row.data;
+
+		var code = data.code;
+
+		$.ajax({
+			dataType : 'json',
+			url : '../../../data/stock-' + code + '.json',
+			success : function (resp) {
+
+				var html = template(resp.a);
+				html = html.replace('/common/img/', '../img/');
+				$('#detail-area').html(html);
+			}
+		});
+	});
+
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/code.json',
+		success : function (resp) {
+
+			grid1.appendRow(resp);
+		}
+	});
+
+	</script>
+</body>
+</html>

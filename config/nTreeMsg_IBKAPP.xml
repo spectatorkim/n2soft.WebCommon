@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nTreeMsg>
+
+    <msg id="IBKAPP.HEAD" name="API 전문 공통부">
+        <input>
+            <item id="H_GRAM_LEN"        name="전문길이"               length="10" type="N"/>
+            <item id="H_GRAM_DIV_CD"     name="전문거래구분"            length="4"   type="C"/>
+            <item id="H_GRAM_RES_CD"     name="전문응답코드(응답코드)"     length="4"  type="C"/>
+            <item id="H_GRAM_RES"     	 name="전문응답메시지(응답메시지)"  length="200"  type="C"/>
+            <item id="H_GRAM_OC_DTM"     name="전문발생시간"            length="14"  type="C"/>
+            <item id="H_CUST_UID"        name="고객고유번호"               length="50"  type="C"/>
+        </input>
+        <output>
+            <item id="H_GRAM_LEN"        name="전문길이"               length="10" type="N"/>
+            <item id="H_GRAM_DIV_CD"     name="전문거래구분"            length="4"   type="C"/>
+            <item id="H_GRAM_RES_CD"     name="전문응답코드(응답코드)"     length="4"  type="C"/>
+            <item id="H_GRAM_RES"     	 name="전문응답메시지(응답메시지)"  length="200"  type="C"/>
+            <item id="H_GRAM_OC_DTM"     name="전문발생시간"            length="14"  type="C"/>
+            <item id="H_CUST_UID"        name="고객고유번호"             length="50"  type="C"/>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.1000" name="추천인조회">
+        <input>
+            <item id="D_IN_TEXT"       	 name="검색명"               	length="30"  type="C"/>
+        </input>
+        <output>
+            <item id="D_USER_CNT"        name="데이터 건수"             length="5"   type="N"/>
+            <item id="DATA"				 name="반복부"  				 count="#D_USER_CNT">
+	            <item id="D_USER_NM"     	name="사원명"          	length="30"   type="C"/>
+	            <item id="D_USER_ID"        name="사원번호"           length="10"   type="C"/>
+	            <item id="D_BR_NM"     		name="지점명"             length="30"   type="C"/>
+            </item>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.1100" name="예금주조회">
+        <input>
+            <item id="D_INSP_NO"     	name="신청번호"           		length="14"  type="C"/>
+            <item id="D_BNK_CD"    		name="은행코드"        		length="3"   type="C"/>
+            <item id="D_ACCT_NO"     	name="계좌번호"          		length="20"  type="C"/>
+        </input>
+        <output>
+            <item id="D_FILLER"        	name="공백"             		length="25"   type="C"/>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.1200" name="유입경로조회">
+        <input>
+            <item id="D_FILLER"       	 name="공백"               	length="25"  type="C"/>
+        </input>
+        <output>
+            <item id="D_ADF_CNT"         name="유입경로건수"             length="3"    type="N"/>
+            <item id="DATA"				 name="반복부"  				 count="#D_ADF_CNT">
+	            <item id="D_ADF_CD"      name="유입경로코드"          	 length="15"    type="C"/>
+	            <item id="D_ADF_NM"      name="유입경로명"              length="100"   type="C"/>
+            </item>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.2000" name="약관동의">
+        <input>
+            <item id="D_INSP_NO"     	name="신청번호"               	length="14"  type="C"/>
+            <item id="D_AUQ_CD_Y_LIST"	name="약관동의목록"          	length="200"  type="C"/>
+            <item id="D_AUQ_CD_N_LIST"	name="약관미동의목록"         	length="200"  type="C"/>
+        </input>
+        <output>
+            <item id="D_FILLER"        	name="공백"             		length="25"   type="C"/>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.2100" name="한도조회">
+        <input>
+            <item id="D_INSP_NO"       	 name="신청번호"            	length="14"  type="C"/>
+            <item id="D_MULTI_GOODS_YN"  name="멀티상품신청여부"         length="1"  type="C"/>
+            <item id="D_GOODS_CD"      	 name="상품코드"             	length="6"  type="C"/>
+            <item id="D_HAC_CD"       	 name="직업구분"             	length="1"  type="C"/>
+            <item id="D_INCM_AMT"        name="연소득"               	length="13"  type="N"/>
+            <item id="D_RED_CD"       	 name="주택소유구분"          	length="1"  type="C"/>
+            <item id="D_ENTC_DT"       	 name="입사일"               	length="8"  type="C"/>
+            <item id="D_HAE_CD"       	 name="고용형태"            	length="1"  type="C"/>
+            <item id="D_CHK_LIST"        name="자가진단목록"   			length="100"  type="C"/>
+        </input>
+        <output>
+            <item id="D_GOODS_CNT"   	 name="데이터 건수"         	length="5"   type="N"/>
+            <item id="DATA"				 name="반복부"  				 count="#D_GOODS_CNT">
+	            <item id="D_GOODS_CD"     	name="상품코드"        	length="10"   type="C"/>
+	            <item id="D_GOODS_NM"    	name="상품명"           	length="50"   type="C"/>
+	            <item id="D_PRE_LMT"     	name="사전한도"        	length="13"   type="N"/>
+	            <item id="D_PRE_RT"     	name="사전금리"        	length="5"   type="N"/>
+            </item>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.2200" name="신분증확인">
+        <input>
+            <item id="D_DIV"     		name="구분"            		length="1"  type="C"/>
+            <item id="D_USE"     		name="용도"            		length="1"  type="C"/>
+            <item id="D_INSP_NO"		name="신청번호"          		length="14"  type="C"/>
+            <item id="D_RESID_NO"		name="주민등록번호"          	length="32"  type="X"/>
+            <item id="D_REG_DT"			name="발급일자"         		length="25"  type="C"/>
+            <item id="D_LSS_NO"			name="면허번호"         		length="25"  type="C"/>
+            <item id="D_ADG_CD"			name="접수매체코드"         	length="1"      type="C"/>
+            <item id="D_FILE_NM"		name="파일명"         		length="100"     type="C"/>
+            <item id="D_CHEK_IDT"		name="신분증진위확인"   			length="1"       type="C"/>
+            <item id="D_FILE_DATA"		name="파일"         			length="500000"  type="C"/> 
+            <item id="D_MOD_YN"		    name="신분증정보수정여부"    length="1"  type="C"/>
+        </input>
+        <output>
+            <item id="D_FILLER"        	name="공백"             		length="25"   type="C"/>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.2300" name="대출신청">
+        <input>
+            <item id="D_INSP_NO"		name="신청번호"          		length="14"  type="C"/>
+            <item id="D_HND_NO"			name="휴대폰번호"         		length="32"  type="X"/>
+            <item id="D_TEL_NO"			name="자택전화번호"         	length="32"  type="X"/>
+            <item id="D_ADDR_GU"		name="주소구분"         		length="2"  type="C"/>
+            <item id="D_POST_NO"		name="우편번호"         		length="7"  type="C"/>
+            <item id="D_POST_SEQNO"		name="우편번호 일련번호"         length="3"  type="C"/>
+            <item id="D_ADDR_1"			name="기본주소"         		length="80"  type="C"/>
+            <item id="D_ADDR_2"			name="상세주소"         		length="80"  type="C"/>
+            <item id="D_ADDR_3"			name="건물관리번호"         	length="30"  type="C"/>
+            <item id="D_ADDR_4"			name="주소참조명"         		length="50"  type="C"/>
+            <item id="D_HAA_CD"			name="주거형태"         		length="4"  type="C"/>
+            <item id="D_RED_CD"			name="주택소유구분"         	length="3"  type="C"/>
+            <item id="D_CO_NM"			name="직장명"         		length="50"  type="C"/>
+            <item id="D_CO_TEL_NO"		name="직장전화번호"         	length="32"  type="X"/>
+            <item id="D_DEP_NM"			name="부서명"         		length="50"  type="C"/>
+            <item id="D_HAG_CD"			name="사업장소유형태"         	length="3"  type="C"/>
+            <item id="D_USER_ID"		name="추천인ID"         		length="30"  type="C"/>
+            <item id="D_BNK_CD"			name="은행코드"         		length="3"  type="C"/>
+            <item id="D_ACCT_NO"		name="계좌번호"         		length="20"  type="C"/>
+            <item id="D_PUSH_TOKEN"		name="메시지 토큰"         	length="200"  type="C"/>
+            <item id="D_INSP_CNT"      	name="데이터 건수"         	length="5"   type="N"/>
+            <item id="DATA"				 name="반복부"  				 count="#D_INSP_CNT">
+	            <item id="D_GOODS_CD"       name="상품코드"           	length="10"   type="C"/>
+	            <item id="D_REQ_AMT"       name="대출신청금액"        	length="13"   type="N"/>
+            </item>
+            <item id="D_ADF_CD" 		name="유입경로"         		length="15"   type="C"/>
+        </input>
+        <output>
+            <item id="D_FILLER"        	name="공백"             		length="25"   type="C"/>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.2400" name="자영업자접수">
+        <input>
+            <item id="D_INSP_NO"		name="신청번호"          		length="14"  type="C"/>
+            <item id="D_HND_NO"			name="휴대폰번호"         		length="32"  type="X"/>
+            <item id="D_INCM_AMT"		name="연소득"         		length="13"  type="N"/>
+            <item id="D_BR_CODE"		name="신청지점"         		length="2"  type="C"/>
+            <item id="D_TEL_NO"			name="자택전화번호"         	length="32"  type="X"/>
+            <item id="D_ADDR_GU"		name="주소구분"         		length="2"  type="C"/>
+            <item id="D_POST_NO"		name="우편번호"         		length="7"  type="C"/>
+            <item id="D_POST_SEQNO"		name="우편번호 일련번호"         length="3"  type="C"/>
+            <item id="D_ADDR_1"			name="기본주소"         		length="80"  type="C"/>
+            <item id="D_ADDR_2"			name="상세주소"         		length="80"  type="C"/>
+            <item id="D_ADDR_3"			name="건물관리번호"         	length="30"  type="C"/>
+            <item id="D_ADDR_4"			name="주소참조명"         		length="50"  type="C"/>
+            <item id="D_CO_NM"			name="직장명"         		length="50"  type="C"/>
+            <item id="D_CO_TEL_NO"		name="직장전화번호"         	length="32"  type="X"/>
+            <item id="D_CO_ADDR_GU"		name="직장주소구분"         	length="2"  type="C"/>
+            <item id="D_CO_POST_NO"		name="직장우편번호"         	length="7"  type="C"/>
+            <item id="D_CO_POST_SEQNO"	name="직장우편번호 일련번호"      length="3"  type="C"/>
+            <item id="D_CO_ADDR_1"		name="직장기본주소"         	length="80"  type="C"/>
+            <item id="D_CO_ADDR_2"		name="직장상세주소"         	length="80"  type="C"/>
+            <item id="D_CO_ADDR_3"		name="직장건물관리번호"         	length="30"  type="C"/>
+            <item id="D_CO_ADDR_4"		name="직장주소참조명"         	length="50"  type="C"/>
+            <item id="D_CO_RGST_NO"		name="사업자번호"         		length="20"  type="C"/>
+            <item id="D_CO_RGST_DT"		name="사업시작일자"         	length="8"  type="C"/>
+            <item id="D_REQ_AMT"		name="신청금액"         		length="13"  type="N"/>
+            <item id="D_CHK_LIST"		name="자가진단목록"         	length="100"  type="C"/>
+            <item id="D_PUSH_TOKEN"		name="메시지 토큰"           	length="200"  type="C"/>
+            <item id="D_USER_ID"		name="추천인ID"         		length="30"   type="C"/>
+            <item id="D_ADF_CD" 		name="유입경로"         		length="15"   type="C"/>
+        </input>
+        <output>
+            <item id="D_FILLER"        	name="공백"             		length="25"   type="C"/>
+        </output>
+    </msg>
+
+    <msg id="IBKAPP.3110" name="사용자생성확인">
+        <input>
+            <item id="D_RESID_NO"        name="주민등록번호"            length="32"  type="X"/>
+            <item id="D_CUST_NM"       	 name="이름"               	   length="64"  type="X"/>
+            <item id="D_AUT_CD"       	 name="인증방법"                length="1"  type="C"/>
+            <item id="D_HND_KEY"       	 name="휴대폰인증 고유번호"      length="50"  type="C"/>
+            <item id="D_SIGN_DN"       	 name="공인인증서 DN"           length="500"  type="C"/>
+            <item id="D_SIGN_ISSUE_DTM"  name="공인인증서 발급일자"      length="8"  type="C"/>
+            <item id="D_SIGN_SERIAL_NO"  name="공인인증서 일련번호"      length="80"  type="C"/>
+            <item id="D_SIGN_CERT_NM"    name="공인인증서 발급기관"      length="100"  type="C"/>
+            <item id="D_IP_ADDR"       	 name="접속 IP"                 length="15"  type="C"/>
+            <item id="D_DEVI_PUB_NO"     name="단말기 고유번호"          length="50"  type="C"/>
+            <item id="D_HND_NO"       	 name="핸드폰번호"               length="32"  type="X"/>
+            <item id="D_AGREE_CD_LIST" 	 name="동의 약관 코드"           length="50"  type="C"/>
+        </input>
+        <output>
+            <item id="D_CUST_NO"		  name="저축은행 고객번호"  		 length="32"   type="X"/>
+            <item id="D_ELEC_FIN_YN"      name="전자금융가입여부"         length="1"   type="C"/>
+            <item id="D_CUST_UID"         name="고객고유번호"             length="50"   type="C"/>
+            <item id="D_APP_FIR_YN"       name="APP 최초 회원가입 여부"   length="1"   type="C"/>
+            <item id="D_ELEC_USER_ID"     name="전자금융 ID"              length="15"   type="C"/>
+            <item id="D_HND_AUT_ADD_YN"   name="휴대폰 추가인증 필요여부"  length="1"   type="C"/>
+        </output>
+    </msg>
+
+    <msg id="IBKAPP.3120" name="사용자 생성 사설인증정보 저장">
+        <input>
+            <item id="D_CUST_UID"        name="고객고유번호"               length="50"  type="C"/>
+            <item id="D_AUV_CD"          name="사설인증방법코드"           length="2"  type="C"/>
+            <item id="D_TOKEN_ID"        name="사설인증토큰ID"             length="200"  type="C"/>
+            <item id="D_PIN_YN"       	 name="PIN 등록여부"               length="1"  type="C"/>
+            <item id="D_PATTERN_YN"      name="패턴 등록여부"               length="1"  type="C"/>
+            <item id="D_BIO_YN"       	 name="생체 등록여부"               length="1"  type="C"/>
+            <item id="D_ENJ_AUV_CD"      name="자주사용 사설인증방법 코드"   length="1"  type="C"/>
+        </input>
+        <output>
+            <item id="D_STATUS"          name="상태"                       length="1"   type="C"/>
+        </output>
+    </msg>
+
+    <msg id="IBKAPP.3130" name="간편인증 로그인 확인">
+        <input>
+            <item id="D_AUT_CD"          name="인증방법코드"               length="1"  type="C"/>
+            <item id="D_AUV_CD"          name="사설인증 방법코드"          length="2"  type="C"/>
+            <item id="D_TOKEN_ID"     	 name="사설인증토큰ID"             length="200"  type="C"/>
+            <item id="D_SIGN_DN"       	 name="공인인증 DN"               length="500"  type="C"/>
+            <item id="D_SIGN_ISSUE_DTM"  name="공인인증서 발급일자"        length="8"  type="C"/>
+            <item id="D_SIGN_SERIAL_NO"  name="공인인증서 일련번호"        length="80"  type="C"/>
+            <item id="D_SIGN_CERT_NM"    name="공인인증서 발급기관"        length="100"  type="C"/>
+            <item id="D_DEVI_PUB_NO"     name="단말기 고유번호"            length="50"  type="C"/>
+            <item id="D_IP_ADDR"       	 name="접속 IP"                    length="15"  type="C"/>
+        </input>
+        <output>
+            <item id="D_LOGIN_YN"        name="로그인 성공 여부"            length="1"   type="C"/>
+            <item id="D_ERR_MSG"         name="로그인 오류메세지"           length="300"   type="C"/>
+            <item id="D_CUST_UID"        name="고객고유번호"                length="50"   type="C"/>
+            <item id="D_CUST_NO"         name="저축은행 고객번호"            length="32"   type="X"/>
+            <item id="D_ELEC_FIN_YN"     name="전자금융 가입여부"            length="1"   type="C"/>
+            <item id="D_ELEC_USER_ID"    name="전자금융 사용자 ID"           length="15"   type="C"/>
+            <item id="D_RESID_NO"        name="주민등록번호"                 length="32"   type="X"/>
+        </output>
+    </msg>
+
+    <msg id="IBKAPP.3140" name="회원정보조회">
+        <input>
+            <item id="D_CUST_UID"        name="고객고유번호"               length="50"  type="C"/>
+        </input>
+        <output>
+            <item id="D_RESULT"          name="조회 결과"                  length="1"   type="C"/>
+            <item id="D_ERRMSG"          name="조회 오류메세지"             length="300"   type="C"/>
+            <item id="D_CUST_NO"         name="저축은행 고객번호"           length="32"   type="X"/>
+            <item id="D_RESID_NO"        name="주민등록번호"                length="32"   type="X"/>
+            <item id="D_BIRTH"           name="생년월일"                    length="6"   type="C"/>
+            <item id="D_RESID_7"         name="주민번호 7번째 자리수"       length="1"   type="C"/>
+            <item id="D_CUST_NM"         name="고객명"                     length="64"   type="X"/>
+            <item id="D_ELEC_USER_ID"    name="전자금융 사용자 ID"          length="15"   type="C"/>
+            <item id="D_PIN_YN"          name="PIN 등록여부"                length="1"   type="C"/>
+            <item id="D_PATTERN_YN"      name="패턴 등록여부"               length="1"   type="C"/>
+            <item id="D_BIO_YN"          name="생체 등록여부"               length="1"   type="C"/>
+            <item id="D_ENJ_AUV_CD"      name="자주쓰는 사설인증방법 코드"   length="1"   type="C"/>
+            <item id="D_HND_NO"          name="핸드폰 번호"                 length="32"   type="X"/>
+            <item id="D_HND_AUT_ADD_YN"  name="핸드폰 추가인증 필요 여부"    length="1"   type="C"/>
+            <item id="D_OS_ID"           name="디바이스 OS"               length="100"  type="C"/>
+            <item id="D_CPU_ID"           name="디바이스 모델"               length="100"  type="C"/>
+            <item id="D_BOOT_UUID"        name="잉카 고유 값1"           length="100"  type="C"/>
+            <item id="D_MB_ID"           name="잉카 고유 값2"               length="100"  type="C"/>
+            <item id="D_HDD_ID"           name="디바이스 ID"               length="100"  type="C"/>
+            <item id="D_KTB_UUID"           name="KTB ID"               length="100"  type="C"/>
+        </output>
+    </msg>
+
+    <msg id="IBKAPP.3150" name="실명번호검증조회">
+        <input>
+            <item id="D_CUST_NM"         name="고객명"                     length="64"  type="X"/>
+            <item id="D_RESID_NO"        name="주민등록번호"               length="32"  type="X"/>
+        </input>
+        <output>
+            <item id="D_RESULT"          name="조회 결과"                  length="1"   type="C"/>
+            <item id="D_ERRMSG"          name="조회 오류메세지"             length="300"   type="C"/>
+        </output>
+    </msg>
+
+    <msg id="IBKAPP.3160" name="사용자정보변경">
+        <input>
+            <item id="D_CUST_UID"         name="고객고유번호"              length="50"  type="C"/>
+            <item id="D_ELEC_USER_ID"     name="전자금융ID"               length="15"  type="C"/>
+            <item id="D_HND_NO"           name="핸드폰번호"               length="32"  type="X"/>
+            <item id="D_OS_ID"            name="디바이스 OS"               length="100"  type="C"/>
+            <item id="D_CPU_ID"           name="디바이스 모델"             length="100"  type="C"/>
+            <item id="D_BOOT_UUID"        name="잉카 고유 값1"             length="100"  type="C"/>
+            <item id="D_MB_ID"            name="잉카 고유 값2"             length="100"  type="C"/>
+            <item id="D_HDD_ID"           name="디바이스 ID"               length="100"  type="C"/>
+            <item id="D_KTB_UUID"         name="KTB ID"                    length="100"  type="C"/>
+            <item id="D_CUST_NO"          name="저축은행 고객번호"          length="32"   type="X"/>
+        </input>
+        <output>
+            <item id="D_FILLER"          name="공백"                  length="25"   type="C"/>
+        </output>
+    </msg>
+
+    <msg id="IBKAPP.3170" name="공통코드조회">
+        <input>
+            <item id="D_CD_KIND"         name="대분류코드"              length="3"  type="C"/>
+        </input>
+        <output>
+            <item id="D_CD_KIND"         name="대분류코드"           length="3"   type="C"/>
+            <item id="D_CD_CNT"          name="데이터 건수"          length="25"   type="C"/>
+            <item id="DATA"				 name="반복부"  			 count="#D_CD_CNT">
+                <item id="D_CD_NM"     	    name="코드명"          	    length="300"   type="C"/>
+                <item id="D_CD"             name="코드"                  length="15"   type="C"/>
+                <item id="D_IFS_CD"         name="중앙회 코드"           length="20"   type="C"/>
+            </item>
+        </output>
+    </msg>
+
+    <msg id="IBKAPP.3210" name="간편대출 전조회">
+        <input>
+            <item id="D_CUST_UID"         name="고객고유번호"           length="50"  type="C"/>
+            <item id="D_GOODS_CD"         name="상품코드"              length="10"  type="C"/>
+            <item id="D_PASS_YN"          name="간편대출 여부"          length="1"  type="C"/>
+        </input>
+        <output>
+            <item id="D_RESULT_GU"        name="전조회 결과"                 length="1"   type="C"/>
+            <item id="D_INSP_NO"          name="이어하기 대상 건 신청번호"    length="14"   type="C"/>
+            <item id="D_JOIN_STATE"       name="이어하기 진행상태 코드"       length="2"   type="C"/>
+            <item id="D_RESULT_MEMO"      name="신청불가사유"                length="300"   type="C"/>
+        </output>
+    </msg>
+
+    <msg id="IBKAPP.3220" name="간편대출 개인정보저장">
+        <input>
+            <item id="D_INSP_NO"          name="신청번호"           length="14"  type="C"/>
+            <item id="D_GOODS_CD"         name="상품코드"              length="10"  type="C"/>
+            <item id="D_HAC_CD"           name="직업구분"               length="1"  type="C"/>
+            <item id="D_RED_CD"           name="주택소유구분"          length="1"  type="C"/>
+            <item id="D_ENTC_DT"          name="입사일"                length="8"  type="C"/>
+            <item id="D_HAE_CD"           name="고용형태"               length="1"  type="C"/>
+            <item id="D_CHK_LIST"         name="자가진단목록"          length="30"  type="C"/>
+        </input>
+        <output>
+            <item id="D_INSP_NO"          name="신청번호"              length="14"   type="C"/>
+            <item id="D_RESULT"           name="계속신청 가능여부"      length="1"   type="C"/>
+            <item id="D_NOTE"             name="불가사유"               length="300"   type="C"/>
+        </output>
+    </msg>
+
+    <msg id="IBKAPP.3230" name="간편대출 한도조회">
+        <input>
+            <item id="D_INSP_NO"       	 name="신청번호"            	length="14"  type="C"/>
+        </input>
+        <output>
+            <item id="D_GOODS_CNT"   	 name="데이터 건수"         	length="5"   type="N"/>
+            <item id="DATA"				 name="반복부"  				 count="#D_GOODS_CNT">
+                <item id="D_GOODS_CD"     	name="상품코드"        	length="10"   type="C"/>
+                <item id="D_GOODS_NM"    	name="상품명"           	length="50"   type="C"/>
+                <item id="D_PRE_LMT"     	name="사전한도"        	length="13"   type="N"/>
+                <item id="D_PRE_RT"     	name="사전금리"        	length="5"   type="N"/>
+            </item>
+        </output>
+    </msg>
+
+    <msg id="IBKAPP.3240" name="간편대출 추가정보 저장">
+        <input>
+            <item id="D_INSP_NO"            	 name="신청번호"            	        length="14"  type="C"/>
+            <item id="D_REQ_AMT"            	 name="신청금액"                    	length="13"  type="C"/>
+            <item id="D_USA_CD"            	     name="사용용도 코드"            	length="2"  type="C"/>
+            <item id="D_SALE_TRM"            	 name="대출기간"            	        length="2"  type="C"/>
+            <item id="D_PYMD_DD"            	 name="약정일"            	        length="2"  type="C"/>
+            <item id="D_BNK_CD"             	 name="은행코드"            	        length="3"  type="C"/>
+            <item id="D_ACCT_NO"            	 name="계좌번호"            	        length="20"  type="C"/>
+            <item id="D_LIVE_TELNO"        	     name="자택 전화번호"            	length="32"  type="X"/>
+            <item id="D_ADDR_GU"             	 name="자택 주소구분"            	length="2"  type="C"/>
+            <item id="D_POST_NO"             	 name="자택 우편번호"            	length="7"  type="C"/>
+            <item id="D_POST_SEQNO"          	 name="자택 우편번호 일련번호"        length="3"  type="C"/>
+            <item id="D_ADDR_1"              	 name="자택 기본주소"            	length="80"  type="C"/>
+            <item id="D_ADDR_2"              	 name="자택 상세주소"            	length="80"  type="C"/>
+            <item id="D_ADDR_3"              	 name="자택 건물관리번호"            length="30"  type="C"/>
+            <item id="D_ADDR_4"              	 name="자택 주소참조명"            	length="50"  type="C"/>
+            <item id="D_CO_NM"               	 name="직장 명"            	        length="50"  type="C"/>
+            <item id="D_CO_TELNO"            	 name="직장 전화번호"            	length="32"  type="X"/>
+            <item id="D_CO_ADDR_GU"          	 name="직장 주소구분"            	length="2"  type="C"/>
+            <item id="D_CO_POST_NO"          	 name="직장 우편번호"            	length="7"  type="C"/>
+            <item id="D_CO_POST_SEQNO"       	 name="직장 우편번호 일련번호"       length="3"  type="C"/>
+            <item id="D_CO_ADDR_1"           	 name="직장 기본주소"            	length="80"  type="C"/>
+            <item id="D_CO_ADDR_2"           	 name="직장 상세주소"            	length="80"  type="C"/>
+            <item id="D_CO_ADDR_3"           	 name="직장 건물관리번호"            length="30"  type="C"/>
+            <item id="D_CO_ADDR_4"           	 name="직장 주소참조명"            	length="50"  type="C"/>
+            <item id="D_F18_CD"           	     name="직업분류코드"            	    length="2"  type="C"/>
+            <item id="D_RRC_CD"           	     name="직위분류코드"            	    length="2"  type="C"/>
+            <item id="D_RGST_NO"           	     name="사업자번호"            	    length="10"  type="C"/>
+        </input>
+        <output>
+            <item id="D_RESULT"   	             name="결과코드"         	        length="1"   type="C"/>
+            <item id="D_NOTE"     	             name="에러메세지"                    length="300"   type="C"/>
+        </output>
+    </msg>
+
+    <msg id="IBKAPP.3250" name="간편대출 신청정보 조회">
+        <input>
+            <item id="D_INSP_NO"            	 name="신청번호"            	        length="14"  type="C"/>
+        </input>
+        <output>
+            <item id="D_CUST_NM"     	             name="고객명"                     length="300"   type="X"/>
+            <item id="D_RESID_NO"     	             name="주민번호"                   length="300"   type="X"/>
+            <item id="D_USA_NM"     	             name="자금용도"                   length="300"   type="C"/>
+            <item id="D_SALE_AMT"     	             name="대출금액"                   length="300"   type="C"/>
+            <item id="D_MTD_NM"     	             name="상환방식"                   length="300"   type="C"/>
+            <item id="D_SALE_TRM"     	             name="상환기간"                   length="300"   type="C"/>
+            <item id="D_SALE_DT"     	             name="대출일자"                   length="300"   type="C"/>
+            <item id="D_EXP_DT"     	             name="만기일자"                   length="300"   type="C"/>
+            <item id="D_NRML_RT"     	             name="대출금리"                   length="300"   type="C"/>
+            <item id="D_DELAY_RT"     	             name="연체금리"                   length="300"   type="C"/>
+            <item id="D_INA_CD"     	             name="응당일"                     length="300"   type="C"/>
+            <item id="D_INCOM_BNK_ACCTNM"     	     name="입금계좌 예금주"             length="300"   type="X"/>
+            <item id="D_INCOM_BNK_NM"     	         name="입금계좌 은행명"             length="300"   type="C"/>
+            <item id="D_INCOM_BNK_ACCTNO"     	     name="입금계좌번호"                length="300"   type="C"/>
+            <item id="D_CMS_BNK_ACCTNM"     	     name="CMS계좌 예금주"              length="300"   type="X"/>
+            <item id="D_CMS_BNK_NM"     	         name="CMS계좌 은행명"              length="300"   type="C"/>
+            <item id="D_CMS_BNK_ACCTNO"     	     name="CMS계좌번호"                 length="300"   type="C"/>
+            <item id="D_BIRTH"     	                 name="생년월일"                    length="300"   type="C"/>
+            <item id="D_HND_NO"     	             name="핸드폰번호"                  length="300"   type="X"/>
+            <item id="D_SEND_AMT"     	             name="예상이체금액"                length="300"   type="C"/>
+            <item id="D_SEND_DT"     	             name="출금일자"                    length="300"   type="C"/>
+            <item id="D_CMS_RELATN"    	             name="예금주와의관계"              length="300"   type="C"/>
+        </output>
+    </msg>
+
+    <msg id="IBKAPP.3260" name="간편대출 자동기표">
+        <input>
+            <item id="D_INSP_NO"            	 name="신청번호"            	        length="14"  type="C"/>
+        </input>
+        <output>
+            <item id="D_RESULT"   	             name="결과코드"         	        length="1"   type="C"/>
+            <item id="D_NOTE"     	             name="에러메세지"                   length="500"   type="C"/>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.3270" name="간편대출 불가 후 처리 ">
+        <input>
+            <item id="D_INSP_NO"                 name="신청번호"                        length="14"  type="C"/>
+            <item id="D_RFS_CD"                  name="불가 후처리 코드"                length="2"  type="C"/>
+        </input>
+        <output>
+            <item id="D_RESULT"                  name="결과코드"                    length="1"   type="C"/>
+            <item id="D_NOTE"                    name="에러메세지"                   length="300"   type="C"/>
+        </output>
+    </msg>
+
+    <msg id="IBKAPP.4000" name="대출계좌조회">
+        <input>
+            <item id="D_RESID_NO"       name="주민번호"               length="32"  type="X"/>
+        </input>
+        <output>
+            <item id="D_LOAN_CNT"        name="데이터 건수"         	length="5"   type="N"/>
+            <item id="DATA"				 name="반복부"  				 count="#D_LOAN_CNT">
+	            <item id="D_LOAN_NO"     	name="대출번호"          	length="14"   type="C"/>
+	            <item id="D_GOODS_CD"       name="상품코드"           	length="10"   type="C"/>
+	            <item id="D_GOODS_NM"       name="상품명"           	length="50"   type="C"/>
+	            <item id="D_SALE_AMT"     	name="대출금액"           	length="13"   type="N"/>
+	            <item id="D_SALE_DT"     	name="대출일"           	length="8"   type="C"/>
+	            <item id="D_LN_BAL"     	name="대출잔액"           	length="13"   type="N"/>
+	            <item id="D_EXP_DT"     	name="만기일"           	length="8"   type="C"/>
+	            <item id="D_NRML_RT"     	name="정상금리"           	length="5"   type="N"/>
+	            <item id="D_MTD_NM"     	name="상환방법"           	length="20"   type="C"/>
+	            <item id="D_PAYM_DD"     	name="이자납입일"       	length="2"   type="C"/>
+	            <item id="D_LAST_TRAN_DT" 	name="최근거래일"       	length="8"   type="C"/>
+	            <item id="D_LAB_CD"     	name="계좌상태코드"        	length="2"   type="C"/>
+	            <item id="D_LAB_NM"     	name="계좌상태"           	length="20"   type="C"/>
+	            <item id="D_LN_TRM"     	name="대출기간"           	length="3"   type="C"/>
+	            <item id="DELAY_PRID"     	name="연체회차"           	length="5"   type="N"/>
+            </item>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.4100" name="대출거래내역조회">
+        <input>
+            <item id="D_LOAN_NO"       	name="대출번호"               length="14"  type="C"/>
+            <item id="D_START_DT"       name="조회시작일"           	length="8"  type="C"/>
+            <item id="D_END_DT"       	name="조회종료일"            	length="8"  type="C"/>
+        </input>
+        <output>
+            <item id="D_LOAN_CNT"        name="데이터 건수"         	length="5"   type="N"/>
+            <item id="DATA"				 name="반복부"  				 count="#D_LOAN_CNT">
+            	<item id="D_LOAN_NO"       	name="대출번호"          	length="14"  type="C"/>
+            	<item id="D_GOODS_CD"     	name="상품코드"          	length="10"   type="C"/>
+            	<item id="D_GOODS_NM"       name="상품명"           	length="50"   type="C"/>
+	            <item id="D_TRN_DT"     	name="거래일자"          	length="8"   type="C"/>
+	            <item id="D_RCK_DT"       	name="상환일자"           	length="8"   type="C"/>
+	            <item id="D_SALE_AMT"     	name="대출금액"           	length="13"   type="N"/>
+	            <item id="D_AFTR_BLNC"     	name="대출잔액"           	length="13"   type="N"/>
+	            <item id="D_TRN_DVNM"     	name="거래구분"           	length="30"   type="C"/>
+	            <item id="D_TRN_AMT"     	name="거래금액"           	length="13"   type="N"/>
+	            <item id="D_INTS_AMT"     	name="이자금액"           	length="13"   type="N"/>
+	            <item id="D_TRN_PRNC"     	name="상환금액"           	length="13"   type="N"/>
+	            <item id="D_NRML_RT"     	name="금리"           	length="5"   type="N"/>
+            </item>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.4200" name="대출신청내역">
+        <input>
+            <item id="D_RESID_NO"       	name="주민번호"         	length="32"  type="X"/>
+        </input>
+        <output>
+            <item id="D_INSP_CNT"        name="데이터 건수"         	length="5"   type="N"/>
+            <item id="DATA"				 name="반복부"  				 count="#D_INSP_CNT">
+	            <item id="D_GOODS_CD"     	name="상품코드"          	length="10"   type="C"/>
+	            <item id="D_GOODS_NM"       name="상품명"           	length="50"   type="C"/>
+	            <item id="D_NRML_RT"     	name="금리"           	length="5"   type="N"/>
+	            <item id="D_REQ_AMT"     	name="신청금액"           	length="13"   type="N"/>
+	            <item id="D_REQ_DT"     	name="신청일"           	length="8"   type="C"/>
+	            <item id="D_STB_NM"     	name="심사상태"           	length="30"   type="C"/>
+            </item>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.4300" name="한도조회내역">
+        <input>
+            <item id="D_RESID_NO"       	name="주민번호"         	length="32"  type="X"/>
+        </input>
+        <output>
+            <item id="D_INSP_CNT"        name="데이터 건수"         	length="5"   type="N"/>
+            <item id="DATA"				 name="반복부"  				 count="#D_INSP_CNT">
+            	<item id="D_INSP_NO"       	name="신청번호"         	length="14"   type="C"/>
+	            <item id="D_GOODS_CD"     	name="상품코드"          	length="10"   type="C"/>
+	            <item id="D_GOODS_NM"       name="상품명"           	length="50"   type="C"/>
+	            <item id="D_PRE_LMT"     	name="사전한도"           	length="13"   type="N"/>
+	            <item id="D_PRE_RT"     	name="사전금리"           	length="5"   type="N"/>
+	            <item id="D_CRT_DTM"     	name="조회일시"           	length="14"   type="C"/>
+            </item>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.4400" name="상환계획일정">
+        <input>
+            <item id="D_LOAN_NO"       	name="대출번호"         		length="14"  type="C"/>
+        </input>
+        <output>
+            <item id="D_PLAN_CNT"        name="데이터 건수"         	length="5"   type="N"/>
+            <item id="DATA"				 name="반복부"  				 count="#D_PLAN_CNT">
+	            <item id="D_RPY_PLAN_SRNO"		name="상환계획일련번호"		length="5"    type="N"/>
+	            <item id="D_RPY_SCHD_DT"       	name="상환예정일자"      	length="8"    type="C"/>
+	            <item id="D_PRNC_RPY_MTCD"		name="상환구분"		    length="30"   type="C"/>
+	            <item id="D_RPY_AMT"		    name="상환금액"	     	length="13"   type="N"/>
+	            <item id="D_LDGR_STCD"			name="상환상태"      		length="15"   type="C"/>
+            </item>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.5000" name="상환조회">
+        <input>
+            <item id="D_LOAN_NO"       		name="대출번호"         	length="14"  type="C"/>
+            <item id="D_TRN_CD"       		name="거래구분"         	length="2"  type="C"/>
+            <item id="D_RPY_CD"       		name="상환구분"         	length="2"  type="C"/>
+            <item id="D_RCK_DT"       		name="조회일자"         	length="8"  type="C"/>
+            <item id="D_RPY_AMT"       		name="상환금액"         	length="13"  type="N"/>
+            <item id="D_RPY_PRNC"       	name="상환원금"         	length="13"  type="N"/>
+            <item id="D_RPY_RND"       		name="상환회차"         	length="3"  type="N"/>
+        </input>
+        <output>
+            <item id="D_LOAN_NO"       		name="대출번호"         	length="14"   type="C"/>
+            <item id="D_ACNO"       		name="상환처리계좌"       	length="50"   type="C"/>
+	        <item id="D_GOODS_NM"       	name="상품명"           	length="50"   type="C"/>
+	        <item id="D_MTD_NM"       		name="상환구분"           	length="30"   type="C"/>
+	        <item id="D_SALE_AMT"       	name="대출금액"           	length="13"   type="N"/>
+	       	<item id="D_LN_BAL"     		name="대출잔액"           	length="13"   type="N"/>
+	       	<item id="D_PRNC_CLAM"     		name="대출원금"           	length="13"   type="N"/>
+	       	<item id="D_TOT_SAMT"     		name="대출이자"           	length="13"   type="N"/>
+	        <item id="D_NRML_RT"       		name="정상이율"           	length="8"   type="N"/>
+	        <item id="D_DELAY_SAMT"       	name="연체이자"           	length="13"   type="N"/>
+	        <item id="D_DELAY_AMT"       	name="연체료"           	length="13"   type="N"/>
+	        <item id="D_DELAY_RT"       	name="연체이율"           	length="8"   type="N"/>
+	        <item id="D_MID_REPAY_AMT"     	name="중도상환수수료"       length="13"   type="N"/>
+	        <item id="D_TOT_AMT"       		name="총납부금액"       	length="13"   type="N"/>
+	        <item id="D_REPAY_CNT"			name="상환조회상세내역"		length="5"	  type="N"/>
+	        <item id="DATA"				 name="반복부"  				 count="#D_REPAY_CNT">
+	            <item id="D_PI_SCHD_DT"		name="납입예정일자"		length="8"   type="C"/>
+	            <item id="D_RLVN_RND"		name="해당회차"		length="5"   type="N"/>
+	            <item id="D_RPY_PRNC"    	name="상환원금"      	length="13"   type="N"/>
+	            <item id="D_NROM_INTS"		name="정상이자"      	length="13"   type="N"/>
+	            <item id="D_OVFE"			name="연체료"			length="8"   type="N"/>
+	            <item id="D_OVRD_INTS"		name="연체이자"		length="13"   type="N"/>
+	            <item id="D_RND_AMT"		name="회차납부금액"		length="13"   type="N"/>
+            </item>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.5100" name="실시간상환">
+        <input>
+            <item id="D_LOAN_NO"       		name="대출번호"         	length="14"  type="C"/>
+            <item id="D_TRN_CD"       		name="거래구분"         	length="2"  type="C"/>
+            <item id="D_RPY_CD"       		name="상환구분"         	length="2"  type="C"/>
+            <item id="D_RCK_DT"       		name="조회일자"         	length="8"  type="C"/>
+            <item id="D_RPY_AMT"       		name="상환금액"         	length="13"  type="N"/>
+            <item id="D_RPY_PRNC"       	name="상환원금"         	length="13"  type="N"/>
+            <item id="D_RPY_RND"       		name="상환회차"         	length="3"  type="N"/>
+        </input>
+        <output>
+            <item id="D_LOAN_NO"       		name="대출번호"         	length="14"   type="C"/>
+            <item id="D_ACNO"       		name="상환처리계좌"       	length="50"   type="C"/>
+	        <item id="D_GOODS_NM"       	name="상품명"           	length="50"   type="C"/>
+	        <item id="D_MTD_NM"       		name="상환구분"           	length="30"   type="C"/>
+	        <item id="D_SALE_AMT"       	name="대출금액"           	length="13"   type="N"/>
+	       	<item id="D_LN_BAL"     		name="대출잔액"           	length="13"   type="N"/>
+	       	<item id="D_PRNC_CLAM"     		name="대출원금"           	length="13"   type="N"/>
+	       	<item id="D_TOT_SAMT"     		name="대출이자"           	length="13"   type="N"/>
+	        <item id="D_NRML_RT"       		name="정상이율"           	length="8"   type="N"/>
+	        <item id="D_DELAY_SAMT"       	name="연체이자"           	length="13"   type="N"/>
+	        <item id="D_DELAY_AMT"       	name="연체료"           	length="13"   type="N"/>
+	        <item id="D_DELAY_RT"       	name="연체이율"           	length="8"   type="N"/>
+	        <item id="D_MID_REPAY_AMT"     	name="중도상환수수료"       length="13"   type="N"/>
+	        <item id="D_TOT_AMT"       		name="총납부금액"       	length="13"   type="N"/>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.6000" name="증명서신청정보조회">
+        <input>
+            <item id="D_LOAN_NO"       		name="대출번호"         	length="14"  type="C"/>
+        </input>
+        <output>
+            <item id="D_CUST_NM"       		name="고객명"         	length="64"  type="X"/>
+            <item id="D_HND_NO"       		name="휴대폰번호"         	length="32"  type="X"/>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.8100" name="휴대폰본인인증확인">
+        <input>
+            <item id="D_USE"       			name="용도"         		length="2"  type="C"/>
+            <item id="D_CUST_NM"       		name="고객명"         	    length="64"  type="X"/>
+            <item id="D_RESID_NO"     		name="주민등록번호"  		length="32"  type="X"/>
+            <item id="D_HPC_CD"       		name="통신사코드"        	length="1"  type="C"/>
+            <item id="D_HND_NO"       		name="휴대폰번호"         	length="32"  type="X"/>
+            <item id="D_REQ_SEQ"       		name="휴대폰인증고유번호"   	length="50"  type="C"/>
+            <item id="D_SMS_CERT_NO"       	name="SMS인증번호"        	length="6"  type="C"/>
+            <item id="D_ADG_CD"     		name="접수매체코드"        	length="1"  type="C"/>
+            <item id="D_IP_ADDR"     		name="접수IP"        		length="20"  type="C"/>
+            <item id="D_PUSH_TOKEN"     	name="메시지 토큰"        	length="200"  type="C"/>
+        </input>
+        <output>
+            <item id="D_INSP_NO"   			name="신청번호"     		length="14"  type="C"/>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.8200" name="공인인증확인">
+        <input>
+            <item id="D_USE"       			name="용도"         		length="2"  type="C"/>
+            <item id="D_CUST_NM"       		name="고객명"         	    length="64"  type="X"/>
+            <item id="D_RESID_NO"     		name="주민등록번호"  		length="32"  type="X"/>
+            <item id="D_CERT_PEM"     		name="PRM"        		    length="200"  type="C"/>
+            <item id="D_SIGN_DN"     		name="SIGN_DN"        	    length="100"  type="C"/>
+            <item id="D_ADG_CD"     		name="접수매체코드"        	length="1"  type="C"/>
+            <item id="D_IP_ADDR"     		name="접수IP"        		length="20"  type="C"/>
+            <item id="D_PUSH_TOKEN"     	name="메시지 토큰"        	length="200"  type="C"/>
+        </input>
+        <output>
+            <item id="D_INSP_NO"   			name="신청번호"     		length="14"  type="C"/>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.8300" name="중개본인인증확인">
+        <input>
+            <item id="D_USE"       			name="용도"         		length="1"  type="C"/>
+            <item id="D_CUST_NM"       		name="고객명"         	    length="64"  type="X"/>
+            <item id="D_RESID_NO"     		name="주민등록번호"  		length="32"  type="X"/>
+            <item id="D_LP_NM"     			name="상담사명"  			length="30"  type="C"/>
+            <item id="D_CERT_PEM"     		name="PRM"        		    length="200"  type="C"/>
+            <item id="D_SIGN_DN"     		name="SIGN_DN"        	    length="100"  type="C"/>
+            <item id="D_HPC_CD"       		name="통신사코드"        	length="1"  type="C"/>
+            <item id="D_HND_NO"       		name="휴대폰번호"         	length="32"  type="X"/>
+            <item id="D_REQ_SEQ"       		name="휴대폰인증고유번호"   	length="50"  type="C"/>
+            <item id="D_SMS_CERT_NO"       	name="SMS인증번호"        	length="6"  type="C"/>
+            <item id="D_AUQ_CD_Y_LIST"		name="약관동의목록"        	length="200"  type="C"/>
+            <item id="D_AUQ_CD_N_LIST"		name="약관미동의목록"      	length="200"  type="C"/>
+            <item id="D_ADG_CD"     		name="접수매체코드"        	length="1"  type="C"/>
+            <item id="D_IP_ADDR"     		name="접수IP"        		length="20"  type="C"/>
+            <item id="D_PUSH_TOKEN"     	name="메시지 토큰"        	length="200"  type="C"/>
+        </input>
+        <output>
+            <item id="D_FILLER"        		name="공백"             	length="25"   type="C"/>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.9000" name="스크래핑 납부확인서">
+        <input>
+            <item id="D_CUST_NM"       		name="고객명"         	    length="64"  type="X"/>
+            <item id="D_RESID_NO"     		name="주민등록번호"  		length="32"  type="X"/>
+            <item id="D_START_DT"     		name="조회시작일"        	length="8"  type="C"/>
+            <item id="D_END_DT"     		name="조회종료일"        	length="8"  type="C"/>
+            <item id="D_RES_CNT"     		name="데이터 건수"        	length="5"  type="N"/>
+            <item id="DATA"					name="반복부" 				count="#D_RES_CNT">
+	            <item id="D_RESISSUENO"     	name="발급번호"        	length="30"  type="C"/>
+	            <item id="D_RESCOMPANYNM"     	name="사업장명"        	length="100"  type="C"/>
+	            <item id="D_RESISSUEDATE"     	name="발급일자"        	length="8"  type="C"/>
+	            <item id="D_RESPAYERNO"     	name="납부자번호"        length="20"  type="C"/>
+	            <item id="D_RESJOINUSERTYPE"   	name="가입자구분"        length="20"  type="C"/>
+	            <item id="D_RES_SUB_CNT"     	name="데이터 건수"       length="5"  type="N"/>
+	            <item id="DATA"				 	name="반복부"  				 count="#DATA.D_RES_SUB_CNT">
+		            <item id="D_RESPAYMONTH"				name="납부년월"						        length="6"   type="C"/>
+		            <item id="D_RESRECTALHEALTHNOTICEAMT"	name="납부내역_고지금액_건강보험료"   		length="13"   type="N"/>
+		            <item id="D_RESRECTALLTCNOTICEAMT"		name="납부내역_고지금액_장기요양보험료" 		length="13"   type="N"/>
+		            <item id="D_RESRECTALHEALTHPAYAMT"		name="납부내역_납부금액_건강보험료"			length="13"   type="N"/>
+		            <item id="D_RESRECTALLTCPAYAMT"			name="납부내역_납부금액_장기요양보험료"		length="13"   type="N"/>
+		            <item id="D_RESINCOMESHEALTHNOTICEAMT"	name="소득납부내역_고지금액_건강보험료" 		length="13"   type="N"/>
+		            <item id="D_RESINCOMESLTCNOTICEAMT"		name="소득납부내역_고지금액_장기요양보험료"	length="13"   type="N"/>
+		            <item id="D_RESINCOMESHEALTHPAYAMT"		name="소득납부내역_납부금액_건강보험료"  	    length="13"   type="N"/>
+		            <item id="D_RESINCOMESLTCPAYAMT"		name="소득납부내역_납부금액_장기요양보험료" 	length="13"   type="N"/>
+	            </item>
+            </item>
+        </input>
+        <output>
+            <item id="D_CUST_NM"       		name="고객명"         	    length="64"  type="X"/>
+            <item id="D_RESID_NO"     		name="주민등록번호"  		length="32"  type="X"/>
+            <item id="D_START_DT"     		name="조회시작일"        	length="8"  type="C"/>
+            <item id="D_END_DT"     		name="조회종료일"        	length="8"  type="C"/>
+            <item id="D_RES_CNT"     		name="데이터 건수"        	length="5"  type="N"/>
+            <item id="DATA"					name="반복부" 				count="#D_RES_CNT">
+	            <item id="D_RESISSUENO"     	name="발급번호"        	length="30"  type="C"/>
+	            <item id="D_RESCOMPANYNM"     	name="사업장명"        	length="100"  type="C"/>
+	            <item id="D_RESISSUEDATE"     	name="발급일자"        	length="8"  type="C"/>
+	            <item id="D_RESPAYERNO"     	name="납부자번호"        length="20"  type="C"/>
+	            <item id="D_RESJOINUSERTYPE"   	name="가입자구분"        length="20"  type="C"/>
+	            <item id="D_RES_SUB_CNT"     	name="데이터 건수"       length="5"  type="N"/>
+	            <item id="DATA"				 	name="반복부"  				 count="#DATA.D_RES_SUB_CNT">
+		            <item id="D_RESPAYMONTH"				name="납부년월"						        length="6"   type="C"/>
+		            <item id="D_RESRECTALHEALTHNOTICEAMT"	name="납부내역_고지금액_건강보험료"   		length="13"   type="N"/>
+		            <item id="D_RESRECTALLTCNOTICEAMT"		name="납부내역_고지금액_장기요양보험료" 		length="13"   type="N"/>
+		            <item id="D_RESRECTALHEALTHPAYAMT"		name="납부내역_납부금액_건강보험료"			length="13"   type="N"/>
+		            <item id="D_RESRECTALLTCPAYAMT"			name="납부내역_납부금액_장기요양보험료"		length="13"   type="N"/>
+		            <item id="D_RESINCOMESHEALTHNOTICEAMT"	name="소득납부내역_고지금액_건강보험료" 		length="13"   type="N"/>
+		            <item id="D_RESINCOMESLTCNOTICEAMT"		name="소득납부내역_고지금액_장기요양보험료"	length="13"   type="N"/>
+		            <item id="D_RESINCOMESHEALTHPAYAMT"		name="소득납부내역_납부금액_건강보험료"  	    length="13"   type="N"/>
+		            <item id="D_RESINCOMESLTCPAYAMT"		name="소득납부내역_납부금액_장기요양보험료" 	length="13"   type="N"/>
+	            </item>
+            </item>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.9100" name="스크래핑 자격득실확인서">
+        <input>
+            <item id="D_CUST_NM"       		name="고객명"         	length="64"  type="X"/>
+            <item id="D_RESID_NO"     		name="주민등록번호"  		length="32"  type="X"/>
+            <item id="D_ISSUNO_QUAIL"     	name="발급번호"        	length="20"  type="C"/>
+            <item id="D_RES_CNT"     		name="데이터 건수"        	length="5"  type="N"/>
+            <item id="DATA"					name="반복부" 				count="#D_RES_CNT">
+	            <item id="D_QUDT_QUAIL"     	name="취득일"        		length="8"  type="C"/>
+	            <item id="D_DISQU_QUAILDT"     	name="상실일"        		length="8"  type="C"/>
+	            <item id="D_CO_QUAIL"     		name="사업장명칭"        	length="50"  type="C"/>
+	            <item id="D_MEM_QUAIL"     		name="가입자구분"        	length="20"  type="C"/>
+            </item>
+        </input>
+        <output>
+            <item id="D_FILLER"        	name="공백"             		length="25"   type="C"/>
+        </output>
+    </msg>
+    
+    <msg id="IBKAPP.9200" name="스크래핑 주민등록등본">
+        <input>
+            <item id="D_CUST_NM"       		name="고객명"         	length="64"  type="X"/>
+            <item id="D_RESID_NO"     		name="주민등록번호"  		length="32"  type="X"/>
+            <item id="D_RESREPORTINGDATE"  	name="발행일"  			length="8"  type="C"/>
+            <item id="D_RESISSUEOGZNM"     	name="발행기관"        	length="100"  type="C"/>
+            <item id="D_RESDOCNO"     		name="문서확인번호"        	length="100"  type="C"/>
+            <item id="D_RESHHNAME"     		name="세대주성명"        	length="64"  type="X"/>
+            <item id="D_RESCOMPOSITIONREASON" name="세대구성사유"        	length="200"  type="C"/>
+            <item id="D_RESCOMPOSITIONDATE"	name="세대구성일자"        	length="8"  type="C"/>
+            <item id="D_DATA1_CNT"     		name="데이터 건수"        	length="5"  type="N"/>
+            <item id="DATA1"					name="반복부" 			count="#D_DATA1_CNT">
+	            <item id="D_SEQ_ADDRINFO"     	name="순번"        	length="10"  type="C"/>
+	            <item id="D_ADDR_ADDRINFO"     	name="주소"        	length="300"  type="C"/>
+	            <item id="D_INTRO_ADDRINFO"     name="전입일"        	length="8"  type="C"/>
+	            <item id="D_CHGDT_ADDRINFO"     name="변동일"        	length="8"  type="C"/>
+	            <item id="D_CHGRESN_ADDRINFO" 	name="변동사유"        length="200"  type="C"/>
+            </item>
+            <item id="D_DATA2_CNT"     		name="데이터 건수"        	length="5"  type="N"/>
+            <item id="DATA2"					name="반복부" 				count="#D_DATA2_CNT">
+	            <item id="D_SEQ_HOMEMEM"     	name="순번"        		length="10"  type="C"/>
+	            <item id="D_RELAT_HOMEMEM"     	name="세대주와의관계"      	length="13"  type="C"/>
+	            <item id="D_CUSTNM_HOMEMEM"     name="성명"        		length="64"  type="X"/>
+	            <item id="D_RESID_HOMEMEM"     	name="주민등록번호"        	length="32"  type="X"/>
+	            <item id="D_TRANDT_HOMEMEM"     name="전입일"        		length="8"  type="C"/>
+	            <item id="D_CHGDT_HOMEMEM"     	name="변동일"        		length="8"  type="C"/>
+	            <item id="D_REGST_HOMEMEM"     	name="등록상태"        	length="20"  type="C"/>
+	            <item id="D_CHGRESN_HOMEMEM" 	name="변동사유"        	length="200"  type="C"/>
+            </item>
+            <item id="D_DATA3_CNT"     		name="데이터 건수"        	length="5"  type="N"/>
+            <item id="DATA3"					name="반복부" 				count="#D_DATA3_CNT">
+	            <item id="D_SEQ_REDADDR"     	name="순번"        		length="10"  type="C"/>
+	            <item id="D_ADDR_REDADDR"     	name="주소"        		length="300"  type="C"/>
+	            <item id="D_INTODT_REDADDR"     name="전입일"        		length="8"  type="C"/>
+	            <item id="D_CHGDT_REDADDR"     	name="변동일"        		length="8"  type="C"/>
+	            <item id="D_CHRESN_REDADDR" 	name="변동사유"        	length="200"  type="C"/>
+            </item>
+        </input>
+        <output>
+            <item id="D_FILLER"        	name="공백"             		length="25"   type="C"/>
+        </output>
+    </msg>
+    
+</nTreeMsg>

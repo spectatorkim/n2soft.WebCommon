@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>틀고정 - 스크롤 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+</head>
+<body>
+	<div class="wrapper" style="width:100%">
+
+	<table id="ci-grid-table"></table>
+
+	<script id="ci-grid-template" type="text/template">
+		<table width="100%" height="468px">
+			<thead>
+				<tr>
+					<th scope="col" name="id" 	rowspan="3" width="200px" align="center">제도명</th>
+					<th scope="col" name="user_name" 		rowspan="3" width="200px" align="center">계약명</th>
+					<th scope="col" name="CONT_DT" 				rowspan="3" width="200px" align="center">가입일자</th>
+					<th scope="col" name="EMPE_MMBR_CNT" 		rowspan="3" width="200px" align="center">가입<br/>자수<br/>(명)</th>
+					<th scope="colgroup" name="ASES_AMT_P" 		colspan="4" width="800px" align="center">적립금(원)</th>
+					<th scope="col" name="RCV_DT" 				rowspan="3" width="200px" align="center">최종납입일</th>
+					<th scope="col" name="PAYT_CYC_NM" 			rowspan="3" width="200px" align="center">납입<br/>주기</th>
+					<th scope="col" name="RTPNS_PLAN_ST_NM" 	rowspan="3" width="200px" align="center">계약<br/>상태</th>
+				</tr>
+				<tr>
+					<th scope="col" name="ASES_AMT" parent="ASES_AMT_P" 				rowspan="2" width="200px" align="center">평가금액</th>
+					<th scope="colgroup" name="PNI_PRTCT_ASES_AMT_P" parent="ASES_AMT_P" 	colspan="2" width="400px" align="center">구성</th>
+					<th scope="col" name="INV_RVN_RT" parent="ASES_AMT_P" 				rowspan="2" width="200px" align="center">운용<br/>수익률(연)</th>
+				</tr>
+				<tr>
+					<th scope="col" name="PNI_PRTCT_ASES_AMT" parent="PNI_PRTCT_ASES_AMT_P" width="200px" align="center">고정금리</th>
+					<th scope="col" name="NON_PNI_PRTCT_ASES_AMT" parent="PNI_PRTCT_ASES_AMT_P" width="200px" align="center">펀드</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td name="id" bind="id"></td>
+					<td name="user_name" bind="user_name"></td>
+					<td name="CONT_DT" bind="password"></td>
+					<td name="EMPE_MMBR_CNT" bind="gender"></td>
+					<td name="ASES_AMT" bind="race"></td>
+					<td name="PNI_PRTCT_ASES_AMT" bind="title"></td>
+					<td name="NON_PNI_PRTCT_ASES_AMT" bind="first_name"></td>
+					<td name="INV_RVN_RT" bind="last_name"></td>
+					<td name="RCV_DT" bind="country"></td>
+					<td name="PAYT_CYC_NM" bind="street_1"></td>
+					<td name="RTPNS_PLAN_ST_NM" bind="street_2"></td>
+				</tr>
+			</tbody>
+			<caption>계약현황 조회 결과</caption>
+		</table>
+	</script>
+		
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+
+
+	var table = $('#ci-grid-table');
+	var template = $('#ci-grid-template');
+	var grid = webponent.grid.init(table, template, {
+		id : 'grid',
+		rowSelectable : true
+	});
+	
+
+	function appendRow () {
+
+		var data = $('#data-count').val();
+
+		$.ajax({
+			cache : false,
+			url : '../../../data/data-1000_0.json',
+			success : function (resp) {
+				grid.removeRow();
+				grid.appendRow(resp);
+			}
+		});
+	}
+
+	appendRow();
+
+	/*setInterval(function () {
+
+		console.log($(':focus')[0]);
+	}, 500);
+	*/
+
+	</script>
+</body>
+</html>

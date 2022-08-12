@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang='ko'>
+
+<head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>scatter form upDown</title>
+	<style>
+
+		.scatter_plot {        
+			width: 100%;
+			height: 100%;
+		}
+
+		.scatter_plot2 {        
+			width: 100%;
+			height: 100%;
+		}
+		
+		.tip_name {
+			font-size : 14px;
+			font-weight: bold;
+			margin-bottom : 5px;
+		}
+
+		.tip_text {
+			margin-bottom : 3px;
+			color :#cccccc;
+			font-weight: bold;
+		}
+
+	</style>
+</head>
+
+<body>
+	
+	<h1>SCATTER PLOT-form_updown</h1>
+	<h2>일반 디자인</h2>
+	<div class="wrap">
+		<div class="btnbox">
+			<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;">
+				<span>Mobile</span>
+			</button>
+			<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/2.+Scatter+Plot'); return false;">
+				<span>Reference</span>
+			</button>
+			<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Visual%20Demo/scatterPlot_upDown'); return false;">
+				<span>Publisher</span>
+			</button>
+		</div>
+		<div class='scatter_plot'></div>
+	</div>
+	<h2>접근성 디자인</h2>
+	<div class="wrap">
+		<div class='scatter_plot2'></div>
+	</div>
+	
+	
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.scatterplot.js'></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<script>
+
+		(function () {
+
+			var style = {
+				layout : {
+					paddingTop : 43,
+					paddingBottom : 24,
+					paddingLeft : 20,
+					paddingRight : 30
+				},
+				graph : {
+					paddingTop: 20,
+					paddingBottom: 0,
+					paddingLeft: 30,
+					paddingRight: 30,
+					area :{
+						color : '#f8f8f8'
+					},
+					line: {
+						top: { 
+							color: '#ccc9c9', 
+							width: 1, 
+							opacity: 1 
+						},
+						left: { 
+							width: 0
+						},
+						right: { 
+							width: 0
+						},
+						bottom: { 
+							width: 0
+						}
+					}
+				},
+				yAxis: {
+					width: 44, 
+					position: 'left',	/* left | right */
+					paddingLeft: 0, 
+					paddingRight: 11,
+					line: {
+						color: '#cccccc', 
+						width: 1, 
+						opacity: 1
+					},
+					text: {
+						family: 'Nanum Gothic', 
+						size: 12, 
+						color: '#666666', 
+						align: 'right',		/* left | center | right */
+						style: 'normal', 	/* normal | italic */
+						weight: 'bold',	/* normal | bold */
+						opacity: 1
+					},
+					tick: {
+						use : false,
+						length: 5, 
+						color: '#807f7f',
+						width: 1, 
+						opacity: 1,
+						position: 'out'	/* out|in */
+					}
+				},
+				xAxis: {
+					height: 10, 
+					paddingTop: 15, 
+					line: { 
+						color: '#e3e3e3', 
+						width: 1, 
+						opacity: 1
+					},
+					text: {
+						family: 'Nanum Gothic',
+						size: 12, 
+						color: '#666666', 
+						align: 'center',	/* left | center | right */
+						style: 'normal',	/* normal | italic */
+						weight: 'bold',		/* normal | bold */
+						opacity: 1
+					}
+				},
+				trendLine : {
+					use : true,
+					color : '#556673',
+					width : 1,
+					opacity : 1,
+					animate : {
+						use : true,
+						color : '#ca873f'
+					}
+				},
+				series : {
+					line: {
+						color: '#fff', 
+						width: 0
+					},
+					area : {
+						type : 'upDown',	/* normal | upDown */
+						up : {
+							color: [ [0, '#ff6461'], [100, '#ff908d'] ],
+							gradient: {
+								direction: 'vertical'
+							},
+							opacity : 1
+						},
+						down : {
+							color: [ [0, '#0289c8'], [100, '#4db4e4'] ],
+							gradient: {
+								direction: 'vertical'
+							},
+							opacity : 1
+						},
+						size : {
+							max : 25,
+							min : 1
+						}
+					},
+					hover : {
+						use : true,
+						area : {
+							up : {
+								color : '#ca2a27'
+							},
+							down : {
+								color : '#005fa8'
+								
+							}	            			
+						}
+					}
+				},
+				animate : {
+					use : true,
+					type : 'bounce', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+					speed : 600				     	
+				}
+			};
+		   
+			var options = {
+				data : {
+					data : [
+						{date:"20140101", name:"한국", sell:0, buy:30, gap:30},
+						{date:"20140101", name:"미국", sell:900, buy:1000, gap:-100},
+						{date:"20140101", name:"일본", sell:2000, buy:4000, gap:2000},
+						{date:"20140101", name:"중국", sell:4000, buy:7000, gap:3000},
+						{date:"20140101", name:"러시아", sell:6000, buy:5000, gap:-1000},
+						{date:"20140101", name:"프랑스", sell:5000, buy:2000, gap:-3000},
+						{date:"20140101", name:"이탈리아", sell:6000, buy:7500, gap:1500},
+						{date:"20140101", name:"영국", sell:7000, buy:7200, gap:200},
+						{date:"20140101", name:"호주", sell:8000, buy:5400, gap:-2600},
+						{date:"20140101", name:"브라질", sell:9000, buy:9000, gap:0}
+					]
+					// url: '../data/scatterPlot_text.txt',
+					// type : 'text',      
+					// gubun : 'code',
+					// gubunOption : 'KR7000060005'
+				},
+				plot : {
+					select : 'gap'
+				},
+				xAxis : {
+					select : 'sell',
+					format : function ( xAxis ) {
+						xAxis = priceDataFormat(xAxis);
+						return xAxis;
+					}
+				},
+				yAxis : {
+					select : 'buy',
+					format : function ( yAxis ) {
+						yAxis = priceDataFormat(yAxis);
+						return yAxis;
+					}
+				},
+				toolTip : {
+					use : true,
+					className : 'tip',
+					func : function (data, tipElement) {
+						var name = '<div class="tip_name">'+ data.name + '</div>';
+						var buy = '<div class="tip_text">' + '매수 : ' + priceDataFormat(data.buy) + '</div>';  
+						var sell = '<div class="tip_text">' + '매도 : ' + priceDataFormat(data.sell) + '</div>';
+						var flat = '<div class="tip_text">' + '순매수 : ' + priceDataFormat(data.buy - data.sell) + '</div>';
+						var tip = '<div class="text">'+ name + buy + sell + flat + '</div>';
+						var arrow = '<div class="arrow" style="width: '+tipElement.width() + 'px;"></div>';
+						tipElement.html(tip + arrow);
+					}
+				},
+				resize : {
+					use : true
+				}
+			};      
+		 
+			scatterPlot = webponent.visual.scatterPlot.init($('.scatter_plot'), style, options);
+
+
+		})();
+
+		(function () {
+
+			var style = {
+				layout : {
+					paddingTop : 43,
+					paddingBottom : 24,
+					paddingLeft : 20,
+					paddingRight : 30
+				},
+				graph : {
+					paddingTop: 20,
+					paddingBottom: 0,
+					paddingLeft: 30,
+					paddingRight: 30,
+					area :{
+						color : '#f8f8f8'
+					},   
+					line: {
+						top: { 
+							color: '#ccc9c9', 
+							width: 1, 
+							opacity: 1 
+						},
+						left: { 
+							width: 0
+						},
+						right: { 
+							width: 0
+						},
+						bottom: { 
+							width: 0
+						}
+					}
+				},
+				yAxis: {
+					width: 40, 
+					position: 'left',	/* left | right */
+					paddingLeft: 0, 
+					paddingRight: 11,
+					line: {
+						color: '#cccccc', 
+						width: 1, 
+						opacity: 1
+					},
+					text: {
+						family: 'Nanum Gothic', 
+						size: 12, 
+						color: '#666666', 
+						align: 'right',		/* left | center | right */
+						style: 'normal', 	/* normal | italic */
+						weight: 'bold',	/* normal | bold */
+						opacity: 1
+					},
+					tick: {
+						use : false,
+						length: 5, 
+						color: '#807f7f',
+						width: 1, 
+						opacity: 1,
+						position: 'out'	/* out|in */
+					}
+				},
+				xAxis: {
+					height: 10, 
+					paddingTop: 15, 
+					line: { 
+						color: '#e3e3e3', 
+						width: 1, 
+						opacity: 1
+					},
+					text: {
+						family: 'Nanum Gothic',
+						size: 12, 
+						color: '#666666', 
+						align: 'center',	/* left | center | right */
+						style: 'normal',	/* normal | italic */
+						weight: 'bold',		/* normal | bold */
+						opacity: 1
+					}
+				},
+				trendLine : {
+					use : true,
+					color : '#556673',
+					width : 2,
+					opacity : 1,
+					animate : {
+						use : true,
+						color : '#ca873f'
+					}
+				},
+				series : {
+					line: {
+						color: '#fff', 
+						width: 0
+					},
+					area : {
+						type : 'upDown',	/* normal | upDown */
+						up : {
+							color : {
+								src : '../img/scatterPlot_pattern_up.png'
+							},
+							opacity : 1
+						},
+						down : {
+							color : {
+								src : '../img/scatterPlot_pattern_down.png'
+							},
+							opacity : 1
+						},
+						size : {
+							max : 25,
+							min : 1
+						}
+					},
+					hover : {
+						use : true,
+						area : {
+							up : {
+								color : '#ca2a27'
+							},
+							down : {
+								color : '#005fa8'
+								
+							}	            			
+						}
+					}
+				},
+				animate : {
+					use : true,
+					type : 'bounce', /* linear|>|<|<>|bounce|elastic|backln|backOut */
+					speed : 600				     	
+				}
+			};
+		   
+			var options = {
+				data : {
+					data : [
+						{date:"20140101", name:"한국", sell:0, buy:30, gap:30},
+						{date:"20140101", name:"미국", sell:900, buy:1000, gap:-100},
+						{date:"20140101", name:"일본", sell:2000, buy:4000, gap:2000},
+						{date:"20140101", name:"중국", sell:4000, buy:7000, gap:3000},
+						{date:"20140101", name:"러시아", sell:6000, buy:5000, gap:-1000},
+						{date:"20140101", name:"프랑스", sell:5000, buy:2000, gap:-3000},
+						{date:"20140101", name:"이탈리아", sell:6000, buy:7500, gap:1500},
+						{date:"20140101", name:"영국", sell:7000, buy:7200, gap:200},
+						{date:"20140101", name:"호주", sell:8000, buy:5400, gap:-2600},
+						{date:"20140101", name:"브라질", sell:9000, buy:9000, gap:0}
+					]
+					// url: '../data/scatterPlot_text.txt',
+					// type : 'text',      
+					// gubun : 'code',
+					// gubunOption : 'KR7000060005'
+				},
+				plot : {
+					select : 'gap'
+				},
+				xAxis : {
+					select : 'sell',
+					format : function ( xAxis ) {						
+						xAxis = priceDataFormat(xAxis);
+						return xAxis;
+					}
+				},
+				yAxis : {
+					select : 'buy',
+					format : function ( yAxis ) {
+						yAxis = priceDataFormat(yAxis);
+						return yAxis;
+					}
+				},
+				toolTip : {
+					use : true,
+					className : 'tip',
+					func : function (data, tipElement) {
+						var name = '<div class="tip_name">'+ data.name + '</div>';
+						var buy = '<div class="tip_text">' + '매수 : ' + priceDataFormat(data.buy) + '</div>';  
+						var sell = '<div class="tip_text">' + '매도 : ' + priceDataFormat(data.sell) + '</div>';
+						var flat = '<div class="tip_text">' + '순매수 : ' + priceDataFormat(data.buy - data.sell) + '</div>';
+						var tip = '<div class="text">'+ name + buy + sell + flat + '</div>';
+						var arrow = '<div class="arrow" style="width: '+tipElement.width() + 'px;"></div>';
+						tipElement.html(tip + arrow);
+					}
+				},
+				resize : {
+					use : true
+				}
+			};      
+		 
+			scatterPlot2 = webponent.visual.scatterPlot.init($('.scatter_plot2'), style, options);
+
+
+		})();
+	
+
+	</script>
+</body>
+
+</html>
+

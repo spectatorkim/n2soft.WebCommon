@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>틀고정 - 스크롤 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+</head>
+<body>
+	<div class="wrapper">
+
+		<div class="wrap" style="height:auto;">
+
+			<h3>로스판 멀티헤더 틀고정</h3>
+
+			<table id="grid-table-3">
+
+			</table>
+
+			<script id="grid-template-3" type="text/template">
+					<table width="100%" height="400px">
+						<thead>
+							<tr>
+								<th name="id" fixed="fixed" rowspan="2" width="100px" align="center">id</th>
+								<th name="user_name" width="100px" rowspan="2" align="center">name</th>
+								<th name="password-p" colspan="3" width="350px" align="center">ohsangwon</th>
+								<th name="title" rowspan="2" width="100px" align="center">title</th>
+								<th name="name-p" colspan="2" width="400px">first_name</th>
+								<th name="email" rowspan="2" width="250px">email</th>
+							</tr>
+							<tr>
+								<th name="password" parent="password-p" align="center">password</th>
+								<th name="gender" parent="password-p" align="center">gender</th>
+								<th name="race" parent="password-p">race</th>
+								<th name="first_name"  parent="name-p">first_name</th>
+								<th name="last_name"  parent="name-p" >last_name</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td name="id" bind="id" ></td>
+								<td name="user_name" bind="user_name" ></td>
+								<td name="password" bind="password" ></td>
+								<td name="gender" bind="gender" ></td>
+								<td name="race" bind="race" ></td>
+								<td name="title" bind="title" ></td>
+								<td name="first_name" bind="first_name" ></td>
+								<td name="last_name" bind="last_name" ></td>
+								<td name="email" bind="email" ></td>
+							</tr>
+						</tbody>
+					</table>
+				</script>
+
+			<ul>
+				<li>
+					<!-- <p style="text-decoration: line-through;">스크롤 오른쪽 끝으로 보낸후 -> 컬럼리사이즈 -> 컬럼을 뷰포트 이하로 줄였을때 스크롤 사라짐</p> -->
+				</li>
+			</ul>
+			<p id="dd" style="width:200px;word-wrap: break-word;"></p>
+			<div style="height:1000px"></div>
+			
+		</div>
+
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+	var dd = $('#dd');
+
+	var table3 = $('#grid-table-3');
+	var template3 = $('#grid-template-3');
+	var grid3 = webponent.grid.init(table3, template3, {
+		id : 'grid-3',
+		boostedLoad : true,
+		fixedScrollAdjustment : 1,
+		rowSelectable : true
+	});
+	
+
+	function appendRow () {
+
+		var data = $('#data-count').val();
+
+		$.ajax({
+			cache : false,
+			url : '../../../data/data-1000_0.json',
+			success : function (resp) {
+				grid3.removeRow();
+				resp = resp.splice(0, 5);
+				grid3.appendRow(resp);
+			}
+		});
+	}
+
+	appendRow();
+
+	</script>
+</body>
+</html>

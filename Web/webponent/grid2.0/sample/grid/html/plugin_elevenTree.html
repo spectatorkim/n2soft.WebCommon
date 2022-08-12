@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>십일자형 트리그리드 - 플러그인 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.pagingUI.css">
+	<style>
+
+		/*.CI-GRID-BODY-TABLE tbody tr.CI-GRID-EVEN:hover {
+		    background: #FFF;
+		}
+		
+		.CI-GRID-BODY-TABLE tbody tr.CI-GRID-ODD:hover {
+		    background: #F8F8F8;
+		}*/
+		
+		.CI-GRID-BODY-TABLE-TBODY td.CI-GRID-BORDER-RIGHT {
+		    border-right: 1px solid #E0E0E0;
+		}
+
+		.ci-grid-tree-indi {
+
+		    width: 24px;
+		    height: 24px;
+		    line-height: 24px;
+
+		    background-image: url(../../../img/tree_arrow.png);
+		    background-position: -4px -4px;
+		    background-repeat: no-repeat;
+		    background-color: rgba(0, 0, 0, 0);
+		    display: inline-block;
+		    text-decoration: none;
+		    margin: 0;
+		    padding: 0;
+		    text-align: center;
+		    vertical-align: middle;
+		    cursor: pointer;
+		}
+		
+		.ci-grid-tree-indi-opened {
+		    background-position: -36px -4px;
+		}
+
+		.ci-grid-depth-indi {
+		    display: inline-block;
+		    width: 12px;
+		}
+		.CI-GRID-ELEVEN-TD-CONTENT {
+			padding-top: 10px;
+			padding-bottom: 10px;
+			padding-left: 10%;
+		}
+		.CI-GRID-ELEVEN-TD-CONTENT .CI-GRID-ALIGN-CENTER,
+		.CI-GRID-ELEVEN-TD-CONTENT .CI-GRID-ALIGN-RIGHT,
+		.CI-GRID-ELEVEN-TD-CONTENT .CI-GRID-ALIGN-LEFT {
+			text-align: left !important;
+			line-height: 25px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>십일자형 트리그리드</h1>
+		<h2>십일자형 트리그리드 - 모바일 변환</h2>
+
+		<div class="wrap">
+			<div class="btnbox" style="top: -122px;">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<!-- <button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%EC%B4%9D%ED%95%A9,%20%ED%8F%89%EA%B7%A0'); return false;"><span>Publisher</span></button> -->
+			</div>
+
+			<h3>거래량 순위</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="Num" align="center" default="false">순위</th>
+							<th name="Isu" default="true">종목명</th>
+							<th name="NowPrc" default="true" align="right">현재가</th>
+							<th name="PrdayCmp" align="right">전일비</th>
+							<th name="UpdnRat" align="right">등락율(%)</th>
+							<th name="Trdvol" align="right">거래량</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="Num" bind="Num"></td>
+							<td name="Isu" bind="Isu"></td>
+							<td name="NowPrc" bind="NowPrc"></td>
+							<td name="PrdayCmp" bind="PrdayCmp"></td>
+							<td name="UpdnRat" bind="UpdnRat"></td>
+							<td name="Trdvol" bind="Trdvol"></td>
+						</tr>
+					</tbody>
+				</table>
+			</script>
+
+		</div>		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+		var table1 = $('#grid-table-1');
+		var template1 = $('#grid-template-1');
+		
+		var grid1 = webponent.grid.init(table1, template1, {
+			rowSelectable : true,
+			baseAlign: 'left'
+		});
+
+		$.ajax({
+			cache : false,
+			dataType : 'json',
+			url :  '../../../data/trading-volume.json',
+			success : function (resp) {
+				// widths의 경우 pixel 값을 가질때 최종 합계는 
+				// wrapper의 넓이와 같아야 한다.
+				// 모바일인 경우 그리드의 넓이가 달라지므로 
+				// 그에 맞는 넓이 pixel 값을 지정해야 한다.
+				webponent.grid.UIplugin.init(grid1, {
+				    elevenTree : {
+				        widths: ['10%', '45%', '45%']
+				    }
+				});
+
+				grid1.appendRow(resp);
+			}
+		});
+
+	</script>
+</body>
+</html>

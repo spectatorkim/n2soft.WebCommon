@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>틀고정 - 스크롤 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+</head>
+<body>
+	<div class="wrapper" style="width:100%">
+
+
+		<div tabindex="0">
+			
+			<a href="">asd</a>
+			<a href="">vvv</a>
+		</div>
+
+		<div class="wrap" style="height:auto;width:100%">
+			<h3 tabindex="0">로스판 멀티헤더 틀고정</h3>
+
+			<table id="grid-table-3">
+
+			</table>
+
+			<script id="grid-template-3" type="text/template">
+					<table width="100%" height="400px" summary="asdasdasdasd">
+						<thead>
+							<tr>
+								<th scope="col" name="id" fixed="fixed" rowspan="3" width="100px" align="center">id</th>
+								<th scope="col" name="whole" colspan="4" width="450px" align="center">whole</th>
+								<th scope="col" name="name-p" colspan="2" width="400px">name_wrap</th>
+								<th scope="col" name="email" rowspan="3" width="250px">email</th>
+							</tr>
+							<tr>
+								<th scope="col" name="user_name" parent="whole" rowspan="2" align="center">name</th>
+								<th scope="col" width="300px" name="wrap" parent="whole" colspan="3"  align="center">wrap</th>
+								<th scope="col" name="first_name" rowspan="2" parent="name-p">first_name</th>
+								<th scope="col" name="last_name" rowspan="2" parent="name-p" >last_name</th>
+							</tr>
+							<tr>
+								<th scope="col" name="password" parent="wrap" align="center">password</th>
+								<th scope="col" name="gender" parent="wrap" align="center">gender</th>
+								<th scope="col" name="race" parent="wrap">race</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td name="id" bind="id" ></td>
+								<td name="user_name" bind="user_name" ></td>
+								<td name="password" bind="password" ></td>
+								<td name="gender" bind="gender" ></td>
+								<td name="race" bind="race" ></td>
+								<td name="first_name" bind="first_name" ></td>
+								<td name="last_name" bind="last_name" ></td>
+								<td name="email" bind="email" ></td>
+							</tr>
+						</tbody>
+						<caption>hello</caption>
+
+					</table>
+				</script>
+
+			<!-- <ul>
+				<li>
+					<p style="text-decoration: line-through;"></p>
+					<p>마지막 컬럼에서 tab했을때 스크롤 되돌리기</p>
+			
+				</li>
+				<li>
+					<p>가상스크롤 학인</p>
+				</li>
+			</ul> -->
+			
+		</div>
+
+	</div>
+
+	<a href="" id="aa">asd</a>
+
+	<div class="wrap" style="height:auto;">
+		
+		<h3>기본 틀 고정</h3>
+
+		<table id="grid-table-2">
+
+		</table>
+
+		<script id="grid-template-2" type="text/template">
+			<table width="100%" height="400px">
+				<thead>
+					<tr>
+						<th name="id" align="center">id</th>
+						<th name="user_name" align="center">user_name</th>
+						<th name="password"  align="center">password</th>
+						<th name="gender"  align="center">gender</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td name="id" bind="id" ></td>
+						<td name="user_name" bind="user_name" ></td>
+						<td name="password" bind="password" ></td>
+						<td name="gender" bind="gender" ></td>
+					</tr>
+				</tbody>
+			</table>
+		</script>
+		
+	</div>
+
+
+	<div class="wrap" style="height:auto;">
+		
+		<h3>기본 틀 고정</h3>
+
+		<table id="grid-table">
+
+		</table>
+
+		<script id="grid-template" type="text/template">
+			<table width="100%" height="400px">
+				<thead>
+					<tr>
+						<th name="id" width="70px" align="center">id</th>
+						<th name="user_name" width="150px" align="center">user_name</th>
+						<th name="password" width="150px" align="center">password</th>
+						<th name="gender" width="100px" align="center">gender</th>
+						<th name="race" width="200px">race</th>
+						<th name="title" width="100px" align="center">title</th>
+						<th name="first_name" width="150px">first_name</th>
+						<th name="last_name" width="150px">last_name</th>
+						<th name="email" width="250px">email</th>
+						<th name="country" width="250px">country</th>
+						<th name="street_1" width="100px">street_1</th>
+						<th name="street_2" width="250px">street_2</th>
+						<th name="ip_address" width="150px" align="center">ip_address</th>
+						<th name="credit_card_type" width="200px">credit_card_type</th>
+						<th name="credit_card_number" width="200px">credit_card_number</th>
+						<th name="frequency" width="200px">frequency</th>
+						<th name="url" width="400px">url</th>
+						<th name="color" width="120px">color</th>
+						<th name="company" width="150px" align="right">company</th>
+						<th name="currency" width="250px">currency</th>
+						<th name="data" width="150px" align="center">date</th>
+						<th name="ISBN" width="150px" align="center">ISBN</th>
+						<th name="language" width="150px" align="center">language</th>
+						<th name="message" width="500px">message</th>
+						<th name="money" width="100px" align="right">money</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td name="id" bind="id" ></td>
+						<td name="user_name" bind="user_name" ></td>
+						<td name="password" bind="password" ></td>
+						<td name="gender" bind="gender" ></td>
+						<td name="race" bind="race" ></td>
+						<td name="title" bind="title" ></td>
+						<td name="first_name" bind="first_name" ></td>
+						<td name="last_name" bind="last_name" ></td>
+						<td name="email" bind="email" ></td>
+						<td name="country" bind="country" ></td>
+						<td name="street_1" bind="street_1" ></td>
+						<td name="street_2" bind="street_2" ></td>
+						<td name="ip_address" bind="ip_address" ></td>
+						<td name="credit_card_type" bind="credit_card_type" ></td>
+						<td name="credit_card_number" bind="credit_card_number"></td>
+						<td name="frequency" bind="frequency" ></td>
+						<td name="url" bind="url" ></td>
+						<td name="color" bind="color" ></td>
+						<td name="company" bind="company" ></td>
+						<td name="currency" bind="currency" ></td>
+						<td name="data" bind="data" ></td>
+						<td name="ISBN" bind="ISBN" ></td>
+						<td name="language" bind="language" ></td>
+						<td name="message" bind="message" ></td>
+						<td name="money" bind="money" ></td>
+					</tr>
+				</tbody>
+			</table>
+		</script>
+
+		<ul>
+			<li>
+				<p style="text-decoration: line-through;">스크롤 오른쪽 끝으로 보낸후 -> 컬럼리사이즈 -> 컬럼을 뷰포트 이하로 줄였을때 스크롤 사라짐</p>
+			</li>
+			<li>
+				<p style="text-decoration: line-through;">틀고정 마지막 컬럼들이이 잘려서 나옴</p>
+			</li>
+		</ul>
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+	var table3 = $('#grid-table-3');
+	var template3 = $('#grid-template-3');
+	var grid3 = webponent.grid.init(table3, template3, {
+		id : 'grid-3',
+		rowSelectable : true,
+		resizable: false
+	});
+
+	var table2 = $('#grid-table-2');
+	var template2 = $('#grid-template-2');
+	var grid2 = webponent.grid.init(table2, template2, {
+		id : 'grid-2',
+		rowSelectable : true
+	});
+
+	var table = $('#grid-table');
+	var template = $('#grid-template');
+	var grid = webponent.grid.init(table, template, {
+		id : 'grid',
+		rowSelectable : true
+	});
+	
+
+	function appendRow () {
+
+		var data = $('#data-count').val();
+
+		$.ajax({
+			cache : false,
+			url : '../../../data/data-1000_0.json',
+			success : function (resp) {
+				grid3.removeRow();
+				grid.removeRow();
+				grid3.appendRow(resp);
+				grid2.appendRow(resp);
+				grid.appendRow(resp);
+			}
+		});
+	}
+
+	appendRow();
+
+	/*setInterval(function () {
+
+		console.log($(':focus')[0]);
+	}, 500);
+	*/
+
+	</script>
+</body>
+</html>

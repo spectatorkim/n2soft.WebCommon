@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>캡션 - 그리드 webPonentⓒ Grid</title>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/webponent.grid.flat.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h1>캡션설정</h1>
+
+		<div class="wrap">
+			<div class="btnbox" style="top: -104px;">
+				<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;"><span>Mobile</span></button>
+				<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/pages/viewpage.action?pageId=14615093#id-%EC%98%B5%EC%85%98-sortable'); return false;"><span>Reference</span></button>
+				<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Grid%20Demo/%EC%BB%AC%EB%9F%BC%20%EC%86%8C%ED%8C%85,%20%EB%A9%80%ED%8B%B0%20%EC%86%8C%ED%8C%85'); return false;"><span>Publisher</span></button>
+			</div>
+
+			<h3>내선번호표</h3>
+			<table id="grid-table-1">
+
+			</table>
+
+			<script id="grid-template-1" type="text/template">
+				<table width="100%" height="350px">
+					<thead>
+						<tr>
+							<th name="team" align="center">부서명</th>
+							<th name="subTeam">소속팅</th>
+							<th name="name" width="90px" align="center">이름</th>
+							<th name="grade" width="90px" align="center">직급</th>
+							<th name="tel" align="center">전화번호</th>
+							<th name="id" align="center">아이디</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td name="team" bind="team"></td>
+							<td name="subTeam" bind="subTeam"></td>
+							<td name="name" bind="name"></td>
+							<td name="grade" bind="grade"></td>
+							<td name="tel" bind="tel"></td>
+							<td name="id" bind="id"></td>
+						</tr>
+					</tbody>
+					<caption>
+						그리드 캡션입니다.
+					</caption>
+				</table>
+
+			</script>
+
+		</div>
+		
+	</div>
+
+	
+	<script src="../../../external/jquery-1.11.1.min.js"></script>
+	<script src="../../../external/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="../../../external/jquery.mousewheel.min.js"></script>
+	<script src="../../../external/underscore-min.js"></script>
+	<script src="../../../webponent.grid.dev.js"></script>
+	<script src="../../../webponent.grid.UIplugin.js"></script>
+
+	<script>
+
+	var table1 = $('#grid-table-1');
+	var template1 = $('#grid-template-1');
+	var grid1 = webponent.grid.init(table1, template1);
+	
+	$.ajax({
+		dataType : 'json',
+		url : '../../../data/ci-book.json',
+		success : function (resp) {
+
+			grid1.appendRow(resp);
+	
+		}
+	});
+
+
+	</script>
+</body>
+</html>

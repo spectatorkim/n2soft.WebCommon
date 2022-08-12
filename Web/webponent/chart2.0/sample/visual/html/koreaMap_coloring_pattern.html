@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>korea map coloring pattern</title>
+
+	<style>
+
+		.korea {        
+			width: 100%;
+			height: 480px;
+		}
+
+		.tip_name {
+			font-size : 14px;
+			font-weight: bold;
+			margin-bottom : 5px;
+		}
+
+		.tip_text {
+			margin-bottom : 3px;
+			color :#cccccc;
+			font-weight: bold;
+		}
+
+		.loading {
+			background-color: #fff;
+			width: 100%;
+			height: 480px;            
+			position: absolute;
+			top: 1px;
+			left: 0;
+		}
+		.loadingImage {
+			background : url("../img/loading.gif") no-repeat;
+			width : 104px;
+			height: 104px;
+			margin: 120px auto 0;
+		}  
+
+	</style>
+</head>
+
+<body>
+	<h1>KOREA MAP-coloring_pattern</h1>
+	<h2>패턴</h2>
+	<div class="wrap">
+
+		<div class="btnbox">
+			<button type="button" class="btn04" onclick="saveImage()">
+				<span>SAVE IMAGE</span>
+			</button>
+			<button type="button" class="btn01" onclick="parent.location.href=document.location; return false;">
+				<span>Mobile</span>
+			</button>
+			<button type="button" class="btn02" onclick="window.open('http://build.cyber-i.com/docs/display/wp/5.+Korea+Map'); return false;">
+				<span>Reference</span>
+			</button>
+			<button type="button" class="btn03" onclick="window.open('http://www.webponent.com/WEB-APP/webponent-publisher/#sample:Visual%20Demo/korea_coloring_pattern'); return false;">
+				<span>Publisher</span>
+			</button>
+		</div>
+
+		<div class="korea"></div>   
+
+		<div class="loading">
+			<div class="loadingImage"></div>
+		</div>
+
+	</div>   
+	
+	
+	
+	<script type="text/javascript" src="../../../lib/comm/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/raphael.export.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.common.js"></script>
+	<script type="text/javascript" src="../../../lib/comm/webponent.comm.export.js"></script>
+	<script type="text/javascript" src='../../../lib/visual/webponent.visual.korea.js'></script>
+	<link rel="stylesheet" href="../../layout/css/layout.css"/>
+
+	<script>
+	
+		(function () {
+
+			var style = {
+				
+				korea : {                    
+					position : {
+						x : 0,
+						y : 0
+					},
+					scale : 1,
+					line : {
+						color : '#fff',
+						width : 2
+					},
+					area : {
+						color : [
+							{'src': '../img/korea_pattern1.png'},
+							{'src': '../img/korea_pattern2.png'},
+							{'src': '../img/korea_pattern3.png'},
+							{'src': '../img/korea_pattern4.png'},
+							{'src': '../img/korea_pattern5.png'},
+							{'src': '../img/korea_pattern6.png'},
+							{'src': '../img/korea_pattern7.png'}
+						]
+					},
+					hover : {
+						use : true,
+						area : {
+							color : '#4e6679'
+						}
+					}
+				},
+				sea : {
+					west : {
+						position : {
+							x : 75,
+							y : 300
+						},
+						text : {
+							value : 'West sea',
+							family: 'Nanum Gothic',
+							size: 15, 
+							color: '#666666', 
+							align: 'center',    /* left | center | right */
+							style: 'normal',    /* normal | italic */
+							weight: 'bold', /* normal | bold */
+							opacity: 1
+						}
+					},
+					east : {
+					   position : {
+							x : 510,
+							y : 300
+						},
+						text : {
+							value : 'East sea',
+							family: 'Nanum Gothic',
+							size: 15, 
+							color: '#666666', 
+							align: 'center',    /* left | center | right */
+							style: 'normal',    /* normal | italic */
+							weight: 'bold', /* normal | bold */
+							opacity: 1
+						}
+					},
+					south : {
+					   position : {
+							x : 280,
+							y : 530
+						},
+						text : {
+							value : 'South sea',
+							family: 'Nanum Gothic',
+							size: 15, 
+							color: '#666666', 
+							align: 'center',    /* left | center | right */
+							style: 'normal',    /* normal | italic */
+							weight: 'bold', /* normal | bold */
+							opacity: 1
+						}
+					}
+				}   
+			}
+
+			var options = {
+				data : {
+					data : [
+						{date: '20120101', locname: '강원', listshrs: 20},
+						{date: '20120101', locname: '경기', listshrs: 200},
+						{date: '20120101', locname: '경남', listshrs: 80},
+						{date: '20120101', locname: '경북', listshrs: 110},
+						{date: '20120101', locname: '광주', listshrs: 80},
+						{date: '20120101', locname: '대구', listshrs: 110},
+						{date: '20120101', locname: '대전', listshrs: 80},
+						{date: '20120101', locname: '부산', listshrs: 110},
+						{date: '20120101', locname: '서울', listshrs: 140},
+						{date: '20120101', locname: '울산', listshrs: 140},
+						{date: '20120101', locname: '인천', listshrs: 110},
+						{date: '20120101', locname: '전남', listshrs: 20},
+						{date: '20120101', locname: '전북', listshrs: 50},
+						{date: '20120101', locname: '제주', listshrs: 80},
+						{date: '20120101', locname: '충남', listshrs: 170},
+						{date: '20120101', locname: '충북', listshrs: 140}
+					],
+					localOption : 'locname',
+					use : 'listshrs'
+					// url: '../data/korea_text.txt',
+					// type : 'text',
+					// gubun : 'date',
+					// gubunOption : '20120219',
+					// localOption : 'locname',
+					// use : 'listshrs',
+					// jsonDepth: 'output.result'
+				},
+				local : {
+					step : [0, 30, 60, 90, 120, 150, 180, 210]
+				},
+				toolTip : {
+					use : {
+						local : true
+					},
+					className : 'tip',
+					func : function ( data, tipElement ) {  
+						var name = '<div class="tip_name">'+ data.locname + '</div>';
+						var data1 = '<div class="tip_text">' + '상장 회원수 : ' + data.listshrs + '</div>';  
+						var data2 = '<div class="tip_text">' + '날짜 : ' + dayDataFormatDot(data.date) + '</div>';
+						var tip = '<div class="text">'+ name + data1 + data2 + '</div>';
+						var arrow = '<div class="arrow" style="width: '+tipElement.width()+'px;"></div>';
+						tipElement.html(tip + arrow);                 
+					} 
+				},
+				loadingBar : {
+					use : true,
+					select : $('.loading')
+				},
+				resize: {
+					use : true,
+					loadingBar : {
+						use : true
+					}
+				}
+			};
+
+			korea = webponent.visual.korea.init($(".korea"), style, options);
+
+
+		})();
+
+		var saveImage = function (){
+
+			korea.getSVG();
+
+		};
+
+
+	</script>
+</body>
+
+</html>

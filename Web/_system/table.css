@@ -1,0 +1,22 @@
+body, table, td {
+	font-family: "µ¸¿òÃ¼";
+	font-size: 11px;
+}
+
+a:link 		     { font-family: "¸¼Àº °íµñ", "Tahoma"; color: #0040FF; text-decoration: none; }
+a:visited 	     { font-family: "¸¼Àº °íµñ", "Tahoma"; color: #0040FF; text-decoration: none; }
+a:active  	     { font-family: "¸¼Àº °íµñ", "Tahoma"; color: #0040FF; text-decoration: none; }
+a:hover 	     { font-family: "¸¼Àº °íµñ", "Tahoma"; color: #FF8000; text-decoration: underline;}
+
+.title {
+	font-family: "¸¼Àº °íµñ", "Tahoma";
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.form2 {
+	font-family: "µ¸¿òÃ¼";
+	font-size: 11px;
+}
+
+input { font-size:9pt; }
